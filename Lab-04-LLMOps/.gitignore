@@ -1,0 +1,9 @@
+# Salida de cada corrida.
+resultados*.csv
+guardrails*.csv
+spans*.jsonl
+reports/traces.jsonl
+reports/answers.json
+reports/evaluation_report.json
+.env
+__pycache__/
