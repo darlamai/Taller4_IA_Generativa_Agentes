@@ -1,0 +1,14 @@
+warning: `VIRTUAL_ENV=/home/dludena/Taller4_IA_Generativa_Agentes/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+Consider using the pymupdf_layout package for a greatly improved page layout analysis.
+  A A01  archivo         ✓  1 archivo(s) con reporte.md
+  A A02  archivo         ✓  11 archivo(s) con **/*.png
+  A A03  secciones       ✓  todas, en orden
+  A A04  palabras_max    ✓  998 palabras
+  A A05  cifra_presente  ✓  verdad=569.0000 ±0; hallada
+  A A06  cifra           ✓  verdad=0.9474 ±0.006; hallada
+  A A07  cifra           ✓  verdad=0.9883 ±0.012; hallada
+  A A08  procedencia     ✓  51/51 cifras respaldadas (1.00)
+  A A09  cifra_presente  ✓  verdad=0.9766 ±0.0006; hallada
+Tarea A: 9/9 · status=completado · 304.5 s
+
+Comprobaciones aprobadas: 9/9 → /tmp/prueba_t4.csv

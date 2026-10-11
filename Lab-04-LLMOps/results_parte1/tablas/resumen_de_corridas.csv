@@ -1,0 +1,2 @@
+corridas,tokens_entrada,tokens_salida,latencia_p50_s,latencia_p95_s,latencia_max_s
+5,306169,870186,468.313,1152.5513999999998,1272.072

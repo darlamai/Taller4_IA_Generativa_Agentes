@@ -1,0 +1,13 @@
+========================================================================
+T6 - Bootstrap pareado (remuestreo de tiendas completas)
+========================================================================
+Datos: data/model_errors.csv | tiendas: 16 | coincide con T2: True
+Semilla: 20260829 | Remuestras: 10000 | Nivel: 95%
+Media observada de difference: 0.418750
+IC percentil 95 %: [-0.193750, 1.006250] | contiene cero: True
+Bootstrap: media=0.420967 | EE=0.305594 | sesgo=0.002218
+P(boot media > 0) = 0.9119 | P(boot media < 0) = 0.0881
+Reproducibilidad (misma semilla, 2 ejecuciones): intervalos idénticos = True | max |Δ| = 0.0
+Coherencia filas completas vs vector de diferencias: True
+Contraste (no válido, A y B por separado): IC = [-1.175000, 2.031250]
+Salidas: resultados.json, output/store_differences.csv, output/store_differences.png

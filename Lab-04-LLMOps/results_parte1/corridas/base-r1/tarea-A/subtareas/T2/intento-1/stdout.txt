@@ -1,0 +1,19 @@
+==================================================================
+T2 — Parte 2: dos clasificadores (división 70/30 de la Parte 1)
+==================================================================
+Fuente de la división: recreada de forma determinista: train_test_split(test_size=0.3, stratify=y, random_state=42), idéntica a la de la Parte 1
+Tamaños: entrenamiento=398, prueba=171
+Verificación contra T1: OK
+  - tam_entrenamiento_coincide_con_T1: True
+  - tam_prueba_coincide_con_T1: True
+  - casos_por_clase_entrenamiento_coincide_con_T1: True
+  - casos_por_clase_prueba_coincide_con_T1: True
+
+Tabla de resultados (conjunto de prueba):
+                       Accuracy (prueba)  F1 macro (prueba)
+Modelo                                                     
+Naive Bayes gaussiano             0.9357             0.9307
+Regresión logística               0.9883             0.9875
+
+Escalador ajustado solo con entrenamiento: True (dif. máx. vs. media de todos los datos: 4.105e+00)
+Archivos generados: resultados.json, tabla_parte2_metricas.png, tabla_parte2_metricas.csv

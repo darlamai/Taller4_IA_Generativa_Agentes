@@ -19,7 +19,7 @@ import sys
 import time
 from pathlib import Path
 from typing import Callable
-
+from solver import observabilidad
 from solver.sandbox.guarda import revisar
 
 COPIAR_DE_DEPENDENCIAS = {".json", ".csv", ".png", ".parquet", ".npy", ".txt"}
@@ -63,7 +63,12 @@ def ejecutar(codigo: str, carpeta: Path, *, entradas: dict[str, Path] | None = N
              tmp: Path | None = None) -> dict:
     """Resultado de una ejecución. Nunca lanza: todo error vuelve como dato."""
     t0 = time.perf_counter()
-    veredicto = revisar(codigo)
+    # --- Taller 4: guardrail de la guarda estática, con su decisión como salida
+    with observabilidad.guardrail("guarda_sandbox", input={"subtarea": subtarea, "lineas": codigo.count("\n") + 1}) as g:
+        veredicto = revisar(codigo)
+        g.actualizar(output={"decision": ("bloquear" if not veredicto.permitido else
+                                          "requiere_confirmacion" if veredicto.descargas else "permitir"),
+                             "violaciones": veredicto.violaciones, "descargas": veredicto.descargas})
     base = {"huella": huella(codigo), "carpeta": str(carpeta), "violaciones": veredicto.violaciones,
             "descargas": veredicto.descargas, "returncode": None, "stdout": "", "stderr": "",
             "archivos": [], "timeout": False, "error": None, "confirmacion": None}
@@ -80,26 +85,35 @@ def ejecutar(codigo: str, carpeta: Path, *, entradas: dict[str, Path] | None = N
             base["error"] = "descarga no confirmada por una persona: " + "; ".join(veredicto.descargas)
             base["duracion_s"] = round(time.perf_counter() - t0, 2)
             return base
-    antes = {p for p in carpeta.rglob("*") if p.is_file()}
-    proc = subprocess.Popen([sys.executable, "script.py"], cwd=carpeta, env=entorno_vacio(carpeta, tmp),
-                            stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True,
-                            start_new_session=True)           # su propio grupo de procesos
-    try:
-        out, err = proc.communicate(timeout=timeout_s)
-    except subprocess.TimeoutExpired:
+    # --- Taller 4: la ejecución en el sandbox es una herramienta (tool): nombre, tamaño, latencia, error
+    with observabilidad.herramienta("sandbox_python", input={"subtarea": subtarea, "timeout_s": timeout_s,
+                                                              "huella": base["huella"]}) as t:
+        antes = {p for p in carpeta.rglob("*") if p.is_file()}
+        proc = subprocess.Popen([sys.executable, "script.py"], cwd=carpeta, env=entorno_vacio(carpeta, tmp),
+                                stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True,
+                                start_new_session=True)           # su propio grupo de procesos
         try:
-            os.killpg(proc.pid, signal.SIGKILL)               # mata al GRUPO: también a los hijos
-        except ProcessLookupError:
-            pass
-        out, err = proc.communicate()
-        base["timeout"] = True
-        base["error"] = f"timeout: superó {timeout_s} s y se mató el grupo de procesos"
-    base["returncode"] = proc.returncode
-    base["stdout"], base["stderr"] = out[-20_000:], err[-20_000:]
-    (carpeta / "stdout.txt").write_text(out, encoding="utf-8")
-    (carpeta / "stderr.txt").write_text(err, encoding="utf-8")
-    base["archivos"] = sorted(str(p.relative_to(carpeta)) for p in carpeta.rglob("*")
-                              if p.is_file() and p not in antes and ".tmp" not in p.parts
-                              and p.name not in {"stdout.txt", "stderr.txt"})
+            out, err = proc.communicate(timeout=timeout_s)
+        except subprocess.TimeoutExpired:
+            try:
+                os.killpg(proc.pid, signal.SIGKILL)               # mata al GRUPO: también a los hijos
+            except ProcessLookupError:
+                pass
+            out, err = proc.communicate()
+            base["timeout"] = True
+            base["error"] = f"timeout: superó {timeout_s} s y se mató el grupo de procesos"
+        base["returncode"] = proc.returncode
+        base["stdout"], base["stderr"] = out[-20_000:], err[-20_000:]
+        (carpeta / "stdout.txt").write_text(out, encoding="utf-8")
+        (carpeta / "stderr.txt").write_text(err, encoding="utf-8")
+        base["archivos"] = sorted(str(p.relative_to(carpeta)) for p in carpeta.rglob("*")
+                                  if p.is_file() and p not in antes and ".tmp" not in p.parts
+                                  and p.name not in {"stdout.txt", "stderr.txt"})
+        t.actualizar(output={"returncode": base["returncode"], "tam_stdout": len(out), "tam_stderr": len(err),
+                             "archivos": len(base["archivos"]), "timeout": base["timeout"]})
+        if base["timeout"]:
+            t.error(base["error"])
+        elif base["returncode"] != 0:
+            t.error(f"returncode={base['returncode']}: {err.strip()[-300:]}")
     base["duracion_s"] = round(time.perf_counter() - t0, 2)
     return base

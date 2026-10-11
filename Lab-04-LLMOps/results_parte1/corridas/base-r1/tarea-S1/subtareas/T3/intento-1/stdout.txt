@@ -1,0 +1,9 @@
+=== T3: DataFrame con load_score y requires_review ===
+Filas: 300 | Columnas: ['server', 'timestamp', 'gpu_utilization', 'cpu_utilization', 'memory_gb', 'power_w', 'temperature_c', 'load_score', 'requires_review']
+load_score dtype: float64 | requires_review dtype: bool
+requires_review=True: 49 de 300
+Fila 23: {'server': 'AI-SRV-01', 'timestamp': '2026-08-24 09:55:00', 'load_score': 3.136217861183744, 'temperature_c': 66.97, 'requires_review': True}
+Fila 23 coincide con lo esperado: True
+Original sin modificar: True | load_score recalculado coincide con T2: True
+Parquet escrito en output/server_analysis.parquet (sin índice, verificado: True)
+review_count por servidor: {'AI-SRV-01': np.int64(2), 'AI-SRV-02': np.int64(1), 'AI-SRV-03': np.int64(2), 'AI-SRV-04': np.int64(5), 'AI-SRV-05': np.int64(12), 'AI-SRV-06': np.int64(27)}

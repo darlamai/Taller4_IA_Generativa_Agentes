@@ -35,6 +35,7 @@ from pathlib import Path
 import networkx as nx
 import numpy as np
 
+from solver import observabilidad
 from solver.cliente_llm import ClienteLLM, PresupuestoAgotado
 from solver.traza import Traza
 
@@ -204,7 +205,7 @@ def extraer_en_paralelo(llm: ClienteLLM, piezas: list[tuple[str, str]], hilos: i
             llm.traza.decision("indexador", "extraccion_fallida", f"{cita}: {type(err).__name__}: {err}"[:300])
             return None
     with ThreadPoolExecutor(max_workers=max(1, hilos)) as pool:
-        return [r for r in pool.map(una, piezas) if r is not None]
+        return [r for r in pool.map(observabilidad.con_contexto(una), piezas) if r is not None]
 
 
 # =========================================================================== fusión
@@ -376,7 +377,7 @@ def resumir_comunidades(llm: ClienteLLM, fusion: Fusion, grupos: list[list[str]]
             resumen = "Entidades: " + ", ".join(e["nombre"] for e in ents[:12])
         return {"id": i, "miembros": miembros, "resumen": resumen[:1200], "citas": citas}
     with ThreadPoolExecutor(max_workers=max(1, hilos)) as pool:
-        return list(pool.map(una, enumerate(grupos)))
+        return list(pool.map(observabilidad.con_contexto(una), enumerate(grupos)))
 
 
 # =========================================================================== índice de las notas

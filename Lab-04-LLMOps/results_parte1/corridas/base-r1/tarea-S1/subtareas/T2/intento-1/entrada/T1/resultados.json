@@ -1,0 +1,60 @@
+{
+  "repr": "ServerMeasurements(shape=(300, 3), features=('gpu_utilization', 'cpu_utilization', 'memory_gb'))",
+  "repr_esperado": "ServerMeasurements(shape=(300, 3), features=('gpu_utilization', 'cpu_utilization', 'memory_gb'))",
+  "repr_coincide": true,
+  "shape": [
+    300,
+    3
+  ],
+  "feature_names": [
+    "gpu_utilization",
+    "cpu_utilization",
+    "memory_gb"
+  ],
+  "values_dtype": "float64",
+  "n_filas": 300,
+  "n_columnas": 3,
+  "muestra_values_primeras_3_filas": [
+    [
+      59.61,
+      59.61,
+      24.87
+    ],
+    [
+      49.49,
+      52.64,
+      27.73
+    ],
+    [
+      65.62,
+      47.06,
+      26.34
+    ]
+  ],
+  "validaciones": {
+    "matriz_no_bidimensional_lanza_valueerror": true,
+    "columnas_distintas_de_nombres_lanza_valueerror": true,
+    "datos_no_numericos_lanza_valueerror": true
+  },
+  "validaciones_todas_ok": true,
+  "csv_no_modificado": true,
+  "csv_md5": "234329069159ee7001bfe3094275e213",
+  "columnas_csv": [
+    "server",
+    "timestamp",
+    "gpu_utilization",
+    "cpu_utilization",
+    "memory_gb",
+    "power_w",
+    "temperature_c"
+  ],
+  "timestamp_dtype": "datetime64[us]",
+  "servidores": [
+    "AI-SRV-01",
+    "AI-SRV-02",
+    "AI-SRV-03",
+    "AI-SRV-04",
+    "AI-SRV-05",
+    "AI-SRV-06"
+  ]
+}

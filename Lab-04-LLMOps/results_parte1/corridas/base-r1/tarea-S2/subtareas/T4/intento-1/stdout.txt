@@ -1,0 +1,14 @@
+================================================================
+T4 · Efecto e incertidumbre de las diferencias pareadas
+================================================================
+n tiendas               : 16
+diferencia media        : 0.418750 unidades
+sd muestral (ddof=1)    : 1.253379
+error estándar (sd/√n)  : 0.313345
+estadístico t(15)     : 1.336388
+p-value (bilateral)     : 0.201342
+IC t 95 %               : [-0.249128, 1.086628]
+¿IC contiene 0?         : sí
+CSV  -> output/store_differences.csv
+PNG  -> output/store_differences.png
+JSON -> resultados.json

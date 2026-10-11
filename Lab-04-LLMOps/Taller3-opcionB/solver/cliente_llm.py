@@ -19,6 +19,7 @@ import os
 import re
 import sys
 import time
+from solver import observabilidad
 from solver.config import RAIZ, Config
 from solver.traza import Traza
 
@@ -101,6 +102,7 @@ class ClienteLLM:
         return limite - self.consumido
 
     # ------------------------------------------------------------------ llamadas
+     # ------------------------------------------------------------------ llamadas
     def chat(self, agente: str, mensajes: list[dict], *, subtarea: str | None = None,
              json_mode: bool = False, tools: list[dict] | None = None,
              max_tokens: int | None = None, tope: int | None = None) -> dict:
@@ -113,7 +115,13 @@ class ClienteLLM:
         tope = tope or self.cfg.max_tokens_tope
         intento = vacios = red = 0
         while True:
-            if self.disponible(agente) <= 0:          # freno: ANTES de la llamada
+            # --- Taller 4 (2.b): guardrail de presupuesto, con su decisión como salida
+            with observabilidad.guardrail("presupuesto_tokens", input={"agente": agente}) as g:
+                restante = self.disponible(agente)
+                g.actualizar(output={"decision": "bloquear" if restante <= 0 else "permitir",
+                                     "restante": restante, "consumido": self.consumido,
+                                     "presupuesto": self.cfg.presupuesto_tokens})
+            if restante <= 0:                         # freno: ANTES de la llamada
                 self.traza.decision(agente, "presupuesto_agotado", subtarea=subtarea,
                                     motivo=f"consumido={self.consumido} de "
                                            f"{self.cfg.presupuesto_tokens} (reserva "
@@ -122,7 +130,12 @@ class ClienteLLM:
             intento += 1
             t0 = time.perf_counter()
             try:
-                r = self.llm.chat(mensajes, tools=tools, json_mode=json_mode, max_tokens=max_tokens)
+                # --- Taller 4 (2.c): un span `llm` (generation) por intento; nombre = el agente
+                with observabilidad.generacion(agente, modelo=self.modelo, input=_recortar(mensajes),
+                                               metadata={"subtarea": subtarea, "intento": intento,
+                                                         "max_tokens": max_tokens, "json": json_mode}) as gen:
+                    r = self.llm.chat(mensajes, tools=tools, json_mode=json_mode, max_tokens=max_tokens)
+                    observabilidad.usar_uso(gen, r.get("uso"), output=r.get("contenido") or "")
             except Exception as err:                  # red, HTTP, VPN caída…
                 self.traza.llamada(agente, modelo=self.modelo, tokens_entrada=0, tokens_salida=0,
                                    latencia_s=round(time.perf_counter() - t0, 2), fin=None,

@@ -23,6 +23,7 @@ import time
 import uuid
 from pathlib import Path
 
+
 from langgraph.graph import END, START, StateGraph
 
 try:
@@ -30,7 +31,7 @@ try:
 except ImportError:  # pragma: no cover  (nombres anteriores de LangGraph)
     from langgraph.checkpoint.memory import MemorySaver as InMemorySaver
 
-from solver import formatos, graphrag
+from solver import formatos, graphrag, observabilidad
 from solver.agentes import critico, ejecutor, indexador, investigador, lector, planificador, programador, redactor
 from solver.cliente_llm import ClienteLLM, PresupuestoAgotado
 from solver.config import RAIZ, Config
@@ -42,6 +43,12 @@ from solver.traza import Traza
 MAX_INTENTOS_PLAN = 3
 MAX_REDACCIONES = 3          # la primera más dos correcciones
 INTERNO = "cache_solver"     # lo que no escribió una ejecución: el evaluador no lo cuenta como respaldo
+
+AGENTE_DE_NODO = {"leer": "lector", "indexar": "indexador", "planificar": "planificador",
+                  "investigar": "investigador", "programar": "programador", "ejecutar": "ejecutor",
+                  "criticar": "critico", "redactar": "redactor", "verificar": "redactor"}
+
+
 
 
 def _cargar(ruta: str) -> dict:
@@ -116,15 +123,29 @@ class Solver:
     def _nodo(self, nombre: str, fn):
         """Ningún error mata la corrida: el presupuesto agotado o una excepción quedan en la
         traza y en motivo_parada, y los enrutadores deciden a dónde ir (redactar o cerrar)."""
+        rol = AGENTE_DE_NODO.get(nombre)
+
         @functools.wraps(fn)
         def envuelto(estado: Estado) -> dict:
+            if rol is None:                      # nodo de control: sin span
+                return ejecutar_nodo(estado, None)
+            with observabilidad.agente(rol, input={"nodo": nombre, "subtarea": estado.get("actual")},
+                                       metadata={"nodo": nombre}) as h:
+                return ejecutar_nodo(estado, h)
+
+        def ejecutar_nodo(estado: Estado, h) -> dict:
+            h = h or observabilidad.Manejador()
             try:
-                return fn(estado) or {}
+                salida = fn(estado) or {}
+                h.actualizar(output={"claves": sorted(salida), "motivo_parada": salida.get("motivo_parada", "")})
+                return salida
             except PresupuestoAgotado as err:
                 self.traza.decision("orquestador", "presupuesto_agotado", str(err), nodo=nombre)
+                h.actualizar(output={"motivo_parada": "presupuesto"}, metadata={"nodo": nombre, "parada": "presupuesto"})
                 return {"motivo_parada": "presupuesto"}
             except Exception as err:
                 self.traza.error(nombre, err, subtarea=estado.get("actual"))
+                h.error(err)
                 return {"motivo_parada": f"error en {nombre}: {type(err).__name__}: {err}"}
         return envuelto
 
@@ -188,7 +209,13 @@ class Solver:
 
     # ================================================================ nodos
     def _leer(self, estado: Estado) -> dict:
-        doc = lector.leer(estado["ruta_entrada"])
+        with observabilidad.herramienta("leer_pdf", input={"ruta": Path(estado["ruta_entrada"]).name}) as t:
+            doc = lector.leer(estado["ruta_entrada"])
+            t.actualizar(output={"secciones": len(doc["secciones"]), "tablas": len(doc["tablas"]),
+                                 "escaneado": bool(doc["escaneado"]),
+                                 "tamano_texto": len(str(doc.get("texto", "")))})
+            if doc["escaneado"]:
+                t.error("PDF escaneado sin texto")
         ruta = _guardar(self._salida(estado) / INTERNO / "enunciado_leido.json", doc)
         trabajo = [s["clave"] for s in doc["secciones"] if s["trabajo"]]
         self.traza.decision("lector", "leido", f"{len(doc['secciones'])} secciones; de trabajo: {trabajo}; "
@@ -200,7 +227,7 @@ class Solver:
             self.traza.decision("lector", "sin_secciones_de_trabajo",
                                 "no se reconoció ninguna «Parte N»: el plan cubrirá el documento entero")
         return {"documento": ruta, "restricciones": doc["restricciones"]}
-
+    
     def _indexar(self, estado: Estado) -> dict:
         doc = _cargar(estado["documento"])
         g = indexador.esqueleto(doc["secciones"])                     # capa 1: regla, no modelo
@@ -321,6 +348,7 @@ class Solver:
             return {"codigo": "", "plan": self._con(estado, s["id"], intentos=intento)}
         return {"codigo": codigo, "plan": self._con(estado, s["id"], intentos=intento)}
 
+
     def _ejecutar(self, estado: Estado) -> dict:
         s = self._subtarea(estado, estado["actual"])
         carpeta = self._salida(estado) / "subtareas" / s["id"] / f"intento-{s['intentos']}"
@@ -329,7 +357,11 @@ class Solver:
                                   "error": "sin script: el modelo no respondió en este intento",
                                   "returncode": None, "archivos": [], "violaciones": []}}
         huella = ejecutor.huella(estado["codigo"])
-        if huella in (estado.get("rechazadas") or {}).get(s["id"], []):      # freno: repetición
+        repetido = huella in (estado.get("rechazadas") or {}).get(s["id"], [])
+        with observabilidad.guardrail("freno_repeticion", input={"subtarea": s["id"], "huella": huella}) as g:
+            g.actualizar(output={"decision": "bloquear" if repetido else "permitir",
+                                 "motivo": "script idéntico a uno ya rechazado" if repetido else "script nuevo"})
+        if repetido:                                                        # freno: repetición
             self.traza.decision("ejecutor", "script_repetido",
                                 f"idéntico ({huella}) a uno ya rechazado: no se ejecuta", subtarea=s["id"])
             return {"ejecucion": {"huella": huella, "carpeta": str(carpeta), "repetido": True,
@@ -349,6 +381,8 @@ class Solver:
                              huella=huella, carpeta=str(carpeta), violaciones=r["violaciones"],
                              timeout=r["timeout"], stderr=r["stderr"][-2000:])
         return {"ejecucion": r}
+
+
 
     def _criticar(self, estado: Estado) -> dict:
         s = self._subtarea(estado, estado["actual"])
@@ -590,7 +624,7 @@ class Solver:
             return {}
 
     # ================================================================ contrato
-    def solve(self, ruta_pdf: str, salida: str) -> dict:
+    def _resolver(self, ruta_pdf: str, salida: str) -> dict:
         carpeta = Path(salida).resolve()
         entrada = Path(ruta_pdf).resolve()
         if carpeta.exists() and (entrada == carpeta or entrada.is_relative_to(carpeta)
@@ -631,6 +665,28 @@ class Solver:
                 "motivo_parada": final.get("motivo_parada", ""),
                 "procedencia": final.get("procedencia"), "duracion_s": round(time.perf_counter() - t0, 1)}
 
+    def solve(self, ruta_pdf: str, salida: str) -> dict:
+        """Una corrida = una traza de Langfuse. La raíz envuelve TODO, guardrails incluidos."""
+        entrada = Path(ruta_pdf)
+        with observabilidad.corrida(str(ruta_pdf), variante=self.variante,
+                                    metadata={"entrada": entrada.name}) as raiz:
+            with observabilidad.guardrail("validar_entrada", input={"entrada": entrada.name}) as g:
+                problema = ("no existe" if not entrada.exists()
+                            else "no es un PDF" if entrada.suffix.lower() != ".pdf" else "")
+                g.actualizar(output={"decision": "advertir" if problema else "permitir",
+                                     "motivo": problema or "PDF existente"})
+            r = self._resolver(ruta_pdf, salida)
+            r["traza_id"] = observabilidad.traza_id_actual()      # para ligar la corrida a su traza
+            raiz.actualizar(output={"status": r["status"], "motivo_parada": r.get("motivo_parada", ""),
+                                    "usage": r.get("usage")},
+                            metadata={"prompt_version": observabilidad.version_prompts(),
+                                      "status": r["status"], "variante": self.variante})
+            if r["status"] == "fallido":
+                raiz.error(r.get("error") or r.get("motivo_parada") or "corrida fallida")
+        observabilidad.vaciar()
+        return r
+
+
     def run(self, pregunta: str) -> dict:
         """Para el Taller 4: la pregunta es la ruta a un enunciado."""
         salida = RAIZ / "corridas" / "run" / f"{Path(pregunta).stem}-{time.strftime('%Y%m%d-%H%M%S')}"
@@ -639,8 +695,9 @@ class Solver:
         if r["entregables"]:
             answer = Path(r["entregables"][0]).read_text(encoding="utf-8")
         return {"answer": answer, "trace": r["trace"], "status": r["status"], "model": r["model"],
-                "usage": r["usage"]}
+                "usage": r["usage"], "traza_id": r.get("traza_id")}
 
+    
 
 class SolverSinGrafo(Solver):
     """Ablación 2.b: el investigador recibe los k fragmentos más similares y nada más."""

@@ -1,0 +1,68 @@
+{
+  "subtarea": "T1",
+  "dataset": "Breast Cancer Wisconsin (Diagnostic)",
+  "total_ejemplos": 569,
+  "numero_atributos": 30,
+  "nombres_atributos": [
+    "mean radius",
+    "mean texture",
+    "mean perimeter",
+    "mean area",
+    "mean smoothness",
+    "mean compactness",
+    "mean concavity",
+    "mean concave points",
+    "mean symmetry",
+    "mean fractal dimension",
+    "radius error",
+    "texture error",
+    "perimeter error",
+    "area error",
+    "smoothness error",
+    "compactness error",
+    "concavity error",
+    "concave points error",
+    "symmetry error",
+    "fractal dimension error",
+    "worst radius",
+    "worst texture",
+    "worst perimeter",
+    "worst area",
+    "worst smoothness",
+    "worst compactness",
+    "worst concavity",
+    "worst concave points",
+    "worst symmetry",
+    "worst fractal dimension"
+  ],
+  "nombres_clases": [
+    "malignant",
+    "benign"
+  ],
+  "casos_por_clase": {
+    "malignant": 212,
+    "benign": 357
+  },
+  "casos_por_clase_etiqueta_numerica": {
+    "0": 212,
+    "1": 357
+  },
+  "division": {
+    "test_size": 0.3,
+    "train_size": 0.7,
+    "estratificado_por_clase": true,
+    "random_state": 42,
+    "tam_entrenamiento": 398,
+    "tam_prueba": 171,
+    "proporcion_entrenamiento": 0.6994727592267135,
+    "proporcion_prueba": 0.30052724077328646,
+    "casos_por_clase_entrenamiento": {
+      "malignant": 148,
+      "benign": 250
+    },
+    "casos_por_clase_prueba": {
+      "malignant": 64,
+      "benign": 107
+    }
+  }
+}

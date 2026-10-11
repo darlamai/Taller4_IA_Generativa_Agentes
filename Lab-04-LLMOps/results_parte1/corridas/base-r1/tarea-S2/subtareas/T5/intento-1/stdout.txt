@@ -1,0 +1,12 @@
+========================================================================
+T5 - Referencia nula exacta por cambios de signo
+  n tiendas (pares)                  : 16
+  media observada de las diferencias : 0.4187500000  (|media| = 0.4187500000)
+  configuraciones enumeradas         : 65536 (únicas: 65536)
+  configuraciones extremas           : 13372 (estrictamente mayores: 12476, iguales: 896)
+  p-value exacto (cambios de signo)  : 13372/65536 = 0.2040405273
+  p-value t bilateral (comparable)   : 0.2013421492  (t = 1.336388, gl = 15)
+  diferencia absoluta entre p-values : 0.0026983781
+  Archivos escritos: resultados.json, sign_flip_null_distribution.png,
+                     output/store_differences.csv, output/store_differences.png
+========================================================================

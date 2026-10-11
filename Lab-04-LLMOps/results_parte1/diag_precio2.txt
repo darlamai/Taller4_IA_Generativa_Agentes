@@ -1,0 +1,73 @@
+== evaluar_llmops.py 170-210
+            if veredicto not in {"aprueba", "falla"}:
+                raise ValueError(f"veredicto «{veredicto}»")
+            return {"juez_veredicto": veredicto, "juez_puntaje": int(datos.get("puntaje", 0)),
+                    "juez_motivo": str(datos.get("motivo", ""))[:300]}
+        except Exception as e:  # el fallo del juez es un dato de la calibración
+            return {"juez_veredicto": "sin_parsear", "juez_puntaje": "",
+                    "juez_motivo": f"{type(e).__name__}: {e}"[:300]}
+
+
+# ---------------------------------------------------------------------------- el costo
+
+def _tabla_modelos() -> dict:
+    """Las filas de la tabla semestral, cada una con su fecha: la suya o, si no la trae, la
+    del archivo."""
+    for base in [AQUI, *AQUI.parents]:
+        ruta = base / "fuentes" / "modelos" / "modelos-2026-1.json"
+        if ruta.exists():
+            tabla = json.loads(ruta.read_text(encoding="utf-8"))
+            return {m["id"]: m | {"verified_at": m.get("verified_at") or tabla.get("verified_at")}
+                    for m in tabla["models"]}
+    return {}
+
+
+def precio(fila_id: str) -> tuple[float, float, str]:
+    """(USD por 1M de entrada, USD por 1M de salida, de dónde sale). `local` cuesta cero."""
+    if fila_id == "local":
+        return 0.0, 0.0, "ejecución local (H200 u Ollama): cero por llamada"
+    fila = _tabla_modelos().get(fila_id)
+    if not fila:
+        raise SystemExit(f"La tabla semestral no tiene la fila «{fila_id}».")
+    return (fila["input_usd_per_1m"], fila["output_usd_per_1m"],
+            f"fila {fila_id} ({fila['model']}), verificada el {fila['verified_at']}")
+
+
+# ---------------------------------------------------------------------------- la corrida
+
+def _referencia(caso: dict, esperado) -> str:
+    partes = []
+    if esperado is not None:
+        partes.append(f"cifra correcta: {esperado:,.2f}")
+    if caso.get("debe_contener"):
+
+== menciones de fuentes/modelos en los README y scripts
+/home/dludena/Taller4_IA_Generativa_Agentes/Lab-03-Agentes/README.md:40:| Clave del curso | `OPENAI_API_KEY=…` y `AGENT_MODEL=` el `model` de la fila `propietario_economico` de `fuentes/modelos/modelos-2026-1.json` | el de la fila, con su fecha |
+/home/dludena/Taller4_IA_Generativa_Agentes/Lab-03-Agentes/README.md:74:  documentación anterior a v1 redirige; ver `fuentes/web/fuentes-web.md`)
+/home/dludena/Taller4_IA_Generativa_Agentes/langfuse/README.md:85:  functionality» (fuentes/web/fuentes-web.md, «Consultadas el 2026-10-06»).
+/home/dludena/Taller4_IA_Generativa_Agentes/Lab-04-LLMOps/results_parte1/corridas/base-r1/tarea-C/subtareas/T3/intento-1/script.py:459:        "fuentes": {
+/home/dludena/Taller4_IA_Generativa_Agentes/Lab-04-LLMOps/results_parte1/corridas/base-r1/tarea-S1/subtareas/T5/intento-2/script.py:76:    load_score, req_review, fuentes = None, None, {}
+/home/dludena/Taller4_IA_Generativa_Agentes/Lab-04-LLMOps/results_parte1/corridas/base-r1/tarea-S1/subtareas/T5/intento-2/script.py:83:            fuentes["load_score"] = ruta.as_posix() + "#load_score"
+/home/dludena/Taller4_IA_Generativa_Agentes/Lab-04-LLMOps/results_parte1/corridas/base-r1/tarea-S1/subtareas/T5/intento-2/script.py:86:            fuentes["requires_review"] = ruta.as_posix() + "#requires_review"
+/home/dludena/Taller4_IA_Generativa_Agentes/Lab-04-LLMOps/results_parte1/corridas/base-r1/tarea-S1/subtareas/T5/intento-2/script.py:87:    return load_score, req_review, fuentes
+/home/dludena/Taller4_IA_Generativa_Agentes/Lab-04-LLMOps/results_parte1/corridas/base-r1/tarea-S1/subtareas/T5/intento-2/script.py:102:    load_score, req_review, fuentes = _listas_previas()
+/home/dludena/Taller4_IA_Generativa_Agentes/Lab-04-LLMOps/results_parte1/corridas/base-r1/tarea-S1/subtareas/T5/intento-2/script.py:111:        fuentes["load_score"] = "recalculo_local_de_reserva"
+/home/dludena/Taller4_IA_Generativa_Agentes/Lab-04-LLMOps/results_parte1/corridas/base-r1/tarea-S1/subtareas/T5/intento-2/script.py:117:        fuentes["requires_review"] = "regla: (load_score > 1.5) | (temperature_c > 80)"
+/home/dludena/Taller4_IA_Generativa_Agentes/Lab-04-LLMOps/results_parte1/corridas/base-r1/tarea-S1/subtareas/T5/intento-2/script.py:123:    fuente = "data/server_measurements.csv + " + "; ".join(sorted(fuentes.values()))
+/home/dludena/Taller4_IA_Generativa_Agentes/Lab-04-LLMOps/Taller3-opcionB/corridas/completo-r2/tarea-C/cache_solver/rechazados/T3/intento-1/script.py:430:        "fuentes_de_rankings": {
+/home/dludena/Taller4_IA_Generativa_Agentes/Lab-04-LLMOps/Taller3-opcionB/corridas/sin_grafo-r2-final/tarea-C/cache_solver/rechazados/T1/intento-1/script.py:37:            "citar sus fuentes."),
+/home/dludena/Taller4_IA_Generativa_Agentes/Lab-04-LLMOps/Taller3-opcionB/corridas/completo-r1/tarea-C/subtareas/T3/intento-1/script.py:451:    "fuentes": {
+/home/dludena/Taller4_IA_Generativa_Agentes/Lab-04-LLMOps/Taller3-opcionB/corridas/desarrollo/juez-adversarial/tarea-C/cache_solver/rechazados/T2/intento-3/script.py:352:fuentes = []  # (error_de_verificacion, descripcion, X_docs, X_queries)
+/home/dludena/Taller4_IA_Generativa_Agentes/Lab-04-LLMOps/Taller3-opcionB/corridas/desarrollo/juez-adversarial/tarea-C/cache_solver/rechazados/T2/intento-3/script.py:356:    fuentes.append((error_vs_t1(sim_coseno(Xq, Xd)),
+/home/dludena/Taller4_IA_Generativa_Agentes/Lab-04-LLMOps/Taller3-opcionB/corridas/desarrollo/juez-adversarial/tarea-C/cache_solver/rechazados/T2/intento-3/script.py:378:    fuentes.append((error_vs_t1(sim_coseno(Xq, Xd)),
+/home/dludena/Taller4_IA_Generativa_Agentes/Lab-04-LLMOps/Taller3-opcionB/corridas/desarrollo/juez-adversarial/tarea-C/cache_solver/rechazados/T2/intento-3/script.py:383:fuentes = [f for f in fuentes if f[2].shape[1] > K_LSA]
+/home/dludena/Taller4_IA_Generativa_Agentes/Lab-04-LLMOps/Taller3-opcionB/corridas/desarrollo/juez-adversarial/tarea-C/cache_solver/rechazados/T2/intento-3/script.py:384:if not fuentes:
+
+== carpetas del laboratorio
+Lab-03-Agentes
+Lab-04-LLMOps
+langfuse
+papers
+pyproject.toml
+resultados
+uv.lock

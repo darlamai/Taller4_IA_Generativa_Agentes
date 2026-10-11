@@ -1,0 +1,20 @@
+==================================================================
+T2 — LSA (TruncatedSVD k=4, random_state=0) sobre la matriz TF-IDF de T1
+Matriz TF-IDF: 10 docs × 105 términos | varianza explicada por las 4 componentes: 0.3953
+------------------------------------------------------------------
+Tabla comparativa (6 consultas):
+  Método                                Hit@1    Hit@3      MRR
+  TF-IDF + coseno (T1)                 0.8333   0.8333   0.8611
+  LSA (SVD k=4) + coseno               0.6667   0.8333   0.7500
+------------------------------------------------------------------
+Rank del relevante por consulta (TF-IDF → LSA):
+  q1: 1 → 1  (relevante: d04)
+  q2: 1 → 1  (relevante: d03)
+  q3: 1 → 1  (relevante: d08)
+  q4: 1 → 3  (relevante: d05)
+  q5: 6 → 6  (relevante: d09)
+  q6: 1 → 1  (relevante: d02)
+------------------------------------------------------------------
+Verificación T1: {"t1_cargado": true, "ruta_T1": "entrada/T1/resultados.json", "archivos_en_entrada_T1": ["consultas.csv", "corpus.csv", "metricas_tfidf_por_consulta.csv", "rankings_tfidf.csv", "resultados.json", "t1_linea_base_tfidf.png"], "tam_vocabulario_T1": 105, "vocabulario_coincide_con_T1": true, "metricas_tfidf_recomputadas_en_T2": {"hit_at_1": 0.8333333333333334, "hit_at_3": 0.8333333333333334, "mrr": 0.8611111111111112}, "metricas_tfidf_coinciden_con_T1": true}
+Figuras: t2_comparativa_metodos.png, t2_tabla_comparativa.png, t2_ranks_por_consulta.png, t2_docs_espacio_latente.png
+Resultados escritos en resultados.json

@@ -1,0 +1,6 @@
+{"traza": "f044f19abde028fcb146cc2e52c35a40", "span": "corrida", "nombre": "corrida", "duracion_ms": 305.0, "error": null, "prompt_version": "v1"}
+{"traza": "f044f19abde028fcb146cc2e52c35a40", "span": "guardrail", "nombre": "validar_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "f044f19abde028fcb146cc2e52c35a40", "span": "llm", "nombre": "planificador", "duracion_ms": 200.0, "error": null, "modelo": "modelo-de-juguete", "tokens_entrada": 120, "tokens_salida": 45, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "f044f19abde028fcb146cc2e52c35a40", "span": "agent", "nombre": "planificador", "duracion_ms": 201.0, "error": null}
+{"traza": "f044f19abde028fcb146cc2e52c35a40", "span": "herramienta", "nombre": "sandbox_python", "duracion_ms": 102.0, "error": "RuntimeError: fallo a propósito: este span debe salir en nivel ERROR"}
+{"traza": "f044f19abde028fcb146cc2e52c35a40", "span": "agent", "nombre": "ejecutor", "duracion_ms": 102.0, "error": null}

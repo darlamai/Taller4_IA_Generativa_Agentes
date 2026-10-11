@@ -9,29 +9,30 @@ authors = [
 requires-python = ">=3.12,<3.13"
 dependencies = [
     # --- LLM y orquestacion (cliente: solver-v2/h200.py, solo stdlib) ---
-    "langgraph==1.2.12",         # version fijada por el laboratorio
+    "langgraph==1.2.12", # version fijada por el laboratorio
     "python-dotenv>=1.0",
-    "pydantic>=2.7",             # esquemas: plan, subtareas, veredicto del critico
+    "pydantic>=2.7", # esquemas: plan, subtareas, veredicto del critico
     # --- Lector (PDF -> texto + tablas, con PyMuPDF como el evaluador) ---
-    "pypdf>=4.0",                # tambien cuenta paginas del entregable PDF
-    "pymupdf>=1.28",             # kit solver-v2: evaluar_solver.py y parte0 leen PDF con PyMuPDF
+    "pypdf>=4.0", # tambien cuenta paginas del entregable PDF
+    "pymupdf>=1.28", # kit solver-v2: evaluar_solver.py y parte0 leen PDF con PyMuPDF
     # --- Indexador (GraphRAG) ---
-    "networkx>=3.3",             # grafo, ciclos del plan y comunidades (louvain)
+    "networkx>=3.3", # grafo, ciclos del plan y comunidades (louvain)
     # --- Lo que importan los scripts que corre el sandbox ---
     "numpy>=1.26",
     "pandas>=2.2",
     "scipy>=1.13",
     "scikit-learn>=1.5",
     "matplotlib>=3.9",
-    "pyarrow>=16.0",             # tarea real semana 1: Parquet
+    "pyarrow>=16.0", # tarea real semana 1: Parquet
     # --- Redactor: notebook ejecutado y PDF ---
     "nbformat>=5.10",
     "nbclient>=0.10",
-    "nbconvert>=7.17",           # kit solver-v2
+    "nbconvert>=7.17", # kit solver-v2
     "ipykernel>=6.29",
     "markdown>=3.6",
-    "markdown-it-py>=4.0",       # kit solver-v2: generar_enunciados.py
+    "markdown-it-py>=4.0", # kit solver-v2: generar_enunciados.py
     "fpdf2>=2.7",
+    "langfuse==4.17.0",
 ]
 
 [project.optional-dependencies]
