@@ -1,0 +1,33 @@
+{
+  "subtarea": "T3_comprobacion_empirica_muestreo_top_p",
+  "fuente_distribucion": "entrada/T2/resultados.json (distribución renormalizada de T2)",
+  "semilla": "numpy.random.default_rng(0)",
+  "num_muestras": 10000,
+  "tokens": [
+    "t0",
+    "t1",
+    "t2",
+    "t3"
+  ],
+  "probabilidades_teoricas": [
+    0.5693760554907313,
+    0.2094617451103304,
+    0.12704497044632815,
+    0.09411722895261025
+  ],
+  "conteos_observados": [
+    5682,
+    2093,
+    1296,
+    929
+  ],
+  "frecuencias_observadas": [
+    0.5682,
+    0.2093,
+    0.1296,
+    0.0929
+  ],
+  "divergencia_KL_bits": 5.006898814879229e-05,
+  "definicion_KL": "D_KL(P_emp || P_teo) = sum p_emp * log2(p_emp / p_teo), en bits",
+  "figura": "T3_frecuencias_vs_teoricas.png"
+}

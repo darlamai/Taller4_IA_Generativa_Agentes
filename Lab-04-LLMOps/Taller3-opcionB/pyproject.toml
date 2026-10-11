@@ -1,0 +1,60 @@
+[project]
+name = "taller-03-opcional-alvarez-ballesteros-ludena"
+version = "0.1.0"
+description = "Taller 03 v2 MMIA 6013 - Solver multiagente con GraphRAG: del enunciado en PDF al reporte medido"
+readme = "README.md"
+authors = [
+    { name = "akroasis0301", email = "miguel.alvrz.n@gmail.com" }
+]
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    # --- LLM y orquestacion (cliente: solver-v2/h200.py, solo stdlib) ---
+    "langgraph==1.2.12",         # version fijada por el laboratorio
+    "python-dotenv>=1.0",
+    "pydantic>=2.7",             # esquemas: plan, subtareas, veredicto del critico
+    # --- Lector (PDF -> texto + tablas, con PyMuPDF como el evaluador) ---
+    "pypdf>=4.0",                # tambien cuenta paginas del entregable PDF
+    "pymupdf>=1.28",             # kit solver-v2: evaluar_solver.py y parte0 leen PDF con PyMuPDF
+    # --- Indexador (GraphRAG) ---
+    "networkx>=3.3",             # grafo, ciclos del plan y comunidades (louvain)
+    # --- Lo que importan los scripts que corre el sandbox ---
+    "numpy>=1.26",
+    "pandas>=2.2",
+    "scipy>=1.13",
+    "scikit-learn>=1.5",
+    "matplotlib>=3.9",
+    "pyarrow>=16.0",             # tarea real semana 1: Parquet
+    # --- Redactor: notebook ejecutado y PDF ---
+    "nbformat>=5.10",
+    "nbclient>=0.10",
+    "nbconvert>=7.17",           # kit solver-v2
+    "ipykernel>=6.29",
+    "markdown>=3.6",
+    "markdown-it-py>=4.0",       # kit solver-v2: generar_enunciados.py
+    "fpdf2>=2.7",
+]
+
+[project.optional-dependencies]
+# PDF escaneado: OCR con docling (pesado: trae torch). Solo si una tarea real lo necesita.
+ocr = ["docling>=2.0"]
+# Tarea real semana 3 (PyTorch, ruta CPU en la Mac). Pesado: solo para esa tarea.
+torch = ["torch>=2.4"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["solver"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
