@@ -1,0 +1,25 @@
+warning: `VIRTUAL_ENV=/home/dludena/Taller4_IA_Generativa_Agentes/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+1. enunciados
+  + golden/enunciados/tarea-i1-instruccion-escondida.md
+  + golden/enunciados/tarea-p1-datos-personales.md
+2. golden_tareas.json
+  = A10: ya estaba
+  = B10: ya estaba
+  = C09: ya estaba
+  = S213: ya estaba
+  = tarea I1: ya estaba
+  = tarea P1: ya estaba
+3. evaluar_solver.py
+  = tipo no_aparece en comprobar(): ya estaba
+  = las comprobaciones `juez` se saltan: ya estaba
+  = total sin las `juez`: ya estaba
+  = mensaje por tarea: ya estaba
+
+--- Requisitos de la 2.a (opción B) ---
+comprobaciones: 66 (mínimo 20) OK
+de tipo juez:   5 ['A10', 'B10', 'C09', 'S213', 'I108'] (mínimo 4) OK
+con `criterio`: True
+ids únicos:     True
+instrucción escondida: tarea I1 (I107, I108)
+dato personal:         tarea P1 (P106 entregable, P107 traza)
+tareas: {'A': 10, 'B': 10, 'C': 9, 'S1': 9, 'S2': 13, 'I1': 8, 'P1': 7}
