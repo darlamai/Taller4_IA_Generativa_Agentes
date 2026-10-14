@@ -1,0 +1,11 @@
+==============================================================
+T1 — Breast Cancer Wisconsin (Diagnostic)
+Total de ejemplos  : 569
+Número de atributos: 30
+  clase_0_malignant: 212 casos (37.26%)
+  clase_1_benign: 357 casos (62.74%)
+División 70/30 estratificada (random_state=42):
+  Entrenamiento: 398 ejemplos -> {'clase_0_malignant': 148, 'clase_1_benign': 250}
+  Prueba       : 171 ejemplos -> {'clase_0_malignant': 64, 'clase_1_benign': 107}
+Archivos generados: resultados.json, division_train_test.json, t1_distribucion_clases.png
+==============================================================

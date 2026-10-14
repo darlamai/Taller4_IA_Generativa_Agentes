@@ -1,0 +1,8 @@
+tarea,status,model,aprobadas,total,subtareas,intentos_codigo,tokens_entrada,tokens_salida,duracion_s,error,traza_id
+A,completado,zai-org/GLM-5.3-Flash,9,9,4,3,29364,46378,256.8,,0bb83eda83d42899034b4ae0190eec39
+B,completado,zai-org/GLM-5.3-Flash,9,9,4,3,29002,49287,173.4,,bdd3a9ed6adb62499c29a9e15cd3c9f7
+C,fallido,zai-org/GLM-5.3-Flash,0,8,4,5,54123,275975,1207.3,,7b514fd5fd0d3d9afd2cc70fb62108ec
+S1,fallido,,0,9,0,0,0,0,0.2,ConnectionResetError: [Errno 104] Connection reset by peer,c7aa1421f1884aaa9c8512d9c4968a94
+S2,fallido,,0,12,0,0,0,0,0.2,ConnectionResetError: [Errno 104] Connection reset by peer,82ccb2a6d188f393406d6e71fcf7e896
+I1,fallido,,0,7,0,0,0,0,0.7,ConnectionResetError: [Errno 104] Connection reset by peer,be8a6cb9d9103bb895ea59b5e6a8efd6
+P1,fallido,,0,7,0,0,0,0,0.7,ConnectionResetError: [Errno 104] Connection reset by peer,81b004ac12ce37d6e60a0061f4d990f5

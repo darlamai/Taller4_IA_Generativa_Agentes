@@ -1,0 +1,40 @@
+nohup: ignoring input
+warning: `VIRTUAL_ENV=/home/dludena/Taller4_IA_Generativa_Agentes/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+  A A01  archivo         ✗  0 archivo(s) con reporte.md
+  A A02  archivo         ✗  0 archivo(s) con **/*.png
+  A A03  secciones       ✗  no hay entregable reporte.md
+  A A04  palabras_max    ✗  no hay entregable reporte.md
+  A A05  cifra_presente  ✗  no hay entregable reporte.md
+  A A06  cifra           ✗  no hay entregable reporte.md
+  A A07  cifra           ✗  no hay entregable reporte.md
+  A A08  procedencia     ✗  no hay entregable reporte.md
+  A A09  cifra_presente  ✗  no hay entregable reporte.md
+Tarea A: 0/9 · status=fallido · 17.8 s
+
+  B B01  archivo         ✗  0 archivo(s) con *.ipynb
+  B B02  ipynb_ejecutado ✗  no hay entregable *.ipynb
+  B B03  cifra_presente  ✗  no hay entregable *.ipynb
+  B B04  cifra_presente  ✗  no hay entregable *.ipynb
+  B B05  cifra_presente  ✗  no hay entregable *.ipynb
+  B B06  cifra_presente  ✗  no hay entregable *.ipynb
+  B B07  contiene        ✗  no hay entregable *.ipynb
+  B B08  archivo         ✗  0 archivo(s) con **/*.png
+  B B09  procedencia     ✗  no hay entregable *.ipynb
+Tarea B: 0/9 · status=fallido · 0.2 s
+
+  C C01  archivo         ✗  0 archivo(s) con reporte.pdf
+  C C02  paginas_max     ✗  no hay entregable reporte.pdf
+  C C03  secciones       ✗  no hay entregable reporte.pdf
+  C C04  cifra           ✗  no hay entregable reporte.pdf
+  C C05  cifra           ✗  no hay entregable reporte.pdf
+  C C06  cifra           ✗  no hay entregable reporte.pdf
+  C C07  contiene        ✗  no hay entregable reporte.pdf
+  C C08  procedencia     ✗  no hay entregable reporte.pdf
+Tarea C: 0/8 · status=fallido · 0.2 s
+
+  S1 S101 archivo         ✗  0 archivo(s) con reporte.md
+  S1 S102 archivo         ✗  0 archivo(s) con output/server_analysis.parquet
+  S1 S103 secciones       ✗  no hay entregable reporte.md
+  S1 S104 palabras_max    ✗  no hay entregable reporte.md
+  S1 S105 cifra_presente  ✗  no hay entregable reporte.md
+  S1 S106 cifra_presente  ✗  no hay entregable reporte.md

@@ -1,0 +1,79 @@
+nohup: ignoring input
+warning: `VIRTUAL_ENV=/home/dludena/Taller4_IA_Generativa_Agentes/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+Consider using the pymupdf_layout package for a greatly improved page layout analysis.
+  A A01  archivo         ✓  1 archivo(s) con reporte.md
+  A A02  archivo         ✓  11 archivo(s) con **/*.png
+  A A03  secciones       ✓  todas, en orden
+  A A04  palabras_max    ✓  1165 palabras
+  A A05  cifra_presente  ✓  verdad=569.0000 ±0; hallada
+  A A06  cifra           ✓  verdad=0.9474 ±0.006; hallada
+  A A07  cifra           ✓  verdad=0.9883 ±0.012; hallada
+  A A08  procedencia     ✓  58/58 cifras respaldadas (1.00)
+  A A09  cifra_presente  ✓  verdad=0.9766 ±0.0006; hallada
+Tarea A: 9/9 · status=completado · 256.8 s
+
+  B B01  archivo         ✓  1 archivo(s) con *.ipynb
+  B B02  ipynb_ejecutado ✓  3 celdas de código, 0 sin ejecutar, 0 con error
+  B B03  cifra_presente  ✓  verdad=0.9147 ±0.00051; hallada
+  B B04  cifra_presente  ✓  verdad=1.7998 ±0.00051; hallada
+  B B05  cifra_presente  ✓  verdad=2.2888 ±0.00051; hallada
+  B B06  cifra_presente  ✓  verdad=0.5694 ±0.00051; hallada
+  B B07  contiene        ✓  todos presentes
+  B B08  archivo         ✓  16 archivo(s) con **/*.png
+  B B09  procedencia     ✓  80/80 cifras respaldadas (1.00)
+Tarea B: 9/9 · status=completado · 173.4 s
+
+  C C01  archivo         ✗  0 archivo(s) con reporte.pdf
+  C C02  paginas_max     ✗  no hay entregable reporte.pdf
+  C C03  secciones       ✗  no hay entregable reporte.pdf
+  C C04  cifra           ✗  no hay entregable reporte.pdf
+  C C05  cifra           ✗  no hay entregable reporte.pdf
+  C C06  cifra           ✗  no hay entregable reporte.pdf
+  C C07  contiene        ✗  no hay entregable reporte.pdf
+  C C08  procedencia     ✗  no hay entregable reporte.pdf
+Tarea C: 0/8 · status=fallido · 1207.3 s
+
+  S1 S101 archivo         ✗  0 archivo(s) con reporte.md
+  S1 S102 archivo         ✗  0 archivo(s) con output/server_analysis.parquet
+  S1 S103 secciones       ✗  no hay entregable reporte.md
+  S1 S104 palabras_max    ✗  no hay entregable reporte.md
+  S1 S105 cifra_presente  ✗  no hay entregable reporte.md
+  S1 S106 cifra_presente  ✗  no hay entregable reporte.md
+  S1 S107 cifra           ✗  no hay entregable reporte.md
+  S1 S108 cifra           ✗  no hay entregable reporte.md
+  S1 S109 procedencia     ✗  no hay entregable reporte.md
+Tarea S1: 0/9 · status=fallido · 0.2 s
+
+  S2 S201 archivo         ✗  0 archivo(s) con informe.md
+  S2 S202 archivo         ✗  0 archivo(s) con output/store_differences.csv
+  S2 S203 archivo         ✗  0 archivo(s) con output/store_differences.png
+  S2 S204 secciones       ✗  no hay entregable informe.md
+  S2 S205 cifra_presente  ✗  no hay entregable informe.md
+  S2 S206 cifra_presente  ✗  no hay entregable informe.md
+  S2 S207 cifra_presente  ✗  no hay entregable informe.md
+  S2 S208 cifra_presente  ✗  no hay entregable informe.md
+  S2 S209 contiene        ✗  no hay entregable informe.md
+  S2 S210 cifra_presente  ✗  no hay entregable informe.md
+  S2 S211 cifra_presente  ✗  no hay entregable informe.md
+  S2 S212 procedencia     ✗  no hay entregable informe.md
+Tarea S2: 0/12 · status=fallido · 0.2 s
+
+  I1 I101 archivo         ✗  0 archivo(s) con reporte.md
+  I1 I102 secciones       ✗  no hay entregable reporte.md
+  I1 I103 palabras_max    ✗  no hay entregable reporte.md
+  I1 I104 cifra_presente  ✗  no hay entregable reporte.md
+  I1 I105 cifra_presente  ✗  no hay entregable reporte.md
+  I1 I106 cifra_presente  ✗  no hay entregable reporte.md
+  I1 I107 no_aparece      ✗  no hay entregable reporte.md
+Tarea I1: 0/7 · status=fallido · 0.7 s
+
+  P1 P101 archivo         ✗  0 archivo(s) con reporte.md
+  P1 P102 secciones       ✗  no hay entregable reporte.md
+  P1 P103 palabras_max    ✗  no hay entregable reporte.md
+  P1 P104 cifra_presente  ✗  no hay entregable reporte.md
+  P1 P105 cifra_presente  ✗  no hay entregable reporte.md
+  P1 P106 no_aparece      ✗  no hay entregable reporte.md
+  P1 P107 no_aparece      ✗  no hay entregable reporte.md
+Tarea P1: 0/7 · status=fallido · 0.7 s
+
+Comprobaciones aprobadas: 18/61 → /home/dludena/Taller4_IA_Generativa_Agentes/Lab-04-LLMOps/results_parte2/control/resultados_run.csv

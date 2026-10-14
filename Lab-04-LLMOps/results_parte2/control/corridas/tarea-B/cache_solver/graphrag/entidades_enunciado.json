@@ -1,0 +1,671 @@
+{
+ "Parte 1": [
+  {
+   "clave": "softmax",
+   "nombre": "Softmax",
+   "tipo": "metodo",
+   "alias": [
+    "softmax con temperatura",
+    "softmax"
+   ],
+   "descripciones": [
+    "Función que normaliza los scores de atención en una distribución de probabilidad.",
+    "Función p_i = exp(z_i/T) / Σ_j exp(z_j/T) que debe implementarse en NumPy."
+   ],
+   "citas": [
+    "s1-transformers-y-foundation-models § 3. Arquitectura Transformer (90 min) … 3.4 Estructura completa de un bloque transformer",
+    "Parte 1"
+   ],
+   "origen": [
+    "notas",
+    "enunciado"
+   ],
+   "fragmentos": [
+    "s1-transformers-y-foundation-models#5"
+   ],
+   "comunidad": 0
+  },
+  {
+   "clave": "numpy",
+   "nombre": "NumPy",
+   "tipo": "metodo",
+   "alias": [],
+   "descripciones": [
+    "Biblioteca en la que se debe implementar la función softmax con temperatura."
+   ],
+   "citas": [
+    "Parte 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 0
+  },
+  {
+   "clave": "temperatura",
+   "nombre": "Temperatura",
+   "tipo": "metodo",
+   "alias": [
+    "temperature",
+    "temperatura",
+    "T"
+   ],
+   "descripciones": [
+    "Parámetro que controla la aleatoriedad al elegir el siguiente token.",
+    "Parámetro que escala los logits en la softmax y se evalúa en varios valores.",
+    "Parámetro de decodificación cuyo efecto sobre la distribución se analiza en los límites T → 0 y T → ∞."
+   ],
+   "citas": [
+    "s1-transformers-y-foundation-models § 4.6 Inference: temperatura y sampling",
+    "Parte 1",
+    "Parte 4"
+   ],
+   "origen": [
+    "notas",
+    "enunciado"
+   ],
+   "fragmentos": [
+    "s1-transformers-y-foundation-models#8"
+   ],
+   "comunidad": 8
+  },
+  {
+   "clave": "distribucion de probabilidad",
+   "nombre": "distribución de probabilidad",
+   "tipo": "concepto",
+   "alias": [
+    "distribución",
+    "p_i"
+   ],
+   "descripciones": [
+    "Distribución original del modelo, que se conserva con temperatura = 1.",
+    "Salida de la softmax que se debe calcular para cada valor de temperatura.",
+    "Distribución cuya forma cambia al variar la temperatura T."
+   ],
+   "citas": [
+    "s1-transformers-y-foundation-models § 4.6 Inference: temperatura y sampling",
+    "Parte 1",
+    "Parte 4"
+   ],
+   "origen": [
+    "notas",
+    "enunciado"
+   ],
+   "fragmentos": [
+    "s1-transformers-y-foundation-models#8"
+   ],
+   "comunidad": 8
+  },
+  {
+   "clave": "entropia",
+   "nombre": "entropía",
+   "tipo": "metrica",
+   "alias": [
+    "entropía en bits",
+    "entropías"
+   ],
+   "descripciones": [
+    "Medida en bits que se calcula para cada una de las tres distribuciones.",
+    "Medida calculada en la Parte 1 que debe usarse como evidencia de la explicación."
+   ],
+   "citas": [
+    "Parte 1",
+    "Parte 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 8
+  },
+  {
+   "clave": "estabilidad numerica",
+   "nombre": "estabilidad numérica",
+   "tipo": "restriccion",
+   "alias": [
+    "numéricamente estable"
+   ],
+   "descripciones": [
+    "La implementación de la softmax debe ser numéricamente estable."
+   ],
+   "citas": [
+    "Parte 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 0
+  },
+  {
+   "clave": "valor de temperatura",
+   "nombre": "valores de temperatura",
+   "tipo": "restriccion",
+   "alias": [
+    "T = 0.5, T = 1, T = 2"
+   ],
+   "descripciones": [
+    "La distribución y la entropía deben calcularse para T = 0.5, T = 1 y T = 2."
+   ],
+   "citas": [
+    "Parte 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 8
+  },
+  {
+   "clave": "cuatro decimal",
+   "nombre": "cuatro decimales",
+   "tipo": "restriccion",
+   "alias": [],
+   "descripciones": [
+    "Precisión con la que se presentan los resultados en la tabla."
+   ],
+   "citas": [
+    "Parte 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  }
+ ],
+ "Parte 2": [
+  {
+   "clave": "top p",
+   "nombre": "Top-p",
+   "tipo": "metodo",
+   "alias": [
+    "nucleus sampling",
+    "top-p",
+    "muestreo de núcleo"
+   ],
+   "descripciones": [
+    "Considera solo los tokens cuya probabilidad acumulada es ≤ p, balanceando creatividad y coherencia.",
+    "Técnica que ordena los tokens por probabilidad, conserva el conjunto mínimo cuya probabilidad acumulada alcanza el umbral y renormaliza."
+   ],
+   "citas": [
+    "s1-transformers-y-foundation-models § 4.6 Inference: temperatura y sampling",
+    "Parte 2"
+   ],
+   "origen": [
+    "notas",
+    "enunciado"
+   ],
+   "fragmentos": [
+    "s1-transformers-y-foundation-models#8"
+   ],
+   "comunidad": 8
+  },
+  {
+   "clave": "p 0 9",
+   "nombre": "p = 0.9",
+   "tipo": "restriccion",
+   "alias": [
+    "p=0.9",
+    "0.9"
+   ],
+   "descripciones": [
+    "Umbral de probabilidad acumulada que debe alcanzar el conjunto mínimo de tokens conservado."
+   ],
+   "citas": [
+    "Parte 2"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 8
+  },
+  {
+   "clave": "distribucion de t 1",
+   "nombre": "distribución de T = 1",
+   "tipo": "dataset",
+   "alias": [
+    "T = 1",
+    "distribución de la Parte 1"
+   ],
+   "descripciones": [
+    "Distribución obtenida en la Parte 1 sobre la cual se aplica el muestreo top-p."
+   ],
+   "citas": [
+    "Parte 2"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 8
+  },
+  {
+   "clave": "probabilidad acumulada",
+   "nombre": "probabilidad acumulada",
+   "tipo": "concepto",
+   "alias": [],
+   "descripciones": [
+    "Criterio (≤ p) que usa Top-p para seleccionar tokens.",
+    "Suma de probabilidades de los tokens ordenados que define el conjunto mínimo a conservar."
+   ],
+   "citas": [
+    "s1-transformers-y-foundation-models § 4.6 Inference: temperatura y sampling",
+    "Parte 2"
+   ],
+   "origen": [
+    "notas",
+    "enunciado"
+   ],
+   "fragmentos": [
+    "s1-transformers-y-foundation-models#8"
+   ],
+   "comunidad": 8
+  },
+  {
+   "clave": "renormalizacion",
+   "nombre": "renormalización",
+   "tipo": "concepto",
+   "alias": [
+    "renormalizar",
+    "distribución renormalizada"
+   ],
+   "descripciones": [
+    "Reajuste de la distribución sobre los tokens sobrevivientes tras aplicar top-p.",
+    "Distribución de la Parte 2 de la cual se toman muestras en esta comprobación empírica."
+   ],
+   "citas": [
+    "Parte 2",
+    "Parte 3"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 8
+  },
+  {
+   "clave": "token",
+   "nombre": "token",
+   "tipo": "concepto",
+   "alias": [
+    "tokens",
+    "tokens sobrevivientes"
+   ],
+   "descripciones": [
+    "Siguiente unidad que se elige durante la inferencia del modelo.",
+    "Unidad por la que se cobra el costo en LLMs.",
+    "Unidades ordenadas por probabilidad de las que se conserva un subconjunto mínimo."
+   ],
+   "citas": [
+    "s1-transformers-y-foundation-models § 4.6 Inference: temperatura y sampling",
+    "s4-llmops-y-finetuning § 1. Por qué LLMOps es diferente a MLOps",
+    "Parte 2"
+   ],
+   "origen": [
+    "notas",
+    "enunciado"
+   ],
+   "fragmentos": [
+    "s1-transformers-y-foundation-models#8",
+    "s4-llmops-y-finetuning#1"
+   ],
+   "comunidad": 8
+  },
+  {
+   "clave": "reporte de resultado",
+   "nombre": "reporte de resultados",
+   "tipo": "restriccion",
+   "alias": [],
+   "descripciones": [
+    "Hay que reportar qué tokens sobreviven y la distribución renormalizada."
+   ],
+   "citas": [
+    "Parte 2"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 8
+  }
+ ],
+ "Parte 3": [
+  {
+   "clave": "renormalizacion",
+   "nombre": "renormalización",
+   "tipo": "concepto",
+   "alias": [
+    "renormalizar",
+    "distribución renormalizada"
+   ],
+   "descripciones": [
+    "Reajuste de la distribución sobre los tokens sobrevivientes tras aplicar top-p.",
+    "Distribución de la Parte 2 de la cual se toman muestras en esta comprobación empírica."
+   ],
+   "citas": [
+    "Parte 2",
+    "Parte 3"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 8
+  },
+  {
+   "clave": "numpy random default rng 0",
+   "nombre": "numpy.random.default_rng(0)",
+   "tipo": "metodo",
+   "alias": [
+    "default_rng(0)"
+   ],
+   "descripciones": [
+    "Generador de números aleatorios de NumPy con semilla 0 usado para tomar las muestras."
+   ],
+   "citas": [
+    "Parte 3"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 8
+  },
+  {
+   "clave": "10 000 muestra",
+   "nombre": "10 000 muestras",
+   "tipo": "restriccion",
+   "alias": [],
+   "descripciones": [
+    "Cantidad de muestras que se deben tomar de la distribución renormalizada."
+   ],
+   "citas": [
+    "Parte 3"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 8
+  },
+  {
+   "clave": "semilla 0",
+   "nombre": "semilla 0",
+   "tipo": "restriccion",
+   "alias": [],
+   "descripciones": [
+    "Semilla con la que se inicializa el generador aleatorio."
+   ],
+   "citas": [
+    "Parte 3"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 8
+  },
+  {
+   "clave": "grafico de barra",
+   "nombre": "gráfico de barras",
+   "tipo": "metodo",
+   "alias": [],
+   "descripciones": [
+    "Gráfico en el que se comparan las frecuencias observadas con las probabilidades teóricas."
+   ],
+   "citas": [
+    "Parte 3"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "frecuencia observada",
+   "nombre": "frecuencias observadas",
+   "tipo": "concepto",
+   "alias": [],
+   "descripciones": [
+    "Frecuencias obtenidas de las muestras tomadas de la distribución."
+   ],
+   "citas": [
+    "Parte 3"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "probabilidad teorica",
+   "nombre": "probabilidades teóricas",
+   "tipo": "concepto",
+   "alias": [],
+   "descripciones": [
+    "Probabilidades de referencia contra las que se comparan las frecuencias observadas."
+   ],
+   "citas": [
+    "Parte 3"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "kl",
+   "nombre": "KL",
+   "tipo": "metrica",
+   "alias": [
+    "divergencia KL",
+    "divergencia de Kullback-Leibler"
+   ],
+   "descripciones": [
+    "Término de regularización del ELBO, KL[qφ(z|x) || p(z)], que hace que z ≈ N(0,I).",
+    "Medida que cuantifica la divergencia de la distribución empírica respecto de la teórica."
+   ],
+   "citas": [
+    "s1-transformers-y-foundation-models § 2.6 Variational Autoencoder — el puente al espacio latente continuo … 2.7 Del VAE al LLM autorregresivo",
+    "Parte 3"
+   ],
+   "origen": [
+    "notas",
+    "enunciado"
+   ],
+   "fragmentos": [
+    "s1-transformers-y-foundation-models#4"
+   ],
+   "comunidad": 0
+  },
+  {
+   "clave": "distribucion empirica",
+   "nombre": "distribución empírica",
+   "tipo": "concepto",
+   "alias": [],
+   "descripciones": [
+    "Distribución construida a partir de las frecuencias observadas en las muestras."
+   ],
+   "citas": [
+    "Parte 3"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 8
+  },
+  {
+   "clave": "distribucion teorica",
+   "nombre": "distribución teórica",
+   "tipo": "concepto",
+   "alias": [],
+   "descripciones": [
+    "Distribución de referencia respecto de la cual se calcula la divergencia KL."
+   ],
+   "citas": [
+    "Parte 3"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 8
+  },
+  {
+   "clave": "bit",
+   "nombre": "bits",
+   "tipo": "restriccion",
+   "alias": [],
+   "descripciones": [
+    "Unidad en la que debe expresarse la divergencia KL calculada."
+   ],
+   "citas": [
+    "Parte 3"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 0
+  }
+ ],
+ "Parte 4": [
+  {
+   "clave": "temperatura",
+   "nombre": "Temperatura",
+   "tipo": "metodo",
+   "alias": [
+    "temperature",
+    "temperatura",
+    "T"
+   ],
+   "descripciones": [
+    "Parámetro que controla la aleatoriedad al elegir el siguiente token.",
+    "Parámetro que escala los logits en la softmax y se evalúa en varios valores.",
+    "Parámetro de decodificación cuyo efecto sobre la distribución se analiza en los límites T → 0 y T → ∞."
+   ],
+   "citas": [
+    "s1-transformers-y-foundation-models § 4.6 Inference: temperatura y sampling",
+    "Parte 1",
+    "Parte 4"
+   ],
+   "origen": [
+    "notas",
+    "enunciado"
+   ],
+   "fragmentos": [
+    "s1-transformers-y-foundation-models#8"
+   ],
+   "comunidad": 8
+  },
+  {
+   "clave": "t 0",
+   "nombre": "T → 0",
+   "tipo": "concepto",
+   "alias": [
+    "temperatura cero"
+   ],
+   "descripciones": [
+    "Límite de temperatura que, según el texto, equivale a la decodificación voraz."
+   ],
+   "citas": [
+    "Parte 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 8
+  },
+  {
+   "clave": "temperatura infinita",
+   "nombre": "T → ∞",
+   "tipo": "concepto",
+   "alias": [
+    "temperatura infinita"
+   ],
+   "descripciones": [
+    "Límite de temperatura cuyo efecto sobre la distribución se pide explicar."
+   ],
+   "citas": [
+    "Parte 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "distribucion de probabilidad",
+   "nombre": "distribución de probabilidad",
+   "tipo": "concepto",
+   "alias": [
+    "distribución",
+    "p_i"
+   ],
+   "descripciones": [
+    "Distribución original del modelo, que se conserva con temperatura = 1.",
+    "Salida de la softmax que se debe calcular para cada valor de temperatura.",
+    "Distribución cuya forma cambia al variar la temperatura T."
+   ],
+   "citas": [
+    "s1-transformers-y-foundation-models § 4.6 Inference: temperatura y sampling",
+    "Parte 1",
+    "Parte 4"
+   ],
+   "origen": [
+    "notas",
+    "enunciado"
+   ],
+   "fragmentos": [
+    "s1-transformers-y-foundation-models#8"
+   ],
+   "comunidad": 8
+  },
+  {
+   "clave": "decodificacion voraz",
+   "nombre": "decodificación voraz",
+   "tipo": "metodo",
+   "alias": [
+    "greedy",
+    "greedy decoding"
+   ],
+   "descripciones": [
+    "Estrategia de decodificación a la que equivale el límite T → 0."
+   ],
+   "citas": [
+    "Parte 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 8
+  },
+  {
+   "clave": "entropia",
+   "nombre": "entropía",
+   "tipo": "metrica",
+   "alias": [
+    "entropía en bits",
+    "entropías"
+   ],
+   "descripciones": [
+    "Medida en bits que se calcula para cada una de las tres distribuciones.",
+    "Medida calculada en la Parte 1 que debe usarse como evidencia de la explicación."
+   ],
+   "citas": [
+    "Parte 1",
+    "Parte 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 8
+  }
+ ]
+}

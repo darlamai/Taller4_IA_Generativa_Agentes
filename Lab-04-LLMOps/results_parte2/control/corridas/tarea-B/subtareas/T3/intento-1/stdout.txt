@@ -1,0 +1,13 @@
+T3 — Comprobación empírica (top-p p=0.9, n=10,000, semilla 0)
+Distribución teórica obtenida de: entrada/T2/resultados.json -> distribucion_renormalizada_vocabulario_completo
+token    p_teorica   conteo  f_observada
+t0        0.569376     5682      0.56820
+t1        0.209462     2093      0.20930
+t2        0.127045     1296      0.12960
+t3        0.094117      929      0.09290
+t4        0.000000        0      0.00000
+t5        0.000000        0      0.00000
+
+Divergencia KL(empírica || teórica) = 0.00005007 bits  (valor pequeño, cercano a 0)
+Figura guardada: T3_frecuencias_observadas_vs_teoricas.png
+Resultados escritos: resultados.json

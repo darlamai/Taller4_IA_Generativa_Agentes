@@ -1,0 +1,208 @@
+{
+  "subtarea": "T3",
+  "descripcion": "Curva de aprendizaje: GaussianNB y regresión logística entrenados con submuestras estratificadas del 5/10/25/50/100 % del entrenamiento de la división 70/30 de T1 (random_state=42) y evaluados siempre sobre el mismo conjunto de prueba.",
+  "origen_division": "entrada/T1/division_train_test.json",
+  "verificacion_division_contra_T1": {
+    "n_train_esperado": 398,
+    "n_test_esperado": 171,
+    "n_train": 398,
+    "n_test": 171,
+    "coincide": true
+  },
+  "porcentajes": [
+    5,
+    10,
+    25,
+    50,
+    100
+  ],
+  "random_state_submuestreo": 42,
+  "preprocesamiento": {
+    "gaussian_nb": "atributos originales del entrenamiento (sin escalar), igual que en T2",
+    "regresion_logistica": "StandardScaler ajustado únicamente con cada submuestra de entrenamiento"
+  },
+  "parametros_modelos": {
+    "GaussianNB": "valores por defecto de sklearn",
+    "LogisticRegression": {
+      "solver": "lbfgs",
+      "max_iter": 5000,
+      "random_state": 42
+    },
+    "StandardScaler": "valores por defecto (ajustado solo con la submuestra de entrenamiento)"
+  },
+  "composicion_submuestras": [
+    {
+      "porcentaje": 5,
+      "n_ejemplos": 19,
+      "clase_0_malignant": 7,
+      "clase_1_benign": 12
+    },
+    {
+      "porcentaje": 10,
+      "n_ejemplos": 39,
+      "clase_0_malignant": 15,
+      "clase_1_benign": 24
+    },
+    {
+      "porcentaje": 25,
+      "n_ejemplos": 99,
+      "clase_0_malignant": 37,
+      "clase_1_benign": 62
+    },
+    {
+      "porcentaje": 50,
+      "n_ejemplos": 199,
+      "clase_0_malignant": 74,
+      "clase_1_benign": 125
+    },
+    {
+      "porcentaje": 100,
+      "n_ejemplos": 398,
+      "clase_0_malignant": 148,
+      "clase_1_benign": 250
+    }
+  ],
+  "curva_aprendizaje": {
+    "Naive Bayes gaussiano": {
+      "porcentajes": [
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "n_ejemplos": [
+        19,
+        39,
+        99,
+        199,
+        398
+      ],
+      "accuracy": [
+        0.9415204678362573,
+        0.9473684210526315,
+        0.9473684210526315,
+        0.935672514619883,
+        0.9473684210526315
+      ],
+      "f1_macro": [
+        0.9353056900726393,
+        0.9420055017522704,
+        0.9424479264051457,
+        0.9301703975943869,
+        0.942866688940862
+      ]
+    },
+    "Regresión logística": {
+      "porcentajes": [
+        5,
+        10,
+        25,
+        50,
+        100
+      ],
+      "n_ejemplos": [
+        19,
+        39,
+        99,
+        199,
+        398
+      ],
+      "accuracy": [
+        0.9298245614035088,
+        0.935672514619883,
+        0.9415204678362573,
+        0.9766081871345029,
+        0.9883040935672515
+      ],
+      "f1_macro": [
+        0.9217271895025938,
+        0.9285470085470086,
+        0.9362891207153503,
+        0.97469665581533,
+        0.9875146028037383
+      ]
+    }
+  },
+  "tabla_por_tamano": [
+    {
+      "porcentaje_entrenamiento": 5,
+      "n_ejemplos_entrenamiento": 19,
+      "modelo": "Naive Bayes gaussiano",
+      "accuracy_test": 0.9415204678362573,
+      "f1_macro_test": 0.9353056900726393
+    },
+    {
+      "porcentaje_entrenamiento": 5,
+      "n_ejemplos_entrenamiento": 19,
+      "modelo": "Regresión logística",
+      "accuracy_test": 0.9298245614035088,
+      "f1_macro_test": 0.9217271895025938
+    },
+    {
+      "porcentaje_entrenamiento": 10,
+      "n_ejemplos_entrenamiento": 39,
+      "modelo": "Naive Bayes gaussiano",
+      "accuracy_test": 0.9473684210526315,
+      "f1_macro_test": 0.9420055017522704
+    },
+    {
+      "porcentaje_entrenamiento": 10,
+      "n_ejemplos_entrenamiento": 39,
+      "modelo": "Regresión logística",
+      "accuracy_test": 0.935672514619883,
+      "f1_macro_test": 0.9285470085470086
+    },
+    {
+      "porcentaje_entrenamiento": 25,
+      "n_ejemplos_entrenamiento": 99,
+      "modelo": "Naive Bayes gaussiano",
+      "accuracy_test": 0.9473684210526315,
+      "f1_macro_test": 0.9424479264051457
+    },
+    {
+      "porcentaje_entrenamiento": 25,
+      "n_ejemplos_entrenamiento": 99,
+      "modelo": "Regresión logística",
+      "accuracy_test": 0.9415204678362573,
+      "f1_macro_test": 0.9362891207153503
+    },
+    {
+      "porcentaje_entrenamiento": 50,
+      "n_ejemplos_entrenamiento": 199,
+      "modelo": "Naive Bayes gaussiano",
+      "accuracy_test": 0.935672514619883,
+      "f1_macro_test": 0.9301703975943869
+    },
+    {
+      "porcentaje_entrenamiento": 50,
+      "n_ejemplos_entrenamiento": 199,
+      "modelo": "Regresión logística",
+      "accuracy_test": 0.9766081871345029,
+      "f1_macro_test": 0.97469665581533
+    },
+    {
+      "porcentaje_entrenamiento": 100,
+      "n_ejemplos_entrenamiento": 398,
+      "modelo": "Naive Bayes gaussiano",
+      "accuracy_test": 0.9473684210526315,
+      "f1_macro_test": 0.942866688940862
+    },
+    {
+      "porcentaje_entrenamiento": 100,
+      "n_ejemplos_entrenamiento": 398,
+      "modelo": "Regresión logística",
+      "accuracy_test": 0.9883040935672515,
+      "f1_macro_test": 0.9875146028037383
+    }
+  ],
+  "diferencia_accuracy_NB_menos_LR_por_porcentaje": {
+    "5": 0.011695906432748537,
+    "10": 0.011695906432748537,
+    "25": 0.005847953216374213,
+    "50": -0.040935672514619936,
+    "100": -0.040935672514619936
+  },
+  "tabla_markdown": "| % entrenamiento | n ejemplos | Modelo | Accuracy (test) | F1 macro (test) |\n|---|---|---|---|---|\n| 5% | 19 | Naive Bayes gaussiano | 0.9415 | 0.9353 |\n| 5% | 19 | Regresión logística | 0.9298 | 0.9217 |\n| 10% | 39 | Naive Bayes gaussiano | 0.9474 | 0.9420 |\n| 10% | 39 | Regresión logística | 0.9357 | 0.9285 |\n| 25% | 99 | Naive Bayes gaussiano | 0.9474 | 0.9424 |\n| 25% | 99 | Regresión logística | 0.9415 | 0.9363 |\n| 50% | 199 | Naive Bayes gaussiano | 0.9357 | 0.9302 |\n| 50% | 199 | Regresión logística | 0.9766 | 0.9747 |\n| 100% | 398 | Naive Bayes gaussiano | 0.9474 | 0.9429 |\n| 100% | 398 | Regresión logística | 0.9883 | 0.9875 |",
+  "figura": "t3_curva_aprendizaje.png"
+}

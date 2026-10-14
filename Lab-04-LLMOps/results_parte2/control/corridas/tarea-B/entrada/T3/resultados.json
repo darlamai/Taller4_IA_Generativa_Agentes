@@ -1,0 +1,67 @@
+{
+  "subtarea": "T3 — Comprobación empírica: 10,000 muestras de la distribución renormalizada de la Parte 2 (top-p, p=0.9) con numpy.random.default_rng(0); comparación frecuencias observadas vs. probabilidades teóricas y divergencia KL en bits",
+  "n_muestras": 10000,
+  "semilla": 0,
+  "generador": "numpy.random.default_rng(0)",
+  "p_top": 0.9,
+  "fuente_distribucion_entrada": "entrada/T2/resultados.json -> distribucion_renormalizada_vocabulario_completo",
+  "tokens": [
+    "t0",
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5"
+  ],
+  "tokens_en_nucleo": [
+    "t0",
+    "t1",
+    "t2",
+    "t3"
+  ],
+  "tokens_fuera_del_nucleo": [
+    "t4",
+    "t5"
+  ],
+  "distribucion_teorica": {
+    "t0": 0.5693760554907313,
+    "t1": 0.2094617451103304,
+    "t2": 0.12704497044632815,
+    "t3": 0.09411722895261025,
+    "t4": 0.0,
+    "t5": 0.0
+  },
+  "conteos_observados": {
+    "t0": 5682,
+    "t1": 2093,
+    "t2": 1296,
+    "t3": 929,
+    "t4": 0,
+    "t5": 0
+  },
+  "frecuencias_observadas": {
+    "t0": 0.5682,
+    "t1": 0.2093,
+    "t2": 0.1296,
+    "t3": 0.0929,
+    "t4": 0.0,
+    "t5": 0.0
+  },
+  "divergencia_KL_bits": 5.006898814879229e-05,
+  "contribuciones_KL_bits_por_token": {
+    "t0": -0.001694935946811347,
+    "t1": -0.00023325875006007248,
+    "t2": 0.0037229487258370647,
+    "t3": -0.0017446850408168529,
+    "t4": 0.0,
+    "t5": 0.0
+  },
+  "figura": "T3_frecuencias_observadas_vs_teoricas.png",
+  "verificaciones": {
+    "suma_distribucion_teorica": 1.0,
+    "suma_frecuencias_observadas": 1.0,
+    "total_conteos": 10000,
+    "tokens_fuera_del_nucleo_nunca_muestreados": true,
+    "kl_no_negativa": true
+  }
+}

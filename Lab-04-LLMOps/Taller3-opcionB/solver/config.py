@@ -41,6 +41,9 @@ class Config:
     # del redactor es el 10 %: el redactor de la Semana 2 gastó 36 k en una sola llamada.
     presupuesto_tokens: int = field(default_factory=lambda: _entero("SOLVER_PRESUPUESTO_TOKENS", 500_000))
     reserva_redactor: int = field(default_factory=lambda: _entero("SOLVER_RESERVA_REDACTOR", 50_000))
+    # v2 (2.c): el freno mira lo que CUESTA la llamada. Apagado por omisión = comportamiento de v1.
+    freno_salida: bool = field(default_factory=lambda: _entero("SOLVER_FRENO_SALIDA", 0) == 1)
+    salida_minima: int = field(default_factory=lambda: _entero("SOLVER_SALIDA_MINIMA", 4_096))
     max_intentos: int = field(default_factory=lambda: _entero("SOLVER_MAX_INTENTOS", 3))
     timeout_s: int = field(default_factory=lambda: _entero("SANDBOX_TIMEOUT_S", 120))
     # Recibe el motivo (p. ej. "fetch_openml en T2") y devuelve True si una persona aprueba.

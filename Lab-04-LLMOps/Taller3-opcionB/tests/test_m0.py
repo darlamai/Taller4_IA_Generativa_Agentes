@@ -114,3 +114,46 @@ def test_solo_razonamiento_cuenta_como_vacio(tmp_path):
     c, _, _ = cliente(tmp_path, [{"contenido": "<think>mucho</think>", "fin": "length"}])
     with pytest.raises(LLMVacio):
         c.pedir("programador", [{"role": "user", "content": "x"}])
+
+
+
+
+
+# ---------------------------------------------------------------- 2.c: freno de presupuesto con tope de salida
+class _ModeloQueRazonaSiempre:
+    """Vuelve vacío por longitud y cobra todo el max_tokens que se le pide (la S2 de la base)."""
+    modelo = "razona"
+
+    def __init__(self, prompt_tokens):
+        self.prompt_tokens, self.llamadas = prompt_tokens, []
+
+    def chat(self, mensajes, tools=None, json_mode=False, max_tokens=16384, temperature=0.0):
+        self.llamadas.append(max_tokens)
+        return {"contenido": "", "tool_calls": [], "razonamiento": "x", "fin": "length",
+                "uso": {"prompt_tokens": self.prompt_tokens, "completion_tokens": max_tokens},
+                "latencia_s": 0.0}
+
+
+def _programador_tras_400k(tmp_path, freno):
+    traza = Traza(tmp_path / "t.jsonl")
+    llm = _ModeloQueRazonaSiempre(12_000)
+    c = ClienteLLM(Config(llm=llm, freno_salida=freno), traza)      # 500 000 con reserva de 50 000
+    traza.llamada("programador", modelo="x", tokens_entrada=200_000, tokens_salida=200_000,
+                  latencia_s=0.0, fin="stop")
+    try:
+        c.pedir("programador", [{"role": "user", "content": "x" * 36_000}])
+    except (LLMVacio, PresupuestoAgotado):
+        pass
+    return c, llm
+
+
+def test_v1_un_reintento_de_65536_se_come_la_reserva_del_redactor(tmp_path):
+    c, llm = _programador_tras_400k(tmp_path, freno=False)
+    assert llm.llamadas == [32768, 65536]
+    assert c.disponible("redactor") < 0                              # S2 de la base: 520 683 de 500 000
+
+
+def test_v2_el_tope_de_salida_protege_la_reserva_del_redactor(tmp_path):
+    c, llm = _programador_tras_400k(tmp_path, freno=True)
+    assert llm.llamadas == [32768]                                   # el reintento ya no cabe: se bloquea
+    assert c.disponible("redactor") >= 50_000                        # la reserva sigue intacta

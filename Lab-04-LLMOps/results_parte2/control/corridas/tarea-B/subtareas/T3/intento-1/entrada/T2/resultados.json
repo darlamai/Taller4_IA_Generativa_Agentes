@@ -1,0 +1,121 @@
+{
+  "subtarea": "T2 — Muestreo de núcleo (top-p) con p = 0.9 sobre la distribución de T=1",
+  "p": 0.9,
+  "fuente_distribucion_entrada": "entrada/T1/resultados.json -> distribuciones['T=1.0']",
+  "distribucion_entrada_T1": {
+    "t0": 0.5516226378718239,
+    "t1": 0.2029306277578035,
+    "t2": 0.12308364752983937,
+    "t3": 0.09118260875807133,
+    "t4": 0.02746367398498595,
+    "t5": 0.003716804097476065
+  },
+  "tokens_ordenados_descendente": [
+    "t0",
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5"
+  ],
+  "probabilidades_ordenadas": [
+    0.5516226378718239,
+    0.2029306277578035,
+    0.12308364752983937,
+    0.09118260875807133,
+    0.02746367398498595,
+    0.003716804097476065
+  ],
+  "acumuladas_ordenadas": [
+    0.5516226378718239,
+    0.7545532656296273,
+    0.8776369131594667,
+    0.968819521917538,
+    0.9962831959025239,
+    1.0
+  ],
+  "tokens_supervivientes": [
+    "t0",
+    "t1",
+    "t2",
+    "t3"
+  ],
+  "num_tokens_en_nucleo": 4,
+  "probabilidad_acumulada_nucleo": 0.968819521917538,
+  "probabilidades_nucleo_antes_de_renormalizar": {
+    "t0": 0.5516226378718239,
+    "t1": 0.2029306277578035,
+    "t2": 0.12308364752983937,
+    "t3": 0.09118260875807133
+  },
+  "distribucion_renormalizada_nucleo": {
+    "t0": 0.5693760554907313,
+    "t1": 0.2094617451103304,
+    "t2": 0.12704497044632815,
+    "t3": 0.09411722895261025
+  },
+  "distribucion_renormalizada_vocabulario_completo": {
+    "t0": 0.5693760554907313,
+    "t1": 0.2094617451103304,
+    "t2": 0.12704497044632815,
+    "t3": 0.09411722895261025,
+    "t4": 0.0,
+    "t5": 0.0
+  },
+  "tokens_fuera_del_nucleo": [
+    "t4",
+    "t5"
+  ],
+  "suma_distribucion_renormalizada": 1.0,
+  "verificaciones": {
+    "suma_de_la_renormalizada_es_1": true,
+    "acumulada_del_nucleo_alcanza_p": true,
+    "es_el_conjunto_minimo": true,
+    "tokens_fuera_del_nucleo_con_prob_0": true,
+    "todas_las_probs_son_no_negativas": true
+  },
+  "tabla_ordenada": [
+    {
+      "token": "t0",
+      "probabilidad_T1": 0.5516226378718239,
+      "acumulada": 0.5516226378718239,
+      "en_nucleo": true,
+      "probabilidad_renormalizada": 0.5693760554907313
+    },
+    {
+      "token": "t1",
+      "probabilidad_T1": 0.2029306277578035,
+      "acumulada": 0.7545532656296273,
+      "en_nucleo": true,
+      "probabilidad_renormalizada": 0.2094617451103304
+    },
+    {
+      "token": "t2",
+      "probabilidad_T1": 0.12308364752983937,
+      "acumulada": 0.8776369131594667,
+      "en_nucleo": true,
+      "probabilidad_renormalizada": 0.12704497044632815
+    },
+    {
+      "token": "t3",
+      "probabilidad_T1": 0.09118260875807133,
+      "acumulada": 0.968819521917538,
+      "en_nucleo": true,
+      "probabilidad_renormalizada": 0.09411722895261025
+    },
+    {
+      "token": "t4",
+      "probabilidad_T1": 0.02746367398498595,
+      "acumulada": 0.9962831959025239,
+      "en_nucleo": false,
+      "probabilidad_renormalizada": 0.0
+    },
+    {
+      "token": "t5",
+      "probabilidad_T1": 0.003716804097476065,
+      "acumulada": 1.0,
+      "en_nucleo": false,
+      "probabilidad_renormalizada": 0.0
+    }
+  ]
+}

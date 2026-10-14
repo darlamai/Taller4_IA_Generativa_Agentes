@@ -1,0 +1,6 @@
+T2 — GaussianNB vs Regresión logística (conjunto de prueba, división 70/30 de T1)
+División: índices guardados en entrada/T1/division_train_test.json (train_indices/test_indices)
+n_train=398, n_test=171 | coincide con T1: True
+  Naive Bayes gaussiano: accuracy=0.9474 | F1 macro=0.9429
+  Regresión logística: accuracy=0.9883 | F1 macro=0.9875
+Archivos generados: resultados.json, t2_metricas_test.png

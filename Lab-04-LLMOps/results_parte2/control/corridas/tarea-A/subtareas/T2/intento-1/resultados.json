@@ -1,0 +1,92 @@
+{
+  "subtarea": "T2",
+  "descripcion": "GaussianNB y regresión logística (atributos estandarizados con StandardScaler ajustado solo con el entrenamiento) evaluados sobre el conjunto de prueba de la división 70/30 estratificada de T1.",
+  "origen_division": "índices guardados en entrada/T1/division_train_test.json (train_indices/test_indices)",
+  "n_train": 398,
+  "n_test": 171,
+  "conteo_por_clase_train": {
+    "clase_0_malignant": 148,
+    "clase_1_benign": 250
+  },
+  "conteo_por_clase_test": {
+    "clase_0_malignant": 64,
+    "clase_1_benign": 107
+  },
+  "verificacion_division_contra_T1": {
+    "n_train_esperado": 398,
+    "n_test_esperado": 171,
+    "coincide": true
+  },
+  "preprocesamiento": {
+    "gaussian_nb": "atributos originales del entrenamiento (sin escalar)",
+    "regresion_logistica": "StandardScaler ajustado únicamente con el entrenamiento"
+  },
+  "parametros_modelos": {
+    "GaussianNB": "valores por defecto de sklearn",
+    "LogisticRegression": {
+      "solver": "lbfgs",
+      "max_iter": 5000,
+      "random_state": 42
+    },
+    "StandardScaler": "valores por defecto (ajustado solo con X_train)"
+  },
+  "tabla_metricas_test": [
+    {
+      "modelo": "Naive Bayes gaussiano",
+      "accuracy": 0.9473684210526315,
+      "f1_macro": 0.942866688940862
+    },
+    {
+      "modelo": "Regresión logística",
+      "accuracy": 0.9883040935672515,
+      "f1_macro": 0.9875146028037383
+    }
+  ],
+  "metricas_por_modelo": {
+    "Naive Bayes gaussiano": {
+      "accuracy": 0.9473684210526315,
+      "f1_macro": 0.942866688940862
+    },
+    "Regresión logística": {
+      "accuracy": 0.9883040935672515,
+      "f1_macro": 0.9875146028037383
+    }
+  },
+  "tabla_markdown": "| Modelo | Accuracy (test) | F1 macro (test) |\n|---|---|---|\n| Naive Bayes gaussiano | 0.9474 | 0.9429 |\n| Regresión logística | 0.9883 | 0.9875 |",
+  "matrices_de_confusion_test": {
+    "gaussian_nb": {
+      "clases": [
+        0,
+        1
+      ],
+      "matriz": [
+        [
+          57,
+          7
+        ],
+        [
+          2,
+          105
+        ]
+      ]
+    },
+    "regresion_logistica": {
+      "clases": [
+        0,
+        1
+      ],
+      "matriz": [
+        [
+          63,
+          1
+        ],
+        [
+          1,
+          106
+        ]
+      ]
+    }
+  },
+  "nota_gaussian_nb_invariante_a_escala": false,
+  "figura": "t2_metricas_test.png"
+}

@@ -118,23 +118,31 @@ class ClienteLLM:
             # --- Taller 4 (2.b): guardrail de presupuesto, con su decisión como salida
             with observabilidad.guardrail("presupuesto_tokens", input={"agente": agente}) as g:
                 restante = self.disponible(agente)
-                g.actualizar(output={"decision": "bloquear" if restante <= 0 else "permitir",
-                                     "restante": restante, "consumido": self.consumido,
+                techo = restante                      # v1: solo importa que quede algo
+                if self.cfg.freno_salida:             # v2: lo que queda menos el prompt (≈ caracteres/3)
+                    techo = restante - sum(len(str(m.get("content") or "")) for m in mensajes) // 3
+                bloquear = restante <= 0 or (self.cfg.freno_salida and techo < self.cfg.salida_minima)
+                g.actualizar(output={"decision": "bloquear" if bloquear else "permitir",
+                                     "restante": restante, "techo_salida": techo,
+                                     "consumido": self.consumido,
                                      "presupuesto": self.cfg.presupuesto_tokens})
-            if restante <= 0:                         # freno: ANTES de la llamada
+            if bloquear:                              # freno: ANTES de la llamada
                 self.traza.decision(agente, "presupuesto_agotado", subtarea=subtarea,
                                     motivo=f"consumido={self.consumido} de "
                                            f"{self.cfg.presupuesto_tokens} (reserva "
-                                           f"{self.cfg.reserva_redactor})")
+                                           f"{self.cfg.reserva_redactor})"
+                                           + (f"; queda {techo} para la salida y el mínimo es "
+                                              f"{self.cfg.salida_minima}" if restante > 0 else ""))
                 raise PresupuestoAgotado(f"{agente}: presupuesto agotado ({self.consumido} tokens)")
+            limite_salida = min(max_tokens, techo) if self.cfg.freno_salida else max_tokens
             intento += 1
             t0 = time.perf_counter()
             try:
                 # --- Taller 4 (2.c): un span `llm` (generation) por intento; nombre = el agente
                 with observabilidad.generacion(agente, modelo=self.modelo, input=_recortar(mensajes),
                                                metadata={"subtarea": subtarea, "intento": intento,
-                                                         "max_tokens": max_tokens, "json": json_mode}) as gen:
-                    r = self.llm.chat(mensajes, tools=tools, json_mode=json_mode, max_tokens=max_tokens)
+                                                         "max_tokens": limite_salida, "json": json_mode}) as gen:
+                    r = self.llm.chat(mensajes, tools=tools, json_mode=json_mode, max_tokens=limite_salida)
                     observabilidad.usar_uso(gen, r.get("uso"), output=r.get("contenido") or "")
             except Exception as err:                  # red, HTTP, VPN caída…
                 self.traza.llamada(agente, modelo=self.modelo, tokens_entrada=0, tokens_salida=0,
@@ -155,12 +163,18 @@ class ClienteLLM:
                 tokens_entrada=int(uso.get("prompt_tokens", 0)),
                 tokens_salida=int(uso.get("completion_tokens", 0)),
                 latencia_s=r.get("latencia_s", round(time.perf_counter() - t0, 2)),
-                fin=r.get("fin"), max_tokens=max_tokens,
+                fin=r.get("fin"), max_tokens=limite_salida,
                 error=f"contenido vacío (fin={r.get('fin')})" if vacio else None,
                 entrada=_recortar(mensajes), salida=contenido,
                 razonamiento_caracteres=len(r.get("razonamiento") or "") + len(crudo) - len(contenido))
             if not vacio:
                 return r
+            if self.cfg.freno_salida and r.get("fin") == "length" and limite_salida < max_tokens:
+                self.traza.decision(agente, "tope_de_presupuesto", subtarea=subtarea,
+                                    motivo=f"vacío por longitud con la salida rebajada a {limite_salida} "
+                                           f"(pedía {max_tokens}): repetirlo gastaría la reserva del redactor")
+                raise LLMVacio(f"{agente}: contenido vacío con la salida limitada por presupuesto "
+                               f"({limite_salida} tokens)")
             if r.get("fin") == "length" and max_tokens >= tope:
                 self.traza.decision(agente, "tope_de_razonamiento", subtarea=subtarea,
                                     motivo=f"vacío por longitud con max_tokens={max_tokens}, que ya es el tope: "
