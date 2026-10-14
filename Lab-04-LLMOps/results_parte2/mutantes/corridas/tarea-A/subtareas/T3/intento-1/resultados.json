@@ -1,0 +1,198 @@
+{
+  "subtarea": "T3",
+  "descripcion": "Parte 3: curva de aprendizaje. Naive Bayes gaussiano y regresión logística entrenados con 5%, 10%, 25%, 50% y 100% del conjunto de entrenamiento de la Parte 1 (submuestras estratificadas, random_state=42) y evaluados siempre sobre el mismo conjunto de prueba de la Parte 1.",
+  "dataset": "Breast Cancer Wisconsin (Diagnostic)",
+  "division_usada": {
+    "test_size": 0.3,
+    "estratificada_por_clase": true,
+    "random_state": 42,
+    "tam_entrenamiento": 398,
+    "tam_prueba": 171,
+    "casos_por_clase_entrenamiento": {
+      "malignant": 148,
+      "benign": 250
+    },
+    "casos_por_clase_prueba": {
+      "malignant": 64,
+      "benign": 107
+    },
+    "identica_a_la_division_de_T1": true
+  },
+  "preprocesamiento": {
+    "escalador": "StandardScaler",
+    "ajustado_solo_con": "conjunto de entrenamiento completo de la Parte 1 (398 ejemplos), igual que en la Parte 2",
+    "submuestras": "tomadas sobre los atributos ya estandarizados; el conjunto de prueba se transforma siempre con el mismo escalador (nunca ajustado con prueba)"
+  },
+  "porcentajes_entrenamiento": [
+    5,
+    10,
+    25,
+    50,
+    100
+  ],
+  "fracciones_entrenamiento": [
+    0.05,
+    0.1,
+    0.25,
+    0.5,
+    1.0
+  ],
+  "conjunto_de_prueba_fijo": {
+    "n_ejemplos": 171,
+    "usado_para_todos_los_puntos": true
+  },
+  "curva_aprendizaje": {
+    "naive_bayes_gaussiano": {
+      "n_ejemplos_entrenamiento": [
+        19,
+        39,
+        99,
+        199,
+        398
+      ],
+      "accuracy_prueba": [
+        0.9415204678362573,
+        0.9473684210526315,
+        0.935672514619883,
+        0.9239766081871345,
+        0.935672514619883
+      ],
+      "f1_macro_prueba": [
+        0.9353056900726393,
+        0.9420055017522704,
+        0.9301703975943869,
+        0.9180460829493088,
+        0.9306543778801843
+      ],
+      "casos_por_clase_submuestra": [
+        {
+          "malignant": 7,
+          "benign": 12
+        },
+        {
+          "malignant": 15,
+          "benign": 24
+        },
+        {
+          "malignant": 37,
+          "benign": 62
+        },
+        {
+          "malignant": 74,
+          "benign": 125
+        },
+        {
+          "malignant": 148,
+          "benign": 250
+        }
+      ]
+    },
+    "regresion_logistica": {
+      "n_ejemplos_entrenamiento": [
+        19,
+        39,
+        99,
+        199,
+        398
+      ],
+      "accuracy_prueba": [
+        0.935672514619883,
+        0.935672514619883,
+        0.9473684210526315,
+        0.9766081871345029,
+        0.9883040935672515
+      ],
+      "f1_macro_prueba": [
+        0.9285470085470086,
+        0.9285470085470086,
+        0.942866688940862,
+        0.97469665581533,
+        0.9875146028037383
+      ]
+    }
+  },
+  "tabla": {
+    "columnas": [
+      "% del entrenamiento",
+      "n_ejemplos_entrenamiento",
+      "accuracy_prueba_naive_bayes_gaussiano",
+      "accuracy_prueba_regresion_logistica"
+    ],
+    "filas": [
+      [
+        5,
+        19,
+        0.9415204678362573,
+        0.935672514619883
+      ],
+      [
+        10,
+        39,
+        0.9473684210526315,
+        0.935672514619883
+      ],
+      [
+        25,
+        99,
+        0.935672514619883,
+        0.9473684210526315
+      ],
+      [
+        50,
+        199,
+        0.9239766081871345,
+        0.9766081871345029
+      ],
+      [
+        100,
+        398,
+        0.935672514619883,
+        0.9883040935672515
+      ]
+    ]
+  },
+  "modelo_con_mayor_accuracy_por_tamano": [
+    {
+      "porcentaje": 5,
+      "n_ejemplos": 19,
+      "modelo_con_mayor_accuracy": "naive_bayes_gaussiano"
+    },
+    {
+      "porcentaje": 10,
+      "n_ejemplos": 39,
+      "modelo_con_mayor_accuracy": "naive_bayes_gaussiano"
+    },
+    {
+      "porcentaje": 25,
+      "n_ejemplos": 99,
+      "modelo_con_mayor_accuracy": "regresion_logistica"
+    },
+    {
+      "porcentaje": 50,
+      "n_ejemplos": 199,
+      "modelo_con_mayor_accuracy": "regresion_logistica"
+    },
+    {
+      "porcentaje": 100,
+      "n_ejemplos": 398,
+      "modelo_con_mayor_accuracy": "regresion_logistica"
+    }
+  ],
+  "figura_png": "curva_aprendizaje_parte3.png",
+  "verificaciones": {
+    "division_contra_T1": {
+      "archivo": "entrada/T1/resultados.json",
+      "encontrado": true,
+      "tam_entrenamiento_coincide": true,
+      "tam_prueba_coincide": true,
+      "casos_por_clase_entrenamiento_coincide": true,
+      "casos_por_clase_prueba_coincide": true
+    },
+    "punto_100pct_contra_T2": {
+      "archivo": "entrada/T2/resultados.json",
+      "encontrado": true,
+      "accuracy_nb_100pct_coincide_con_T2": true,
+      "accuracy_lr_100pct_coincide_con_T2": true
+    }
+  }
+}

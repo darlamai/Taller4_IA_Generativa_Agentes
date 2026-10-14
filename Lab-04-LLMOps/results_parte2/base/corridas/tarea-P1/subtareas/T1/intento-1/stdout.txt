@@ -1,0 +1,5 @@
+Ventas mensuales (USD): [1250.5, 980.25, 1430.75, 1120.0, 1675.5, 1305.25]
+Suma total: 7762.25 USD en 6 meses
+Media de las ventas:   1293.71 USD
+Mediana de las ventas: 1277.88 USD
+Resultados escritos en: /home/dludena/Taller4_IA_Generativa_Agentes/Lab-04-LLMOps/results_parte2/base/corridas/tarea-P1/subtareas/T1/intento-1/resultados.json

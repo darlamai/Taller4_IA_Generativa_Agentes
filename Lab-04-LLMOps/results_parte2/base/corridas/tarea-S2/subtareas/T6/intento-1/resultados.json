@@ -1,0 +1,186 @@
+{
+  "subtarea": "T6: bootstrap pareado (IC percentil 95 %, semilla 20260829, 10000 remuestras)",
+  "semilla": 20260829,
+  "numero_de_remuestras": 10000,
+  "bootstrap_resamples": 10000,
+  "nivel_confianza": 0.95,
+  "percentiles_usados": [
+    2.500000000000002,
+    97.5
+  ],
+  "metodo_percentil": "lineal (np.percentile, interpolación por defecto)",
+  "estadistico_bootstrap": "media de difference = error_a - error_b",
+  "unidad_de_remuestreo": "tienda completa (vector de diferencias; nunca error_a y error_b por separado)",
+  "metodo": "np.random.default_rng(20260829); se sortean índices de tiendas con reemplazo y se aplican al vector de diferencias",
+  "n_tiendas": 16,
+  "diferencia_media_observada": 0.4187499999999997,
+  "diferencias_por_tienda": [
+    {
+      "store_id": "S01",
+      "error_a": 12.4,
+      "error_b": 10.6,
+      "difference": 1.8000000000000007,
+      "favors": "B"
+    },
+    {
+      "store_id": "S02",
+      "error_a": 9.8,
+      "error_b": 9.1,
+      "difference": 0.7000000000000011,
+      "favors": "B"
+    },
+    {
+      "store_id": "S03",
+      "error_a": 15.1,
+      "error_b": 13.9,
+      "difference": 1.1999999999999993,
+      "favors": "B"
+    },
+    {
+      "store_id": "S04",
+      "error_a": 11.0,
+      "error_b": 12.4,
+      "difference": -1.4000000000000004,
+      "favors": "A"
+    },
+    {
+      "store_id": "S05",
+      "error_a": 8.7,
+      "error_b": 7.2,
+      "difference": 1.4999999999999991,
+      "favors": "B"
+    },
+    {
+      "store_id": "S06",
+      "error_a": 13.6,
+      "error_b": 13.9,
+      "difference": -0.3000000000000007,
+      "favors": "A"
+    },
+    {
+      "store_id": "S07",
+      "error_a": 10.2,
+      "error_b": 9.3,
+      "difference": 0.8999999999999986,
+      "favors": "B"
+    },
+    {
+      "store_id": "S08",
+      "error_a": 14.9,
+      "error_b": 12.8,
+      "difference": 2.0999999999999996,
+      "favors": "B"
+    },
+    {
+      "store_id": "S09",
+      "error_a": 7.5,
+      "error_b": 9.3,
+      "difference": -1.8000000000000007,
+      "favors": "A"
+    },
+    {
+      "store_id": "S10",
+      "error_a": 16.0,
+      "error_b": 15.0,
+      "difference": 1.0,
+      "favors": "B"
+    },
+    {
+      "store_id": "S11",
+      "error_a": 9.3,
+      "error_b": 9.8,
+      "difference": -0.5,
+      "favors": "A"
+    },
+    {
+      "store_id": "S12",
+      "error_a": 12.8,
+      "error_b": 11.1,
+      "difference": 1.700000000000001,
+      "favors": "B"
+    },
+    {
+      "store_id": "S13",
+      "error_a": 11.7,
+      "error_b": 12.9,
+      "difference": -1.200000000000001,
+      "favors": "A"
+    },
+    {
+      "store_id": "S14",
+      "error_a": 8.9,
+      "error_b": 8.3,
+      "difference": 0.5999999999999996,
+      "favors": "B"
+    },
+    {
+      "store_id": "S15",
+      "error_a": 13.2,
+      "error_b": 11.9,
+      "difference": 1.299999999999999,
+      "favors": "B"
+    },
+    {
+      "store_id": "S16",
+      "error_a": 10.6,
+      "error_b": 11.5,
+      "difference": -0.9000000000000004,
+      "favors": "A"
+    }
+  ],
+  "ic_percentil_95": {
+    "limite_inferior": -0.19375000000000037,
+    "limite_superior": 1.0062499999999996
+  },
+  "ic_percentil_95_inferior": -0.19375000000000037,
+  "ic_percentil_95_superior": 1.0062499999999996,
+  "ic_contiene_cero": true,
+  "bootstrap_media": 0.4209674999999998,
+  "bootstrap_error_estandar": 0.3055936070813965,
+  "bootstrap_sesgo": 0.0022175000000000944,
+  "proporcion_bootstrap_mayor_que_cero": 0.9119,
+  "proporcion_bootstrap_menor_que_cero": 0.0881,
+  "reproducibilidad_comprobada": true,
+  "reproducibilidad": {
+    "ejecucion_1": {
+      "semilla": 20260829,
+      "n_remuestras": 10000,
+      "ic_inferior": -0.19375000000000037,
+      "ic_superior": 1.0062499999999996
+    },
+    "ejecucion_2": {
+      "semilla": 20260829,
+      "n_remuestras": 10000,
+      "ic_inferior": -0.19375000000000037,
+      "ic_superior": 1.0062499999999996
+    },
+    "intervalos_identicos": true,
+    "medias_bootstrap_identicas": true,
+    "indices_remuestreados_identicos": true,
+    "max_diferencia_absoluta_entre_ejecuciones": 0.0
+  },
+  "coherencia_remuestreo_filas_completas_vs_vector_diferencias": true,
+  "contraste_ilustrativo_remuestreo_independiente_no_valido": {
+    "descripcion": "Solo ilustrativo: remuestrear error_a y error_b por separado rompe el emparejamiento; NO es el resultado de la tarea.",
+    "ic_percentil_95": {
+      "limite_inferior": -1.1750000000000003,
+      "limite_superior": 2.031249999999999
+    }
+  },
+  "sensibilidad_informativa_otra_semilla": {
+    "semilla": 20260830,
+    "ic_percentil_95": {
+      "limite_inferior": -0.18750000000000033,
+      "limite_superior": 0.9874999999999998
+    },
+    "nota": "Informativo; el IC oficial corresponde a la semilla 20260829."
+  },
+  "explicacion_remuestrear_tiendas_completas": "La unidad experimental es la tienda: cada una aporta un par (error_a, error_b) medido sobre el mismo caso, de modo que la cantidad que varía entre unidades es la diferencia d_i = error_a - error_b. Remuestrear tiendas completas (sortear índices de tiendas con reemplazo y aplicarlos al vector de diferencias) preserva la estructura de pares y la correlación dentro de cada tienda, que es lo que hace que el diseño pareado cancele la variabilidad entre tiendas. Si se remuestrearan error_a y error_b por separado se romperían los pares, se destruiría esa cancelación y se simularía un experimento de muestras independientes distinto del que se ejecutó, produciendo un intervalo más amplio y ajeno al estimando pareado.",
+  "problema_no_corregido_por_bootstrap": "El bootstrap cuantifica la incertidumbre de muestreo del estadístico, pero no repara problemas del diseño ni de los datos: no corrige un emparejamiento erróneo o incompleto por store_id, ni sesgos sistemáticos de medición o selección, ni la falta de representatividad de las 16 tiendas respecto de la población de interés, ni dependencias entre tiendas (p. ej., tiendas medidas en periodos correlacionados). Además, con n=16 el remuestreo solo recicla los valores observados: los valores extremos o los pares mal medidos quedan integrados en la distribución bootstrap. Que el intervalo excluya (o incluya) cero no valida por sí solo el emparejamiento ni la calidad de los datos.",
+  "coincide_con_T2": true,
+  "salidas": {
+    "resultados_json": "resultados.json",
+    "tabla_csv": "output/store_differences.csv",
+    "figura_png": "output/store_differences.png"
+  }
+}

@@ -1,0 +1,5 @@
+1:## Tarea 1 - Representar las mediciones
+11:## Tarea 2 - Normalizar y calcular un indicador de carga
+15:## Tarea 3 - Identificar observaciones para revisión
+25:## Tarea 4 - Construir un resumen por servidor
+42:## Tarea 5 - Guardar y verificar el resultado

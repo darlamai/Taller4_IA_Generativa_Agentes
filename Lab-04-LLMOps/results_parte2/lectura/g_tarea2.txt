@@ -1,0 +1,2 @@
+11:## Tarea 2 - Normalizar y calcular un indicador de carga
+17:Se creó una copia del DataFrame original (300 filas, sin modificarlo) y se agregaron `load_score` (float64, proveniente de la Tarea 2) y `requires_review` (bool), calculada vectorizadamente como `(load_score > 1.5) | (temperature_c > 80)`; el resultado tiene 9 columnas. Quedan 49 filas en `True` y 251 en `False`: 9 por superar load_score 1.5 y 42 por temperatura mayor de 80. La fila 23 obtenida:

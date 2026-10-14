@@ -1,0 +1,9 @@
+Round trip verificado: output/server_analysis.parquet
+Filas: True
+Columnas: True
+Esquema: True
+Valores: True
+----------------------------------------------------------------
+DataFrame T3: 300 filas x 9 columnas | fuente: data/server_measurements.csv + entrada/T3/resultados.json#load_score; entrada/T3/resultados.json#requires_review
+Parquet escrito con PyArrow 25.0.1 (sin índice): output/server_analysis.parquet (17629 bytes)
+requires_review=True tras releer: 49 | fila 23 coincide con T3: True

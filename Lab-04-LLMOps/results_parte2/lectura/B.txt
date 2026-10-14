@@ -1,0 +1,641 @@
+--- [markdown] ---
+## Parte 1 — Softmax con temperatura y entropía
+
+La softmax con temperatura se implementa de forma numéricamente estable restando el máximo de los logits antes de exponenciar: p_i = exp((z_i − m)/T) / Σ_j exp((z_j − m)/T), con m = max_j z_j. Esto evita desbordamientos sin alterar el resultado, porque el factor común exp(m/T) se cancela entre numerador y denominador. Con los logits dados (t0 = 2.0, t1 = 1.0, t2 = 0.5, t3 = 0.2, t4 = −1.0, t5 = −3.0) se obtienen las siguientes distribuciones, cada una con suma verificada igual a 1, y la entropía en bits H = −Σ p_i log2(p_i):
+
+| Token | Logit | T = 0.5 | T = 1 | T = 2 |
+|---|---|---|---|---|
+| t0 | 2.0 | 0.8231 | 0.5516 | 0.3583 |
+| t1 | 1.0 | 0.1114 | 0.2029 | 0.2173 |
+| t2 | 0.5 | 0.0410 | 0.1231 | 0.1693 |
+| t3 | 0.2 | 0.0225 | 0.0912 | 0.1457 |
+| t4 | −1.0 | 0.0020 | 0.0275 | 0.0800 |
+| t5 | −3.0 | 0.0000 | 0.0037 | 0.0294 |
+| **Entropía (bits)** | — | **0.9147** | **1.7998** | **2.2888** |
+
+El 0.0000 de t5 con T = 0.5 es un efecto del redondeo a cuatro decimales: el valor sin redondear es 3.7367e-05. Se observa que al bajar la temperatura la masa se concentra en t0 (0.3583 → 0.5516 → 0.8231) y la entropía cae (2.2888 → 1.7998 → 0.9147); al subirla, la distribución se aplana y la entropía sube.
+
+![Distribuciones softmax con temperatura para T = 0.5, T = 1 y T = 2](figuras/T1_t1_softmax_temperatura.png)
+--- [code] ---
+# T1: código aprobado por el crítico
+# T1 — Softmax con temperatura y entropía en bits (implementación en NumPy)
+# Entregables: resultados.json (contrato) + figura PNG + resumen en consola.
+
+import json
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+
+
+def softmax_con_temperatura(logits, T):
+    """p_i = exp(z_i/T) / sum_j exp(z_j/T), numéricamente estable:
+    se resta el máximo de los logits escalados antes de exponenciar."""
+    z = np.asarray(logits, dtype=float) / float(T)
+    z = z - np.max(z)  # estabilidad numérica
+    e = np.exp(z)
+    return e / np.sum(e)
+
+
+def entropia_bits(p):
+    """H = -sum p_i * log2(p_i), en bits (ignora términos con p_i = 0)."""
+    p = np.asarray(p, dtype=float)
+    m = p > 0
+    return float(-np.sum(p[m] * np.log2(p[m])))
+
+
+# ----------------------------- Datos del enunciado -----------------------------
+tokens = ["t0", "t1", "t2", "t3", "t4", "t5"]
+logits = [2.0, 1.0, 0.5, 0.2, -1.0, -3.0]
+temperaturas = [0.5, 1.0, 2.0]
+
+# ----------------------------- Cálculos -----------------------------
+distribuciones = {T: softmax_con_temperatura(logits, T) for T in temperaturas}
+entropias = {T: entropia_bits(distribuciones[T]) for T in temperaturas}
+
+# ----------------------------- Tabla con cuatro decimales -----------------------------
+tabla = pd.DataFrame(index=tokens)
+for T in temperaturas:
+    tabla[f"T={T}"] = [f"{p:.4f}" for p in distribuciones[T]]
+tabla.loc["entropia_bits"] = {f"T={T}": f"{entropias[T]:.4f}" for T in temperaturas}
+
+# ----------------------------- Verificaciones del criterio de éxito -----------------------------
+sumas = {f"T={T}": float(np.sum(distribuciones[T])) for T in temperaturas}
+sumas_ok = all(abs(s - 1.0) < 1e-12 for s in sumas.values())
+entropia_crece = bool(entropias[0.5] < entropias[1.0] < entropias[2.0])
+
+# ----------------------------- Figura -----------------------------
+fig, ax = plt.subplots(figsize=(8.0, 4.5))
+x = np.arange(len(tokens))
+ancho = 0.26
+colores = ["#4C72B0", "#55A868", "#C44E52"]
+for j, T in enumerate(temperaturas):
+    ax.bar(
+        x + (j - 1) * ancho,
+        distribuciones[T],
+        width=ancho,
+        color=colores[j],
+        label=f"T={T}  (H={entropias[T]:.4f} bits)",
+    )
+ax.set_xticks(x)
+ax.set_xticklabels(tokens)
+ax.set_xlabel("Token")
+ax.set_ylabel("Probabilidad")
+ax.set_title("Softmax con temperatura — logits: 2.0, 1.0, 0.5, 0.2, -1.0, -3.0")
+ax.grid(axis="y", alpha=0.3)
+ax.legend()
+fig.tight_layout()
+fig.savefig("t1_softmax_temperatura.png", dpi=120)
+plt.close(fig)
+
+# ----------------------------- Tabla en formato lista de filas (para JSON) -----------------------------
+tabla_json = []
+for i, tok in enumerate(tokens):
+    fila = {"token": tok, "logit": logits[i]}
+    for T in temperaturas:
+        fila[f"T={T}"] = f"{distribuciones[T][i]:.4f}"
+    tabla_json.append(fila)
+fila_h = {"token": "entropia_bits", "logit": None}
+for T in temperaturas:
+    fila_h[f"T={T}"] = f"{entropias[T]:.4f}"
+tabla_json.append(fila_h)
+
+# ----------------------------- Contrato: resultados.json -----------------------------
+resultados = {
+    "subtarea": "T1 - Softmax con temperatura y entropia en bits",
+    "tokens": tokens,
+    "logits": logits,
+    "temperaturas": temperaturas,
+    "distribuciones_sin_redondear": {
+        f"T={T}": distribuciones[T].tolist() for T in temperaturas
+    },
+    "entropias_bits_sin_redondear": {f"T={T}": entropias[T] for T in temperaturas},
+    "tabla_4_decimales": {
+        "distribuciones": {
+            f"T={T}": [f"{p:.4f}" for p in distribuciones[T]] for T in temperaturas
+        },
+        "entropias_bits": {f"T={T}": f"{entropias[T]:.4f}" for T in temperaturas},
+    },
+    "tabla_4_decimales_filas": tabla_json,
+    "verificacion": {
+        "suma_por_temperatura": sumas,
+        "cada_distribucion_suma_1": sumas_ok,
+        "entropia_crece_con_T": entropia_crece,
+    },
+}
+
+with open("resultados.json", "w", encoding="utf-8") as f:
+    json.dump(resultados, f, indent=2, ensure_ascii=False)
+
+# ----------------------------- Resumen -----------------------------
+print("=== T1: Softmax con temperatura ===")
+print("Logits:", dict(zip(tokens, logits)))
+print()
+print("Tabla (4 decimales):")
+print(tabla.to_string())
+print()
+print("Entropías en bits (sin redondear):")
+for T in temperaturas:
+    print(f"  T={T}: H = {entropias[T]:.10f} bits")
+print()
+print(f"Verificación: sumas = {sumas} (todas = 1: {sumas_ok})")
+print(f"Verificación: H(T=0.5) < H(T=1) < H(T=2) -> {entropia_crece}")
+print("Archivos generados: resultados.json, t1_softmax_temperatura.png")
+
+[salida]
+=== T1: Softmax con temperatura ===
+Logits: {'t0': 2.0, 't1': 1.0, 't2': 0.5, 't3': 0.2, 't4': -1.0, 't5': -3.0}
+
+Tabla (4 decimales):
+                T=0.5   T=1.0   T=2.0
+t0             0.8231  0.5516  0.3583
+t1             0.1114  0.2029  0.2173
+t2             0.0410  0.1231  0.1693
+t3             0.0225  0.0912  0.1457
+t4             0.0020  0.0275  0.0800
+t5             0.0000  0.0037  0.0294
+entropia_bits  0.9147  1.7998  2.2888
+
+Entropías en bits (sin redondear):
+  T=0.5: H = 0.9146817686 bits
+  T=1.0: H = 1.7998355411 bits
+  T=2.0: H = 2.2888261658 bits
+
+Verificación: sumas = {'T=0.5': 1.0, 'T=1.0': 1.0, 'T=2.0': 1.0} (todas = 1: True)
+Verificación: H(T=0.5) < H(T=1) < H(T=2) -> True
+Archivos generados: resultados.json, t1_softmax_temperatura.png
+
+--- [markdown] ---
+## Parte 2 — Muestreo de núcleo (top-p) con p = 0.9
+
+Sobre la distribución de T = 1 de la Parte 1, se ordenan los tokens por probabilidad descendente (el orden resultante es t0, t1, t2, t3, t4, t5) y se acumula. La acumulada con {t0, t1, t2} es 0.8776, que no alcanza 0.9; al incluir t3 la acumulada llega a 0.9688 ≥ 0.9. El núcleo mínimo es por tanto {t0, t1, t2, t3} (4 tokens), con probabilidad acumulada 0.9688; quedan fuera t4 y t5, que juntos concentran 0.0312 de masa. Renormalizando (dividiendo entre 0.9688), la distribución resultante suma 1:
+
+| Rank | Token | p (T = 1) | Acumulada | ¿En el núcleo? | p renormalizada |
+|---|---|---|---|---|---|
+| 1 | t0 | 0.5516 | 0.5516 | sí | 0.5694 |
+| 2 | t1 | 0.2029 | 0.7546 | sí | 0.2095 |
+| 3 | t2 | 0.1231 | 0.8776 | sí | 0.1270 |
+| 4 | t3 | 0.0912 | 0.9688 | sí | 0.0941 |
+| 5 | t4 | 0.0275 | 0.9963 | no | 0.0000 |
+| 6 | t5 | 0.0037 | 1.0000 | no | 0.0000 |
+
+Sobreviven t0, t1, t2 y t3, con distribución renormalizada (0.5694, 0.2095, 0.1270, 0.0941, 0.0000, 0.0000). El conjunto es mínimo: sin t3 la acumulada sería 0.8776 < 0.9. Nótese que la renormalización eleva ligeramente todas las probabilidades de los tokens supervivientes (p. ej., t0 pasa de 0.5516 a 0.5694).
+
+![Núcleo top-p con p = 0.9 sobre la distribución de T = 1](figuras/T2_top_p_nucleo.png)
+--- [code] ---
+# T2: código aprobado por el crítico
+# -*- coding: utf-8 -*-
+"""
+T2 — Muestreo de núcleo (top-p) con p = 0.9 sobre la distribución de T = 1 (Parte 1).
+
+Pasos:
+1) Carga la distribución de T = 1 desde entrada/T1/resultados.json (subtarea previa T1)
+   y la verifica recalculando la softmax con temperatura de forma numéricamente estable.
+2) Aplica top-p con p = 0.9: ordena los tokens por probabilidad descendente, conserva el
+   conjunto MÍNIMO cuya probabilidad acumulada alcanza 0.9 y renormaliza (los tokens
+   fuera del núcleo quedan con probabilidad 0).
+3) Escribe resultados.json (contrato de la subtarea) y la figura top_p_nucleo.png.
+
+Ejecución: python T2_top_p.py  (desde la carpeta de trabajo de la tarea)
+"""
+
+import json
+from pathlib import Path
+
+import numpy as np
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+
+# ----------------------------------------------------------------------
+# Parámetros fijos del enunciado
+# ----------------------------------------------------------------------
+P = 0.9
+T = 1.0
+TOKENS = ["t0", "t1", "t2", "t3", "t4", "t5"]
+LOGITS = np.array([2.0, 1.0, 0.5, 0.2, -1.0, -3.0], dtype=float)
+
+
+def softmax_con_temperatura(logits: np.ndarray, temperatura: float) -> np.ndarray:
+    """Softmax con temperatura, numéricamente estable (resta el máximo antes de exponenciar)."""
+    z = np.asarray(logits, dtype=float) / float(temperatura)
+    z = z - z.max()
+    e = np.exp(z)
+    return e / e.sum()
+
+
+# ----------------------------------------------------------------------
+# 1) Distribución de T = 1 obtenida en la Parte 1 (subtarea T1)
+# ----------------------------------------------------------------------
+ruta_t1 = Path("entrada") / "T1" / "resultados.json"
+if ruta_t1.exists():
+    with ruta_t1.open("r", encoding="utf-8") as f:
+        res_t1 = json.load(f)
+    p_T1 = np.array(res_t1["distribuciones_sin_redondear"]["T=1.0"], dtype=float)
+    fuente = "entrada/T1/resultados.json (distribucion de T=1 de la Parte 1)"
+else:  # respaldo: recalcular si el archivo de T1 no estuviera disponible
+    p_T1 = softmax_con_temperatura(LOGITS, T)
+    fuente = "recalculada con softmax estable (entrada/T1 no disponible)"
+
+p_verif = softmax_con_temperatura(LOGITS, T)
+coincide_con_softmax = bool(np.allclose(p_T1, p_verif, rtol=0.0, atol=1e-12))
+
+# ----------------------------------------------------------------------
+# 2) Top-p (nucleus sampling) con p = 0.9
+# ----------------------------------------------------------------------
+orden = np.argsort(-p_T1, kind="stable")       # índices por probabilidad descendente
+probs_ord = p_T1[orden]
+acum_ord = np.cumsum(probs_ord)
+
+alcanza = acum_ord >= P                        # primer rank cuya acumulada alcanza p
+k = int(np.argmax(alcanza)) + 1                # tamaño del núcleo (conjunto mínimo)
+nucleo_idx = orden[:k]
+fuera_idx = orden[k:]
+nucleo_set = set(nucleo_idx.tolist())
+
+acum_nucleo = float(acum_ord[k - 1])                          # acumulada del núcleo (>= 0.9)
+acum_sin_ultimo = float(acum_ord[k - 2]) if k >= 2 else 0.0   # para verificar minimalidad
+
+# Renormalización: los tokens fuera del núcleo quedan con probabilidad 0
+p_renorm = np.zeros_like(p_T1)
+p_renorm[nucleo_idx] = p_T1[nucleo_idx] / acum_nucleo
+
+tokens_nucleo = [TOKENS[i] for i in nucleo_idx]
+tokens_fuera = [TOKENS[i] for i in fuera_idx]
+
+dist_T1_dict = {TOKENS[i]: float(p_T1[i]) for i in range(len(TOKENS))}
+dist_renorm_dict = {TOKENS[i]: float(p_renorm[i]) for i in range(len(TOKENS))}
+
+# Tabla del procedimiento (orden descendente), con y sin redondeo
+tabla_ordenada = []
+for rank, idx in enumerate(orden, start=1):
+    tabla_ordenada.append({
+        "rank": rank,
+        "token": TOKENS[idx],
+        "p_T1": float(p_T1[idx]),
+        "acumulada": float(acum_ord[rank - 1]),
+        "en_nucleo": bool(idx in nucleo_set),
+        "p_renormalizada": float(p_renorm[idx]),
+    })
+
+tabla_4_decimales = [
+    {
+        "rank": fila["rank"],
+        "token": fila["token"],
+        "p_T1": f"{fila['p_T1']:.4f}",
+        "acumulada": f"{fila['acumulada']:.4f}",
+        "en_nucleo": "si" if fila["en_nucleo"] else "no",
+        "p_renormalizada": f"{fila['p_renormalizada']:.4f}",
+    }
+    for fila in tabla_ordenada
+]
+
+# ----------------------------------------------------------------------
+# 3) Verificaciones del criterio de éxito
+# ----------------------------------------------------------------------
+suma_renorm = float(p_renorm.sum())
+verificacion = {
+    "distribucion_T1_coincide_con_softmax_estable": coincide_con_softmax,
+    "suma_distribucion_renormalizada": suma_renorm,
+    "renormalizada_suma_1": bool(np.isclose(suma_renorm, 1.0, rtol=0.0, atol=1e-12)),
+    "nucleo_acumula_al_menos_p": bool(acum_nucleo >= P),
+    "acumulada_nucleo": acum_nucleo,
+    "acumulada_sin_el_ultimo_token_del_nucleo": acum_sin_ultimo,
+    "conjunto_es_minimo": bool(acum_sin_ultimo < P),
+    "tokens_fuera_quedan_en_cero": (bool(np.all(p_renorm[fuera_idx] == 0.0))
+                                    if len(fuera_idx) > 0 else True),
+}
+
+# ----------------------------------------------------------------------
+# 4) Figura
+# ----------------------------------------------------------------------
+fig = plt.figure(figsize=(11, 8.2))
+gs = fig.add_gridspec(2, 2, height_ratios=[1.0, 0.9])
+colores = ["#2a9d8f" if i in nucleo_set else "#e76f51" for i in range(len(TOKENS))]
+x = np.arange(len(TOKENS))
+
+ax1 = fig.add_subplot(gs[0, 0])
+ax1.bar(x, p_T1, color=colores, edgecolor="black", linewidth=0.5)
+ax1.set_title("Distribución original (T = 1, Parte 1)")
+ax1.set_xticks(x)
+ax1.set_xticklabels(TOKENS)
+ax1.set_ylabel("probabilidad")
+ax1.set_ylim(0, float(p_T1.max()) * 1.18)
+for i, v in enumerate(p_T1):
+    ax1.text(i, v + 0.006, f"{v:.4f}", ha="center", fontsize=8)
+
+ax2 = fig.add_subplot(gs[0, 1])
+ax2.bar(x, p_renorm, color=colores, edgecolor="black", linewidth=0.5)
+ax2.set_title(f"Distribución renormalizada tras top-p (p = {P})")
+ax2.set_xticks(x)
+ax2.set_xticklabels(TOKENS)
+ax2.set_ylim(0, float(p_renorm.max()) * 1.18)
+for i, v in enumerate(p_renorm):
+    ax2.text(i, v + 0.006, f"{v:.4f}", ha="center", fontsize=8)
+
+ax3 = fig.add_subplot(gs[1, :])
+ranks = np.arange(1, len(TOKENS) + 1)
+ax3.step(ranks, acum_ord, where="post", color="#264653", marker="o",
+         label="acumulada (orden descendente)")
+ax3.axhline(P, color="#e76f51", linestyle="--", label=f"umbral p = {P}")
+ax3.axvline(k, color="#2a9d8f", linestyle=":", label=f"borde del núcleo (k = {k})")
+ax3.plot([k], [acum_nucleo], "o", color="#2a9d8f", markersize=9)
+ax3.annotate(f"núcleo {{{', '.join(tokens_nucleo)}}}\nacumulada = {acum_nucleo:.4f}",
+             xy=(k, acum_nucleo), xytext=(k + 0.4, acum_nucleo - 0.20),
+             arrowprops=dict(arrowstyle="->", color="#2a9d8f"))
+ax3.set_xticks(ranks)
+ax3.set_xticklabels([f"{rank}: {TOKENS[idx]}" for rank, idx in enumerate(orden, start=1)])
+ax3.set_xlabel("tokens ordenados por probabilidad descendente")
+ax3.set_ylabel("probabilidad acumulada")
+ax3.set_ylim(0, 1.05)
+ax3.set_title("Construcción del conjunto mínimo con acumulada ≥ 0.9")
+ax3.legend(loc="lower right")
+ax3.grid(alpha=0.3)
+
+fig.suptitle("T2 — Muestreo de núcleo (top-p, p = 0.9) sobre la distribución de T = 1", fontsize=13)
+fig.tight_layout(rect=[0, 0, 1, 0.96])
+fig.savefig("top_p_nucleo.png", dpi=120)
+plt.close(fig)
+
+# ----------------------------------------------------------------------
+# 5) Contrato: resultados.json
+# ----------------------------------------------------------------------
+resultados = {
+    "subtarea": "T2 - Muestreo de nucleo (top-p) con p=0.9 sobre la distribucion de T=1",
+    "p": P,
+    "temperatura": T,
+    "tokens": TOKENS,
+    "logits": LOGITS.tolist(),
+    "fuente_distribucion_T1": fuente,
+    "distribucion_T1_sin_redondear": dist_T1_dict,
+    "distribucion_T1_lista": p_T1.tolist(),
+    "orden_descendente": [TOKENS[i] for i in orden],
+    "probs_ordenadas_desc_sin_redondear": probs_ord.tolist(),
+    "acumulada_ordenada_desc_sin_redondear": acum_ord.tolist(),
+    "tokens_nucleo": tokens_nucleo,
+    "num_tokens_nucleo": k,
+    "probabilidad_acumulada_nucleo": acum_nucleo,
+    "tokens_fuera_nucleo": tokens_fuera,
+    "probabilidad_fuera_nucleo": float(1.0 - acum_nucleo),
+    "distribucion_renormalizada_sin_redondear": dist_renorm_dict,
+    "distribucion_renormalizada_lista": p_renorm.tolist(),
+    "distribucion_renormalizada_4_decimales": {t: f"{v:.4f}" for t, v in dist_renorm_dict.items()},
+    "tabla_ordenada_sin_redondear": tabla_ordenada,
+    "tabla_4_decimales": tabla_4_decimales,
+    "verificacion": verificacion,
+    "figura": "top_p_nucleo.png",
+}
+
+with open("resultados.json", "w", encoding="utf-8") as f:
+    json.dump(resultados, f, ensure_ascii=False, indent=2)
+
+# ----------------------------------------------------------------------
+# 6) Resumen
+# ----------------------------------------------------------------------
+print("=" * 72)
+print("T2 — Muestreo de núcleo (top-p) con p = 0.9 sobre la distribución de T = 1")
+print("=" * 72)
+print(f"Fuente de la distribución T=1: {fuente}")
+print("Distribución T=1: " + ", ".join(f"{t}={p_T1[i]:.4f}" for i, t in enumerate(TOKENS)))
+print(f"Orden descendente: {' > '.join(TOKENS[i] for i in orden)}")
+print("Acumuladas:        " + ", ".join(f"{a:.4f}" for a in acum_ord))
+print(f"Núcleo (conjunto mínimo con acumulada >= 0.9): {{{', '.join(tokens_nucleo)}}}")
+print(f"Probabilidad acumulada del núcleo: {acum_nucleo:.6f} "
+      f"(sin el último token: {acum_sin_ultimo:.6f} < 0.9 -> el conjunto es mínimo)")
+print(f"Tokens fuera del núcleo (probabilidad 0): {tokens_fuera if tokens_fuera else 'ninguno'}")
+print("Distribución renormalizada: "
+      + ", ".join(f"{t}={p_renorm[i]:.4f}" for i, t in enumerate(TOKENS)))
+print(f"Suma de la distribución renormalizada: {suma_renorm:.6f}")
+print(f"Verificación: conjunto mínimo = {verificacion['conjunto_es_minimo']}, "
+      f"suma 1 = {verificacion['renormalizada_suma_1']}, "
+      f"fuera en cero = {verificacion['tokens_fuera_quedan_en_cero']}")
+print("Archivos escritos: resultados.json, top_p_nucleo.png")
+
+[salida]
+========================================================================
+T2 — Muestreo de núcleo (top-p) con p = 0.9 sobre la distribución de T = 1
+========================================================================
+Fuente de la distribución T=1: entrada/T1/resultados.json (distribucion de T=1 de la Parte 1)
+Distribución T=1: t0=0.5516, t1=0.2029, t2=0.1231, t3=0.0912, t4=0.0275, t5=0.0037
+Orden descendente: t0 > t1 > t2 > t3 > t4 > t5
+Acumuladas:        0.5516, 0.7546, 0.8776, 0.9688, 0.9963, 1.0000
+Núcleo (conjunto mínimo con acumulada >= 0.9): {t0, t1, t2, t3}
+Probabilidad acumulada del núcleo: 0.968820 (sin el último token: 0.877637 < 0.9 -> el conjunto es mínimo)
+Tokens fuera del núcleo (probabilidad 0): ['t4', 't5']
+Distribución renormalizada: t0=0.5694, t1=0.2095, t2=0.1270, t3=0.0941, t4=0.0000, t5=0.0000
+Suma de la distribución renormalizada: 1.000000
+Verificación: conjunto mínimo = True, suma 1 = True, fuera en cero = True
+Archivos escritos: resultados.json, top_p_nucleo.png
+
+--- [markdown] ---
+## Parte 3 — Comprobación empírica
+
+Se tomaron 10 000 muestras de la distribución renormalizada de la Parte 2 con numpy.random.default_rng(0). Las frecuencias observadas suman 1 y se comparan con las probabilidades teóricas:
+
+| Token | p teórica | Conteo observado | Frecuencia observada | Diferencia (obs − teo) |
+|---|---|---|---|---|
+| t0 | 0.5694 | 5682 | 0.5682 | −0.0012 |
+| t1 | 0.2095 | 2093 | 0.2093 | −0.0002 |
+| t2 | 0.1270 | 1296 | 0.1296 | +0.0026 |
+| t3 | 0.0941 | 929 | 0.0929 | −0.0012 |
+| t4 | 0.0000 | 0 | 0.0000 | +0.0000 |
+| t5 | 0.0000 | 0 | 0.0000 | +0.0000 |
+
+La divergencia KL de la empírica respecto de la teórica, KL(emp‖teo) = Σ_i p_emp(i)·log2(p_emp(i)/p_teo(i)) con los términos de masa nula aportando 0, es de **5.0069e-05 bits**, un valor prácticamente cero. Las desviaciones son pequeñas y coherentes con el ruido de muestreo con n = 10 000 (la mayor es +0.0026 en t2), y t4 y t5, con probabilidad teórica cero, no reciben ninguna muestra. Esto confirma empíricamente que el generador muestrea de la distribución renormalizada correctamente.
+
+![Frecuencias observadas frente a probabilidades teóricas (10 000 muestras)](figuras/T3_parte3_frecuencias_vs_teoricas.png)
+--- [code] ---
+# T3: código aprobado por el crítico
+import json
+from pathlib import Path
+
+import numpy as np
+import matplotlib
+
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+
+
+def cargar_distribucion_renormalizada():
+    """Carga la distribución renormalizada de la Parte 2 (T2); si no está
+    disponible, la recalcula de forma determinista a partir de los logits."""
+    ruta_t2 = Path("entrada/T2/resultados.json")
+    if ruta_t2.exists():
+        with ruta_t2.open("r", encoding="utf-8") as f:
+            res_t2 = json.load(f)
+        tokens = list(res_t2["tokens"])
+        p_teo = np.asarray(res_t2["distribucion_renormalizada_lista"], dtype=float)
+        fuente = "entrada/T2/resultados.json (distribucion renormalizada top-p p=0.9 sobre T=1)"
+        return tokens, p_teo, fuente
+
+    # Fallback determinista: softmax(T=1) + top-p p=0.9 + renormalización
+    tokens = ["t0", "t1", "t2", "t3", "t4", "t5"]
+    logits = np.array([2.0, 1.0, 0.5, 0.2, -1.0, -3.0], dtype=float)
+    z = logits - logits.max()  # softmax numéricamente estable, T = 1
+    p1 = np.exp(z) / np.exp(z).sum()
+    orden = np.argsort(-p1)
+    acum = np.cumsum(p1[orden])
+    k = int(np.searchsorted(acum, 0.9) + 1)  # conjunto mínimo que alcanza 0.9
+    nucleo = orden[:k]
+    p_teo = np.zeros_like(p1)
+    p_teo[nucleo] = p1[nucleo] / p1[nucleo].sum()
+    fuente = "recalculada en T3 (softmax T=1 + top-p p=0.9 + renormalizacion)"
+    return tokens, p_teo, fuente
+
+
+def main():
+    # ------------------------------------------------------------------
+    # 1) Distribución teórica: renormalizada de la Parte 2
+    # ------------------------------------------------------------------
+    tokens, p_teo, fuente = cargar_distribucion_renormalizada()
+    p_teo = p_teo / p_teo.sum()  # seguridad numérica (no-op si ya suma 1)
+
+    # ------------------------------------------------------------------
+    # 2) Muestreo: 10,000 muestras con numpy.random.default_rng(0)
+    # ------------------------------------------------------------------
+    n_muestras = 10_000
+    rng = np.random.default_rng(0)
+    muestras = rng.choice(len(tokens), size=n_muestras, p=p_teo)
+
+    conteos = np.bincount(muestras, minlength=len(tokens))
+    frec_obs = conteos / n_muestras
+
+    # ------------------------------------------------------------------
+    # 3) Divergencia KL (en bits) de la empírica respecto de la teórica
+    #    KL(emp || teo) = Σ_i p_emp(i) * log2(p_emp(i) / p_teo(i))
+    #    convención: términos con p_emp(i) = 0 aportan 0
+    # ------------------------------------------------------------------
+    mask = frec_obs > 0
+    if np.any(p_teo[mask] <= 0.0):
+        kl_bits = float("inf")
+        kl_nats = float("inf")
+    else:
+        kl_bits = float(np.sum(frec_obs[mask] * np.log2(frec_obs[mask] / p_teo[mask])))
+        kl_nats = float(np.sum(frec_obs[mask] * np.log(frec_obs[mask] / p_teo[mask])))
+
+    # ------------------------------------------------------------------
+    # 4) Gráfico de barras: frecuencias observadas vs probabilidades teóricas
+    # ------------------------------------------------------------------
+    x = np.arange(len(tokens))
+    ancho = 0.38
+
+    fig, ax = plt.subplots(figsize=(8.5, 5.4))
+    b1 = ax.bar(x - ancho / 2, frec_obs, width=ancho,
+                label="Frecuencia observada (10,000 muestras)",
+                color="#4C72B0", edgecolor="black", linewidth=0.6)
+    b2 = ax.bar(x + ancho / 2, p_teo, width=ancho,
+                label="Probabilidad teórica (renormalizada, top-p 0.9)",
+                color="#DD8452", edgecolor="black", linewidth=0.6)
+    for barras in (b1, b2):
+        for b in barras:
+            h = b.get_height()
+            ax.annotate(f"{h:.4f}", (b.get_x() + b.get_width() / 2, h),
+                        ha="center", va="bottom", fontsize=8)
+    ax.set_xticks(x)
+    ax.set_xticklabels(tokens)
+    ax.set_xlabel("Token")
+    ax.set_ylabel("Probabilidad / frecuencia relativa")
+    ax.set_ylim(0, max(frec_obs.max(), p_teo.max()) * 1.20)
+    ax.set_title("Parte 3 — Comprobación empírica\n"
+                 "Frecuencias observadas vs. probabilidades teóricas "
+                 f"(n={n_muestras:,}, default_rng(0))\n"
+                 f"KL(emp||teo) = {kl_bits:.6f} bits")
+    ax.legend(loc="upper right")
+    fig.tight_layout()
+    fig.savefig("parte3_frecuencias_vs_teoricas.png", dpi=120)
+    plt.close(fig)
+
+    # ------------------------------------------------------------------
+    # 5) resultados.json (contrato de la subtarea)
+    # ------------------------------------------------------------------
+    tabla = [
+        {
+            "token": tok,
+            "probabilidad_teorica": float(p_teo[i]),
+            "conteo_observado": int(conteos[i]),
+            "frecuencia_observada": float(frec_obs[i]),
+            "diferencia_obs_menos_teo": float(frec_obs[i] - p_teo[i]),
+        }
+        for i, tok in enumerate(tokens)
+    ]
+
+    resultados = {
+        "subtarea": ("T3 - Comprobacion empirica: 10,000 muestras de la "
+                     "distribucion renormalizada de la Parte 2 (top-p p=0.9, T=1)"),
+        "n_muestras": n_muestras,
+        "semilla": 0,
+        "generador": "numpy.random.default_rng(0)",
+        "fuente_distribucion_renormalizada": fuente,
+        "tokens": tokens,
+        "probabilidades_teoricas_sin_redondear": p_teo.tolist(),
+        "conteos_observados": conteos.tolist(),
+        "frecuencias_observadas_sin_redondear": frec_obs.tolist(),
+        "tabla_comparativa_sin_redondear": tabla,
+        "tabla_comparativa_4_decimales": [
+            {
+                "token": t["token"],
+                "probabilidad_teorica": f"{t['probabilidad_teorica']:.4f}",
+                "conteo_observado": t["conteo_observado"],
+                "frecuencia_observada": f"{t['frecuencia_observada']:.4f}",
+                "diferencia": f"{t['diferencia_obs_menos_teo']:+.4f}",
+            }
+            for t in tabla
+        ],
+        "divergencia_KL_bits": kl_bits,
+        "divergencia_KL_nats": kl_nats,
+        "convencion_KL": ("KL(emp||teo) = sum_i p_emp(i)*log2(p_emp(i)/p_teo(i)); "
+                          "terminos con p_emp(i)=0 aportan 0"),
+        "suma_frecuencias_observadas": float(frec_obs.sum()),
+        "figura": "parte3_frecuencias_vs_teoricas.png",
+        "verificacion": {
+            "frecuencias_suman_1": bool(np.isclose(frec_obs.sum(), 1.0)),
+            "kl_pequena_cercana_a_cero": bool(np.isfinite(kl_bits) and kl_bits < 0.01),
+            "tokens_sin_soporte_sin_muestras": bool(conteos[p_teo == 0].sum() == 0),
+        },
+    }
+
+    with open("resultados.json", "w", encoding="utf-8") as f:
+        json.dump(resultados, f, ensure_ascii=False, indent=2)
+
+    # ------------------------------------------------------------------
+    # 6) Resumen
+    # ------------------------------------------------------------------
+    print("=== T3 - Comprobacion empirica ===")
+    print(f"Muestras: {n_muestras} con numpy.random.default_rng(0)")
+    print(f"Fuente distribucion teorica: {fuente}")
+    print(f"{'token':<6}{'p_teo':>12}{'conteo':>10}{'f_obs':>12}{'diff':>12}")
+    for i, tok in enumerate(tokens):
+        print(f"{tok:<6}{p_teo[i]:>12.6f}{conteos[i]:>10d}"
+              f"{frec_obs[i]:>12.6f}{frec_obs[i] - p_teo[i]:>12.6f}")
+    print(f"Divergencia KL (emp || teo) = {kl_bits:.6f} bits ({kl_nats:.6f} nats)")
+    print("Figura guardada: parte3_frecuencias_vs_teoricas.png")
+    print("Resultados escritos en resultados.json")
+
+
+if __name__ == "__main__":
+    main()
+
+[salida]
+=== T3 - Comprobacion empirica ===
+Muestras: 10000 con numpy.random.default_rng(0)
+Fuente distribucion teorica: entrada/T2/resultados.json (distribucion renormalizada top-p p=0.9 sobre T=1)
+token        p_teo    conteo       f_obs        diff
+t0        0.569376      5682    0.568200   -0.001176
+t1        0.209462      2093    0.209300   -0.000162
+t2        0.127045      1296    0.129600    0.002555
+t3        0.094117       929    0.092900   -0.001217
+t4        0.000000         0    0.000000    0.000000
+t5        0.000000         0    0.000000    0.000000
+Divergencia KL (emp || teo) = 0.000050 bits (0.000035 nats)
+Figura guardada: parte3_frecuencias_vs_teoricas.png
+Resultados escritos en resultados.json
+
+--- [markdown] ---
+## Parte 4 — Pregunta conceptual
+
+**Cuando T → 0:** en p_i = exp(z_i/T) / Σ_j exp(z_j/T), al dividir los logits por una temperatura cada vez menor, las diferencias relativas entre logits se amplifican sin cota: exp((z_i − z_max)/T) → 0 para todo token que no sea el de mayor logit. Toda la masa se concentra entonces en t0 (el de mayor logit, 2.0) y la distribución tiende a un delta de Dirac (one-hot) sobre ese token, con entropía que tiende a 0. Las entropías de la Parte 1 muestran esa tendencia: al bajar T de 2 a 0.5, la entropía cae de 2.2888 a 1.7998 y luego a 0.9147 bits, mientras la masa de t0 sube de 0.3583 a 0.5516 y a 0.8231, y la de t5 cae hasta 0.0000 (3.7367e-05 sin redondear). **Por qué equivale a greedy:** la decodificación voraz selecciona siempre el token de mayor probabilidad, es decir, el argmax de los logits (t0 en este caso). Como el muestreo con T → 0 asigna probabilidad 1 a ese mismo token, cualquier muestra obtenida es exactamente el argmax: muestrear de una distribución delta y elegir el máximo son operaciones equivalentes, por lo que T → 0 reproduce la decodificación greedy de forma determinista.
+
+**Cuando T → ∞:** dividir los logits por una temperatura muy grande hace z_i/T → 0 para todos los tokens, de modo que todos los términos exp(z_i/T) tienden al mismo valor y la softmax converge a la distribución uniforme sobre el vocabulario (la misma probabilidad para los seis tokens). La evidencia son de nuevo las entropías de la Parte 1, que crecen monótonamente con T (0.9147 < 1.7998 < 2.2888) acercándose al máximo posible, el de la uniforme sobre seis tokens, mientras la distribución se aplana: t0 baja de 0.8231 a 0.5516 y a 0.3583, y t5 sube de 0.0000 a 0.0037 y a 0.0294. En resumen, la temperatura interpola entre un régimen determinista (greedy, entropía mínima) y un régimen uniforme de máxima entropía, y top-p actúa sobre ese espectro recortando la cola de baja probabilidad, como se vio en la Parte 2 al eliminar t4 y t5.

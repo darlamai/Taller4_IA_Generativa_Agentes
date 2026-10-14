@@ -1,0 +1,17 @@
+# Mutantes: qué se estropeó
+
+- A · A10: ESTROPEADA
+- A · A03: ESTROPEADA
+- A · A05: ESTROPEADA
+- B · B10: ESTROPEADA
+- B · B03: ESTROPEADA
+- I1 · I104: ESTROPEADA
+- I1 · I105: ESTROPEADA
+- I1 · I106: ESTROPEADA
+- I1 · I107: ESTROPEADA
+- I1 · I108: ESTROPEADA
+- P1 · P106: ESTROPEADA
+- S1 · S103: ESTROPEADA
+- S1 · S105: ESTROPEADA
+
+Etiquetas por construcción en `etiquetas.csv`.

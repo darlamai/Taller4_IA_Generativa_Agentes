@@ -1,0 +1,550 @@
+{
+  "subtarea": "T1",
+  "titulo": "Línea base léxica: TF-IDF + similitud coseno",
+  "config": {
+    "vectorizador": "sklearn TfidfVectorizer, parámetros por defecto",
+    "idf_ajustado_sobre": "los 10 documentos del corpus (consultas solo transform)",
+    "similitud": "coseno (sklearn.metrics.pairwise.cosine_similarity)",
+    "n_documentos": 10,
+    "n_consultas": 6,
+    "tam_vocabulario": 105,
+    "desempate": "orden estable por id de documento (d01..d10)"
+  },
+  "metricas_globales": {
+    "hit_at_1": 0.8333333333333334,
+    "hit_at_3": 0.8333333333333334,
+    "mrr": 0.8611111111111112
+  },
+  "metricas_por_consulta": {
+    "q1": {
+      "texto_consulta": "¿Qué función de ranking léxica pondera la frecuencia de términos?",
+      "documento_relevante": "d04",
+      "rank_del_relevante": 1,
+      "reciprocal_rank": 1.0,
+      "hit_at_1": 1,
+      "hit_at_3": 1,
+      "ranking_completo": [
+        {
+          "pos": 1,
+          "doc": "d04",
+          "similitud_coseno": 0.6890762406943802
+        },
+        {
+          "pos": 2,
+          "doc": "d01",
+          "similitud_coseno": 0.24104429689047813
+        },
+        {
+          "pos": 3,
+          "doc": "d06",
+          "similitud_coseno": 0.17176219526377373
+        },
+        {
+          "pos": 4,
+          "doc": "d10",
+          "similitud_coseno": 0.14558189772995922
+        },
+        {
+          "pos": 5,
+          "doc": "d02",
+          "similitud_coseno": 0.07453421603164366
+        },
+        {
+          "pos": 6,
+          "doc": "d08",
+          "similitud_coseno": 0.07361653787213339
+        },
+        {
+          "pos": 7,
+          "doc": "d09",
+          "similitud_coseno": 0.06091203978803966
+        },
+        {
+          "pos": 8,
+          "doc": "d05",
+          "similitud_coseno": 0.0304178302412077
+        },
+        {
+          "pos": 9,
+          "doc": "d03",
+          "similitud_coseno": 0.030168272064907867
+        },
+        {
+          "pos": 10,
+          "doc": "d07",
+          "similitud_coseno": 0.0
+        }
+      ]
+    },
+    "q2": {
+      "texto_consulta": "¿Cómo se añaden fragmentos recuperados al prompt?",
+      "documento_relevante": "d03",
+      "rank_del_relevante": 1,
+      "reciprocal_rank": 1.0,
+      "hit_at_1": 1,
+      "hit_at_3": 1,
+      "ranking_completo": [
+        {
+          "pos": 1,
+          "doc": "d03",
+          "similitud_coseno": 0.5174387367568429
+        },
+        {
+          "pos": 2,
+          "doc": "d01",
+          "similitud_coseno": 0.0
+        },
+        {
+          "pos": 3,
+          "doc": "d02",
+          "similitud_coseno": 0.0
+        },
+        {
+          "pos": 4,
+          "doc": "d04",
+          "similitud_coseno": 0.0
+        },
+        {
+          "pos": 5,
+          "doc": "d05",
+          "similitud_coseno": 0.0
+        },
+        {
+          "pos": 6,
+          "doc": "d06",
+          "similitud_coseno": 0.0
+        },
+        {
+          "pos": 7,
+          "doc": "d07",
+          "similitud_coseno": 0.0
+        },
+        {
+          "pos": 8,
+          "doc": "d08",
+          "similitud_coseno": 0.0
+        },
+        {
+          "pos": 9,
+          "doc": "d09",
+          "similitud_coseno": 0.0
+        },
+        {
+          "pos": 10,
+          "doc": "d10",
+          "similitud_coseno": 0.0
+        }
+      ]
+    },
+    "q3": {
+      "texto_consulta": "¿Qué técnica entrena matrices de bajo rango?",
+      "documento_relevante": "d08",
+      "rank_del_relevante": 1,
+      "reciprocal_rank": 1.0,
+      "hit_at_1": 1,
+      "hit_at_3": 1,
+      "ranking_completo": [
+        {
+          "pos": 1,
+          "doc": "d08",
+          "similitud_coseno": 0.5604292724229949
+        },
+        {
+          "pos": 2,
+          "doc": "d06",
+          "similitud_coseno": 0.12298847552390194
+        },
+        {
+          "pos": 3,
+          "doc": "d04",
+          "similitud_coseno": 0.08065431281941934
+        },
+        {
+          "pos": 4,
+          "doc": "d01",
+          "similitud_coseno": 0.06381465584320169
+        },
+        {
+          "pos": 5,
+          "doc": "d10",
+          "similitud_coseno": 0.0494078249415492
+        },
+        {
+          "pos": 6,
+          "doc": "d02",
+          "similitud_coseno": 0.045968561989839445
+        },
+        {
+          "pos": 7,
+          "doc": "d03",
+          "similitud_coseno": 0.0
+        },
+        {
+          "pos": 8,
+          "doc": "d05",
+          "similitud_coseno": 0.0
+        },
+        {
+          "pos": 9,
+          "doc": "d07",
+          "similitud_coseno": 0.0
+        },
+        {
+          "pos": 10,
+          "doc": "d09",
+          "similitud_coseno": 0.0
+        }
+      ]
+    },
+    "q4": {
+      "texto_consulta": "¿Cómo se compara la orientación de dos vectores de texto?",
+      "documento_relevante": "d05",
+      "rank_del_relevante": 1,
+      "reciprocal_rank": 1.0,
+      "hit_at_1": 1,
+      "hit_at_3": 1,
+      "ranking_completo": [
+        {
+          "pos": 1,
+          "doc": "d05",
+          "similitud_coseno": 0.4569245353145955
+        },
+        {
+          "pos": 2,
+          "doc": "d01",
+          "similitud_coseno": 0.24754993848068024
+        },
+        {
+          "pos": 3,
+          "doc": "d04",
+          "similitud_coseno": 0.24252131947498234
+        },
+        {
+          "pos": 4,
+          "doc": "d10",
+          "similitud_coseno": 0.19166293170642723
+        },
+        {
+          "pos": 5,
+          "doc": "d02",
+          "similitud_coseno": 0.09812652932690284
+        },
+        {
+          "pos": 6,
+          "doc": "d08",
+          "similitud_coseno": 0.09691837852548282
+        },
+        {
+          "pos": 7,
+          "doc": "d09",
+          "similitud_coseno": 0.08019252602167252
+        },
+        {
+          "pos": 8,
+          "doc": "d03",
+          "similitud_coseno": 0.039717434369503
+        },
+        {
+          "pos": 9,
+          "doc": "d06",
+          "similitud_coseno": 0.0
+        },
+        {
+          "pos": 10,
+          "doc": "d07",
+          "similitud_coseno": 0.0
+        }
+      ]
+    },
+    "q5": {
+      "texto_consulta": "¿Qué hace que el modelo sea más determinista al elegir la siguiente palabra?",
+      "documento_relevante": "d09",
+      "rank_del_relevante": 6,
+      "reciprocal_rank": 0.16666666666666666,
+      "hit_at_1": 0,
+      "hit_at_3": 0,
+      "ranking_completo": [
+        {
+          "pos": 1,
+          "doc": "d03",
+          "similitud_coseno": 0.3106758887220715
+        },
+        {
+          "pos": 2,
+          "doc": "d06",
+          "similitud_coseno": 0.20085134590621823
+        },
+        {
+          "pos": 3,
+          "doc": "d04",
+          "similitud_coseno": 0.18955976285205217
+        },
+        {
+          "pos": 4,
+          "doc": "d01",
+          "similitud_coseno": 0.16230333908296432
+        },
+        {
+          "pos": 5,
+          "doc": "d10",
+          "similitud_coseno": 0.08491551831191196
+        },
+        {
+          "pos": 6,
+          "doc": "d09",
+          "similitud_coseno": 0.07900232923856973
+        },
+        {
+          "pos": 7,
+          "doc": "d08",
+          "similitud_coseno": 0.0748861092010969
+        },
+        {
+          "pos": 8,
+          "doc": "d05",
+          "similitud_coseno": 0.0394516330072182
+        },
+        {
+          "pos": 9,
+          "doc": "d02",
+          "similitud_coseno": 0.0
+        },
+        {
+          "pos": 10,
+          "doc": "d07",
+          "similitud_coseno": 0.0
+        }
+      ]
+    },
+    "q6": {
+      "texto_consulta": "¿Qué arquitectura combina autoatención con capas feed-forward?",
+      "documento_relevante": "d02",
+      "rank_del_relevante": 1,
+      "reciprocal_rank": 1.0,
+      "hit_at_1": 1,
+      "hit_at_3": 1,
+      "ranking_completo": [
+        {
+          "pos": 1,
+          "doc": "d02",
+          "similitud_coseno": 0.5674153888326815
+        },
+        {
+          "pos": 2,
+          "doc": "d06",
+          "similitud_coseno": 0.16635706514893972
+        },
+        {
+          "pos": 3,
+          "doc": "d03",
+          "similitud_coseno": 0.04553295699284448
+        },
+        {
+          "pos": 4,
+          "doc": "d08",
+          "similitud_coseno": 0.045402589103718784
+        },
+        {
+          "pos": 5,
+          "doc": "d01",
+          "similitud_coseno": 0.03190732792160084
+        },
+        {
+          "pos": 6,
+          "doc": "d04",
+          "similitud_coseno": 0.0
+        },
+        {
+          "pos": 7,
+          "doc": "d05",
+          "similitud_coseno": 0.0
+        },
+        {
+          "pos": 8,
+          "doc": "d07",
+          "similitud_coseno": 0.0
+        },
+        {
+          "pos": 9,
+          "doc": "d09",
+          "similitud_coseno": 0.0
+        },
+        {
+          "pos": 10,
+          "doc": "d10",
+          "similitud_coseno": 0.0
+        }
+      ]
+    }
+  },
+  "rankings_por_consulta": {
+    "q1": [
+      "d04",
+      "d01",
+      "d06",
+      "d10",
+      "d02",
+      "d08",
+      "d09",
+      "d05",
+      "d03",
+      "d07"
+    ],
+    "q2": [
+      "d03",
+      "d01",
+      "d02",
+      "d04",
+      "d05",
+      "d06",
+      "d07",
+      "d08",
+      "d09",
+      "d10"
+    ],
+    "q3": [
+      "d08",
+      "d06",
+      "d04",
+      "d01",
+      "d10",
+      "d02",
+      "d03",
+      "d05",
+      "d07",
+      "d09"
+    ],
+    "q4": [
+      "d05",
+      "d01",
+      "d04",
+      "d10",
+      "d02",
+      "d08",
+      "d09",
+      "d03",
+      "d06",
+      "d07"
+    ],
+    "q5": [
+      "d03",
+      "d06",
+      "d04",
+      "d01",
+      "d10",
+      "d09",
+      "d08",
+      "d05",
+      "d02",
+      "d07"
+    ],
+    "q6": [
+      "d02",
+      "d06",
+      "d03",
+      "d08",
+      "d01",
+      "d04",
+      "d05",
+      "d07",
+      "d09",
+      "d10"
+    ]
+  },
+  "matriz_similitud_coseno": {
+    "filas_consultas": [
+      "q1",
+      "q2",
+      "q3",
+      "q4",
+      "q5",
+      "q6"
+    ],
+    "columnas_documentos": [
+      "d01",
+      "d02",
+      "d03",
+      "d04",
+      "d05",
+      "d06",
+      "d07",
+      "d08",
+      "d09",
+      "d10"
+    ],
+    "valores": [
+      [
+        0.24104429689047813,
+        0.07453421603164366,
+        0.030168272064907867,
+        0.6890762406943802,
+        0.0304178302412077,
+        0.17176219526377373,
+        0.0,
+        0.07361653787213339,
+        0.06091203978803966,
+        0.14558189772995922
+      ],
+      [
+        0.0,
+        0.0,
+        0.5174387367568429,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.06381465584320169,
+        0.045968561989839445,
+        0.0,
+        0.08065431281941934,
+        0.0,
+        0.12298847552390194,
+        0.0,
+        0.5604292724229949,
+        0.0,
+        0.0494078249415492
+      ],
+      [
+        0.24754993848068024,
+        0.09812652932690284,
+        0.039717434369503,
+        0.24252131947498234,
+        0.4569245353145955,
+        0.0,
+        0.0,
+        0.09691837852548282,
+        0.08019252602167252,
+        0.19166293170642723
+      ],
+      [
+        0.16230333908296432,
+        0.0,
+        0.3106758887220715,
+        0.18955976285205217,
+        0.0394516330072182,
+        0.20085134590621823,
+        0.0,
+        0.0748861092010969,
+        0.07900232923856973,
+        0.08491551831191196
+      ],
+      [
+        0.03190732792160084,
+        0.5674153888326815,
+        0.04553295699284448,
+        0.0,
+        0.0,
+        0.16635706514893972,
+        0.0,
+        0.045402589103718784,
+        0.0,
+        0.0
+      ]
+    ]
+  }
+}

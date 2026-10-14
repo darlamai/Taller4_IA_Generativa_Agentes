@@ -1,0 +1,5 @@
+ServerMeasurements(shape=(300, 3), features=('gpu_utilization', 'cpu_utilization', 'memory_gb'))
+Validaciones ValueError -> no 2D: True | columnas != nombres: True | no numéricos: True
+repr coincide con el esperado: True
+CSV de entrada sin modificar: True
+Resultados escritos en: resultados.json

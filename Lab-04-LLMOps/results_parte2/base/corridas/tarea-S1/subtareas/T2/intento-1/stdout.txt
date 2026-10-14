@@ -1,0 +1,10 @@
+=== T2: Z-score y load_score ===
+means           : [57.99313333 50.54163333 29.45533333]
+stds (ddof=0)   : [14.43011728 12.69846349  6.53680183]
+zscores.shape   : (300, 3)
+load_score.shape: (300,)
+medias de zscores (~0): [ 5.68434189e-16  2.36847579e-16 -3.31586610e-16]
+desvs de zscores  (~1): [1. 1. 1.]
+load_score min/max/media: -1.955650 / 3.136218 / 0.000000
+Parquet: output/server_analysis.parquet (300 filas)
+Criterio de éxito cumplido: True

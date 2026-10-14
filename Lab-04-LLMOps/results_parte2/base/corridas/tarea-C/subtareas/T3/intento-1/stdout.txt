@@ -1,0 +1,30 @@
+========================================================================
+T3 — Análisis por consulta (fallo = relevante fuera del top 3)
+========================================================================
+Vocabulario TF-IDF: 105 términos | Verificación T1: True | Verificación T2: True
+
+TFIDF: 1 fallo(s) -> ['q5']
+   q5: relevante d09 en pos 6; comparte con él: ['la']
+      pos 1: d03 comparte ['la', 'al', 'modelo']
+      pos 2: d06 comparte ['el', 'qué']
+      pos 3: d04 comparte ['la', 'que']
+      pos 4: d01 comparte ['la', 'el']
+      pos 5: d10 comparte ['la']
+
+LSA: 1 fallo(s) -> ['q5']
+   q5: relevante d09 en pos 6; comparte con él: ['la']
+      pos 1: d04 comparte ['la', 'que']
+      pos 2: d01 comparte ['la', 'el']
+      pos 3: d03 comparte ['la', 'al', 'modelo']
+      pos 4: d06 comparte ['el', 'qué']
+      pos 5: d10 comparte ['la']
+
+Términos compartidos consulta–relevante (6 consultas):
+   q1 vs d04: ['la', 'de', 'función', 'pondera', 'frecuencia', 'léxica', 'ranking', 'términos'] [rank TF-IDF 1 | rank LSA 1]
+   q2 vs d03: ['al', 'fragmentos', 'prompt'] [rank TF-IDF 1 | rank LSA 1]
+   q3 vs d08: ['de', 'bajo', 'entrena', 'matrices', 'rango'] [rank TF-IDF 1 | rank LSA 1]
+   q4 vs d05: ['la', 'compara', 'orientación', 'vectores'] [rank TF-IDF 1 | rank LSA 3]
+   q5 vs d09: ['la'] [rank TF-IDF 6 | rank LSA 6]
+   q6 vs d02: ['con', 'autoatención', 'capas', 'feed', 'forward'] [rank TF-IDF 1 | rank LSA 1]
+
+Archivos escritos: resultados.json, T3_heatmap_terminos_compartidos.png, T3_rank_del_relevante_por_metodo.png, T3_tabla_fallos.csv, T3_tabla_terminos_compartidos.csv

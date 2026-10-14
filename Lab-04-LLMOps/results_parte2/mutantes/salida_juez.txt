@@ -1,0 +1,24 @@
+warning: `VIRTUAL_ENV=/home/dludena/Taller4_IA_Generativa_Agentes/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+Juez: gemma3:27b (temperature=0) · 2026-10-14 07:04
+  tarea A: 8 preguntas · 116.02 s · 2146+441 tokens
+  tarea B: 7 preguntas · 126.48 s · 3929+323 tokens
+  tarea S1: 7 preguntas · 132.1 s · 3283+370 tokens
+  tarea I1: 7 preguntas · 51.01 s · 755+260 tokens
+  tarea P1: 5 preguntas · 58.23 s · 904+313 tokens
+# Juez del solver — variante `mutantes`
+
+Juez: `gemma3:27b` (Ollama de la H200, `temperature=0`) · 2026-10-14 07:04 · 34 comprobaciones juzgadas (sin entregable, no juzgadas: ['C', 'S2'])
+
+## Calibración 1 — juez contra el verificador automático
+
+- comprobaciones con las dos calificaciones: **31** (de tipo `juez`, sin verificador: 3)
+- acuerdo: **0.806** · kappa de Cohen: **0.497**
+
+| | juez: aprueba | juez: rechaza |
+|---|---|---|
+| **verificador: aprueba** | 20 | 2 (falso negativo del juez) |
+| **verificador: rechaza** | 4 (falso positivo del juez) | 5 |
+
+
+→ /home/dludena/Taller4_IA_Generativa_Agentes/Lab-04-LLMOps/results_parte2/mutantes/juez_solver.csv, juez_solver.md, traza_juez.jsonl
+Calibración 2: {'pares': 27, 'acuerdo': 0.7407407407407407, 'kappa': 0.4391691394658754, 'desacuerdos': ['A03', 'A05', 'A10', 'P104', 'P105', 'S103', 'S105']}

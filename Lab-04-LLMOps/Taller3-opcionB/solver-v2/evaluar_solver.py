@@ -101,14 +101,14 @@ def _norm(s: str) -> str:
     return re.sub(r"[^a-z0-9]+", " ", "".join(c for c in s if not unicodedata.combining(c))).strip()
 
 
-def posicion_seccion(texto: str, seccion: str) -> int:
+def posicion_seccion(texto: str, seccion: str,extra:int=40) -> int:
     """Primer renglón que ES el encabezado: con o sin `#`, con o sin número delante, sin
     distinguir acentos ni puntuación (un PDF no conserva los `#`; un `\\b` tras «)» no casa)."""
     objetivo = _norm(seccion)
     pos = 0
     for linea in texto.splitlines(keepends=True):
         h = re.sub(r"^\d+ ", "", _norm(linea.lstrip("# ")))
-        if h and len(h) <= len(objetivo) + 40 and (h == objetivo or h.startswith(objetivo + " ")):
+        if h and len(h) <= len(objetivo) + extra and (h == objetivo or h.startswith(objetivo + " ")):
             return pos
         pos += len(linea)
     return -1
@@ -257,7 +257,7 @@ def comprobar(check: dict, salida: Path, tarea: dict, texto_enunciado: str,
             return False, f"aparecen {len(hallados)} de {len(check['lista'])} textos prohibidos en {', '.join(donde)}"
         return True, f"ninguno de {len(check['lista'])} textos en {', '.join(fuentes)}"
     if tipo == "secciones":
-        posiciones = [posicion_seccion(texto, s) for s in check["lista"]]
+        posiciones = [posicion_seccion(texto, s,check.get("largo_extra", 40)) for s in check["lista"]]
         faltan = [s for s, p in zip(check["lista"], posiciones) if p < 0]
         if faltan:
             return False, f"faltan: {faltan}"
@@ -346,6 +346,8 @@ def main() -> int:
                 info = {"status": "excepcion", "error": f"{type(err).__name__}: {err}"}
                 (salida / "excepcion.txt").write_text(traceback.format_exc())
         dur = round(time.perf_counter() - t0, 1)
+        if info.get("traza_id"):   # del CSV a los spans: la carpeta de la tarea guarda su traza_id
+            (salida / "traza_id.txt").write_text(str(info["traza_id"]), encoding="utf-8")
         enunciado = texto_entrada(pdf)
         aprobadas = 0
         for c in t["checks"]:
@@ -368,7 +370,8 @@ def main() -> int:
             "intentos_codigo": sum(s.get("intentos", 0) for s in subt),
             "tokens_entrada": uso.get("tokens_entrada", 0),
             "tokens_salida": uso.get("tokens_salida", 0),
-            "duracion_s": dur, "error": info.get("error", "")})
+            "duracion_s": dur, "error": info.get("error", ""),
+            "traza_id": info.get("traza_id", "")})
         print(f"Tarea {t['id']}: {aprobadas}/{sum(c['tipo'] != 'juez' for c in t['checks'])} · status={info.get('status')} · {dur} s\n")
 
     destino = Path(args.salida)

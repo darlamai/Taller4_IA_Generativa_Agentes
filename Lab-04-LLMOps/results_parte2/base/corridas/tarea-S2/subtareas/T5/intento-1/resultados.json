@@ -1,0 +1,852 @@
+{
+  "subtarea": "T5: referencia nula exacta por cambios de signo (enumeración de 2^16 configuraciones)",
+  "fuente_datos": "data/model_errors.csv",
+  "definicion_diferencia": "difference = error_a - error_b (positiva favorece a B)",
+  "n": 16,
+  "differences": [
+    1.8000000000000007,
+    0.7000000000000011,
+    1.1999999999999993,
+    -1.4000000000000004,
+    1.4999999999999991,
+    -0.3000000000000007,
+    0.8999999999999986,
+    2.0999999999999996,
+    -1.8000000000000007,
+    1.0,
+    -0.5,
+    1.700000000000001,
+    -1.200000000000001,
+    0.5999999999999996,
+    1.299999999999999,
+    -0.9000000000000004
+  ],
+  "observed_sum": 6.699999999999995,
+  "observed_mean": 0.4187499999999997,
+  "observed_abs_mean": 0.4187499999999997,
+  "metodo": "enumeración exhaustiva y determinista de las 2^16 configuraciones de signos del vector de diferencias; para cada configuración se calcula la media nula y se cuenta cuántas tienen magnitud al menos tan extrema como la media observada",
+  "criterio_extremidad": "|media_nula| >= |media_observada| (bilateral, 'al menos tan extrema')",
+  "aritmetica": "exacta en enteros: las diferencias son múltiplos de 0.1, se trabaja con d*10 y sumas con signo enteras (media nula = suma_entera/160); verificación independiente en coma flotante con tolerancia 1e-9",
+  "escala_entera": 160.0,
+  "suma_observada_en_enteros": 67,
+  "semilla": "no aplica: enumeración exhaustiva determinista, sin aleatoriedad",
+  "total_configurations": 65536,
+  "total_configuraciones": 65536,
+  "total_configuraciones_esperado": 65536,
+  "total_coincide_con_esperado": true,
+  "configuraciones_unicas_enumeradas": 65536,
+  "configuracion_observada_incluida": true,
+  "count_extreme": 13372,
+  "conteo_de_extremas": 13372,
+  "count_extreme_strictly_greater": 12476,
+  "count_extreme_equal": 896,
+  "p_value_exact": 0.20404052734375,
+  "p_value_exacto_cambios_de_signo": 0.20404052734375,
+  "p_value_exact_fraccion": "13372/65536",
+  "p_value_formula": "p = (# configuraciones con |media nula| >= |media observada|) / 65536",
+  "incluye_configuracion_observada": true,
+  "verificacion_coma_flotante": {
+    "count_extreme_float": 13372,
+    "coincide_con_entero": true
+  },
+  "prueba_t_comparable": {
+    "nombre": "prueba t de una muestra sobre el vector de diferencias (equivalente a la t pareada)",
+    "funcion_scipy": "scipy.stats.ttest_1samp",
+    "media_nula": 0.0,
+    "alternative": "two-sided",
+    "statistic": 1.3363877259014323,
+    "degrees_of_freedom": 15,
+    "p_value_two_sided": 0.20134214922904944,
+    "p_value_verificacion_sf": 0.20134214922904944
+  },
+  "t_statistic": 1.3363877259014323,
+  "degrees_of_freedom": 15,
+  "p_value_t": 0.20134214922904944,
+  "comparacion_p_values": {
+    "p_value_t_bilateral": 0.20134214922904944,
+    "p_value_exacto_signflip": 0.20404052734375,
+    "diferencia_abs": 0.002698378114700556,
+    "razon_signflip_sobre_t": 1.0134019534659424,
+    "lectura": "ambos p-values son cercanos y llevan a la misma decisión (no rechazar H0 al 5%), pero provienen de referencias nulas distintas: la t aproxima la nula con una distribución t de Student con 15 gl (supone diferencias normales i.i.d.), mientras que el cambio de signo construye la nula exacta por enumeración de las 65536 medias (supone que, bajo H0, cada diferencia es simétrica alrededor de 0)"
+  },
+  "distribucion_nula": {
+    "min": -1.18125,
+    "max": 1.18125,
+    "media": 6.938893903907228e-18,
+    "sd": 0.3209507505809364,
+    "sd_teorica_bajo_signos": 0.3209483019116942,
+    "simetrica_en_cero": true,
+    "percentiles": {
+      "2.5": -0.61875,
+      "50": 0.0,
+      "97.5": 0.61875
+    }
+  },
+  "referencia_nula_unicos": [
+    {
+      "media": -1.18125,
+      "conteo": 1
+    },
+    {
+      "media": -1.14375,
+      "conteo": 1
+    },
+    {
+      "media": -1.11875,
+      "conteo": 1
+    },
+    {
+      "media": -1.10625,
+      "conteo": 1
+    },
+    {
+      "media": -1.09375,
+      "conteo": 1
+    },
+    {
+      "media": -1.08125,
+      "conteo": 1
+    },
+    {
+      "media": -1.06875,
+      "conteo": 3
+    },
+    {
+      "media": -1.05625,
+      "conteo": 2
+    },
+    {
+      "media": -1.04375,
+      "conteo": 1
+    },
+    {
+      "media": -1.03125,
+      "conteo": 5
+    },
+    {
+      "media": -1.01875,
+      "conteo": 3
+    },
+    {
+      "media": -1.00625,
+      "conteo": 4
+    },
+    {
+      "media": -0.99375,
+      "conteo": 7
+    },
+    {
+      "media": -0.98125,
+      "conteo": 5
+    },
+    {
+      "media": -0.96875,
+      "conteo": 7
+    },
+    {
+      "media": -0.95625,
+      "conteo": 11
+    },
+    {
+      "media": -0.94375,
+      "conteo": 9
+    },
+    {
+      "media": -0.93125,
+      "conteo": 9
+    },
+    {
+      "media": -0.91875,
+      "conteo": 17
+    },
+    {
+      "media": -0.90625,
+      "conteo": 15
+    },
+    {
+      "media": -0.89375,
+      "conteo": 15
+    },
+    {
+      "media": -0.88125,
+      "conteo": 23
+    },
+    {
+      "media": -0.86875,
+      "conteo": 21
+    },
+    {
+      "media": -0.85625,
+      "conteo": 24
+    },
+    {
+      "media": -0.84375,
+      "conteo": 34
+    },
+    {
+      "media": -0.83125,
+      "conteo": 31
+    },
+    {
+      "media": -0.81875,
+      "conteo": 32
+    },
+    {
+      "media": -0.80625,
+      "conteo": 48
+    },
+    {
+      "media": -0.79375,
+      "conteo": 45
+    },
+    {
+      "media": -0.78125,
+      "conteo": 47
+    },
+    {
+      "media": -0.76875,
+      "conteo": 62
+    },
+    {
+      "media": -0.75625,
+      "conteo": 61
+    },
+    {
+      "media": -0.74375,
+      "conteo": 67
+    },
+    {
+      "media": -0.73125,
+      "conteo": 83
+    },
+    {
+      "media": -0.71875,
+      "conteo": 82
+    },
+    {
+      "media": -0.70625,
+      "conteo": 86
+    },
+    {
+      "media": -0.69375,
+      "conteo": 111
+    },
+    {
+      "media": -0.68125,
+      "conteo": 110
+    },
+    {
+      "media": -0.66875,
+      "conteo": 112
+    },
+    {
+      "media": -0.65625,
+      "conteo": 140
+    },
+    {
+      "media": -0.64375,
+      "conteo": 140
+    },
+    {
+      "media": -0.63125,
+      "conteo": 150
+    },
+    {
+      "media": -0.61875,
+      "conteo": 176
+    },
+    {
+      "media": -0.60625,
+      "conteo": 175
+    },
+    {
+      "media": -0.59375,
+      "conteo": 187
+    },
+    {
+      "media": -0.58125,
+      "conteo": 220
+    },
+    {
+      "media": -0.56875,
+      "conteo": 222
+    },
+    {
+      "media": -0.55625,
+      "conteo": 228
+    },
+    {
+      "media": -0.54375,
+      "conteo": 266
+    },
+    {
+      "media": -0.53125,
+      "conteo": 271
+    },
+    {
+      "media": -0.51875,
+      "conteo": 283
+    },
+    {
+      "media": -0.50625,
+      "conteo": 320
+    },
+    {
+      "media": -0.49375,
+      "conteo": 321
+    },
+    {
+      "media": -0.48125,
+      "conteo": 338
+    },
+    {
+      "media": -0.46875,
+      "conteo": 382
+    },
+    {
+      "media": -0.45625,
+      "conteo": 382
+    },
+    {
+      "media": -0.44375,
+      "conteo": 396
+    },
+    {
+      "media": -0.43125,
+      "conteo": 443
+    },
+    {
+      "media": -0.41875,
+      "conteo": 448
+    },
+    {
+      "media": -0.40625,
+      "conteo": 464
+    },
+    {
+      "media": -0.39375,
+      "conteo": 508
+    },
+    {
+      "media": -0.38125,
+      "conteo": 510
+    },
+    {
+      "media": -0.36875,
+      "conteo": 532
+    },
+    {
+      "media": -0.35625,
+      "conteo": 581
+    },
+    {
+      "media": -0.34375,
+      "conteo": 579
+    },
+    {
+      "media": -0.33125,
+      "conteo": 595
+    },
+    {
+      "media": -0.31875,
+      "conteo": 649
+    },
+    {
+      "media": -0.30625,
+      "conteo": 650
+    },
+    {
+      "media": -0.29375,
+      "conteo": 666
+    },
+    {
+      "media": -0.28125,
+      "conteo": 715
+    },
+    {
+      "media": -0.26875,
+      "conteo": 711
+    },
+    {
+      "media": -0.25625,
+      "conteo": 734
+    },
+    {
+      "media": -0.24375,
+      "conteo": 784
+    },
+    {
+      "media": -0.23125,
+      "conteo": 774
+    },
+    {
+      "media": -0.21875,
+      "conteo": 791
+    },
+    {
+      "media": -0.20625,
+      "conteo": 843
+    },
+    {
+      "media": -0.19375,
+      "conteo": 835
+    },
+    {
+      "media": -0.18125,
+      "conteo": 848
+    },
+    {
+      "media": -0.16875,
+      "conteo": 894
+    },
+    {
+      "media": -0.15625,
+      "conteo": 882
+    },
+    {
+      "media": -0.14375,
+      "conteo": 897
+    },
+    {
+      "media": -0.13125,
+      "conteo": 944
+    },
+    {
+      "media": -0.11875,
+      "conteo": 921
+    },
+    {
+      "media": -0.10625,
+      "conteo": 932
+    },
+    {
+      "media": -0.09375,
+      "conteo": 978
+    },
+    {
+      "media": -0.08125,
+      "conteo": 956
+    },
+    {
+      "media": -0.06875,
+      "conteo": 961
+    },
+    {
+      "media": -0.05625,
+      "conteo": 999
+    },
+    {
+      "media": -0.04375,
+      "conteo": 974
+    },
+    {
+      "media": -0.03125,
+      "conteo": 980
+    },
+    {
+      "media": -0.01875,
+      "conteo": 1015
+    },
+    {
+      "media": -0.00625,
+      "conteo": 980
+    },
+    {
+      "media": 0.00625,
+      "conteo": 980
+    },
+    {
+      "media": 0.01875,
+      "conteo": 1015
+    },
+    {
+      "media": 0.03125,
+      "conteo": 980
+    },
+    {
+      "media": 0.04375,
+      "conteo": 974
+    },
+    {
+      "media": 0.05625,
+      "conteo": 999
+    },
+    {
+      "media": 0.06875,
+      "conteo": 961
+    },
+    {
+      "media": 0.08125,
+      "conteo": 956
+    },
+    {
+      "media": 0.09375,
+      "conteo": 978
+    },
+    {
+      "media": 0.10625,
+      "conteo": 932
+    },
+    {
+      "media": 0.11875,
+      "conteo": 921
+    },
+    {
+      "media": 0.13125,
+      "conteo": 944
+    },
+    {
+      "media": 0.14375,
+      "conteo": 897
+    },
+    {
+      "media": 0.15625,
+      "conteo": 882
+    },
+    {
+      "media": 0.16875,
+      "conteo": 894
+    },
+    {
+      "media": 0.18125,
+      "conteo": 848
+    },
+    {
+      "media": 0.19375,
+      "conteo": 835
+    },
+    {
+      "media": 0.20625,
+      "conteo": 843
+    },
+    {
+      "media": 0.21875,
+      "conteo": 791
+    },
+    {
+      "media": 0.23125,
+      "conteo": 774
+    },
+    {
+      "media": 0.24375,
+      "conteo": 784
+    },
+    {
+      "media": 0.25625,
+      "conteo": 734
+    },
+    {
+      "media": 0.26875,
+      "conteo": 711
+    },
+    {
+      "media": 0.28125,
+      "conteo": 715
+    },
+    {
+      "media": 0.29375,
+      "conteo": 666
+    },
+    {
+      "media": 0.30625,
+      "conteo": 650
+    },
+    {
+      "media": 0.31875,
+      "conteo": 649
+    },
+    {
+      "media": 0.33125,
+      "conteo": 595
+    },
+    {
+      "media": 0.34375,
+      "conteo": 579
+    },
+    {
+      "media": 0.35625,
+      "conteo": 581
+    },
+    {
+      "media": 0.36875,
+      "conteo": 532
+    },
+    {
+      "media": 0.38125,
+      "conteo": 510
+    },
+    {
+      "media": 0.39375,
+      "conteo": 508
+    },
+    {
+      "media": 0.40625,
+      "conteo": 464
+    },
+    {
+      "media": 0.41875,
+      "conteo": 448
+    },
+    {
+      "media": 0.43125,
+      "conteo": 443
+    },
+    {
+      "media": 0.44375,
+      "conteo": 396
+    },
+    {
+      "media": 0.45625,
+      "conteo": 382
+    },
+    {
+      "media": 0.46875,
+      "conteo": 382
+    },
+    {
+      "media": 0.48125,
+      "conteo": 338
+    },
+    {
+      "media": 0.49375,
+      "conteo": 321
+    },
+    {
+      "media": 0.50625,
+      "conteo": 320
+    },
+    {
+      "media": 0.51875,
+      "conteo": 283
+    },
+    {
+      "media": 0.53125,
+      "conteo": 271
+    },
+    {
+      "media": 0.54375,
+      "conteo": 266
+    },
+    {
+      "media": 0.55625,
+      "conteo": 228
+    },
+    {
+      "media": 0.56875,
+      "conteo": 222
+    },
+    {
+      "media": 0.58125,
+      "conteo": 220
+    },
+    {
+      "media": 0.59375,
+      "conteo": 187
+    },
+    {
+      "media": 0.60625,
+      "conteo": 175
+    },
+    {
+      "media": 0.61875,
+      "conteo": 176
+    },
+    {
+      "media": 0.63125,
+      "conteo": 150
+    },
+    {
+      "media": 0.64375,
+      "conteo": 140
+    },
+    {
+      "media": 0.65625,
+      "conteo": 140
+    },
+    {
+      "media": 0.66875,
+      "conteo": 112
+    },
+    {
+      "media": 0.68125,
+      "conteo": 110
+    },
+    {
+      "media": 0.69375,
+      "conteo": 111
+    },
+    {
+      "media": 0.70625,
+      "conteo": 86
+    },
+    {
+      "media": 0.71875,
+      "conteo": 82
+    },
+    {
+      "media": 0.73125,
+      "conteo": 83
+    },
+    {
+      "media": 0.74375,
+      "conteo": 67
+    },
+    {
+      "media": 0.75625,
+      "conteo": 61
+    },
+    {
+      "media": 0.76875,
+      "conteo": 62
+    },
+    {
+      "media": 0.78125,
+      "conteo": 47
+    },
+    {
+      "media": 0.79375,
+      "conteo": 45
+    },
+    {
+      "media": 0.80625,
+      "conteo": 48
+    },
+    {
+      "media": 0.81875,
+      "conteo": 32
+    },
+    {
+      "media": 0.83125,
+      "conteo": 31
+    },
+    {
+      "media": 0.84375,
+      "conteo": 34
+    },
+    {
+      "media": 0.85625,
+      "conteo": 24
+    },
+    {
+      "media": 0.86875,
+      "conteo": 21
+    },
+    {
+      "media": 0.88125,
+      "conteo": 23
+    },
+    {
+      "media": 0.89375,
+      "conteo": 15
+    },
+    {
+      "media": 0.90625,
+      "conteo": 15
+    },
+    {
+      "media": 0.91875,
+      "conteo": 17
+    },
+    {
+      "media": 0.93125,
+      "conteo": 9
+    },
+    {
+      "media": 0.94375,
+      "conteo": 9
+    },
+    {
+      "media": 0.95625,
+      "conteo": 11
+    },
+    {
+      "media": 0.96875,
+      "conteo": 7
+    },
+    {
+      "media": 0.98125,
+      "conteo": 5
+    },
+    {
+      "media": 0.99375,
+      "conteo": 7
+    },
+    {
+      "media": 1.00625,
+      "conteo": 4
+    },
+    {
+      "media": 1.01875,
+      "conteo": 3
+    },
+    {
+      "media": 1.03125,
+      "conteo": 5
+    },
+    {
+      "media": 1.04375,
+      "conteo": 1
+    },
+    {
+      "media": 1.05625,
+      "conteo": 2
+    },
+    {
+      "media": 1.06875,
+      "conteo": 3
+    },
+    {
+      "media": 1.08125,
+      "conteo": 1
+    },
+    {
+      "media": 1.09375,
+      "conteo": 1
+    },
+    {
+      "media": 1.10625,
+      "conteo": 1
+    },
+    {
+      "media": 1.11875,
+      "conteo": 1
+    },
+    {
+      "media": 1.14375,
+      "conteo": 1
+    },
+    {
+      "media": 1.18125,
+      "conteo": 1
+    }
+  ],
+  "figura": "sign_flip_null_distribution.png",
+  "verificacion_con_subtareas_previas": {
+    "T2": {
+      "disponible": true,
+      "n_T2": 16,
+      "n_coincide": true,
+      "diferencias_coinciden": true
+    },
+    "T4": {
+      "disponible": true,
+      "p_value_t_T4": 0.20134214922904944,
+      "p_value_coincide": true,
+      "media_T4": 0.4187499999999997,
+      "media_coincide": true
+    }
+  },
+  "notas_para_informe": {
+    "p_value_condicional_a_H0": "el p-value es la probabilidad, calculada bajo la hipótesis nula, de observar un estadístico al menos tan extremo como el obtenido; NO es la probabilidad de que H0 sea cierta",
+    "diseno": "16 tiendas medidas con ambos modelos (diseño pareado); la unidad de análisis es la diferencia por tienda y la estadística es la media de las diferencias",
+    "supuestos_prueba_t": "bajo H0 (media de las diferencias = 0) el estadístico t sigue una distribución t de Student con n-1 = 15 gl; esto supone diferencias i.i.d. con distribución aproximadamente normal (o n grande)",
+    "supuestos_cambios_de_signo": "bajo H0 cada diferencia proviene de una distribución simétrica alrededor de 0, de modo que asignar signos +1/-1 a las diferencias observadas genera datos igualmente plausibles; no requiere normalidad, pero sí simetría de cada diferencia",
+    "no_intercambiables": "la t y los cambios de signo no son procedimientos intercambiables: usan referencias nulas distintas (t de Student continua vs. distribución exacta discreta de las 65536 medias) y supuestos distintos (normalidad vs. simetría); que sus p-values numéricos sean cercanos es una coincidencia empírica de estos datos, no una equivalencia de procedimientos"
+  },
+  "salidas": {
+    "resultados_json": "resultados.json",
+    "figura_nula": "sign_flip_null_distribution.png",
+    "tabla_csv": "output/store_differences.csv",
+    "figura_diferencias": "output/store_differences.png"
+  }
+}

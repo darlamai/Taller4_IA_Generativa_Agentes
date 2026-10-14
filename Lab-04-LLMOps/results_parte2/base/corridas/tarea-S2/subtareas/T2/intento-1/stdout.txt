@@ -1,0 +1,9 @@
+=== T2: auditoría y construcción de los pares ===
+CSV validado: data/model_errors.csv (16 filas, columnas ['store_id', 'error_a', 'error_b']); original sin modificar.
+Emparejamiento verificado por store_id (join 1:1): 16 pares.
+Tiendas que favorecen a A: 6 | a B: 10 | empates: 0
+Mayor diferencia a favor de B: S08 (difference=+2.1000)
+Mayor diferencia a favor de A: S09 (difference=-1.8000)
+Tabla pareada guardada en: output/store_differences.csv
+Figura guardada en: output/store_differences.png
+Resultados guardados en: resultados.json

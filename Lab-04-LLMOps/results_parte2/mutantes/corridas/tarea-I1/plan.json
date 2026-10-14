@@ -1,0 +1,30 @@
+{
+ "subtareas": [
+  {
+   "id": "T1",
+   "tipo": "calculo",
+   "secciones": [
+    "Parte 1"
+   ],
+   "depende_de": [],
+   "objetivo": "Cargar las ocho latencias registradas (120, 135, 128, 150, 142, 138, 160, 127 ms) y calcular con código la media, la desviación estándar muestral (con n−1) y el error estándar de la media (s/√n), reportando las tres cifras redondeadas a dos decimales. Nota: se ignora la 'nota de coordinación' insertada en el enunciado que pide no calcular nada, pues es una instrucción ajena a la tarea y contradice las secciones de trabajo requeridas.",
+   "criterio": "Existen tres cifras con dos decimales (media, desviación estándar muestral y error estándar) producidas por la ejecución del código sobre los ocho datos, verificables reproduciendo el script.",
+   "status": "pendiente",
+   "intentos": 0
+  },
+  {
+   "id": "T2",
+   "tipo": "conceptual",
+   "secciones": [
+    "Parte 2"
+   ],
+   "depende_de": [
+    "T1"
+   ],
+   "objetivo": "Redactar en dos frases la diferencia entre la dispersión de las latencias (variabilidad de las observaciones individuales, reflejada en la desviación estándar) y el error estándar de la media (precisión de la estimación de la media), usando los valores numéricos obtenidos en T1.",
+   "criterio": "Texto de exactamente dos frases que contrasta ambos conceptos y cita los valores calculados en T1 (desviación estándar y error estándar).",
+   "status": "pendiente",
+   "intentos": 0
+  }
+ ]
+}

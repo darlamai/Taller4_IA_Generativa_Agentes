@@ -1,0 +1,2 @@
+['1.9147', '1.9147', '1.9147', '0.9146817686']
+['El 0.0000 de t5 con T = 0.5 es un efecto del redondeo a cuatro decimales: el valor sin redondear es 3.7367e-05. Se observa que al bajar la temperatura la masa se concentra en t0 (0.3583 → 0.5516 → 0.8231) y la entropía cae (2.2888 → 1.7998 → 1.9147); al subirla, la distribución se aplana y la entropía sube.']

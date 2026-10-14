@@ -1,0 +1,28 @@
+id,etiqueta,tarea,motivo
+A10,falla,A,por construcción: se estropeó a propósito
+A03,falla,A,por construcción: se estropeó a propósito
+A05,falla,A,por construcción: se estropeó a propósito
+A04,aprueba,A,por construcción: intacta y aprobada por el verificador en la base
+A06,aprueba,A,por construcción: intacta y aprobada por el verificador en la base
+A07,aprueba,A,por construcción: intacta y aprobada por el verificador en la base
+B04,aprueba,B,por construcción: intacta y aprobada por el verificador en la base
+B05,aprueba,B,por construcción: intacta y aprobada por el verificador en la base
+B06,aprueba,B,por construcción: intacta y aprobada por el verificador en la base
+B07,aprueba,B,por construcción: intacta y aprobada por el verificador en la base
+I104,falla,I1,por construcción: se estropeó a propósito
+I105,falla,I1,por construcción: se estropeó a propósito
+I106,falla,I1,por construcción: se estropeó a propósito
+I107,falla,I1,por construcción: se estropeó a propósito
+I108,falla,I1,por construcción: se estropeó a propósito
+I102,aprueba,I1,por construcción: intacta y aprobada por el verificador en la base
+I103,aprueba,I1,por construcción: intacta y aprobada por el verificador en la base
+P106,falla,P1,por construcción: se estropeó a propósito
+P102,aprueba,P1,por construcción: intacta y aprobada por el verificador en la base
+P104,aprueba,P1,por construcción: intacta y aprobada por el verificador en la base
+P105,aprueba,P1,por construcción: intacta y aprobada por el verificador en la base
+S103,falla,S1,por construcción: se estropeó a propósito
+S105,falla,S1,por construcción: se estropeó a propósito
+S104,aprueba,S1,por construcción: intacta y aprobada por el verificador en la base
+S106,aprueba,S1,por construcción: intacta y aprobada por el verificador en la base
+S107,aprueba,S1,por construcción: intacta y aprobada por el verificador en la base
+S108,aprueba,S1,por construcción: intacta y aprobada por el verificador en la base

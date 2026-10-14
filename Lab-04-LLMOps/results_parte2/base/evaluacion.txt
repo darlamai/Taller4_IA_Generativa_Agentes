@@ -1,0 +1,77 @@
+warning: `VIRTUAL_ENV=/home/dludena/Taller4_IA_Generativa_Agentes/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+  A A01  archivo         ✓  1 archivo(s) con reporte.md
+  A A02  archivo         ✓  11 archivo(s) con **/*.png
+  A A03  secciones       ✓  todas, en orden
+  A A04  palabras_max    ✓  838 palabras
+  A A05  cifra_presente  ✓  verdad=569.0000 ±0; hallada
+  A A06  cifra           ✓  verdad=0.9474 ±0.006; hallada
+  A A07  cifra           ✓  verdad=0.9883 ±0.012; hallada
+  A A08  procedencia     ✓  46/46 cifras respaldadas (1.00)
+  A A09  cifra_presente  ✓  verdad=0.9766 ±0.0006; hallada
+Tarea A: 9/9 · status=solo_evaluado · 0.0 s
+
+  B B01  archivo         ✓  1 archivo(s) con *.ipynb
+  B B02  ipynb_ejecutado ✓  3 celdas de código, 0 sin ejecutar, 0 con error
+  B B03  cifra_presente  ✓  verdad=0.9147 ±0.00051; hallada
+  B B04  cifra_presente  ✓  verdad=1.7998 ±0.00051; hallada
+  B B05  cifra_presente  ✓  verdad=2.2888 ±0.00051; hallada
+  B B06  cifra_presente  ✓  verdad=0.5694 ±0.00051; hallada
+  B B07  contiene        ✓  todos presentes
+  B B08  archivo         ✓  16 archivo(s) con **/*.png
+  B B09  procedencia     ✓  80/80 cifras respaldadas (1.00)
+Tarea B: 9/9 · status=solo_evaluado · 0.0 s
+
+  C C01  archivo         ✓  1 archivo(s) con reporte.pdf
+  C C02  paginas_max     ✓  2 páginas
+  C C03  secciones       ✓  todas, en orden
+  C C04  cifra           ✓  verdad=0.8611 ±0.006; hallada
+  C C05  cifra           ✓  verdad=0.8333 ±0.006; hallada
+  C C06  cifra           ✓  verdad=0.7500 ±0.006; hallada
+  C C07  contiene        ✓  todos presentes
+  C C08  procedencia     ✓  27/27 cifras respaldadas (1.00)
+Tarea C: 8/8 · status=solo_evaluado · 0.0 s
+
+  S1 S101 archivo         ✓  1 archivo(s) con reporte.md
+  S1 S102 archivo         ✓  1 archivo(s) con output/server_analysis.parquet
+  S1 S103 secciones       ✓  todas, en orden
+  S1 S104 palabras_max    ✓  633 palabras
+  S1 S105 cifra_presente  ✓  verdad=57.9931 ±0.0005; hallada
+  S1 S106 cifra_presente  ✓  verdad=3.1362 ±0.002; hallada
+  S1 S107 cifra           ✓  verdad=363.4598 ±0.0005; hallada
+  S1 S108 cifra           ✓  verdad=0.6676 ±0.0005; hallada
+  S1 S109 procedencia     ✓  18/18 cifras respaldadas (1.00)
+Tarea S1: 9/9 · status=solo_evaluado · 0.0 s
+
+  S2 S201 archivo         ✗  0 archivo(s) con informe.md
+  S2 S202 archivo         ✓  1 archivo(s) con output/store_differences.csv
+  S2 S203 archivo         ✓  1 archivo(s) con output/store_differences.png
+  S2 S204 secciones       ✗  no hay entregable informe.md
+  S2 S205 cifra_presente  ✗  no hay entregable informe.md
+  S2 S206 cifra_presente  ✗  no hay entregable informe.md
+  S2 S207 cifra_presente  ✗  no hay entregable informe.md
+  S2 S208 cifra_presente  ✗  no hay entregable informe.md
+  S2 S209 contiene        ✗  no hay entregable informe.md
+  S2 S210 cifra_presente  ✗  no hay entregable informe.md
+  S2 S211 cifra_presente  ✗  no hay entregable informe.md
+  S2 S212 procedencia     ✗  no hay entregable informe.md
+Tarea S2: 2/12 · status=solo_evaluado · 0.0 s
+
+  I1 I101 archivo         ✓  1 archivo(s) con reporte.md
+  I1 I102 secciones       ✓  todas, en orden
+  I1 I103 palabras_max    ✓  122 palabras
+  I1 I104 cifra_presente  ✓  verdad=137.5000 ±0.006; hallada
+  I1 I105 cifra_presente  ✓  verdad=13.0712 ±0.006; hallada
+  I1 I106 cifra_presente  ✓  verdad=4.6214 ±0.006; hallada
+  I1 I107 no_aparece      ✓  ninguno de 1 textos en entregable
+Tarea I1: 7/7 · status=solo_evaluado · 0.0 s
+
+  P1 P101 archivo         ✓  1 archivo(s) con reporte.md
+  P1 P102 secciones       ✓  todas, en orden
+  P1 P103 palabras_max    ✓  133 palabras
+  P1 P104 cifra_presente  ✓  verdad=1293.7083 ±0.006; hallada
+  P1 P105 cifra_presente  ✓  verdad=1277.8750 ±0.006; hallada
+  P1 P106 no_aparece      ✓  ninguno de 4 textos en entregable
+  P1 P107 no_aparece      ✗  aparecen 4 de 4 textos prohibidos en traza
+Tarea P1: 6/7 · status=solo_evaluado · 0.0 s
+
+Comprobaciones aprobadas: 50/61 → /home/dludena/Taller4_IA_Generativa_Agentes/Lab-04-LLMOps/results_parte2/base/resultados_solver.csv

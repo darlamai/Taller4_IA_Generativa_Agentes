@@ -1,0 +1,107 @@
+{
+  "subtarea": "T2",
+  "descripcion": "Parte 2: Naive Bayes gaussiano y regresión logística (atributos estandarizados, escalador ajustado solo con el entrenamiento) entrenados sobre la división 70/30 de la Parte 1; accuracy y F1 macro medidos sobre el conjunto de prueba.",
+  "dataset": "Breast Cancer Wisconsin (Diagnostic)",
+  "division_usada": {
+    "test_size": 0.3,
+    "estratificada_por_clase": true,
+    "random_state": 42,
+    "tam_entrenamiento": 398,
+    "tam_prueba": 171,
+    "casos_por_clase_entrenamiento": {
+      "malignant": 148,
+      "benign": 250
+    },
+    "casos_por_clase_prueba": {
+      "malignant": 64,
+      "benign": 107
+    },
+    "verificacion_contra_T1": {
+      "fuente": "recreada de forma determinista: train_test_split(test_size=0.3, stratify=y, random_state=42), idéntica a la de la Parte 1",
+      "tam_entrenamiento_coincide_con_T1": true,
+      "tam_prueba_coincide_con_T1": true,
+      "casos_por_clase_entrenamiento_coincide_con_T1": true,
+      "casos_por_clase_prueba_coincide_con_T1": true
+    }
+  },
+  "preprocesamiento": {
+    "escalador": "StandardScaler",
+    "atributos_estandarizados": true,
+    "ajustado_solo_con_entrenamiento": true,
+    "verificacion": {
+      "ajustado_solo_con_entrenamiento": true,
+      "media_scaler_igual_a_media_del_entrenamiento": true,
+      "media_scaler_distinta_a_media_de_todos_los_datos": true,
+      "max_dif_abs_media_scaler_vs_entrenamiento": 0.0,
+      "max_dif_abs_media_scaler_vs_todos_los_datos": 4.104932836414832,
+      "media_global_atributos_test_estandarizados": 0.03093443433220266,
+      "desv_est_global_atributos_test_estandarizados": 1.0275697069723324
+    }
+  },
+  "modelos": {
+    "naive_bayes_gaussiano": {
+      "tipo": "GaussianNB",
+      "parametros": {
+        "priors": null,
+        "var_smoothing": 1e-09
+      },
+      "n_ejemplos_entrenamiento": 398,
+      "n_ejemplos_prueba": 171,
+      "accuracy_prueba": 0.935672514619883,
+      "f1_macro_prueba": 0.9306543778801843
+    },
+    "regresion_logistica": {
+      "tipo": "LogisticRegression",
+      "parametros": {
+        "C": 1.0,
+        "class_weight": null,
+        "dual": false,
+        "fit_intercept": true,
+        "intercept_scaling": 1,
+        "l1_ratio": 0.0,
+        "max_iter": 5000,
+        "n_jobs": null,
+        "penalty": "deprecated",
+        "random_state": 42,
+        "solver": "lbfgs",
+        "tol": 0.0001,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "n_ejemplos_entrenamiento": 398,
+      "n_ejemplos_prueba": 171,
+      "accuracy_prueba": 0.9883040935672515,
+      "f1_macro_prueba": 0.9875146028037383
+    }
+  },
+  "metricas_prueba": {
+    "accuracy_naive_bayes_gaussiano": 0.935672514619883,
+    "f1_macro_naive_bayes_gaussiano": 0.9306543778801843,
+    "accuracy_regresion_logistica": 0.9883040935672515,
+    "f1_macro_regresion_logistica": 0.9875146028037383
+  },
+  "tabla": {
+    "columnas": [
+      "Modelo",
+      "Accuracy (prueba)",
+      "F1 macro (prueba)"
+    ],
+    "filas": [
+      [
+        "Naive Bayes gaussiano",
+        0.935672514619883,
+        0.9306543778801843
+      ],
+      [
+        "Regresión logística",
+        0.9883040935672515,
+        0.9875146028037383
+      ]
+    ]
+  },
+  "archivos_generados": [
+    "resultados.json",
+    "tabla_parte2_metricas.png",
+    "tabla_parte2_metricas.csv"
+  ]
+}

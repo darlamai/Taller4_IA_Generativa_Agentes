@@ -1,0 +1,89 @@
+Objetivo
+Comparar un recuperador léxico (TF-IDF + similitud coseno) con uno de semántica latente (LSA mediante
+TruncatedSVD con k=4) sobre un corpus de 10 documentos y 6 consultas con un documento relevante cada
+una. Se miden Hit@1, Hit@3 y MRR, se identiﬁcan las consultas donde cada método falla (relevante fuera del
+top 3) y se discute qué aportaría un recuperador denso.
+Método
+•  Corpus y juicios: 10 documentos (d01–d10); consultas q1–q6 con relevante único (q1→d04, q2→d03,
+q3→d08, q4→d05, q5→d09, q6→d02).
+•  TF-IDF: TfidfVectorizer de scikit-learn con parámetros por defecto, ajustado sobre los 10 documentos
+(las consultas solo se transforman); vocabulario de 105 términos; ranking por similitud coseno;
+desempate por orden estable de id.
+•  LSA: TruncatedSVD(n_components=4, random_state=0) sobre la misma matriz TF-IDF; consultas
+proyectadas con transform; coseno en el espacio latente de 4 dimensiones.
+•  Métricas: Hit@1, Hit@3 y MRR sobre las 6 consultas; fallo = relevante en posición ≥ 4. Análisis de
+términos compartidos con la tokenización por defecto del vectorizador.
+Resultados
+Tabla comparativa (Parte 2):
+Método
+Hit@1
+Hit@3
+MRR
+TF-IDF + coseno
+0.8333
+0.8333 0.8611
+LSA (k=4) + coseno 0.6667
+0.8333 0.75
+Δ (LSA − TF-IDF)
+-0.1667 0.0
+-0.1111
+Rank del relevante por consulta (Parte 3):
+Consulta Relevante Rank TF-IDF
+Rank
+LSA
+Fallo top-3
+q1
+d04
+1
+1
+ninguno
+q2
+d03
+1
+1
+ninguno
+q3
+d08
+1
+1
+ninguno
+q4
+d05
+1
+3
+ninguno
+q5
+d09
+6
+6
+ambos
+q6
+d02
+1
+1
+ninguno
+
+LSA retiene 0.3953 de la varianza total (componentes: 0.0342, 0.1266, 0.1160, 0.1186).
+Análisis del único fallo (q5, ambos métodos): la consulta comparte con d09 un solo término, "la" (df=6,
+idf=1.4520); siete palabras de la consulta están fuera de vocabulario (determinista, elegir, hace, más, palabra,
+sea, siguiente). En TF-IDF, d09 queda 6.º con similitud 0.0790, superado por d03 (0.3107), que comparte los
+términos raros "al" y "modelo" (idf 2.7047 cada uno), por d06 ("el", "qué") y por d04 ("la", "que"). En LSA, d09
+también queda 6.º (0.4999), tras d04 (0.9427) y d01 (0.8066). Además, LSA degrada q4: d05 cae del puesto 1 al
+3 (0.8984), superado por d01 (0.9220) y d10 (0.9206).
+Discusión
+TF-IDF coloca el relevante en el puesto 1 en 5 de 6 consultas: las coincidencias léxicas exactas con términos
+raros (alto idf) bastan en un corpus técnico mínimo. LSA no mejora: con k=4 solo conserva 0.3953 de la varianza
+y la proyección suaviza las diferencias entre documentos muy cortos, lo que cuesta 0.1667 de Hit@1 (q4 pasa
+de rank 1 a 3) y 0.1111 de MRR, sin cambio en Hit@3 (0.8333). Con solo 10 documentos no hay co-ocurrencias
+suﬁcientes para que las dimensiones latentes capturen sinonimia útil.
+El fallo compartido en q5 es un hueco léxico: las palabras distintivas de la consulta no aparecen en ningún
+documento y el único término compartido con d09 es "la", con df=6 y escaso poder discriminativo. Los
+documentos que superan a d09 lo hacen por términos raros pero semánticamente irrelevantes ("al", "modelo" en
+d03), un problema de matching literal que ni el idf ni la proyección latente corrigen.
+Un recuperador denso entrenado resolvería q5 mejor porque sus embeddings, aprendidos sobre corpus
+grandes, codiﬁcan paráfrasis: "más determinista al elegir la siguiente palabra" quedaría cerca de "valores bajos
+concentran la probabilidad" aunque no compartan ningún término, exactamente el hueco que TF-IDF y LSA
+(ajustado solo sobre 10 documentos) no pueden cerrar. Sus costos frente a TF-IDF son: requerir un modelo
+preentrenado (memoria y cómputo), mayor latencia por consulta, reindexar todo el corpus con el encoder, perder
+interpretabilidad (no hay pesos por término que inspeccionar) y asumir riesgo de desajuste de dominio; TF-IDF
+sigue siendo ligero, determinista y explicable.

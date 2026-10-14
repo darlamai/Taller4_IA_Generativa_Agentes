@@ -1,0 +1,6 @@
+tarea,status,model,aprobadas,total,subtareas,intentos_codigo,tokens_entrada,tokens_salida,duracion_s,error,traza_id
+A,solo_evaluado,,7,9,0,0,0,0,0.0,,
+B,solo_evaluado,,9,9,0,0,0,0,0.0,,
+S1,solo_evaluado,,7,9,0,0,0,0,0.0,,
+I1,solo_evaluado,,3,7,0,0,0,0,0.0,,
+P1,solo_evaluado,,5,7,0,0,0,0,0.0,,

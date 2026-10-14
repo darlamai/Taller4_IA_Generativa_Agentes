@@ -1,0 +1,137 @@
+{
+  "subtarea": "T3 - Comprobacion empirica: 10,000 muestras de la distribucion renormalizada de la Parte 2 (top-p p=0.9, T=1)",
+  "n_muestras": 10000,
+  "semilla": 0,
+  "generador": "numpy.random.default_rng(0)",
+  "fuente_distribucion_renormalizada": "entrada/T2/resultados.json (distribucion renormalizada top-p p=0.9 sobre T=1)",
+  "tokens": [
+    "t0",
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5"
+  ],
+  "probabilidades_teoricas_sin_redondear": [
+    0.5693760554907313,
+    0.2094617451103304,
+    0.12704497044632815,
+    0.09411722895261025,
+    0.0,
+    0.0
+  ],
+  "conteos_observados": [
+    5682,
+    2093,
+    1296,
+    929,
+    0,
+    0
+  ],
+  "frecuencias_observadas_sin_redondear": [
+    0.5682,
+    0.2093,
+    0.1296,
+    0.0929,
+    0.0,
+    0.0
+  ],
+  "tabla_comparativa_sin_redondear": [
+    {
+      "token": "t0",
+      "probabilidad_teorica": 0.5693760554907313,
+      "conteo_observado": 5682,
+      "frecuencia_observada": 0.5682,
+      "diferencia_obs_menos_teo": -0.0011760554907312981
+    },
+    {
+      "token": "t1",
+      "probabilidad_teorica": 0.2094617451103304,
+      "conteo_observado": 2093,
+      "frecuencia_observada": 0.2093,
+      "diferencia_obs_menos_teo": -0.00016174511033037464
+    },
+    {
+      "token": "t2",
+      "probabilidad_teorica": 0.12704497044632815,
+      "conteo_observado": 1296,
+      "frecuencia_observada": 0.1296,
+      "diferencia_obs_menos_teo": 0.002555029553671845
+    },
+    {
+      "token": "t3",
+      "probabilidad_teorica": 0.09411722895261025,
+      "conteo_observado": 929,
+      "frecuencia_observada": 0.0929,
+      "diferencia_obs_menos_teo": -0.0012172289526102553
+    },
+    {
+      "token": "t4",
+      "probabilidad_teorica": 0.0,
+      "conteo_observado": 0,
+      "frecuencia_observada": 0.0,
+      "diferencia_obs_menos_teo": 0.0
+    },
+    {
+      "token": "t5",
+      "probabilidad_teorica": 0.0,
+      "conteo_observado": 0,
+      "frecuencia_observada": 0.0,
+      "diferencia_obs_menos_teo": 0.0
+    }
+  ],
+  "tabla_comparativa_4_decimales": [
+    {
+      "token": "t0",
+      "probabilidad_teorica": "0.5694",
+      "conteo_observado": 5682,
+      "frecuencia_observada": "0.5682",
+      "diferencia": "-0.0012"
+    },
+    {
+      "token": "t1",
+      "probabilidad_teorica": "0.2095",
+      "conteo_observado": 2093,
+      "frecuencia_observada": "0.2093",
+      "diferencia": "-0.0002"
+    },
+    {
+      "token": "t2",
+      "probabilidad_teorica": "0.1270",
+      "conteo_observado": 1296,
+      "frecuencia_observada": "0.1296",
+      "diferencia": "+0.0026"
+    },
+    {
+      "token": "t3",
+      "probabilidad_teorica": "0.0941",
+      "conteo_observado": 929,
+      "frecuencia_observada": "0.0929",
+      "diferencia": "-0.0012"
+    },
+    {
+      "token": "t4",
+      "probabilidad_teorica": "0.0000",
+      "conteo_observado": 0,
+      "frecuencia_observada": "0.0000",
+      "diferencia": "+0.0000"
+    },
+    {
+      "token": "t5",
+      "probabilidad_teorica": "0.0000",
+      "conteo_observado": 0,
+      "frecuencia_observada": "0.0000",
+      "diferencia": "+0.0000"
+    }
+  ],
+  "divergencia_KL_bits": 5.006898814879229e-05,
+  "divergencia_KL_nats": 3.470517796882468e-05,
+  "convencion_KL": "KL(emp||teo) = sum_i p_emp(i)*log2(p_emp(i)/p_teo(i)); terminos con p_emp(i)=0 aportan 0",
+  "suma_frecuencias_observadas": 1.0,
+  "figura": "parte3_frecuencias_vs_teoricas.png",
+  "verificacion": {
+    "frecuencias_suman_1": true,
+    "kl_pequena_cercana_a_cero": true,
+    "tokens_sin_soporte_sin_muestras": true
+  }
+}

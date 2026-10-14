@@ -1,0 +1,12 @@
+=== T3 — Curva de aprendizaje (Parte 3) ===
+División de la Parte 1: 398 entrenamiento / 171 prueba (estratificada, random_state=42)
+ % ent.  n_ent    acc NB    acc LR
+     5%     19    0.9415    0.9357
+    10%     39    0.9474    0.9357
+    25%     99    0.9357    0.9474
+    50%    199    0.9240    0.9766
+   100%    398    0.9357    0.9883
+Figura guardada en: curva_aprendizaje_parte3.png
+Resultados escritos en: resultados.json
+División idéntica a la de T1: True
+Punto 100% coincide con T2 -> NB: True, LR: True

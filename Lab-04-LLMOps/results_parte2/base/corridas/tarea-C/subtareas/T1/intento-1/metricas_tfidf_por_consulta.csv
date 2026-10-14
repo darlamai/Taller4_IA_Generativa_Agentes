@@ -1,0 +1,7 @@
+consulta,relevante,rank_relevante,hit@1,hit@3,reciprocal_rank
+q1,d04,1,1,1,1.0
+q2,d03,1,1,1,1.0
+q3,d08,1,1,1,1.0
+q4,d05,1,1,1,1.0
+q5,d09,6,0,0,0.16666666666666666
+q6,d02,1,1,1,1.0

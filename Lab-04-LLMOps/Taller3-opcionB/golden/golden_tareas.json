@@ -345,7 +345,8 @@
       "Tarea 5"
      ],
      "en_orden": true,
-     "_por_que": "«Una sección por tarea, en orden (Tarea 1 a Tarea 5)», tal como lo dice el enunciado. LIMITACIÓN conocida del evaluador del kit: acepta un encabezado de hasta 40 caracteres más que el nombre buscado, así que «## Tarea 2 - Normalizar y calcular un indicador de carga» (51) no se reconoce y «## Tarea 2» sí. Con los títulos completos pasa lo contrario: ninguna lista acepta las dos formas (exploratoria y completo-r1, 2026-10-05). Un fallo aquí se revisa a mano antes de atribuirlo al solver.",
+      "largo_extra": 80,
+     "_por_que": "«Una sección por tarea, en orden (Tarea 1 a Tarea 5)», tal como lo dice el enunciado. LIMITACIÓN conocida del evaluador del kit: acepta un encabezado de hasta 40 caracteres más que el nombre buscado, así que «## Tarea 2 - Normalizar y calcular un indicador de carga» (51) no se reconoce y «## Tarea 2» sí. Con los títulos completos pasa lo contrario: ninguna lista acepta las dos formas (exploratoria y completo-r1, 2026-10-05). Un fallo aquí se revisa a mano antes de atribuirlo al solver. CORREGIDO en 2.b: el verificador falló un reporte que sí tenía las cinco secciones (la persona y el juez lo aprobaron); se agregó el campo «largo_extra» (por omisión 40) y S103 usa 80, que acepta los títulos completos.",
      "juez": "¿Tiene una sección por tarea, de la Tarea 1 a la Tarea 5, en orden?"
     },
     {
