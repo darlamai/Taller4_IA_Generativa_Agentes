@@ -1,0 +1,25 @@
+warning: `VIRTUAL_ENV=/home/dludena/Taller4_IA_Generativa_Agentes/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+# Antes / después de la mejora
+
+Mismo golden set, mismo evaluador y mismo modelo. Comprobaciones del verificador comparadas: **61**.
+
+| | aprobadas | de 61 |
+|---|---|---|
+| base | 50 | 0.820 |
+| mejora | 60 | 0.984 |
+| diferencia | +10 | +0.164 |
+
+Cambiaron **10** comprobaciones: 10 mejoraron, 0 empeoraron.
+
+**Ruido del modelo:** entre la corrida base y la de control (misma versión, mismo golden) cambiaron **10 de 61** comprobaciones (16.4%) sin tocar nada: eso es azar del muestreo.
+
+## Qué cambió, caso por caso
+
+| tarea | id | tipo | base | mejora | cambio | ¿cambia también sin mejora? | ¿era el objetivo? |
+|---|---|---|---|---|---|---|---|
+| S2 | S201 | archivo | 0 | 1 | mejoró | sí | sí |
+| S2 | S204 | secciones | 0 | 1 | mejoró | sí | sí |
+| S2 | S205 | cifra_presente | 0 | 1 | mejoró | sí | sí |
+| S2 | S206 | cifra_presente | 0 | 1 | mejoró | sí | sí |
+
+→ /home/dludena/Taller4_IA_Generativa_Agentes/Lab-04-LLMOps/results_parte2/antes_despues.md y antes_despues.csv

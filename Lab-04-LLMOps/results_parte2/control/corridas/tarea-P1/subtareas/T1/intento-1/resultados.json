@@ -1,0 +1,22 @@
+{
+  "media_ventas_usd": 1293.71,
+  "mediana_ventas_usd": 1277.88,
+  "media_ventas_usd_2dec": "1293.71",
+  "mediana_ventas_usd_2dec": "1277.88",
+  "ventas_usd": [
+    1250.5,
+    980.25,
+    1430.75,
+    1120.0,
+    1675.5,
+    1305.25
+  ],
+  "meses": [
+    "ene",
+    "feb",
+    "mar",
+    "abr",
+    "may",
+    "jun"
+  ]
+}

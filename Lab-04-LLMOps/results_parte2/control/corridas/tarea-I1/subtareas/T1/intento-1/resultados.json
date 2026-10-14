@@ -1,0 +1,19 @@
+{
+  "n_datos": 8,
+  "datos_latencia_ms": [
+    120.0,
+    135.0,
+    128.0,
+    150.0,
+    142.0,
+    138.0,
+    160.0,
+    127.0
+  ],
+  "media_ms": 137.5,
+  "desviacion_estandar_muestral_ms": 13.07,
+  "error_estandar_media_ms": 4.62,
+  "media_ms_sin_redondear": 137.5,
+  "desviacion_estandar_muestral_ms_sin_redondear": 13.071233409940428,
+  "error_estandar_media_ms_sin_redondear": 4.621378891320518
+}

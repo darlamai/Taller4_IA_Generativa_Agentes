@@ -1,0 +1,190 @@
+{
+  "subtarea": "T6",
+  "descripcion": "Bootstrap pareado: remuestreo de tiendas completas del vector de diferencias (error_a - error_b) e intervalo percentil del 95 %",
+  "semilla": 20260829,
+  "bootstrap_resamples": 10000,
+  "n_tiendas": 16,
+  "generador": "np.random.default_rng(20260829)",
+  "unidad_de_remuestreo": "tienda completa: un solo sorteo de índices con reemplazo se aplica al vector de diferencias; error_a y error_b nunca se remuestrean por separado",
+  "metodo_bootstrap": "Para cada remuestra b se muestrean n índices de tienda con reemplazo (rng.integers) y se calcula media_b = mean(d[índices]); el IC percentil del 95 % son los percentiles 2.5 y 97.5 de las 10000 medias",
+  "diferencias_por_tienda": [
+    {
+      "store_id": "S01",
+      "error_a": 12.4,
+      "error_b": 10.6,
+      "difference": 1.8000000000000007,
+      "favors": "B"
+    },
+    {
+      "store_id": "S02",
+      "error_a": 9.8,
+      "error_b": 9.1,
+      "difference": 0.7000000000000011,
+      "favors": "B"
+    },
+    {
+      "store_id": "S03",
+      "error_a": 15.1,
+      "error_b": 13.9,
+      "difference": 1.1999999999999993,
+      "favors": "B"
+    },
+    {
+      "store_id": "S04",
+      "error_a": 11.0,
+      "error_b": 12.4,
+      "difference": -1.4000000000000004,
+      "favors": "A"
+    },
+    {
+      "store_id": "S05",
+      "error_a": 8.7,
+      "error_b": 7.2,
+      "difference": 1.4999999999999991,
+      "favors": "B"
+    },
+    {
+      "store_id": "S06",
+      "error_a": 13.6,
+      "error_b": 13.9,
+      "difference": -0.3000000000000007,
+      "favors": "A"
+    },
+    {
+      "store_id": "S07",
+      "error_a": 10.2,
+      "error_b": 9.3,
+      "difference": 0.8999999999999986,
+      "favors": "B"
+    },
+    {
+      "store_id": "S08",
+      "error_a": 14.9,
+      "error_b": 12.8,
+      "difference": 2.0999999999999996,
+      "favors": "B"
+    },
+    {
+      "store_id": "S09",
+      "error_a": 7.5,
+      "error_b": 9.3,
+      "difference": -1.8000000000000007,
+      "favors": "A"
+    },
+    {
+      "store_id": "S10",
+      "error_a": 16.0,
+      "error_b": 15.0,
+      "difference": 1.0,
+      "favors": "B"
+    },
+    {
+      "store_id": "S11",
+      "error_a": 9.3,
+      "error_b": 9.8,
+      "difference": -0.5,
+      "favors": "A"
+    },
+    {
+      "store_id": "S12",
+      "error_a": 12.8,
+      "error_b": 11.1,
+      "difference": 1.700000000000001,
+      "favors": "B"
+    },
+    {
+      "store_id": "S13",
+      "error_a": 11.7,
+      "error_b": 12.9,
+      "difference": -1.200000000000001,
+      "favors": "A"
+    },
+    {
+      "store_id": "S14",
+      "error_a": 8.9,
+      "error_b": 8.3,
+      "difference": 0.5999999999999996,
+      "favors": "B"
+    },
+    {
+      "store_id": "S15",
+      "error_a": 13.2,
+      "error_b": 11.9,
+      "difference": 1.299999999999999,
+      "favors": "B"
+    },
+    {
+      "store_id": "S16",
+      "error_a": 10.6,
+      "error_b": 11.5,
+      "difference": -0.9000000000000004,
+      "favors": "A"
+    }
+  ],
+  "estadistico_observado": {
+    "media_diferencia": 0.4187499999999997,
+    "mediana_diferencia": 0.7999999999999998,
+    "desviacion_estandar_muestral": 1.2533787669070087,
+    "error_estandar_media": 0.31334469172675217
+  },
+  "bootstrap": {
+    "metodo": "percentil",
+    "nivel": 0.95,
+    "percentiles_usados": [
+      2.5,
+      97.5
+    ],
+    "ic95_inferior": -0.19375000000000037,
+    "ic95_superior": 1.0062499999999996,
+    "ic95_percentil": [
+      -0.19375000000000037,
+      1.0062499999999996
+    ],
+    "media_bootstrap": 0.4209674999999998,
+    "error_estandar_bootstrap": 0.3055936070813965,
+    "sesgo_bootstrap": 0.0022175000000000944,
+    "ic_contiene_cero": true,
+    "remuestras_con_media_positiva": 9119,
+    "proporcion_remuestras_con_media_positiva": 0.9119
+  },
+  "verificacion_reproducibilidad": {
+    "protocolo": "cada corrida recrea el generador desde cero con np.random.default_rng(20260829) y repite las 10000 remuestras",
+    "corrida_1_ic95": [
+      -0.19375000000000037,
+      1.0062499999999996
+    ],
+    "corrida_2_ic95": [
+      -0.19375000000000037,
+      1.0062499999999996
+    ],
+    "limites_identicos": true,
+    "remuestras_identicas": true,
+    "intervalos_identicos": true,
+    "diagnostico_semilla_distinta": {
+      "solo_informativo": true,
+      "semilla_alternativa": 20260830,
+      "ic95": [
+        -0.18750000000000033,
+        0.9874999999999998
+      ],
+      "difiere_de_la_semilla_original": true
+    }
+  },
+  "verificacion_con_T2": {
+    "archivo_consultado": "entrada/T2/resultados.json",
+    "disponible": true,
+    "coincide": true,
+    "nota": "Compara el vector de diferencias recalculado con la tabla pareada de T2.",
+    "n_pares_t2": 16
+  },
+  "interpretacion": "IC95% percentil de la media de diferencias (error_a - error_b): [-0.1938, 1.0062], con 10000 remuestras de tiendas completas y semilla 20260829. El intervalo contiene 0: como análisis de sensibilidad aproximado, la diferencia media entre modelos no es robusta al nivel del 95 %.",
+  "explicaciones": {
+    "por_que_se_remuestrean_tiendas_completas": "El diseño es pareado: la unidad muestral es la tienda y el estadístico de interés es la media de las diferencias intra-tienda (error_a - error_b). Remuestrear tiendas completas (un solo sorteo de índices con reemplazo aplicado al vector de diferencias) mantiene unido cada par (error_a, error_b) y preserva la correlación intra-tienda. Si se remuestrearan error_a y error_b por separado se romperían los pares: errores de modelos y tiendas distintos se combinarían entre sí, se estimaría la diferencia entre medias de muestras independientes en lugar de la media de diferencias pareadas, y la variabilidad quedaría mal estimada (al ignorar la correlación positiva intra-par, en general inflada).",
+    "que_no_puede_corregir_el_bootstrap": "El bootstrap remuestrea los datos observados y hereda sus limitaciones: no corrige una muestra no representativa o no aleatoria (p. ej., si las 16 tiendas no son una muestra aleatoria de la población de interés), ni sesgos de medición o de emparejamiento, ni dependencias entre tiendas (clústeres, correlación espacial o temporal) que la unidad de remuestreo no refleje, ni la ausencia de valores de cola no observados en muestras pequeñas. Tampoco repara una especificación errónea del estadístico: solo aproxima su distribución muestral condicionando a la muestra disponible."
+  },
+  "archivos_generados": {
+    "resultados": "resultados.json",
+    "tabla_csv": "output/store_differences.csv",
+    "figura_png": "output/store_differences.png"
+  }
+}

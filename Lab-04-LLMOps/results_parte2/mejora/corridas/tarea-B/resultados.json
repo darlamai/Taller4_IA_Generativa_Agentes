@@ -1,0 +1,56 @@
+{
+  "subtarea": "T3",
+  "descripcion": "Comprobación empírica: 10 000 muestras de la distribución renormalizada de T2 (top-p p=0.9 sobre la distribución de T=1) con numpy.random.default_rng(0); comparación de frecuencias observadas vs. probabilidades teóricas en un diagrama de barras y divergencia KL (en bits) de la empírica respecto de la teórica.",
+  "n_muestras": 10000,
+  "semilla": 0,
+  "generador": "numpy.random.default_rng(0)",
+  "fuente_distribucion": "entrada/T2/resultados.json",
+  "tokens": [
+    "t0",
+    "t1",
+    "t2",
+    "t3"
+  ],
+  "probabilidades_teoricas": {
+    "t0": 0.5693760554907313,
+    "t1": 0.2094617451103304,
+    "t2": 0.12704497044632815,
+    "t3": 0.09411722895261025
+  },
+  "probabilidades_teoricas_lista": [
+    0.5693760554907313,
+    0.2094617451103304,
+    0.12704497044632815,
+    0.09411722895261025
+  ],
+  "suma_probabilidades_teoricas": 1.0,
+  "frecuencias_observadas_conteo": {
+    "t0": 5682,
+    "t1": 2093,
+    "t2": 1296,
+    "t3": 929
+  },
+  "frecuencias_observadas_conteo_lista": [
+    5682,
+    2093,
+    1296,
+    929
+  ],
+  "frecuencias_observadas_relativas": {
+    "t0": 0.5682,
+    "t1": 0.2093,
+    "t2": 0.1296,
+    "t3": 0.0929
+  },
+  "frecuencias_observadas_relativas_lista": [
+    0.5682,
+    0.2093,
+    0.1296,
+    0.0929
+  ],
+  "suma_conteos_observados": 10000,
+  "suma_frecuencias_relativas": 1.0,
+  "divergencia_KL_bits": 5.006898814879229e-05,
+  "divergencia_KL_nats": 3.470517796882469e-05,
+  "figura": "T3_frecuencias_vs_teoricas.png"
+}

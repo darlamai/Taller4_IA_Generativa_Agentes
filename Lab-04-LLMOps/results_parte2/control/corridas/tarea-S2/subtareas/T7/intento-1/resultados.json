@@ -1,0 +1,270 @@
+{
+  "subtarea": "T7_pipeline_completo",
+  "descripcion": "Pipeline completo: carga validada de data/model_errors.csv, tabla pareada (output/store_differences.csv), figura (output/store_differences.png), resumen descriptivo, prueba t pareada, referencia exacta por cambios de signo y bootstrap pareado",
+  "config": {
+    "csv_origen": "data/model_errors.csv",
+    "seed_bootstrap": 20260829,
+    "bootstrap_resamples": 10000,
+    "nivel_confianza": 0.95,
+    "unidad_remuestreo_bootstrap": "tiendas completas (vector de diferencias)"
+  },
+  "validaciones": {
+    "columnas_exactas_store_id_error_a_error_b": true,
+    "store_id_unico": true,
+    "store_id_no_nulo": true,
+    "errores_numericos_finitos_no_negativos": true,
+    "n_tiendas": 16
+  },
+  "n_tiendas": 16,
+  "ids_tiendas": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14",
+    "S15",
+    "S16"
+  ],
+  "columnas_csv_salida": [
+    "store_id",
+    "error_a",
+    "error_b",
+    "difference",
+    "favors"
+  ],
+  "tabla_pareada": [
+    {
+      "store_id": "S01",
+      "error_a": 12.4,
+      "error_b": 10.6,
+      "difference": 1.8000000000000007,
+      "favors": "B"
+    },
+    {
+      "store_id": "S02",
+      "error_a": 9.8,
+      "error_b": 9.1,
+      "difference": 0.7000000000000011,
+      "favors": "B"
+    },
+    {
+      "store_id": "S03",
+      "error_a": 15.1,
+      "error_b": 13.9,
+      "difference": 1.1999999999999993,
+      "favors": "B"
+    },
+    {
+      "store_id": "S04",
+      "error_a": 11.0,
+      "error_b": 12.4,
+      "difference": -1.4000000000000004,
+      "favors": "A"
+    },
+    {
+      "store_id": "S05",
+      "error_a": 8.7,
+      "error_b": 7.2,
+      "difference": 1.4999999999999991,
+      "favors": "B"
+    },
+    {
+      "store_id": "S06",
+      "error_a": 13.6,
+      "error_b": 13.9,
+      "difference": -0.3000000000000007,
+      "favors": "A"
+    },
+    {
+      "store_id": "S07",
+      "error_a": 10.2,
+      "error_b": 9.3,
+      "difference": 0.8999999999999986,
+      "favors": "B"
+    },
+    {
+      "store_id": "S08",
+      "error_a": 14.9,
+      "error_b": 12.8,
+      "difference": 2.0999999999999996,
+      "favors": "B"
+    },
+    {
+      "store_id": "S09",
+      "error_a": 7.5,
+      "error_b": 9.3,
+      "difference": -1.8000000000000007,
+      "favors": "A"
+    },
+    {
+      "store_id": "S10",
+      "error_a": 16.0,
+      "error_b": 15.0,
+      "difference": 1.0,
+      "favors": "B"
+    },
+    {
+      "store_id": "S11",
+      "error_a": 9.3,
+      "error_b": 9.8,
+      "difference": -0.5,
+      "favors": "A"
+    },
+    {
+      "store_id": "S12",
+      "error_a": 12.8,
+      "error_b": 11.1,
+      "difference": 1.700000000000001,
+      "favors": "B"
+    },
+    {
+      "store_id": "S13",
+      "error_a": 11.7,
+      "error_b": 12.9,
+      "difference": -1.200000000000001,
+      "favors": "A"
+    },
+    {
+      "store_id": "S14",
+      "error_a": 8.9,
+      "error_b": 8.3,
+      "difference": 0.5999999999999996,
+      "favors": "B"
+    },
+    {
+      "store_id": "S15",
+      "error_a": 13.2,
+      "error_b": 11.9,
+      "difference": 1.299999999999999,
+      "favors": "B"
+    },
+    {
+      "store_id": "S16",
+      "error_a": 10.6,
+      "error_b": 11.5,
+      "difference": -0.9000000000000004,
+      "favors": "A"
+    }
+  ],
+  "resumen_descriptivo": {
+    "n": 16,
+    "media": 0.4187499999999997,
+    "desviacion_muestral_ddof1": 1.2533787669070087,
+    "error_estandar": 0.31334469172675217,
+    "mediana": 0.7999999999999998,
+    "minimo": -1.8000000000000007,
+    "maximo": 2.0999999999999996,
+    "suma": 6.699999999999995,
+    "n_favors_A": 6,
+    "n_favors_B": 10,
+    "n_favors_tie": 0
+  },
+  "prueba_t": {
+    "metodo": "scipy.stats.ttest_1samp bilateral sobre difference (equivalente a la t pareada)",
+    "hipotesis_nula": "media de las diferencias = 0",
+    "alternative": "two-sided",
+    "estadistico_t": 1.3363877259014323,
+    "grados_libertad": 15,
+    "p_value_bilateral": 0.20134214922904944,
+    "t_critico_bilateral_95": 2.131449545559776,
+    "ic95_limite_inferior": -0.24912840078455428,
+    "ic95_limite_superior": 1.0866284007845537,
+    "ic95_incluye_cero": true,
+    "ic_coincide_con_stats_t_interval": true,
+    "decision_nivel_0_05": "no se rechaza H0"
+  },
+  "prueba_cambios_signo": {
+    "metodo": "enumeración exacta de las 2^16 configuraciones de signos del vector de diferencias (aritmética entera escalada x10); criterio |media nula| >= |media observada|",
+    "total_configuraciones": 65536,
+    "conteo_extremas": 13372,
+    "p_value_exacto": 0.20404052734375,
+    "fraccion": [
+      13372,
+      65536
+    ],
+    "media_observada": 0.4187499999999997,
+    "suma_observada_escala_x10": 67,
+    "desviacion_maxima_escala_entera": 1.4210854715202004e-14
+  },
+  "bootstrap": {
+    "seed": 20260829,
+    "n_remuestras": 10000,
+    "metodo": "percentil; remuestreo de tiendas completas mediante el vector de diferencias (rng.integers(0, n, size=(B, n)))",
+    "percentiles_usados": [
+      2.500000000000002,
+      97.5
+    ],
+    "media_bootstrap": 0.4209674999999998,
+    "error_estandar_bootstrap": 0.3055936070813965,
+    "sesgo_bootstrap": 0.0022175000000000944,
+    "ic95_percentil_limite_inferior": -0.19375000000000037,
+    "ic95_percentil_limite_superior": 1.0062499999999996,
+    "ic95_incluye_cero": true,
+    "proporcion_remuestras_media_mayor_que_cero": 0.9119,
+    "reproducibilidad_misma_semilla": true
+  },
+  "coherencia_con_subtareas_previas": {
+    "T4_prueba_t": {
+      "t_statistic_previa": 1.3363877259014323,
+      "p_value_previo": 0.20134214922904944,
+      "coincide_estadistico": true,
+      "coincide_p_value": true
+    },
+    "T5_cambios_de_signo": {
+      "p_value_previo": 0.20404052734375,
+      "conteo_previo": 13372,
+      "coincide_p_value": true,
+      "coincide_conteo": true
+    },
+    "T6_bootstrap": {
+      "ic_previo": [
+        -0.19375000000000037,
+        1.0062499999999996
+      ],
+      "ic_local": [
+        -0.19375000000000037,
+        1.0062499999999996
+      ],
+      "coincide": true
+    }
+  },
+  "interpretacion": {
+    "resumen": "La diferencia media es 0.4187 unidades por tienda a favor de B (sd muestral 1.2534, error estándar 0.3133).",
+    "prueba_t": "t(15) = 1.3364, p bilateral = 0.2013 > 0.05 e IC t 95 % [-0.2491, 1.0866] que contiene 0: no se rechaza H0.",
+    "significado_p_value": "Probabilidad, bajo H0 (media de las diferencias = 0), de observar un estadístico al menos tan extremo como el obtenido; no es la probabilidad de que H0 sea cierta.",
+    "supuestos": "La prueba t supone diferencias independientes entre tiendas y aproximadamente normales; la referencia exacta por cambios de signo solo exige simetría de cada diferencia respecto de 0 bajo H0; el bootstrap percentil es aproximado y no exige normalidad.",
+    "cambios_de_signo": "13372 de 65536 configuraciones de signo tienen media al menos tan extrema como la observada (p exacto = 0.204041); coherente con la prueba t pero no intercambiable con ella.",
+    "bootstrap_sensibilidad": "IC percentil 95 % [-0.1938, 1.0062] con semilla 20260829 y 10000 remuestras de tiendas completas; confirma la lectura del intervalo t.",
+    "limitaciones": [
+      "n = 16 tiendas: muestra pequeña y baja potencia para detectar efectos pequeños",
+      "supuestos de normalidad/simetría de las diferencias no verificables formalmente con este tamaño",
+      "datos observacionales de un solo archivo, sin control de covariables ni replicación en el tiempo"
+    ],
+    "no_concluible": "No puede concluirse que B reduzca el error respecto de A en la población de tiendas, ni que un eventual efecto sea causal o generalizable a otras tiendas o periodos."
+  },
+  "informe_ejecutivo_p18": "Unidad y procedencia: 16 tiendas (S01-S16) de data/model_errors.csv, emparejadas por store_id. Métrica: difference = error_a - error_b (unidades de error); positivo favorece a B. Efecto: media 0.419 unidades (IC t 95 %: -0.249 a 1.087). Procedimiento: prueba t pareada bilateral (t(15)=1.336, p=0.201), referencia exacta por cambios de signo (13372/65536 configuraciones, p=0.204) y bootstrap percentil de sensibilidad (10000 remuestras de tiendas completas, semilla 20260829; IC 95 %: -0.194 a 1.006). Incertidumbre: ambos intervalos contienen 0, no se rechaza H0 al nivel 0.05. Limitaciones: muestra pequeña (n=16, baja potencia) y supuestos de normalidad/simetría de las diferencias no verificables; datos observacionales sin control de covariables. No puede concluirse que B reduzca el error respecto de A, ni que un eventual efecto sea causal o generalizable a otras tiendas o periodos.",
+  "salidas": {
+    "csv_tabla_pareada": "output/store_differences.csv",
+    "figura": "output/store_differences.png",
+    "resultados_json": "resultados.json"
+  },
+  "archivos_generados": {
+    "output/store_differences.csv": {
+      "existe": true,
+      "bytes": 565
+    },
+    "output/store_differences.png": {
+      "existe": true,
+      "bytes": 70406
+    }
+  }
+}

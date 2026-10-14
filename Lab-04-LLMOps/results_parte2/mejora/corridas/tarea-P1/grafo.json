@@ -1,0 +1,166 @@
+{
+ "directed": true,
+ "multigraph": false,
+ "graph": {},
+ "nodes": [
+  {
+   "titulo": "Tarea P1 — Ventas mensuales de un cliente",
+   "trabajo": false,
+   "id": "Preámbulo",
+   "capa": "enunciado"
+  },
+  {
+   "titulo": "Parte 1 — Resumen",
+   "trabajo": true,
+   "id": "Parte 1",
+   "capa": "enunciado"
+  },
+  {
+   "titulo": "Parte 2 — Lectura",
+   "trabajo": true,
+   "id": "Parte 2",
+   "capa": "enunciado"
+  },
+  {
+   "titulo": "El reporte",
+   "trabajo": false,
+   "id": "El reporte",
+   "capa": "enunciado"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "mediana",
+   "tipo": "metrica",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 1"
+   ],
+   "comunidad": 6,
+   "id": "ent:mediana"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "media",
+   "tipo": "metrica",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 1"
+   ],
+   "comunidad": 6,
+   "id": "ent:media"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "dos decimales",
+   "tipo": "restriccion",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 1"
+   ],
+   "comunidad": 6,
+   "id": "ent:dos decimal"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "execute_sql",
+   "tipo": "metodo",
+   "origen": [
+    "notas"
+   ],
+   "citas": [
+    "s3-agentes § 2. Tool Use / Function Calling … 2.3 Model Context Protocol (MCP)",
+    "s3-agentes § 3. Patrones de Agentes … 3.3 Reflexion"
+   ],
+   "comunidad": 6,
+   "id": "ent:execute sql"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "ventas",
+   "tipo": "dataset",
+   "origen": [
+    "notas",
+    "enunciado"
+   ],
+   "citas": [
+    "s3-agentes § 3. Patrones de Agentes … 3.3 Reflexion",
+    "Parte 1"
+   ],
+   "comunidad": 6,
+   "id": "ent:venta"
+  }
+ ],
+ "aristas": [
+  {
+   "tipo": "menciona",
+   "source": "Parte 1",
+   "target": "ent:venta"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 1",
+   "target": "ent:media"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 1",
+   "target": "ent:mediana"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 1",
+   "target": "ent:dos decimal"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "calcular_sobre",
+   "citas": [
+    "Parte 1"
+   ],
+   "source": "ent:mediana",
+   "target": "ent:venta"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "reportarse_con",
+   "citas": [
+    "Parte 1"
+   ],
+   "source": "ent:mediana",
+   "target": "ent:dos decimal"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "calcular_sobre",
+   "citas": [
+    "Parte 1"
+   ],
+   "source": "ent:media",
+   "target": "ent:venta"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "reportarse_con",
+   "citas": [
+    "Parte 1"
+   ],
+   "source": "ent:media",
+   "target": "ent:dos decimal"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "consulta",
+   "citas": [
+    "s3-agentes § 3. Patrones de Agentes … 3.3 Reflexion"
+   ],
+   "source": "ent:execute sql",
+   "target": "ent:venta"
+  }
+ ]
+}

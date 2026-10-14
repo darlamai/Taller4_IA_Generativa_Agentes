@@ -1,0 +1,61 @@
+{
+ "subtareas": [
+  {
+   "id": "T1",
+   "tipo": "calculo",
+   "secciones": [
+    "Parte 1"
+   ],
+   "depende_de": [],
+   "objetivo": "Construir el corpus de 10 documentos y las 6 consultas con sus juicios de relevancia tal como aparecen en el enunciado; vectorizar con TfidfVectorizer de scikit-learn (parámetros por defecto), calcular similitud coseno entre cada consulta y los documentos, ordenar los 10 documentos por consulta y evaluar Hit@1, Hit@3 y MRR sobre las 6 consultas.",
+   "criterio": "Ranking completo de los 10 documentos para cada una de las 6 consultas con TF-IDF+coseno y las tres métricas agregadas (Hit@1, Hit@3, MRR) reportadas como números resultado de la ejecución.",
+   "status": "pendiente",
+   "intentos": 0
+  },
+  {
+   "id": "T2",
+   "tipo": "calculo",
+   "secciones": [
+    "Parte 2"
+   ],
+   "depende_de": [
+    "T1"
+   ],
+   "objetivo": "Usando la misma matriz TF-IDF, las mismas consultas y los mismos juicios de la Parte 1, proyectar a 4 dimensiones con TruncatedSVD(n_components=4, random_state=0) (LSA), repetir el ranking por similitud coseno en el espacio latente y construir una sola tabla comparativa con Hit@1, Hit@3 y MRR de los dos métodos (TF-IDF y LSA).",
+   "criterio": "Rankings por consulta con LSA y una tabla única con las tres métricas de los dos métodos, generada por código a partir de la ejecución.",
+   "status": "pendiente",
+   "intentos": 0
+  },
+  {
+   "id": "T3",
+   "tipo": "calculo",
+   "secciones": [
+    "Parte 3"
+   ],
+   "depende_de": [
+    "T1",
+    "T2"
+   ],
+   "objetivo": "A partir de los rankings de T1 y T2, identificar por método en qué consultas falla cada uno (documento relevante fuera del top 3) y calcular, para cada consulta, qué términos comparten la consulta con su documento relevante (intersección de tokens tras la tokenización de TF-IDF), para disponer de la evidencia que explica los fallos.",
+   "criterio": "Lista de consultas falladas por cada método (relevante fuera del top 3) y tabla de términos compartidos consulta-documento relevante por consulta, todos obtenidos por ejecución.",
+   "status": "pendiente",
+   "intentos": 0
+  },
+  {
+   "id": "T4",
+   "tipo": "conceptual",
+   "secciones": [
+    "Parte 4"
+   ],
+   "depende_de": [
+    "T1",
+    "T2",
+    "T3"
+   ],
+   "objetivo": "Redactar la respuesta conceptual: por qué un recuperador denso (embeddings de un modelo entrenado) resolvería q5 mejor que TF-IDF y que LSA según los resultados obtenidos (p. ej. ausencia de solapamiento léxico entre q5 y d09), y qué costo tiene frente a TF-IDF (modelo, cómputo de indexación e inferencia, latencia, memoria).",
+   "criterio": "Texto que argumenta usando las cifras y el análisis de solapamiento de T1-T3 (sin inventar números) y que menciona explícitamente el caso q5 y al menos un costo concreto del recuperador denso frente a TF-IDF.",
+   "status": "pendiente",
+   "intentos": 0
+  }
+ ]
+}

@@ -1,0 +1,9 @@
+T3 — Comprobación empírica
+Muestras: 10000 con numpy.random.default_rng(0)
+Tokens (soporte top-p): ['t0', 't1', 't2', 't3']
+Probabilidades teóricas : [0.5694 0.2095 0.127  0.0941]
+Frecuencias observadas  : [0.5682 0.2093 0.1296 0.0929]
+Conteos observados      : [5682, 2093, 1296, 929] (suma = 10000)
+Divergencia KL(empírica || teórica) = 0.000050 bits
+Figura guardada: T3_frecuencias_vs_teoricas.png
+Resultados escritos en resultados.json

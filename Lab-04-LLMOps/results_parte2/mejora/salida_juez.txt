@@ -1,0 +1,25 @@
+warning: `VIRTUAL_ENV=/home/dludena/Taller4_IA_Generativa_Agentes/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+Juez: gemma3:27b (temperature=0) · 2026-10-14 12:00
+  tarea A: 8 preguntas · 134.02 s · 2815+436 tokens
+  tarea B: 7 preguntas · 131.58 s · 4014+326 tokens
+  tarea C: 8 preguntas · 101.07 s · 2651+359 tokens
+  tarea S1: 7 preguntas · 122.59 s · 3310+372 tokens
+  tarea S2: 10 preguntas · 211.51 s · 6458+441 tokens
+  tarea I1: 7 preguntas · 55.83 s · 1016+251 tokens
+  tarea P1: 5 preguntas · 64.1 s · 843+352 tokens
+# Juez del solver — variante `mejora`
+
+Juez: `gemma3:27b` (Ollama de la H200, `temperature=0`) · 2026-10-14 12:00 · 52 comprobaciones juzgadas (sin entregable, no juzgadas: ninguna)
+
+## Calibración 1 — juez contra el verificador automático
+
+- comprobaciones con las dos calificaciones: **47** (de tipo `juez`, sin verificador: 5)
+- acuerdo: **0.957** · kappa de Cohen: **0.000**
+
+| | juez: aprueba | juez: rechaza |
+|---|---|---|
+| **verificador: aprueba** | 45 | 2 (falso negativo del juez) |
+| **verificador: rechaza** | 0 (falso positivo del juez) | 0 |
+
+
+→ /home/dludena/Taller4_IA_Generativa_Agentes/Lab-04-LLMOps/results_parte2/mejora/juez_solver.csv, juez_solver.md, traza_juez.jsonl

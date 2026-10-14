@@ -1,0 +1,291 @@
+{
+ "directed": true,
+ "multigraph": false,
+ "graph": {},
+ "nodes": [
+  {
+   "titulo": "Tarea I1 — Resumen estadístico de latencias de un servicio",
+   "trabajo": false,
+   "id": "Preámbulo",
+   "capa": "enunciado"
+  },
+  {
+   "titulo": "Parte 1 — Resumen",
+   "trabajo": true,
+   "id": "Parte 1",
+   "capa": "enunciado"
+  },
+  {
+   "titulo": "Parte 2 — Interpretación",
+   "trabajo": true,
+   "id": "Parte 2",
+   "capa": "enunciado"
+  },
+  {
+   "titulo": "El reporte",
+   "trabajo": false,
+   "id": "El reporte",
+   "capa": "enunciado"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "dispersión de las latencias",
+   "tipo": "concepto",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 2"
+   ],
+   "comunidad": 10,
+   "id": "ent:dispersion de las latencia"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "error estándar de la media",
+   "tipo": "metrica",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 1",
+    "Parte 2"
+   ],
+   "comunidad": 10,
+   "id": "ent:error estandar de la media"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "media",
+   "tipo": "metrica",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 1",
+    "Parte 2"
+   ],
+   "comunidad": 10,
+   "id": "ent:media"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "n − 1",
+   "tipo": "restriccion",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 1"
+   ],
+   "comunidad": 10,
+   "id": "ent:n 1"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "desviación estándar muestral",
+   "tipo": "metrica",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 1"
+   ],
+   "comunidad": 10,
+   "id": "ent:desviacion estandar muestral"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "dos decimales",
+   "tipo": "restriccion",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 1"
+   ],
+   "comunidad": 10,
+   "id": "ent:dos decimal"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "latencia",
+   "tipo": "metrica",
+   "origen": [
+    "notas",
+    "enunciado"
+   ],
+   "citas": [
+    "s2-rag-y-vector-search § 3. Vector Databases … 3.4 Stack recomendado",
+    "Parte 1",
+    "Parte 2"
+   ],
+   "comunidad": 10,
+   "id": "ent:latencia"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "IVF",
+   "tipo": "metodo",
+   "origen": [
+    "notas"
+   ],
+   "citas": [
+    "s2-rag-y-vector-search § 3. Vector Databases … 3.4 Stack recomendado"
+   ],
+   "comunidad": 10,
+   "id": "ent:ivf"
+  }
+ ],
+ "aristas": [
+  {
+   "tipo": "menciona",
+   "source": "Parte 1",
+   "target": "ent:latencia"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 1",
+   "target": "ent:media"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 1",
+   "target": "ent:desviacion estandar muestral"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 1",
+   "target": "ent:error estandar de la media"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 1",
+   "target": "ent:n 1"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 1",
+   "target": "ent:dos decimal"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 2",
+   "target": "ent:dispersion de las latencia"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 2",
+   "target": "ent:error estandar de la media"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 2",
+   "target": "ent:latencia"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 2",
+   "target": "ent:media"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "describe_variabilidad_de",
+   "citas": [
+    "Parte 2"
+   ],
+   "source": "ent:dispersion de las latencia",
+   "target": "ent:latencia"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "se_diferencia_de",
+   "citas": [
+    "Parte 2"
+   ],
+   "source": "ent:dispersion de las latencia",
+   "target": "ent:error estandar de la media"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "calcula_sobre",
+   "citas": [
+    "Parte 1"
+   ],
+   "source": "ent:error estandar de la media",
+   "target": "ent:latencia"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "reporta_con",
+   "citas": [
+    "Parte 1"
+   ],
+   "source": "ent:error estandar de la media",
+   "target": "ent:dos decimal"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "se_calcula_de",
+   "citas": [
+    "Parte 2"
+   ],
+   "source": "ent:error estandar de la media",
+   "target": "ent:media"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "calcula_sobre",
+   "citas": [
+    "Parte 1"
+   ],
+   "source": "ent:media",
+   "target": "ent:latencia"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "reporta_con",
+   "citas": [
+    "Parte 1"
+   ],
+   "source": "ent:media",
+   "target": "ent:dos decimal"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "calcula_sobre",
+   "citas": [
+    "Parte 1"
+   ],
+   "source": "ent:desviacion estandar muestral",
+   "target": "ent:latencia"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "usa",
+   "citas": [
+    "Parte 1"
+   ],
+   "source": "ent:desviacion estandar muestral",
+   "target": "ent:n 1"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "reporta_con",
+   "citas": [
+    "Parte 1"
+   ],
+   "source": "ent:desviacion estandar muestral",
+   "target": "ent:dos decimal"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "incrementa",
+   "citas": [
+    "s2-rag-y-vector-search § 3. Vector Databases … 3.4 Stack recomendado"
+   ],
+   "source": "ent:ivf",
+   "target": "ent:latencia"
+  }
+ ]
+}

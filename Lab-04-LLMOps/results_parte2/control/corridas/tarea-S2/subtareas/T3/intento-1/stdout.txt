@@ -1,0 +1,8 @@
+T3 completada.
+Figura: output/store_differences.png (82491 bytes, 16 tiendas)
+CSV:    output/store_differences.csv
+Origen de la tabla: tabla pareada reutilizada de entrada/T2/resultados.json
+Favorece a A: 6 tiendas | Favorece a B: 10 tiendas | Empates: 0
+Mayor diferencia a favor de B: S08 (+2.1000)
+Mayor diferencia a favor de A: S09 (-1.8000)
+Media de difference: +0.418750

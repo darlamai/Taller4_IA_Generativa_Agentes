@@ -1,0 +1,9 @@
+T5 - Prueba exacta por cambios de signo
+  n diferencias            : 16
+  media observada          : 0.418750
+  total de configuraciones : 65536
+  configuraciones extremas : 13372
+  p-value exacto           : 0.204041  (13372/65536)
+  comparación              : p_t(bilateral) = 0.201342 vs p_signflip = 0.204041
+  coincide con media de T4 : True
+  archivos generados       : resultados.json, output/store_differences.csv, output/store_differences.png, t5_signflip_null_distribution.png

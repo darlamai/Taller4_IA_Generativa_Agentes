@@ -1,0 +1,40 @@
+{
+  "subtarea": "T1",
+  "dataset": "Breast Cancer Wisconsin (Diagnostic)",
+  "total_ejemplos": 569,
+  "numero_atributos": 30,
+  "clases": [
+    "malignant",
+    "benign"
+  ],
+  "conteo_por_clase": {
+    "malignant": 212,
+    "benign": 357
+  },
+  "conteo_por_clase_numerico": {
+    "0": 212,
+    "1": 357
+  },
+  "division": {
+    "test_size": 0.3,
+    "train_size": 0.7,
+    "estratificada": true,
+    "random_state": 42
+  },
+  "n_train": 398,
+  "n_test": 171,
+  "conteo_train_por_clase": {
+    "malignant": 148,
+    "benign": 250
+  },
+  "conteo_test_por_clase": {
+    "malignant": 64,
+    "benign": 107
+  },
+  "archivos_generados": {
+    "train": "train.csv",
+    "test": "test.csv",
+    "meta": "meta.json",
+    "figura": "t1_distribucion_clases.png"
+  }
+}

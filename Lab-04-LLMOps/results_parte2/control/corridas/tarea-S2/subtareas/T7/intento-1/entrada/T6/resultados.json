@@ -1,0 +1,117 @@
+{
+  "subtarea": "T6_bootstrap_pareado",
+  "seed": 20260829,
+  "bootstrap_resamples": 10000,
+  "config": {
+    "seed": 20260829,
+    "bootstrap_resamples": 10000,
+    "nivel_confianza": 0.95,
+    "metodo": "bootstrap percentil (análisis de sensibilidad aproximado)",
+    "generador": "np.random.default_rng",
+    "unidad_remuestreo": "tiendas completas: se remuestrea el vector de diferencias (difference = error_a - error_b, una por tienda); error_a y error_b NUNCA se remuestrean por separado",
+    "n_tiendas": 16,
+    "interpolacion_percentil": "linear (por defecto de numpy)"
+  },
+  "datos": {
+    "csv_origen": "data/model_errors.csv",
+    "ids_tiendas": [
+      "S01",
+      "S02",
+      "S03",
+      "S04",
+      "S05",
+      "S06",
+      "S07",
+      "S08",
+      "S09",
+      "S10",
+      "S11",
+      "S12",
+      "S13",
+      "S14",
+      "S15",
+      "S16"
+    ],
+    "difference": [
+      1.8000000000000007,
+      0.7000000000000011,
+      1.1999999999999993,
+      -1.4000000000000004,
+      1.4999999999999991,
+      -0.3000000000000007,
+      0.8999999999999986,
+      2.0999999999999996,
+      -1.8000000000000007,
+      1.0,
+      -0.5,
+      1.700000000000001,
+      -1.200000000000001,
+      0.5999999999999996,
+      1.299999999999999,
+      -0.9000000000000004
+    ],
+    "media_difference_observada": 0.4187499999999997,
+    "mediana_difference_observada": 0.7999999999999998,
+    "desv_est_difference_ddof1": 1.2533787669070087,
+    "error_estandar_analitico_media": 0.31334469172675217
+  },
+  "bootstrap": {
+    "n_remuestras": 10000,
+    "media_bootstrap": 0.4209674999999998,
+    "error_estandar_bootstrap": 0.3055936070813965,
+    "sesgo_bootstrap": 0.0022175000000000944,
+    "ic_percentil_95": {
+      "percentiles": [
+        2.500000000000002,
+        97.5
+      ],
+      "limite_inferior": -0.19375000000000037,
+      "limite_superior": 1.0062499999999996
+    },
+    "ic95_limite_inferior": -0.19375000000000037,
+    "ic95_limite_superior": 1.0062499999999996,
+    "incluye_cero": true,
+    "proporcion_remuestras_media_mayor_que_cero": 0.9119,
+    "verificacion_remuestreo_tiendas_completas": {
+      "descripcion": "Con los mismos índices de tiendas remuestreadas, media(error_a)-media(error_b) coincide con la media del vector de diferencias remuestreado; confirma que la unidad de remuestreo es la tienda completa (pareado preservado).",
+      "coincide": true,
+      "max_diferencia_absoluta": 3.941291737419306e-15
+    }
+  },
+  "reproducibilidad": {
+    "semilla": 20260829,
+    "n_ejecuciones_misma_semilla": 2,
+    "ejecucion_1": {
+      "limite_inferior": -0.19375000000000037,
+      "limite_superior": 1.0062499999999996
+    },
+    "ejecucion_2": {
+      "limite_inferior": -0.19375000000000037,
+      "limite_superior": 1.0062499999999996
+    },
+    "mismo_intervalo": true,
+    "medias_bootstrap_identicas_bit_a_bit": true,
+    "indices_remuestreo_identicos": true,
+    "verificado": true,
+    "control_semilla_distinta": {
+      "seed": 20260830,
+      "ic95": [
+        -0.18750000000000033,
+        0.9874999999999998
+      ],
+      "indices_difieren_de_ejecucion_1": true
+    }
+  },
+  "coherencia_con_T2": {
+    "comparado_con": "entrada/T2/resultados.json",
+    "ids_iguales": true,
+    "diferencias_coinciden": true
+  },
+  "notas": "El intervalo percentil del 95 % se reporta como análisis de sensibilidad aproximado. Remuestrear tiendas completas (y no los errores de A y B por separado) preserva el emparejamiento y la correlación dentro de cada tienda.",
+  "salidas": {
+    "csv_tabla_diferencias": "output/store_differences.csv",
+    "figura_diferencias_y_bootstrap": "output/store_differences.png",
+    "figura_reproducibilidad": "bootstrap_reproducibilidad.png",
+    "resultados_json": "resultados.json"
+  }
+}

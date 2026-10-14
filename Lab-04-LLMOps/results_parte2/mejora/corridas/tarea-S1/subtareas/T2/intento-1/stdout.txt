@@ -1,0 +1,21 @@
+means: [57.99313333 50.54163333 29.45533333]
+zscores.shape: (300, 3)
+load_score.shape: (300,)
+  means_coinciden_esperados: True
+  zscores_shape_correcto: True
+  load_score_shape_correcto: True
+  zscores_media_cero_tol_1e-10: True
+  zscores_desv_uno_tol_1e-10: True
+  load_score_igual_a_zscores_por_pesos: True
+  matriz_consistente_con_T1: True
+------------------------------------------------------------
+Resumen T2
+  means              : [57.99313333 50.54163333 29.45533333]
+  stds               : [14.43011728 12.69846349  6.53680183]
+  zscores.shape      : (300, 3)
+  load_score.shape   : (300,)
+  media zscores      : [ 5.68434189e-16  2.36847579e-16 -3.31586610e-16] (~0)
+  desv. zscores      : [1. 1. 1.] (~1)
+  load_score media/desv: 2.6053233644537007e-16 0.8024072918435488
+  filas con load_score > 1.5: 9
+  Parquet: output/server_analysis.parquet | Resultados: resultados.json

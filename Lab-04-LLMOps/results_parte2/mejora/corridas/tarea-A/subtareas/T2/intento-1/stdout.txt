@@ -1,0 +1,9 @@
+T2 — Accuracy y F1 macro en el conjunto de prueba (división 70/30 de la Parte 1)
+                       accuracy_prueba  f1_macro_prueba
+modelo                                                 
+Naive Bayes gaussiano           0.9474           0.9429
+Regresión logística             0.9883           0.9874
+
+n_train=398  n_test=171  (coincide con T1: True)
+Escalador: StandardScaler ajustado solo con el entrenamiento.
+Archivos generados: resultados.json, t2_tabla_metricas.png

@@ -1,0 +1,15 @@
+División usada: entrada/T1 (train.csv / test.csv generados en la Parte 1)
+n_train=398 | n_test=171 (debe ser 398/171 según T1)
+
+=== T3 — Tabla de accuracy (evaluada siempre en el mismo test de 171 ejemplos) ===
+ porcentaje_entrenamiento  n_ejemplos_entrenamiento  accuracy_naive_bayes_gaussiano  accuracy_regresion_logistica
+                        5                        19                        0.941520                      0.929825
+                       10                        39                        0.941520                      0.929825
+                       25                        99                        0.941520                      0.953216
+                       50                       199                        0.923977                      0.976608
+                      100                       398                        0.947368                      0.988304
+
+Ganador por tamaño: ['naive_bayes_gaussiano', 'naive_bayes_gaussiano', 'regresion_logistica', 'regresion_logistica', 'regresion_logistica']
+¿Hay cruce entre las curvas?: True
+Figura guardada: t3_curva_aprendizaje.png
+Resultados guardados: resultados.json

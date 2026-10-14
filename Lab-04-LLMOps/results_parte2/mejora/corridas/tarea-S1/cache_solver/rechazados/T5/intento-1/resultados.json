@@ -1,0 +1,69 @@
+{
+  "subtarea": "T5_guardar_y_verificar_parquet",
+  "archivo_parquet": "output/server_analysis.parquet",
+  "metodo_guardado": "pyarrow.parquet.write_table, preserve_index=False (sin indice)",
+  "fuente_dataframe": "reconstruido desde data/server_measurements.csv (load_score: gpu/100 + cpu/100 + mem/64 (defecto))",
+  "filas_antes": 300,
+  "filas_despues": 300,
+  "verificacion_filas": true,
+  "columnas_antes": [
+    "server",
+    "timestamp",
+    "gpu_utilization",
+    "cpu_utilization",
+    "memory_gb",
+    "power_w",
+    "temperature_c",
+    "load_score",
+    "requires_review"
+  ],
+  "columnas_despues": [
+    "server",
+    "timestamp",
+    "gpu_utilization",
+    "cpu_utilization",
+    "memory_gb",
+    "power_w",
+    "temperature_c",
+    "load_score",
+    "requires_review"
+  ],
+  "n_columnas_antes": 9,
+  "n_columnas_despues": 9,
+  "verificacion_columnas": true,
+  "esquema_antes": {
+    "server": "str",
+    "timestamp": "datetime64[us]",
+    "gpu_utilization": "float64",
+    "cpu_utilization": "float64",
+    "memory_gb": "float64",
+    "power_w": "float64",
+    "temperature_c": "float64",
+    "load_score": "float64",
+    "requires_review": "bool"
+  },
+  "esquema_despues": {
+    "server": "str",
+    "timestamp": "datetime64[us]",
+    "gpu_utilization": "float64",
+    "cpu_utilization": "float64",
+    "memory_gb": "float64",
+    "power_w": "float64",
+    "temperature_c": "float64",
+    "load_score": "float64",
+    "requires_review": "bool"
+  },
+  "esquema_arrow_antes": "server: large_string\ntimestamp: timestamp[us]\ngpu_utilization: double\ncpu_utilization: double\nmemory_gb: double\npower_w: double\ntemperature_c: double\nload_score: double\nrequires_review: bool\n-- schema metadata --\npandas: '{\"index_columns\": [], \"column_indexes\": [], \"columns\": [{\"name\":' + 1197",
+  "esquema_arrow_leido": "server: large_string\ntimestamp: timestamp[us]\ngpu_utilization: double\ncpu_utilization: double\nmemory_gb: double\npower_w: double\ntemperature_c: double\nload_score: double\nrequires_review: bool\n-- schema metadata --\npandas: '{\"index_columns\": [], \"column_indexes\": [], \"columns\": [{\"name\":' + 1197",
+  "verificacion_esquema": true,
+  "verificacion_valores": true,
+  "max_diferencia_absoluta_floats": 0.0,
+  "n_requires_review_true": 161,
+  "fila_23": {
+    "load_score": 2.759375,
+    "temperature_c": 66.97,
+    "requires_review": true
+  },
+  "coherencia_load_score_con_T3": null,
+  "round_trip_ok": true
+}

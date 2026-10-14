@@ -1,0 +1,12 @@
+T5 - Guardar y verificar el resultado (Parquet con PyArrow)
+Fuente del DataFrame analizado: reconstruido desde data/server_measurements.csv (load_score: gpu/100 + cpu/100 + mem/64 (defecto))
+Filas antes: 300 | Filas despues: 300
+Columnas antes: 9 | Columnas despues: 9
+Archivo escrito: output/server_analysis.parquet (17631 bytes)
+------------------------------------------------------------
+Round trip verificado: output/server_analysis.parquet
+Filas: True
+Columnas: True
+Esquema: True
+Valores: True
+resultados.json escrito con las verificaciones del round trip.

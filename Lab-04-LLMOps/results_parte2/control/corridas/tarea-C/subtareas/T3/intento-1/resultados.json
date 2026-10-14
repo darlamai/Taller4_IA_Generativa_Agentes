@@ -1,0 +1,1439 @@
+{
+  "subtarea": "T3",
+  "descripcion": "Parte 3, análisis por consulta: consultas falladas por método (documento relevante fuera del top 3) y términos compartidos entre cada consulta y su documento relevante (intersección de tokens tras la tokenización de TF-IDF), como evidencia que explica los fallos.",
+  "criterio_de_fallo": "el documento relevante queda fuera del top 3 (rank > 3) en el ranking del método",
+  "configuracion": {
+    "tokenizacion_para_la_interseccion": "build_analyzer() de TfidfVectorizer por defecto: minúsculas, token_pattern r'(?u)\\b\\w\\w+\\b' (tokens de 2+ caracteres), sin stop words ni stemming; intersección de conjuntos de tokens únicos",
+    "tfidf": "TfidfVectorizer() por defecto, ajustado con los 10 documentos (idéntico a T1/T2)",
+    "lsa": "TruncatedSVD(n_components=4, random_state=0), ajustado con los 10 documentos (idéntico a T2)",
+    "n_documentos": 10,
+    "n_consultas": 6,
+    "tam_vocabulario_tfidf": 105,
+    "tam_vocabulario_reportado_en_T1": 105
+  },
+  "fuente_de_los_rankings": {
+    "TF-IDF": "entrada/T1/resultados.json (rankings oficiales de la subtarea previa)",
+    "LSA": "entrada/T2/resultados.json (rankings oficiales de la subtarea previa)"
+  },
+  "verificacion_con_subtareas_previas": {
+    "T1": {
+      "archivo": "entrada/T1/resultados.json",
+      "disponible_y_completo": true,
+      "rankings_locales_coinciden_con_T1": true,
+      "Hit@3_recapitulado": 0.8333333333333334,
+      "Hit@3_coincide_con_T1": true,
+      "MRR_recapitulado": 0.8611111111111112,
+      "MRR_coincide_con_T1": true,
+      "ranks_del_relevante_usados": {
+        "q1": 1,
+        "q2": 1,
+        "q3": 1,
+        "q4": 1,
+        "q5": 6,
+        "q6": 1
+      },
+      "ranks_del_relevante_recalculados_localmente": {
+        "q1": 1,
+        "q2": 1,
+        "q3": 1,
+        "q4": 1,
+        "q5": 6,
+        "q6": 1
+      }
+    },
+    "T2": {
+      "archivo": "entrada/T2/resultados.json",
+      "disponible_y_completo": true,
+      "rankings_locales_coinciden_con_T2": true,
+      "Hit@3_recapitulado": 0.8333333333333334,
+      "Hit@3_coincide_con_T2": true,
+      "MRR_recapitulado": 0.75,
+      "MRR_coincide_con_T2": true,
+      "ranks_del_relevante_usados": {
+        "q1": 1,
+        "q2": 1,
+        "q3": 1,
+        "q4": 3,
+        "q5": 6,
+        "q6": 1
+      },
+      "ranks_del_relevante_recalculados_localmente": {
+        "q1": 1,
+        "q2": 1,
+        "q3": 1,
+        "q4": 3,
+        "q5": 6,
+        "q6": 1
+      }
+    }
+  },
+  "ranks_del_relevante_por_metodo": {
+    "TF-IDF": {
+      "q1": 1,
+      "q2": 1,
+      "q3": 1,
+      "q4": 1,
+      "q5": 6,
+      "q6": 1
+    },
+    "LSA": {
+      "q1": 1,
+      "q2": 1,
+      "q3": 1,
+      "q4": 3,
+      "q5": 6,
+      "q6": 1
+    }
+  },
+  "top3_por_consulta_por_metodo": {
+    "TF-IDF": {
+      "q1": [
+        "d04",
+        "d01",
+        "d06"
+      ],
+      "q2": [
+        "d03",
+        "d01",
+        "d02"
+      ],
+      "q3": [
+        "d08",
+        "d06",
+        "d04"
+      ],
+      "q4": [
+        "d05",
+        "d01",
+        "d04"
+      ],
+      "q5": [
+        "d03",
+        "d06",
+        "d04"
+      ],
+      "q6": [
+        "d02",
+        "d06",
+        "d03"
+      ]
+    },
+    "LSA": {
+      "q1": [
+        "d04",
+        "d01",
+        "d06"
+      ],
+      "q2": [
+        "d03",
+        "d07",
+        "d09"
+      ],
+      "q3": [
+        "d08",
+        "d02",
+        "d06"
+      ],
+      "q4": [
+        "d01",
+        "d10",
+        "d05"
+      ],
+      "q5": [
+        "d04",
+        "d01",
+        "d03"
+      ],
+      "q6": [
+        "d02",
+        "d08",
+        "d10"
+      ]
+    }
+  },
+  "metricas_recapituladas_desde_los_ranks": {
+    "TF-IDF": {
+      "Hit@1": 0.8333333333333334,
+      "Hit@3": 0.8333333333333334,
+      "MRR": 0.8611111111111112
+    },
+    "LSA": {
+      "Hit@1": 0.6666666666666666,
+      "Hit@3": 0.8333333333333334,
+      "MRR": 0.75
+    }
+  },
+  "fallos_por_metodo": {
+    "TF-IDF": {
+      "metodo": "TF-IDF",
+      "consultas_falladas": [
+        "q5"
+      ],
+      "n_consultas_falladas": 1,
+      "consultas_con_relevante_en_top3": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q6"
+      ],
+      "Hit@1": 0.8333333333333334,
+      "Hit@3": 0.8333333333333334,
+      "MRR": 0.8611111111111112,
+      "detalle_por_fallo": [
+        {
+          "consulta": "q5",
+          "texto_consulta": "¿Qué hace que el modelo sea más determinista al elegir la siguiente palabra?",
+          "documento_relevante": "d09",
+          "rank_del_relevante": 6,
+          "top_3": [
+            "d03",
+            "d06",
+            "d04"
+          ],
+          "similitud_del_relevante": 0.07900232923856973,
+          "terminos_compartidos_con_relevante": [
+            "la"
+          ],
+          "n_terminos_compartidos_con_relevante": 1,
+          "df_de_terminos_compartidos": {
+            "la": 6
+          },
+          "tokens_consulta_fuera_de_vocabulario": [
+            "determinista",
+            "elegir",
+            "hace",
+            "más",
+            "palabra",
+            "sea",
+            "siguiente"
+          ]
+        }
+      ]
+    },
+    "LSA": {
+      "metodo": "LSA",
+      "consultas_falladas": [
+        "q5"
+      ],
+      "n_consultas_falladas": 1,
+      "consultas_con_relevante_en_top3": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q6"
+      ],
+      "Hit@1": 0.6666666666666666,
+      "Hit@3": 0.8333333333333334,
+      "MRR": 0.75,
+      "detalle_por_fallo": [
+        {
+          "consulta": "q5",
+          "texto_consulta": "¿Qué hace que el modelo sea más determinista al elegir la siguiente palabra?",
+          "documento_relevante": "d09",
+          "rank_del_relevante": 6,
+          "top_3": [
+            "d04",
+            "d01",
+            "d03"
+          ],
+          "similitud_del_relevante": 0.49988551680348015,
+          "terminos_compartidos_con_relevante": [
+            "la"
+          ],
+          "n_terminos_compartidos_con_relevante": 1,
+          "df_de_terminos_compartidos": {
+            "la": 6
+          },
+          "tokens_consulta_fuera_de_vocabulario": [
+            "determinista",
+            "elegir",
+            "hace",
+            "más",
+            "palabra",
+            "sea",
+            "siguiente"
+          ]
+        }
+      ]
+    }
+  },
+  "tabla_terminos_compartidos": [
+    {
+      "consulta": "q1",
+      "texto_consulta": "¿Qué función de ranking léxica pondera la frecuencia de términos?",
+      "documento_relevante": "d04",
+      "texto_documento_relevante": "BM25 es una función de ranking léxica que pondera la frecuencia de términos y la longitud del documento.",
+      "tokens_unicos_consulta": [
+        "de",
+        "frecuencia",
+        "función",
+        "la",
+        "léxica",
+        "pondera",
+        "qué",
+        "ranking",
+        "términos"
+      ],
+      "tokens_unicos_documento_relevante": [
+        "bm25",
+        "de",
+        "del",
+        "documento",
+        "es",
+        "frecuencia",
+        "función",
+        "la",
+        "longitud",
+        "léxica",
+        "pondera",
+        "que",
+        "ranking",
+        "términos",
+        "una"
+      ],
+      "n_tokens_unicos_consulta": 9,
+      "n_tokens_unicos_documento_relevante": 15,
+      "terminos_compartidos": [
+        "de",
+        "frecuencia",
+        "función",
+        "la",
+        "léxica",
+        "pondera",
+        "ranking",
+        "términos"
+      ],
+      "n_terminos_compartidos": 8,
+      "cobertura_de_la_consulta": 0.8888888888888888,
+      "tokens_consulta_fuera_de_vocabulario": [],
+      "n_tokens_consulta_fuera_de_vocabulario": 0,
+      "tokens_consulta_sin_coincidencia_en_relevante": [
+        "qué"
+      ],
+      "df_de_terminos_compartidos": {
+        "de": 5,
+        "frecuencia": 1,
+        "función": 2,
+        "la": 6,
+        "léxica": 1,
+        "pondera": 2,
+        "ranking": 1,
+        "términos": 1
+      }
+    },
+    {
+      "consulta": "q2",
+      "texto_consulta": "¿Cómo se añaden fragmentos recuperados al prompt?",
+      "documento_relevante": "d03",
+      "texto_documento_relevante": "La recuperación aumentada con generación busca fragmentos relevantes y los añade al prompt del modelo.",
+      "tokens_unicos_consulta": [
+        "al",
+        "añaden",
+        "cómo",
+        "fragmentos",
+        "prompt",
+        "recuperados",
+        "se"
+      ],
+      "tokens_unicos_documento_relevante": [
+        "al",
+        "aumentada",
+        "añade",
+        "busca",
+        "con",
+        "del",
+        "fragmentos",
+        "generación",
+        "la",
+        "los",
+        "modelo",
+        "prompt",
+        "recuperación",
+        "relevantes"
+      ],
+      "n_tokens_unicos_consulta": 7,
+      "n_tokens_unicos_documento_relevante": 14,
+      "terminos_compartidos": [
+        "al",
+        "fragmentos",
+        "prompt"
+      ],
+      "n_terminos_compartidos": 3,
+      "cobertura_de_la_consulta": 0.42857142857142855,
+      "tokens_consulta_fuera_de_vocabulario": [
+        "añaden",
+        "cómo",
+        "recuperados",
+        "se"
+      ],
+      "n_tokens_consulta_fuera_de_vocabulario": 4,
+      "tokens_consulta_sin_coincidencia_en_relevante": [
+        "añaden",
+        "cómo",
+        "recuperados",
+        "se"
+      ],
+      "df_de_terminos_compartidos": {
+        "al": 1,
+        "fragmentos": 1,
+        "prompt": 1
+      }
+    },
+    {
+      "consulta": "q3",
+      "texto_consulta": "¿Qué técnica entrena matrices de bajo rango?",
+      "documento_relevante": "d08",
+      "texto_documento_relevante": "El ajuste fino con LoRA entrena matrices de bajo rango y congela los pesos originales.",
+      "tokens_unicos_consulta": [
+        "bajo",
+        "de",
+        "entrena",
+        "matrices",
+        "qué",
+        "rango",
+        "técnica"
+      ],
+      "tokens_unicos_documento_relevante": [
+        "ajuste",
+        "bajo",
+        "con",
+        "congela",
+        "de",
+        "el",
+        "entrena",
+        "fino",
+        "lora",
+        "los",
+        "matrices",
+        "originales",
+        "pesos",
+        "rango"
+      ],
+      "n_tokens_unicos_consulta": 7,
+      "n_tokens_unicos_documento_relevante": 14,
+      "terminos_compartidos": [
+        "bajo",
+        "de",
+        "entrena",
+        "matrices",
+        "rango"
+      ],
+      "n_terminos_compartidos": 5,
+      "cobertura_de_la_consulta": 0.7142857142857143,
+      "tokens_consulta_fuera_de_vocabulario": [
+        "técnica"
+      ],
+      "n_tokens_consulta_fuera_de_vocabulario": 1,
+      "tokens_consulta_sin_coincidencia_en_relevante": [
+        "qué",
+        "técnica"
+      ],
+      "df_de_terminos_compartidos": {
+        "bajo": 1,
+        "de": 5,
+        "entrena": 1,
+        "matrices": 1,
+        "rango": 1
+      }
+    },
+    {
+      "consulta": "q4",
+      "texto_consulta": "¿Cómo se compara la orientación de dos vectores de texto?",
+      "documento_relevante": "d05",
+      "texto_documento_relevante": "Los embeddings densos representan textos como vectores; la similitud coseno compara su orientación.",
+      "tokens_unicos_consulta": [
+        "compara",
+        "cómo",
+        "de",
+        "dos",
+        "la",
+        "orientación",
+        "se",
+        "texto",
+        "vectores"
+      ],
+      "tokens_unicos_documento_relevante": [
+        "como",
+        "compara",
+        "coseno",
+        "densos",
+        "embeddings",
+        "la",
+        "los",
+        "orientación",
+        "representan",
+        "similitud",
+        "su",
+        "textos",
+        "vectores"
+      ],
+      "n_tokens_unicos_consulta": 9,
+      "n_tokens_unicos_documento_relevante": 13,
+      "terminos_compartidos": [
+        "compara",
+        "la",
+        "orientación",
+        "vectores"
+      ],
+      "n_terminos_compartidos": 4,
+      "cobertura_de_la_consulta": 0.4444444444444444,
+      "tokens_consulta_fuera_de_vocabulario": [
+        "cómo",
+        "dos",
+        "se",
+        "texto"
+      ],
+      "n_tokens_consulta_fuera_de_vocabulario": 4,
+      "tokens_consulta_sin_coincidencia_en_relevante": [
+        "cómo",
+        "de",
+        "dos",
+        "se",
+        "texto"
+      ],
+      "df_de_terminos_compartidos": {
+        "compara": 1,
+        "la": 6,
+        "orientación": 1,
+        "vectores": 1
+      }
+    },
+    {
+      "consulta": "q5",
+      "texto_consulta": "¿Qué hace que el modelo sea más determinista al elegir la siguiente palabra?",
+      "documento_relevante": "d09",
+      "texto_documento_relevante": "La temperatura reescala los logits antes del softmax; valores bajos concentran la probabilidad.",
+      "tokens_unicos_consulta": [
+        "al",
+        "determinista",
+        "el",
+        "elegir",
+        "hace",
+        "la",
+        "modelo",
+        "más",
+        "palabra",
+        "que",
+        "qué",
+        "sea",
+        "siguiente"
+      ],
+      "tokens_unicos_documento_relevante": [
+        "antes",
+        "bajos",
+        "concentran",
+        "del",
+        "la",
+        "logits",
+        "los",
+        "probabilidad",
+        "reescala",
+        "softmax",
+        "temperatura",
+        "valores"
+      ],
+      "n_tokens_unicos_consulta": 13,
+      "n_tokens_unicos_documento_relevante": 12,
+      "terminos_compartidos": [
+        "la"
+      ],
+      "n_terminos_compartidos": 1,
+      "cobertura_de_la_consulta": 0.07692307692307693,
+      "tokens_consulta_fuera_de_vocabulario": [
+        "determinista",
+        "elegir",
+        "hace",
+        "más",
+        "palabra",
+        "sea",
+        "siguiente"
+      ],
+      "n_tokens_consulta_fuera_de_vocabulario": 7,
+      "tokens_consulta_sin_coincidencia_en_relevante": [
+        "al",
+        "determinista",
+        "el",
+        "elegir",
+        "hace",
+        "modelo",
+        "más",
+        "palabra",
+        "que",
+        "qué",
+        "sea",
+        "siguiente"
+      ],
+      "df_de_terminos_compartidos": {
+        "la": 6
+      }
+    },
+    {
+      "consulta": "q6",
+      "texto_consulta": "¿Qué arquitectura combina autoatención con capas feed-forward?",
+      "documento_relevante": "d02",
+      "texto_documento_relevante": "Los transformadores apilan capas de autoatención y redes feed-forward, con conexiones residuales y normalización.",
+      "tokens_unicos_consulta": [
+        "arquitectura",
+        "autoatención",
+        "capas",
+        "combina",
+        "con",
+        "feed",
+        "forward",
+        "qué"
+      ],
+      "tokens_unicos_documento_relevante": [
+        "apilan",
+        "autoatención",
+        "capas",
+        "con",
+        "conexiones",
+        "de",
+        "feed",
+        "forward",
+        "los",
+        "normalización",
+        "redes",
+        "residuales",
+        "transformadores"
+      ],
+      "n_tokens_unicos_consulta": 8,
+      "n_tokens_unicos_documento_relevante": 13,
+      "terminos_compartidos": [
+        "autoatención",
+        "capas",
+        "con",
+        "feed",
+        "forward"
+      ],
+      "n_terminos_compartidos": 5,
+      "cobertura_de_la_consulta": 0.625,
+      "tokens_consulta_fuera_de_vocabulario": [
+        "arquitectura",
+        "combina"
+      ],
+      "n_tokens_consulta_fuera_de_vocabulario": 2,
+      "tokens_consulta_sin_coincidencia_en_relevante": [
+        "arquitectura",
+        "combina",
+        "qué"
+      ],
+      "df_de_terminos_compartidos": {
+        "autoatención": 1,
+        "capas": 1,
+        "con": 5,
+        "feed": 1,
+        "forward": 1
+      }
+    }
+  ],
+  "detalle_pesos_de_los_terminos_compartidos": [
+    {
+      "consulta": "q1",
+      "documento_relevante": "d04",
+      "termino": "de",
+      "df_en_corpus": 5,
+      "idf": 1.6061358035703155,
+      "peso_tfidf_en_consulta": 0.41616626604586404,
+      "peso_tfidf_en_documento_relevante": 0.31423567671878266
+    },
+    {
+      "consulta": "q1",
+      "documento_relevante": "d04",
+      "termino": "frecuencia",
+      "df_en_corpus": 1,
+      "idf": 2.7047480922384253,
+      "peso_tfidf_en_consulta": 0.3504139910334365,
+      "peso_tfidf_en_documento_relevante": 0.2645879461839569
+    },
+    {
+      "consulta": "q1",
+      "documento_relevante": "d04",
+      "termino": "función",
+      "df_en_corpus": 2,
+      "idf": 2.2992829841302607,
+      "peso_tfidf_en_consulta": 0.29788390619311367,
+      "peso_tfidf_en_documento_relevante": 0.22492392700544242
+    },
+    {
+      "consulta": "q1",
+      "documento_relevante": "d04",
+      "termino": "la",
+      "df_en_corpus": 6,
+      "idf": 1.4519851237430572,
+      "peso_tfidf_en_consulta": 0.1881121216397302,
+      "peso_tfidf_en_documento_relevante": 0.2840765562480844
+    },
+    {
+      "consulta": "q1",
+      "documento_relevante": "d04",
+      "termino": "léxica",
+      "df_en_corpus": 1,
+      "idf": 2.7047480922384253,
+      "peso_tfidf_en_consulta": 0.3504139910334365,
+      "peso_tfidf_en_documento_relevante": 0.2645879461839569
+    },
+    {
+      "consulta": "q1",
+      "documento_relevante": "d04",
+      "termino": "pondera",
+      "df_en_corpus": 2,
+      "idf": 2.2992829841302607,
+      "peso_tfidf_en_consulta": 0.29788390619311367,
+      "peso_tfidf_en_documento_relevante": 0.22492392700544242
+    },
+    {
+      "consulta": "q1",
+      "documento_relevante": "d04",
+      "termino": "ranking",
+      "df_en_corpus": 1,
+      "idf": 2.7047480922384253,
+      "peso_tfidf_en_consulta": 0.3504139910334365,
+      "peso_tfidf_en_documento_relevante": 0.2645879461839569
+    },
+    {
+      "consulta": "q1",
+      "documento_relevante": "d04",
+      "termino": "términos",
+      "df_en_corpus": 1,
+      "idf": 2.7047480922384253,
+      "peso_tfidf_en_consulta": 0.3504139910334365,
+      "peso_tfidf_en_documento_relevante": 0.2645879461839569
+    },
+    {
+      "consulta": "q2",
+      "documento_relevante": "d03",
+      "termino": "al",
+      "df_en_corpus": 1,
+      "idf": 2.7047480922384253,
+      "peso_tfidf_en_consulta": 0.5773502691896257,
+      "peso_tfidf_en_documento_relevante": 0.29874339395570315
+    },
+    {
+      "consulta": "q2",
+      "documento_relevante": "d03",
+      "termino": "fragmentos",
+      "df_en_corpus": 1,
+      "idf": 2.7047480922384253,
+      "peso_tfidf_en_consulta": 0.5773502691896257,
+      "peso_tfidf_en_documento_relevante": 0.29874339395570315
+    },
+    {
+      "consulta": "q2",
+      "documento_relevante": "d03",
+      "termino": "prompt",
+      "df_en_corpus": 1,
+      "idf": 2.7047480922384253,
+      "peso_tfidf_en_consulta": 0.5773502691896257,
+      "peso_tfidf_en_documento_relevante": 0.29874339395570315
+    },
+    {
+      "consulta": "q3",
+      "documento_relevante": "d08",
+      "termino": "bajo",
+      "df_en_corpus": 1,
+      "idf": 2.7047480922384253,
+      "peso_tfidf_en_consulta": 0.43223174876056586,
+      "peso_tfidf_en_documento_relevante": 0.29788804547336384
+    },
+    {
+      "consulta": "q3",
+      "documento_relevante": "d08",
+      "termino": "de",
+      "df_en_corpus": 5,
+      "idf": 1.6061358035703155,
+      "peso_tfidf_en_consulta": 0.2566682232316953,
+      "peso_tfidf_en_documento_relevante": 0.17689213153095973
+    },
+    {
+      "consulta": "q3",
+      "documento_relevante": "d08",
+      "termino": "entrena",
+      "df_en_corpus": 1,
+      "idf": 2.7047480922384253,
+      "peso_tfidf_en_consulta": 0.43223174876056586,
+      "peso_tfidf_en_documento_relevante": 0.29788804547336384
+    },
+    {
+      "consulta": "q3",
+      "documento_relevante": "d08",
+      "termino": "matrices",
+      "df_en_corpus": 1,
+      "idf": 2.7047480922384253,
+      "peso_tfidf_en_consulta": 0.43223174876056586,
+      "peso_tfidf_en_documento_relevante": 0.29788804547336384
+    },
+    {
+      "consulta": "q3",
+      "documento_relevante": "d08",
+      "termino": "rango",
+      "df_en_corpus": 1,
+      "idf": 2.7047480922384253,
+      "peso_tfidf_en_consulta": 0.43223174876056586,
+      "peso_tfidf_en_documento_relevante": 0.29788804547336384
+    },
+    {
+      "consulta": "q4",
+      "documento_relevante": "d05",
+      "termino": "compara",
+      "df_en_corpus": 1,
+      "idf": 2.7047480922384253,
+      "peso_tfidf_en_consulta": 0.4613305217177221,
+      "peso_tfidf_en_documento_relevante": 0.30121466100132
+    },
+    {
+      "consulta": "q4",
+      "documento_relevante": "d05",
+      "termino": "la",
+      "df_en_corpus": 6,
+      "idf": 1.4519851237430572,
+      "peso_tfidf_en_consulta": 0.24765524618908155,
+      "peso_tfidf_en_documento_relevante": 0.161700532512538
+    },
+    {
+      "consulta": "q4",
+      "documento_relevante": "d05",
+      "termino": "orientación",
+      "df_en_corpus": 1,
+      "idf": 2.7047480922384253,
+      "peso_tfidf_en_consulta": 0.4613305217177221,
+      "peso_tfidf_en_documento_relevante": 0.30121466100132
+    },
+    {
+      "consulta": "q4",
+      "documento_relevante": "d05",
+      "termino": "vectores",
+      "df_en_corpus": 1,
+      "idf": 2.7047480922384253,
+      "peso_tfidf_en_consulta": 0.4613305217177221,
+      "peso_tfidf_en_documento_relevante": 0.30121466100132
+    },
+    {
+      "consulta": "q5",
+      "documento_relevante": "d09",
+      "termino": "la",
+      "df_en_corpus": 6,
+      "idf": 1.4519851237430572,
+      "peso_tfidf_en_consulta": 0.24397961091537643,
+      "peso_tfidf_en_documento_relevante": 0.32380709577396377
+    },
+    {
+      "consulta": "q6",
+      "documento_relevante": "d02",
+      "termino": "autoatención",
+      "df_en_corpus": 1,
+      "idf": 2.7047480922384253,
+      "peso_tfidf_en_consulta": 0.43223174876056586,
+      "peso_tfidf_en_documento_relevante": 0.30160141425178877
+    },
+    {
+      "consulta": "q6",
+      "documento_relevante": "d02",
+      "termino": "capas",
+      "df_en_corpus": 1,
+      "idf": 2.7047480922384253,
+      "peso_tfidf_en_consulta": 0.43223174876056586,
+      "peso_tfidf_en_documento_relevante": 0.30160141425178877
+    },
+    {
+      "consulta": "q6",
+      "documento_relevante": "d02",
+      "termino": "con",
+      "df_en_corpus": 5,
+      "idf": 1.6061358035703155,
+      "peso_tfidf_en_consulta": 0.2566682232316953,
+      "peso_tfidf_en_documento_relevante": 0.1790972073248953
+    },
+    {
+      "consulta": "q6",
+      "documento_relevante": "d02",
+      "termino": "feed",
+      "df_en_corpus": 1,
+      "idf": 2.7047480922384253,
+      "peso_tfidf_en_consulta": 0.43223174876056586,
+      "peso_tfidf_en_documento_relevante": 0.30160141425178877
+    },
+    {
+      "consulta": "q6",
+      "documento_relevante": "d02",
+      "termino": "forward",
+      "df_en_corpus": 1,
+      "idf": 2.7047480922384253,
+      "peso_tfidf_en_consulta": 0.43223174876056586,
+      "peso_tfidf_en_documento_relevante": 0.30160141425178877
+    }
+  ],
+  "matriz_n_terminos_compartidos": {
+    "filas_consultas": [
+      "q1",
+      "q2",
+      "q3",
+      "q4",
+      "q5",
+      "q6"
+    ],
+    "columnas_documentos": [
+      "d01",
+      "d02",
+      "d03",
+      "d04",
+      "d05",
+      "d06",
+      "d07",
+      "d08",
+      "d09",
+      "d10"
+    ],
+    "nota": "cada celda es |tokens(consulta) ∩ tokens(documento)| con la tokenización de TF-IDF",
+    "valores": [
+      [
+        3,
+        1,
+        1,
+        8,
+        1,
+        2,
+        0,
+        1,
+        1,
+        2
+      ],
+      [
+        0,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        5,
+        0,
+        1
+      ],
+      [
+        2,
+        1,
+        1,
+        2,
+        4,
+        0,
+        0,
+        1,
+        1,
+        2
+      ],
+      [
+        2,
+        0,
+        3,
+        2,
+        1,
+        2,
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        5,
+        1,
+        0,
+        0,
+        2,
+        0,
+        1,
+        0,
+        0
+      ]
+    ]
+  },
+  "evidencia_de_los_fallos": {
+    "q5": {
+      "consulta": "q5",
+      "texto_consulta": "¿Qué hace que el modelo sea más determinista al elegir la siguiente palabra?",
+      "documento_relevante": "d09",
+      "terminos_compartidos_con_relevante": [
+        "la"
+      ],
+      "terminos_compartidos_con_cada_documento": {
+        "d01": [
+          "el",
+          "la"
+        ],
+        "d02": [],
+        "d03": [
+          "al",
+          "la",
+          "modelo"
+        ],
+        "d04": [
+          "la",
+          "que"
+        ],
+        "d05": [
+          "la"
+        ],
+        "d06": [
+          "el",
+          "qué"
+        ],
+        "d07": [],
+        "d08": [
+          "el"
+        ],
+        "d09": [
+          "la"
+        ],
+        "d10": [
+          "la"
+        ]
+      },
+      "por_metodo": {
+        "TF-IDF": {
+          "rank_del_relevante": 6,
+          "similitud_del_relevante": 0.07900232923856973,
+          "top_3": [
+            "d03",
+            "d06",
+            "d04"
+          ],
+          "competidores_del_top3": [
+            {
+              "posicion": 1,
+              "documento": "d03",
+              "similitud": 0.3106758887220715,
+              "terminos_compartidos_con_consulta": [
+                "al",
+                "la",
+                "modelo"
+              ],
+              "n_terminos_compartidos_con_consulta": 3
+            },
+            {
+              "posicion": 2,
+              "documento": "d06",
+              "similitud": 0.20085134590621823,
+              "terminos_compartidos_con_consulta": [
+                "el",
+                "qué"
+              ],
+              "n_terminos_compartidos_con_consulta": 2
+            },
+            {
+              "posicion": 3,
+              "documento": "d04",
+              "similitud": 0.18955976285205217,
+              "terminos_compartidos_con_consulta": [
+                "la",
+                "que"
+              ],
+              "n_terminos_compartidos_con_consulta": 2
+            }
+          ]
+        },
+        "LSA": {
+          "rank_del_relevante": 6,
+          "similitud_del_relevante": 0.49988551680348015,
+          "top_3": [
+            "d04",
+            "d01",
+            "d03"
+          ],
+          "competidores_del_top3": [
+            {
+              "posicion": 1,
+              "documento": "d04",
+              "similitud": 0.9427359534682045,
+              "terminos_compartidos_con_consulta": [
+                "la",
+                "que"
+              ],
+              "n_terminos_compartidos_con_consulta": 2
+            },
+            {
+              "posicion": 2,
+              "documento": "d01",
+              "similitud": 0.8066012329018133,
+              "terminos_compartidos_con_consulta": [
+                "el",
+                "la"
+              ],
+              "n_terminos_compartidos_con_consulta": 2
+            },
+            {
+              "posicion": 3,
+              "documento": "d03",
+              "similitud": 0.614050984025136,
+              "terminos_compartidos_con_consulta": [
+                "al",
+                "la",
+                "modelo"
+              ],
+              "n_terminos_compartidos_con_consulta": 3
+            }
+          ]
+        }
+      }
+    }
+  },
+  "rankings_y_similitudes_usados": {
+    "TF-IDF": {
+      "q1": {
+        "ranking": [
+          "d04",
+          "d01",
+          "d06",
+          "d10",
+          "d02",
+          "d08",
+          "d09",
+          "d05",
+          "d03",
+          "d07"
+        ],
+        "similitudes_por_documento": {
+          "d01": 0.24104429689047813,
+          "d02": 0.07453421603164366,
+          "d03": 0.030168272064907867,
+          "d04": 0.6890762406943802,
+          "d05": 0.0304178302412077,
+          "d06": 0.17176219526377373,
+          "d07": 0.0,
+          "d08": 0.07361653787213339,
+          "d09": 0.06091203978803966,
+          "d10": 0.14558189772995922
+        },
+        "rank_del_relevante": 1
+      },
+      "q2": {
+        "ranking": [
+          "d03",
+          "d01",
+          "d02",
+          "d04",
+          "d05",
+          "d06",
+          "d07",
+          "d08",
+          "d09",
+          "d10"
+        ],
+        "similitudes_por_documento": {
+          "d01": 0.0,
+          "d02": 0.0,
+          "d03": 0.5174387367568429,
+          "d04": 0.0,
+          "d05": 0.0,
+          "d06": 0.0,
+          "d07": 0.0,
+          "d08": 0.0,
+          "d09": 0.0,
+          "d10": 0.0
+        },
+        "rank_del_relevante": 1
+      },
+      "q3": {
+        "ranking": [
+          "d08",
+          "d06",
+          "d04",
+          "d01",
+          "d10",
+          "d02",
+          "d03",
+          "d05",
+          "d07",
+          "d09"
+        ],
+        "similitudes_por_documento": {
+          "d01": 0.06381465584320169,
+          "d02": 0.045968561989839445,
+          "d03": 0.0,
+          "d04": 0.08065431281941934,
+          "d05": 0.0,
+          "d06": 0.12298847552390194,
+          "d07": 0.0,
+          "d08": 0.5604292724229949,
+          "d09": 0.0,
+          "d10": 0.0494078249415492
+        },
+        "rank_del_relevante": 1
+      },
+      "q4": {
+        "ranking": [
+          "d05",
+          "d01",
+          "d04",
+          "d10",
+          "d02",
+          "d08",
+          "d09",
+          "d03",
+          "d06",
+          "d07"
+        ],
+        "similitudes_por_documento": {
+          "d01": 0.24754993848068024,
+          "d02": 0.09812652932690284,
+          "d03": 0.039717434369503,
+          "d04": 0.24252131947498234,
+          "d05": 0.4569245353145955,
+          "d06": 0.0,
+          "d07": 0.0,
+          "d08": 0.09691837852548282,
+          "d09": 0.08019252602167252,
+          "d10": 0.19166293170642723
+        },
+        "rank_del_relevante": 1
+      },
+      "q5": {
+        "ranking": [
+          "d03",
+          "d06",
+          "d04",
+          "d01",
+          "d10",
+          "d09",
+          "d08",
+          "d05",
+          "d02",
+          "d07"
+        ],
+        "similitudes_por_documento": {
+          "d01": 0.16230333908296432,
+          "d02": 0.0,
+          "d03": 0.3106758887220715,
+          "d04": 0.18955976285205217,
+          "d05": 0.0394516330072182,
+          "d06": 0.20085134590621823,
+          "d07": 0.0,
+          "d08": 0.0748861092010969,
+          "d09": 0.07900232923856973,
+          "d10": 0.08491551831191196
+        },
+        "rank_del_relevante": 6
+      },
+      "q6": {
+        "ranking": [
+          "d02",
+          "d06",
+          "d03",
+          "d08",
+          "d01",
+          "d04",
+          "d05",
+          "d07",
+          "d09",
+          "d10"
+        ],
+        "similitudes_por_documento": {
+          "d01": 0.03190732792160084,
+          "d02": 0.5674153888326815,
+          "d03": 0.04553295699284448,
+          "d04": 0.0,
+          "d05": 0.0,
+          "d06": 0.16635706514893972,
+          "d07": 0.0,
+          "d08": 0.045402589103718784,
+          "d09": 0.0,
+          "d10": 0.0
+        },
+        "rank_del_relevante": 1
+      }
+    },
+    "LSA": {
+      "q1": {
+        "ranking": [
+          "d04",
+          "d01",
+          "d06",
+          "d10",
+          "d09",
+          "d05",
+          "d03",
+          "d08",
+          "d07",
+          "d02"
+        ],
+        "similitudes_por_documento": {
+          "d01": 0.9261673642870463,
+          "d02": 0.0030220873496772083,
+          "d03": 0.37388789812768175,
+          "d04": 0.9542338764603777,
+          "d05": 0.46575217619467096,
+          "d06": 0.6302861368690833,
+          "d07": 0.19343780781776454,
+          "d08": 0.3245207546801641,
+          "d09": 0.5060238963860741,
+          "d10": 0.5834748914843843
+        },
+        "rank_del_relevante": 1
+      },
+      "q2": {
+        "ranking": [
+          "d03",
+          "d07",
+          "d09",
+          "d02",
+          "d04",
+          "d10",
+          "d08",
+          "d01",
+          "d05",
+          "d06"
+        ],
+        "similitudes_por_documento": {
+          "d01": 0.03374106389120352,
+          "d02": 0.4022930576302999,
+          "d03": 0.9753616198616087,
+          "d04": 0.38269812995797114,
+          "d05": -0.16002038909686714,
+          "d06": -0.26136569169095336,
+          "d07": 0.8023847351500111,
+          "d08": 0.14626163623898272,
+          "d09": 0.4708679135966445,
+          "d10": 0.2942380763214462
+        },
+        "rank_del_relevante": 1
+      },
+      "q3": {
+        "ranking": [
+          "d08",
+          "d02",
+          "d06",
+          "d10",
+          "d01",
+          "d04",
+          "d03",
+          "d05",
+          "d07",
+          "d09"
+        ],
+        "similitudes_por_documento": {
+          "d01": 0.3543433582332384,
+          "d02": 0.7665154388303889,
+          "d03": 0.148207824992226,
+          "d04": 0.22438785854469848,
+          "d05": -0.13297643110944177,
+          "d06": 0.560621788324575,
+          "d07": -0.13599590950411708,
+          "d08": 0.9746239272656919,
+          "d09": -0.17353933738775976,
+          "d10": 0.41330397888066933
+        },
+        "rank_del_relevante": 1
+      },
+      "q4": {
+        "ranking": [
+          "d01",
+          "d10",
+          "d05",
+          "d09",
+          "d04",
+          "d03",
+          "d08",
+          "d02",
+          "d06",
+          "d07"
+        ],
+        "similitudes_por_documento": {
+          "d01": 0.921961809400011,
+          "d02": 0.12236796902645228,
+          "d03": 0.2875415099375303,
+          "d04": 0.7523786823058987,
+          "d05": 0.898421713413974,
+          "d06": 0.05001260690762112,
+          "d07": -0.258115005691511,
+          "d08": 0.26950027576974256,
+          "d09": 0.8201270985637528,
+          "d10": 0.9205569108925602
+        },
+        "rank_del_relevante": 3
+      },
+      "q5": {
+        "ranking": [
+          "d04",
+          "d01",
+          "d03",
+          "d06",
+          "d10",
+          "d09",
+          "d07",
+          "d08",
+          "d05",
+          "d02"
+        ],
+        "similitudes_por_documento": {
+          "d01": 0.8066012329018133,
+          "d02": 0.17339640145553137,
+          "d03": 0.614050984025136,
+          "d04": 0.9427359534682045,
+          "d05": 0.2737753303946249,
+          "d06": 0.5655795641518964,
+          "d07": 0.43375161039146864,
+          "d08": 0.40469793469632886,
+          "d09": 0.49988551680348015,
+          "d10": 0.5629897534965783
+        },
+        "rank_del_relevante": 6
+      },
+      "q6": {
+        "ranking": [
+          "d02",
+          "d08",
+          "d10",
+          "d03",
+          "d06",
+          "d01",
+          "d07",
+          "d04",
+          "d09",
+          "d05"
+        ],
+        "similitudes_por_documento": {
+          "d01": 0.04002492044137482,
+          "d02": 0.9530957100505455,
+          "d03": 0.33015611410498175,
+          "d04": -0.011801219300028089,
+          "d05": -0.32567217098165185,
+          "d06": 0.2163585977781817,
+          "d07": 0.005194301093239754,
+          "d08": 0.9523406024377631,
+          "d09": -0.18718419462120292,
+          "d10": 0.34842799295196764
+        },
+        "rank_del_relevante": 1
+      }
+    }
+  },
+  "explicacion": [
+    "TF-IDF falla en q5: el relevante d09 queda en el puesto 6 (similitud 0.0790) y la intersección de tokens con la consulta se reduce a 1 término(s): 'la' (df=6/10). Además, 7 de los 13 tokens de la consulta no aparecen en ningún documento del corpus (determinista, elegir, hace, más, palabra, sea, siguiente), con lo que no pueden emparejar con nada. Los documentos que lo anteceden comparten más vocabulario con la consulta: d03 (puesto 1, similitud 0.3107) comparte 3 término(s) [al, la, modelo]; d06 (puesto 2, similitud 0.2009) comparte 2 término(s) [el, qué]; d04 (puesto 3, similitud 0.1896) comparte 2 término(s) [la, que].",
+    "LSA falla en q5: el relevante d09 queda en el puesto 6 (similitud 0.4999) y la intersección de tokens con la consulta se reduce a 1 término(s): 'la' (df=6/10). Además, 7 de los 13 tokens de la consulta no aparecen en ningún documento del corpus (determinista, elegir, hace, más, palabra, sea, siguiente), con lo que no pueden emparejar con nada. Los documentos que lo anteceden comparten más vocabulario con la consulta: d04 (puesto 1, similitud 0.9427) comparte 2 término(s) [la, que]; d01 (puesto 2, similitud 0.8066) comparte 2 término(s) [el, la]; d03 (puesto 3, similitud 0.6141) comparte 3 término(s) [al, la, modelo].",
+    "Solape consulta–relevante en el corpus: mínimo 1 término(s) (q5 vs d09: la; 7 de sus 13 tokens de consulta son ajenos al vocabulario) y máximo 8 (q1 vs d04). El fallo se explica porque el solape se reduce a términos muy frecuentes en el corpus (df alto, idf bajo), que apenas discriminan, y a tokens de la consulta ausentes del vocabulario."
+  ],
+  "notas_metodologicas": [
+    "Intersección calculada sobre tokens únicos tras el análisis de TfidfVectorizer por defecto: minúsculas, patrón r'(?u)\\b\\w\\w+\\b' (tokens de 2+ caracteres), sin stop words ni stemming; por eso 'que' y 'qué' son tokens distintos y variantes morfológicas como 'añaden'/'añade', 'recuperados'/'recuperación' o 'texto'/'textos' no cuentan como compartidos.",
+    "Los tokens de la consulta ausentes del vocabulario (ajustado solo con los 10 documentos) no aportan nada a la similitud TF-IDF ni a la proyección LSA; se listan por consulta.",
+    "df = número de documentos del corpus que contienen el término; un término compartido con df alto (p. ej. 'la') tiene idf bajo y apenas discrimina.",
+    "Los rankings usados son los oficiales de T1/T2 cuando sus archivos están disponibles y completos; en caso contrario se recalcularon localmente con los mismos parámetros (ver 'verificacion_con_subtareas_previas')."
+  ],
+  "figuras": [
+    "T3_terminos_compartidos.png",
+    "T3_puesto_relevante_por_metodo.png"
+  ]
+}

@@ -1,0 +1,14 @@
+================================================================
+T3 — Figura de diferencias por tienda (barras divergentes)
+================================================================
+Fuente de datos       : data/model_errors.csv
+Tiendas representadas : 16 (una observación por tienda)
+Favorecen a B (d>0)   : 10 -> S01, S02, S03, S05, S07, S08, S10, S12, S14, S15
+Favorecen a A (d<0)   : 6 -> S04, S06, S09, S11, S13, S16
+Empates               : 0
+Mayor diferencia +    : S08 (+2.10)
+Mayor diferencia -    : S09 (-1.80)
+Figura generada       : output/store_differences.png (87685 bytes)
+Tabla pareada         : output/store_differences.csv
+Contrato de cifras    : resultados.json
+Consistencia con T2   : {'verificado': True, 'n_tiendas': 16, 'max_dif_abs_vs_T2': 0.0, 'coincide': True}

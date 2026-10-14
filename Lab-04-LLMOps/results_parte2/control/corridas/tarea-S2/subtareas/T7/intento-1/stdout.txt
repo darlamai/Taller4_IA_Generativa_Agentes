@@ -1,0 +1,66 @@
+==============================================================================
+TAREA 7 · PIPELINE COMPLETO — diferencias pareadas de error por tienda (A vs B)
+==============================================================================
+Datos: data/model_errors.csv | emparejamiento por store_id | tiendas: n = 16
+
+Tabla pareada (guardada en output/store_differences.csv):
+store_id  error_a  error_b  difference favors
+     S01     12.4     10.6         1.8      B
+     S02      9.8      9.1         0.7      B
+     S03     15.1     13.9         1.2      B
+     S04     11.0     12.4        -1.4      A
+     S05      8.7      7.2         1.5      B
+     S06     13.6     13.9        -0.3      A
+     S07     10.2      9.3         0.9      B
+     S08     14.9     12.8         2.1      B
+     S09      7.5      9.3        -1.8      A
+     S10     16.0     15.0         1.0      B
+     S11      9.3      9.8        -0.5      A
+     S12     12.8     11.1         1.7      B
+     S13     11.7     12.9        -1.2      A
+     S14      8.9      8.3         0.6      B
+     S15     13.2     11.9         1.3      B
+     S16     10.6     11.5        -0.9      A
+
+[1] RESUMEN DESCRIPTIVO de difference = error_a - error_b
+    n                            = 16
+    media                        = 0.418750
+    desviación muestral (ddof=1) = 1.253379
+    error estándar (sd/raiz(n))  = 0.313345
+    mediana                      = 0.800000
+    minimo / maximo              = -1.8000 / 2.1000
+    favorece B (>0): 10 | favorece A (<0): 6 | empate (=0): 0
+
+[2] PRUEBA T PAREADA (scipy.stats; H0: media de las diferencias = 0, bilateral)
+    estadístico t                = 1.336388
+    grados de libertad           = 15
+    p-value (bilateral)          = 0.201342
+    IC t 95 % de la media        = [-0.249128, 1.086628] (t crítico = 2.131450)
+    decisión al nivel 0.05       = no se rechaza H0 (IC incluye 0: True)
+
+[3] REFERENCIA EXACTA POR CAMBIOS DE SIGNO
+    configuraciones de signo     = 65536 (2^16)
+    conteo de extremas           = 13372 (|media nula| >= |media observada| = 0.418750)
+    p-value exacto               = 0.2040405273 (13372/65536)
+
+[4] BOOTSTRAP PAREADO (análisis de sensibilidad)
+    semilla                      = 20260829
+    remuestras                   = 10000 (unidad: tienda completa -> vector de diferencias)
+    IC percentil 95 %            = [-0.193750, 1.006250]
+    media bootstrap              = 0.420967 | EE bootstrap = 0.305594 | sesgo = 0.002218
+    proporción medias > 0        = 0.9119 | IC incluye 0: True
+    reproducibilidad             = misma semilla reproduce índices, medias e intervalo: True
+
+[5] COHERENCIA CON SUBTAREAS PREVIAS (informativa)
+    T4_prueba_t: {'t_statistic_previa': 1.3363877259014323, 'p_value_previo': 0.20134214922904944, 'coincide_estadistico': True, 'coincide_p_value': True}
+    T5_cambios_de_signo: {'p_value_previo': 0.20404052734375, 'conteo_previo': 13372, 'coincide_p_value': True, 'coincide_conteo': True}
+    T6_bootstrap: {'ic_previo': [-0.19375000000000037, 1.0062499999999996], 'ic_local': [-0.19375000000000037, 1.0062499999999996], 'coincide': True}
+
+[6] ARCHIVOS EXIGIDOS POR EL ENUNCIADO
+    output/store_differences.csv -> existe: True
+    output/store_differences.png -> existe: True
+
+[7] INFORME EJECUTIVO (pregunta 18, <= 150 palabras)
+Unidad y procedencia: 16 tiendas (S01-S16) de data/model_errors.csv, emparejadas por store_id. Métrica: difference = error_a - error_b (unidades de error); positivo favorece a B. Efecto: media 0.419 unidades (IC t 95 %: -0.249 a 1.087). Procedimiento: prueba t pareada bilateral (t(15)=1.336, p=0.201), referencia exacta por cambios de signo (13372/65536 configuraciones, p=0.204) y bootstrap percentil de sensibilidad (10000 remuestras de tiendas completas, semilla 20260829; IC 95 %: -0.194 a 1.006). Incertidumbre: ambos intervalos contienen 0, no se rechaza H0 al nivel 0.05. Limitaciones: muestra pequeña (n=16, baja potencia) y supuestos de normalidad/simetría de las diferencias no verificables; datos observacionales sin control de covariables. No puede concluirse que B reduzca el error respecto de A, ni que un eventual efecto sea causal o generalizable a otras tiendas o periodos.
+==============================================================================
+Pipeline completado: resultados.json, output/store_differences.csv y output/store_differences.png

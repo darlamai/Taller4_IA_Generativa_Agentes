@@ -1,0 +1,10 @@
+=== T1: Resumen de ventas mensuales (USD) ===
+  ene: 1250.50
+  feb: 980.25
+  mar: 1430.75
+  abr: 1120.00
+  may: 1675.50
+  jun: 1305.25
+Media   : 1293.71 USD
+Mediana : 1277.88 USD
+Resultados escritos en: /home/dludena/Taller4_IA_Generativa_Agentes/Lab-04-LLMOps/results_parte2/control/corridas/tarea-P1/subtareas/T1/intento-1/resultados.json

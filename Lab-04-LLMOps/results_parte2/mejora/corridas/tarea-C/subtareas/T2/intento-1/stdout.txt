@@ -1,0 +1,28 @@
+==================================================================
+T2 — LSA (TruncatedSVD 4D, random_state=0) sobre la matriz TF-IDF de T1
+==================================================================
+Documentos: 10 | Consultas: 6 | Vocabulario: 105
+Varianza explicada por las 4 componentes: [0.0342, 0.1266, 0.116, 0.1186] (total 0.3953)
+
+Tabla comparativa (promedio sobre 6 consultas):
+                        Hit@1  Hit@3    MRR
+metodo                                     
+TF-IDF (línea base)    0.8333 0.8333 0.8611
+LSA (TruncatedSVD, 4D) 0.6667 0.8333 0.7500
+
+Posición (1-based) del documento relevante por consulta:
+  q1: TF-IDF rank= 1 | LSA rank= 1 (relevante=d04)
+  q2: TF-IDF rank= 1 | LSA rank= 1 (relevante=d03)
+  q3: TF-IDF rank= 1 | LSA rank= 1 (relevante=d08)
+  q4: TF-IDF rank= 1 | LSA rank= 3 (relevante=d05)
+  q5: TF-IDF rank= 6 | LSA rank= 6 (relevante=d09)
+  q6: TF-IDF rank= 1 | LSA rank= 1 (relevante=d02)
+
+Verificación: rankings TF-IDF recalculados idénticos a T1 -> True
+
+Archivos generados:
+  - resultados.json
+  - tabla_comparativa.csv
+  - tabla_comparativa.png
+  - mapa_calor_tfidf_vs_lsa.png
+  - metricas_tfidf_vs_lsa.png

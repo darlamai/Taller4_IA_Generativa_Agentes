@@ -1,0 +1,15 @@
+================================================================
+T2 - Auditoría y tabla pareada (data/model_errors.csv)
+================================================================
+Columnas encontradas: ['store_id', 'error_a', 'error_b'] (exactas: True)
+Filas leídas: 16 | pares validados por store_id: 16
+store_id únicos y no nulos: True | errores numéricos, finitos y >= 0: True
+CSV original intacto: True
+Favorece A: 6 tiendas -> ['S04', 'S06', 'S09', 'S11', 'S13', 'S16']
+Favorece B: 10 tiendas -> ['S01', 'S02', 'S03', 'S05', 'S07', 'S08', 'S10', 'S12', 'S14', 'S15']
+Empates: 0 -> [] (suma de conteos = 16)
+Mayor diferencia positiva (favorece B): ['S08'] con difference = +2.1000
+Mayor diferencia negativa (favorece A): ['S09'] con difference = -1.8000
+Tabla pareada -> output/store_differences.csv
+Figura        -> output/store_differences.png
+Resultados    -> resultados.json

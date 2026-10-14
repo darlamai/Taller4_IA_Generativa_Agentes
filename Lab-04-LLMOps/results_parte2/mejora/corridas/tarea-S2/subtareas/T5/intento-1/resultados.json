@@ -1,0 +1,59 @@
+{
+  "subtarea": "T5",
+  "descripcion": "Prueba exacta por cambios de signo: enumeración de las 2^16 = 65536 configuraciones de signos del vector de diferencias, conteo de medias nulas al menos tan extremas como la observada y p-value exacto",
+  "fuente_datos": "data/model_errors.csv",
+  "definicion_diferencia": "difference = error_a - error_b, emparejada por store_id",
+  "metodo": "enumeración exhaustiva y determinista de las 2^16 configuraciones de signos (sin muestreo ni aleatoriedad)",
+  "n": 16,
+  "media_observada": 0.4187499999999997,
+  "suma_observada": 6.699999999999995,
+  "umbral_extremo_en_media": 0.4187499999999997,
+  "umbral_extremo_en_suma": 6.699999999999995,
+  "criterio_extremo": "|media_nula| >= |media_observada| (tolerancia numerica 1e-12)",
+  "total_configuraciones": 65536,
+  "conteo_extremas": 13372,
+  "p_value": 0.20404052734375,
+  "p_value_como_fraccion": "13372/65536",
+  "p_value_formula": "p_value = conteo_extremas / total_configuraciones",
+  "aclaracion_notacion": "El enunciado pide enumerar las 2^16 = 65536 configuraciones de signos; la notación '216' en fragmentos auxiliares corresponde a 2^16.",
+  "desglose_conteo": {
+    "estrictamente_mas_extremas": 12476,
+    "igualmente_extremas": 896,
+    "nota": "la configuración observada (todos los signos +) está incluida en el conteo de extremas"
+  },
+  "colas": {
+    "media_nula_mayor_igual_que_observada": 6686,
+    "media_nula_menor_igual_que_menos_observada": 6686,
+    "colas_suman_conteo_extremas": true
+  },
+  "distribucion_nula_medias": {
+    "min": -1.1812500000000001,
+    "max": 1.1812500000000001,
+    "media": 0.0,
+    "sd": 0.3209507505809365,
+    "cuantil_2_5": -0.6187500000000004,
+    "cuantil_97_5": 0.6187500000000004,
+    "max_abs": 1.1812500000000001
+  },
+  "verificacion": {
+    "configuracion_todo_positivo_iguala_media_observada": true,
+    "configuracion_observada_cuenta_como_extrema": true,
+    "media_T4": 0.4187499999999997,
+    "coincide_con_media_T4": true,
+    "coincide_con_vector_T4": true
+  },
+  "comparacion_con_prueba_t": {
+    "estadistico_t": 1.3363877259014323,
+    "grados_libertad": 15,
+    "p_value_t_bilateral": 0.20134214922904944,
+    "p_value_cambios_de_signo": 0.20404052734375,
+    "diferencia_abs": 0.002698378114700556,
+    "nota": "Ambas referencias nulas son bilaterales sobre la media de las diferencias y producen valores numéricos cercanos, pero no son intercambiables: la prueba t asume que las diferencias son una muestra aleatoria de una población aproximadamente normal y usa la distribución t de Student del estadístico estandarizado; la prueba exacta por cambios de signo solo asume que, bajo H0, cada diferencia es simétrica alrededor de 0 (signos intercambiables), condiciona en las magnitudes observadas |d_i| y usa la distribución exacta de las 2^16 medias, sin suponer normalidad."
+  },
+  "interpretacion_p_value": "El p-value es la probabilidad, condicional a la hipótesis nula de efecto nulo (cada diferencia simétrica alrededor de 0, signos igualmente probables), de observar una media de las diferencias al menos tan extrema en magnitud como la observada; se obtiene contando configuraciones de signos, no ajustando parámetros.",
+  "archivos_generados": [
+    "output/store_differences.csv",
+    "output/store_differences.png",
+    "t5_signflip_null_distribution.png"
+  ]
+}

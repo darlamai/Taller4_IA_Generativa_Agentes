@@ -1,0 +1,23 @@
+Round trip verificado: output/server_analysis.parquet
+Filas: True
+Columnas: True
+Esquema: True
+Valores: True
+----------------------------------------------------------------
+Resumen T5
+  DataFrame analizado: 300 filas x 9 columnas (fuente: data/server_measurements.csv)
+  Guardado con PyArrow sin índice: output/server_analysis.parquet (17629 bytes)
+  Releído: 300 filas x 9 columnas
+  Esquema del parquet:
+    server: large_string
+    timestamp: timestamp[us]
+    gpu_utilization: double
+    cpu_utilization: double
+    memory_gb: double
+    power_w: double
+    temperature_c: double
+    load_score: double
+    requires_review: bool
+  Verificaciones -> Filas: True | Columnas: True | Esquema: True | Valores: True
+  Validación contra T3: {'indice': 23, 'server_igual': True, 'load_score_igual': True, 'temperature_c_igual': True, 'requires_review_igual': True, 'indices_requieren_revision_iguales': True, 'n_requieren_revision': 49}
+  resultados.json escrito en resultados.json

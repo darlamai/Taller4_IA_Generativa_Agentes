@@ -1,0 +1,16 @@
+CSV cargado: 300 filas x 7 columnas
+dtypes:
+server                        str
+timestamp          datetime64[us]
+gpu_utilization           float64
+cpu_utilization           float64
+memory_gb                 float64
+power_w                   float64
+temperature_c             float64
+ServerMeasurements(shape=(300, 3), features=('gpu_utilization', 'cpu_utilization', 'memory_gb'))
+Validaciones ValueError (deben ser True): {'matriz_no_bidimensional_lanza_valueerror': True, 'columnas_distintas_de_nombres_lanza_valueerror': True, 'datos_no_numericos_lanza_valueerror': True}
+CSV sin modificar: True
+gpu_utilization: media=57.9931, min=22.3100, max=97.8200
+cpu_utilization: media=50.5416, min=19.0900, max=93.0000
+memory_gb: media=29.4553, min=13.5900, max=55.0000
+resultados.json escrito correctamente.

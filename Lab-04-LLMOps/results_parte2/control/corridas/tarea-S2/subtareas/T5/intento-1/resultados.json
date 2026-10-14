@@ -1,0 +1,64 @@
+{
+  "subtarea": "T5_referencia_nula_exacta_por_cambios_de_signo",
+  "fuente_datos": "data/model_errors.csv",
+  "n_tiendas": 16,
+  "vector_diferencias": [
+    1.8000000000000007,
+    0.7000000000000011,
+    1.1999999999999993,
+    -1.4000000000000004,
+    1.4999999999999991,
+    -0.3000000000000007,
+    0.8999999999999986,
+    2.0999999999999996,
+    -1.8000000000000007,
+    1.0,
+    -0.5,
+    1.700000000000001,
+    -1.200000000000001,
+    0.5999999999999996,
+    1.299999999999999,
+    -0.9000000000000004
+  ],
+  "media_diferencia_observada": 0.41875,
+  "suma_diferencias_observada": 6.7,
+  "total_configuraciones": 65536,
+  "conteo_configuraciones_extremas": 13372,
+  "p_value_exacto": 0.20404052734375,
+  "prueba_exacta_cambios_de_signo": {
+    "metodo": "enumeración completa de las 2^16 configuraciones de signos del vector de diferencias; la media nula de cada configuración se compara en aritmética exacta (enteros escalados) con el criterio |media nula| >= |media observada|",
+    "total_configuraciones": 65536,
+    "total_configuraciones_es_2_elevado_16": true,
+    "conteo_configuraciones_extremas": 13372,
+    "p_value_exacto": 0.20404052734375,
+    "p_value_fraccion": [
+      13372,
+      65536
+    ],
+    "conteo_extremas_lado_positivo": 6686,
+    "conteo_extremas_lado_negativo": 6686,
+    "conteo_medias_nulas_con_magnitud_igual_a_la_observada": 896,
+    "media_nula_minima": -1.18125,
+    "media_nula_maxima": 1.18125,
+    "percentil_2_5_medias_nulas": -0.61875,
+    "percentil_97_5_medias_nulas": 0.61875
+  },
+  "verificaciones": {
+    "enumeracion_vs_dinamica_exacta_coinciden": true,
+    "enumeracion_vs_float_con_tolerancia_coinciden": true,
+    "simetria_colas_positiva_negativa": true,
+    "configuracion_observada_incluida_en_extremas": true,
+    "diferencias_coinciden_con_T2": true
+  },
+  "comparacion_con_prueba_t": {
+    "t_statistic": 1.3363877259014323,
+    "p_value_t_bilateral": 0.20134214922904944,
+    "diferencia_absoluta_p_values": 0.002698378114700556,
+    "nota": "Ambos procedimientos evalúan la misma hipótesis nula (media de las diferencias = 0) pero usan referencias nulas distintas: la prueba t usa la distribución t de Student de la media estandarizada (supone diferencias iid aproximadamente normales), mientras que la prueba exacta por cambios de signo usa la distribución de la media bajo todas las asignaciones de signos equiprobables (solo requiere que, bajo H0, cada diferencia sea simétrica respecto de 0). Por eso no son intercambiables, aunque aquí produzcan valores numéricos cercanos."
+  },
+  "salidas": {
+    "csv_tabla_diferencias": "output/store_differences.csv",
+    "figura": "output/store_differences.png",
+    "resultados_json": "resultados.json"
+  }
+}

@@ -1,0 +1,16 @@
+==============================================================================
+T3 · Análisis por consulta — fallos por método y términos compartidos
+==============================================================================
+Rankings TF-IDF: entrada/T1/resultados.json (rankings oficiales de la subtarea previa)
+Rankings LSA   : entrada/T2/resultados.json (rankings oficiales de la subtarea previa)
+Recálculo local coincide con T1: True | con T2: True
+TF-IDF: Hit@1=0.8333  Hit@3=0.8333  MRR=0.8611  consultas falladas (relevante fuera del top 3): q5
+LSA: Hit@1=0.6667  Hit@3=0.8333  MRR=0.7500  consultas falladas (relevante fuera del top 3): q5
+Términos compartidos consulta -> documento relevante (intersección de tokens TF-IDF):
+  q1 -> d04: 8 compartidos [de, frecuencia, función, la, léxica, pondera, ranking, términos]
+  q2 -> d03: 3 compartidos [al, fragmentos, prompt] | 4 tokens de consulta fuera de vocabulario
+  q3 -> d08: 5 compartidos [bajo, de, entrena, matrices, rango] | 1 tokens de consulta fuera de vocabulario
+  q4 -> d05: 4 compartidos [compara, la, orientación, vectores] | 4 tokens de consulta fuera de vocabulario
+  q5 -> d09: 1 compartidos [la] | 7 tokens de consulta fuera de vocabulario
+  q6 -> d02: 5 compartidos [autoatención, capas, con, feed, forward] | 2 tokens de consulta fuera de vocabulario
+Escritos: resultados.json | T3_terminos_compartidos.png | T3_puesto_relevante_por_metodo.png

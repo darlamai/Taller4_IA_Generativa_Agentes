@@ -1,0 +1,17 @@
+==============================================================================
+T1 — Línea base léxica: TF-IDF (por defecto) + similitud coseno
+==============================================================================
+consulta relevante  rank_relevante     RR            top3
+      q1       d04               1 1.0000 d04 > d01 > d06
+      q2       d03               1 1.0000 d03 > d01 > d02
+      q3       d08               1 1.0000 d08 > d06 > d04
+      q4       d05               1 1.0000 d05 > d01 > d04
+      q5       d09               6 0.1667 d03 > d06 > d04
+      q6       d02               1 1.0000 d02 > d06 > d03
+------------------------------------------------------------------------------
+Hit@1 = 0.833333  (5/6)
+Hit@3 = 0.833333  (5/6)
+MRR   = 0.861111
+Vocabulario TF-IDF: 105 términos
+Resultados escritos en: /home/dludena/Taller4_IA_Generativa_Agentes/Lab-04-LLMOps/results_parte2/control/corridas/tarea-C/subtareas/T1/intento-1/resultados.json
+Figuras: t1_heatmap_similitud.png, t1_rank_relevante.png

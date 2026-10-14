@@ -1,0 +1,13 @@
+==================================================================
+T5 · Referencia nula exacta por cambios de signo
+==================================================================
+Tiendas pareadas (n)                       : 16
+Media observada de las diferencias         : 0.418750
+Total de configuraciones enumeradas        : 65536 (= 2^16)
+Configuraciones extremas (|media| >= |obs|): 13372
+  - lado positivo / lado negativo          : 6686 / 6686
+  - con magnitud exactamente igual a |obs| : 896
+p-value exacto por cambios de signo        : 0.2040405273
+Referencia comparativa (prueba t bilateral): t = 1.3364, p = 0.201342
+Verificaciones (DP exacta, float+tolerancia, simetría): OK
+Salidas: resultados.json, output/store_differences.csv, output/store_differences.png

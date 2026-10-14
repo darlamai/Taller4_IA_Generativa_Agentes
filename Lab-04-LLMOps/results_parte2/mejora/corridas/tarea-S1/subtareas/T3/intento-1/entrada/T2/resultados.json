@@ -1,0 +1,90 @@
+{
+  "subtarea": "T2_normalizar_y_load_score",
+  "feature_names": [
+    "gpu_utilization",
+    "cpu_utilization",
+    "memory_gb"
+  ],
+  "pesos": [
+    0.5,
+    0.3,
+    0.2
+  ],
+  "means": [
+    57.993133333333326,
+    50.54163333333333,
+    29.455333333333336
+  ],
+  "stds": [
+    14.43011728465465,
+    12.69846348968602,
+    6.536801834400537
+  ],
+  "stds_usados_en_division": [
+    14.43011728465465,
+    12.69846348968602,
+    6.536801834400537
+  ],
+  "zscores_shape": [
+    300,
+    3
+  ],
+  "load_score_shape": [
+    300
+  ],
+  "zscores_media_por_columna": [
+    5.684341886080802e-16,
+    2.3684757858670006e-16,
+    -3.315866100213801e-16
+  ],
+  "zscores_desv_por_columna": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "zscores_primeras_3_filas": [
+    [
+      0.11204806134085206,
+      0.7141310186096296,
+      -0.7014643321758027
+    ],
+    [
+      -0.5892629398359617,
+      0.16524571404808241,
+      -0.2639415079486739
+    ],
+    [
+      0.5285380926721421,
+      -0.27417752834121933,
+      -0.47658371972339747
+    ]
+  ],
+  "load_score_primeros_5": [
+    0.12997046981815433,
+    -0.2978460572932909,
+    0.08669904388902576,
+    -1.1566082602432481,
+    -0.9777841752188701
+  ],
+  "load_score_resumen": {
+    "media": 2.6053233644537007e-16,
+    "desv_est": 0.8024072918435488,
+    "min": -1.955649651274497,
+    "max": 3.136217861183744
+  },
+  "n_filas_load_score_mayor_1_5": 9,
+  "verificacion": {
+    "means_coinciden_esperados": true,
+    "zscores_shape_correcto": true,
+    "load_score_shape_correcto": true,
+    "zscores_media_cero_tol_1e-10": true,
+    "zscores_desv_uno_tol_1e-10": true,
+    "load_score_igual_a_zscores_por_pesos": true,
+    "matriz_consistente_con_T1": true
+  },
+  "archivo_parquet": "output/server_analysis.parquet",
+  "archivos_npy": [
+    "zscores.npy",
+    "load_score.npy"
+  ]
+}

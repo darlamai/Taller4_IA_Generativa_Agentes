@@ -1,0 +1,19 @@
+==============================================================================
+T3 — Fallos por método (relevante fuera del top 3) y términos compartidos
+==============================================================================
+consulta relevante  rank_tfidf  fallo_tfidf  rank_lsa  fallo_lsa
+      q1       d04           1        False         1      False
+      q2       d03           1        False         1      False
+      q3       d08           1        False         1      False
+      q4       d05           1        False         3      False
+      q5       d09           6         True         6       True
+      q6       d02           1        False         1      False
+
+TF-IDF: fallos=['q5'] | Hit@1=0.8333 Hit@3=0.8333 MRR=0.8611
+LSA   : fallos=['q5'] | Hit@1=0.6667 Hit@3=0.8333 MRR=0.7500
+
+q5 vs d09: términos compartidos = ['la'] (idf=1.4519851237430572, df=6/10)
+       rank TF-IDF=6, rank LSA=6; fuera de vocabulario: ['determinista', 'elegir', 'hace', 'más', 'palabra', 'sea', 'siguiente']
+       FALLO EN AMBOS MÉTODOS. q5 («¿Qué hace que el modelo sea más determinista al elegir la siguiente palabra?») y su relevante d09 comparten un único término del vocabulario: «la» (df=6/10, idf=1.4520), que aporta solo el 6.0% de la energía TF-IDF de la consulta; fuera de ese artículo, ningún término de d09 aparece en la consulta (p. ej. temperatura, reescala, los, logits) y los términos de contenido de la consulta (determinista, elegir, hace, más, palabra, sea, siguiente) no existen en el corpus. La similitud coseno TF-IDF es 0.0790 y d09 queda en el puesto 6 (fuera del top 3), por detrás de documentos que solo comparten palabras funcionales o «modelo/al» con q5. LSA-4D no repara el fallo (varianza explicada 39.5%): d09 sigue en el puesto 6 (sim 0.4999) porque la relación «determinista ↔ temperatura baja» no tiene soporte de co-ocurrencia en un corpus de 10 documentos.
+
+Archivos escritos: resultados.json, T3_fallos_y_terminos.png, T3_q5_terminos.png

@@ -1,0 +1,82 @@
+{
+ "Parte 1": [
+  {
+   "clave": "venta",
+   "nombre": "ventas",
+   "tipo": "dataset",
+   "alias": [
+    "ventas mensuales"
+   ],
+   "descripciones": [
+    "Tabla de datos de ventas mensuales consultada con execute_sql en los ejemplos.",
+    "Datos de ventas por mes sobre los que se deben calcular estadísticas."
+   ],
+   "citas": [
+    "s3-agentes § 3. Patrones de Agentes … 3.3 Reflexion",
+    "Parte 1"
+   ],
+   "origen": [
+    "notas",
+    "enunciado"
+   ],
+   "fragmentos": [
+    "s3-agentes#3"
+   ],
+   "comunidad": 6
+  },
+  {
+   "clave": "media",
+   "nombre": "media",
+   "tipo": "metrica",
+   "alias": [
+    "promedio"
+   ],
+   "descripciones": [
+    "Medida que se debe calcular sobre las ventas mensuales."
+   ],
+   "citas": [
+    "Parte 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "mediana",
+   "nombre": "mediana",
+   "tipo": "metrica",
+   "alias": [],
+   "descripciones": [
+    "Medida que se debe calcular sobre las ventas mensuales."
+   ],
+   "citas": [
+    "Parte 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "dos decimal",
+   "nombre": "dos decimales",
+   "tipo": "restriccion",
+   "alias": [],
+   "descripciones": [
+    "Formato con el que se deben reportar las dos cifras calculadas."
+   ],
+   "citas": [
+    "Parte 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  }
+ ],
+ "Parte 2": []
+}

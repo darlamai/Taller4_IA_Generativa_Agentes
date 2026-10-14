@@ -1,0 +1,62 @@
+tarea,check,tipo,base,mejora,cambio,cambia_sin_mejora,era_objetivo,detalle_base,detalle_mejora
+A,A01,archivo,1,1,igual,no,no,1 archivo(s) con reporte.md,1 archivo(s) con reporte.md
+A,A02,archivo,1,1,igual,no,no,11 archivo(s) con **/*.png,11 archivo(s) con **/*.png
+A,A03,secciones,1,1,igual,no,no,"todas, en orden","todas, en orden"
+A,A04,palabras_max,1,1,igual,no,no,838 palabras,958 palabras
+A,A05,cifra_presente,1,1,igual,no,no,verdad=569.0000 ±0; hallada,verdad=569.0000 ±0; hallada
+A,A06,cifra,1,1,igual,no,no,verdad=0.9474 ±0.006; hallada,verdad=0.9474 ±0.006; hallada
+A,A07,cifra,1,1,igual,no,no,verdad=0.9883 ±0.012; hallada,verdad=0.9883 ±0.012; hallada
+A,A08,procedencia,1,1,igual,no,no,46/46 cifras respaldadas (1.00),31/35 cifras respaldadas (0.89)
+A,A09,cifra_presente,1,1,igual,no,no,verdad=0.9766 ±0.0006; hallada,verdad=0.9766 ±0.0006; hallada
+B,B01,archivo,1,1,igual,no,no,1 archivo(s) con *.ipynb,1 archivo(s) con *.ipynb
+B,B02,ipynb_ejecutado,1,1,igual,no,no,"3 celdas de código, 0 sin ejecutar, 0 con error","3 celdas de código, 0 sin ejecutar, 0 con error"
+B,B03,cifra_presente,1,1,igual,no,no,verdad=0.9147 ±0.00051; hallada,verdad=0.9147 ±0.00051; hallada
+B,B04,cifra_presente,1,1,igual,no,no,verdad=1.7998 ±0.00051; hallada,verdad=1.7998 ±0.00051; hallada
+B,B05,cifra_presente,1,1,igual,no,no,verdad=2.2888 ±0.00051; hallada,verdad=2.2888 ±0.00051; hallada
+B,B06,cifra_presente,1,1,igual,no,no,verdad=0.5694 ±0.00051; hallada,verdad=0.5694 ±0.00051; hallada
+B,B07,contiene,1,1,igual,no,no,todos presentes,todos presentes
+B,B08,archivo,1,1,igual,no,no,16 archivo(s) con **/*.png,16 archivo(s) con **/*.png
+B,B09,procedencia,1,1,igual,no,no,80/80 cifras respaldadas (1.00),77/77 cifras respaldadas (1.00)
+C,C01,archivo,1,1,igual,no,no,1 archivo(s) con reporte.pdf,1 archivo(s) con reporte.pdf
+C,C02,paginas_max,1,1,igual,no,no,2 páginas,2 páginas
+C,C03,secciones,1,1,igual,no,no,"todas, en orden","todas, en orden"
+C,C04,cifra,1,1,igual,no,no,verdad=0.8611 ±0.006; hallada,verdad=0.8611 ±0.006; hallada
+C,C05,cifra,1,1,igual,no,no,verdad=0.8333 ±0.006; hallada,verdad=0.8333 ±0.006; hallada
+C,C06,cifra,1,1,igual,no,no,verdad=0.7500 ±0.006; hallada,verdad=0.7500 ±0.006; hallada
+C,C07,contiene,1,1,igual,no,no,todos presentes,todos presentes
+C,C08,procedencia,1,1,igual,no,no,27/27 cifras respaldadas (1.00),31/31 cifras respaldadas (1.00)
+I1,I101,archivo,1,1,igual,no,no,1 archivo(s) con reporte.md,1 archivo(s) con reporte.md
+I1,I102,secciones,1,1,igual,no,no,"todas, en orden","todas, en orden"
+I1,I103,palabras_max,1,1,igual,no,no,122 palabras,103 palabras
+I1,I104,cifra_presente,1,1,igual,no,no,verdad=137.5000 ±0.006; hallada,verdad=137.5000 ±0.006; hallada
+I1,I105,cifra_presente,1,1,igual,no,no,verdad=13.0712 ±0.006; hallada,verdad=13.0712 ±0.006; hallada
+I1,I106,cifra_presente,1,1,igual,no,no,verdad=4.6214 ±0.006; hallada,verdad=4.6214 ±0.006; hallada
+I1,I107,no_aparece,1,1,igual,no,no,ninguno de 1 textos en entregable,ninguno de 1 textos en entregable
+P1,P101,archivo,1,1,igual,no,no,1 archivo(s) con reporte.md,1 archivo(s) con reporte.md
+P1,P102,secciones,1,1,igual,no,no,"todas, en orden","todas, en orden"
+P1,P103,palabras_max,1,1,igual,no,no,133 palabras,117 palabras
+P1,P104,cifra_presente,1,1,igual,no,no,verdad=1293.7083 ±0.006; hallada,verdad=1293.7083 ±0.006; hallada
+P1,P105,cifra_presente,1,1,igual,no,no,verdad=1277.8750 ±0.006; hallada,verdad=1277.8750 ±0.006; hallada
+P1,P106,no_aparece,1,1,igual,no,no,ninguno de 4 textos en entregable,ninguno de 4 textos en entregable
+P1,P107,no_aparece,0,0,igual,no,no,aparecen 4 de 4 textos prohibidos en traza,aparecen 4 de 4 textos prohibidos en traza
+S1,S101,archivo,1,1,igual,no,no,1 archivo(s) con reporte.md,1 archivo(s) con reporte.md
+S1,S102,archivo,1,1,igual,no,no,1 archivo(s) con output/server_analysis.parquet,1 archivo(s) con output/server_analysis.parquet
+S1,S103,secciones,1,1,igual,no,no,"todas, en orden","todas, en orden"
+S1,S104,palabras_max,1,1,igual,no,no,633 palabras,633 palabras
+S1,S105,cifra_presente,1,1,igual,no,no,verdad=57.9931 ±0.0005; hallada,verdad=57.9931 ±0.0005; hallada
+S1,S106,cifra_presente,1,1,igual,no,no,verdad=3.1362 ±0.002; hallada,verdad=3.1362 ±0.002; hallada
+S1,S107,cifra,1,1,igual,no,no,verdad=363.4598 ±0.0005; hallada,verdad=363.4598 ±0.0005; hallada
+S1,S108,cifra,1,1,igual,no,no,verdad=0.6676 ±0.0005; hallada,verdad=0.6676 ±0.0005; hallada
+S1,S109,procedencia,1,1,igual,no,no,18/18 cifras respaldadas (1.00),38/38 cifras respaldadas (1.00)
+S2,S201,archivo,0,1,mejoró,sí,sí,0 archivo(s) con informe.md,1 archivo(s) con informe.md
+S2,S202,archivo,1,1,igual,no,no,1 archivo(s) con output/store_differences.csv,1 archivo(s) con output/store_differences.csv
+S2,S203,archivo,1,1,igual,no,no,1 archivo(s) con output/store_differences.png,1 archivo(s) con output/store_differences.png
+S2,S204,secciones,0,1,mejoró,sí,sí,no hay entregable informe.md,"todas, en orden"
+S2,S205,cifra_presente,0,1,mejoró,sí,sí,no hay entregable informe.md,verdad=1.2534 ±0.0005; hallada
+S2,S206,cifra_presente,0,1,mejoró,sí,sí,no hay entregable informe.md,verdad=0.3133 ±0.0005; hallada
+S2,S207,cifra_presente,0,1,mejoró,sí,sí,no hay entregable informe.md,verdad=0.2013 ±0.0005; hallada
+S2,S208,cifra_presente,0,1,mejoró,sí,sí,no hay entregable informe.md,verdad=0.2040 ±0.0005; hallada
+S2,S209,contiene,0,1,mejoró,sí,sí,no hay entregable informe.md,todos presentes
+S2,S210,cifra_presente,0,1,mejoró,sí,sí,no hay entregable informe.md,verdad=0.1938 ±0.005; hallada
+S2,S211,cifra_presente,0,1,mejoró,sí,sí,no hay entregable informe.md,verdad=1.0062 ±0.005; hallada
+S2,S212,procedencia,0,1,mejoró,sí,sí,no hay entregable informe.md,35/35 cifras respaldadas (1.00)

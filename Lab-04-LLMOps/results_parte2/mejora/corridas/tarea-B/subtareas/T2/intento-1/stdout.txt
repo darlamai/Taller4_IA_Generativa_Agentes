@@ -1,0 +1,26 @@
+=== T2: Top-p (nucleus sampling) con p = 0.9 sobre la distribución T=1 ===
+Fuente de la distribución: entrada/T1/resultados.json
+Distribución T=1 de entrada:
+  t0: 0.551623
+  t1: 0.202931
+  t2: 0.123084
+  t3: 0.091183
+  t4: 0.027464
+  t5: 0.003717
+Orden descendente con probabilidad acumulada:
+  t0: p=0.551623  acum=0.551623
+  t1: p=0.202931  acum=0.754553
+  t2: p=0.123084  acum=0.877637
+  t3: p=0.091183  acum=0.968820  <- corte aquí
+  t4: p=0.027464  acum=0.996283
+  t5: p=0.003717  acum=1.000000
+Tokens supervivientes (conjunto mínimo con acumulada >= 0.9): ['t0', 't1', 't2', 't3']
+Probabilidad acumulada antes del corte: 0.968820
+Distribución renormalizada de los supervivientes:
+  t0: 0.569376
+  t1: 0.209462
+  t2: 0.127045
+  t3: 0.094117
+Suma de la distribución renormalizada: 1.000000000000
+Tokens descartados: ['t4', 't5'] (masa descartada = 0.031180)
+Archivos escritos: resultados.json, T2_top_p.png

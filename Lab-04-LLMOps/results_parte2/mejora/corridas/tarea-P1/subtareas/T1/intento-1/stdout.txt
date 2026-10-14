@@ -1,0 +1,5 @@
+T1 - Resumen de ventas mensuales (enero a junio, USD)
+Ventas registradas: {'ene': 1250.5, 'feb': 980.25, 'mar': 1430.75, 'abr': 1120.0, 'may': 1675.5, 'jun': 1305.25}
+Media:   1293.71 USD
+Mediana: 1277.88 USD
+Resultados escritos en resultados.json

@@ -1,0 +1,159 @@
+{
+  "subtarea": "T4_resumen_por_servidor",
+  "fuente_datos": "recomputado desde data/server_measurements.csv (load_score = zscores @ [0.50, 0.30, 0.20] (ddof=0))",
+  "load_score_formula": "zscores @ [0.50, 0.30, 0.20] sobre gpu_utilization, cpu_utilization, memory_gb",
+  "pesos_load_score": [
+    0.5,
+    0.3,
+    0.2
+  ],
+  "n_filas_entrada": 300,
+  "n_servidores": 6,
+  "columnas": [
+    "server",
+    "observations",
+    "mean_power_w",
+    "max_temperature_c",
+    "mean_load",
+    "review_count"
+  ],
+  "orden_columnas_correcto": true,
+  "tabla": [
+    {
+      "server": "AI-SRV-01",
+      "observations": 50,
+      "mean_power_w": 363.45980000000003,
+      "max_temperature_c": 86.5,
+      "mean_load": -0.6145273545959999,
+      "review_count": 2
+    },
+    {
+      "server": "AI-SRV-02",
+      "observations": 50,
+      "mean_power_w": 390.499,
+      "max_temperature_c": 76.47,
+      "mean_load": -0.4177297003125984,
+      "review_count": 1
+    },
+    {
+      "server": "AI-SRV-03",
+      "observations": 50,
+      "mean_power_w": 416.6088,
+      "max_temperature_c": 86.5,
+      "mean_load": -0.08588446470318914,
+      "review_count": 2
+    },
+    {
+      "server": "AI-SRV-04",
+      "observations": 50,
+      "mean_power_w": 434.86840000000007,
+      "max_temperature_c": 80.86,
+      "mean_load": -0.0030414730046210894,
+      "review_count": 5
+    },
+    {
+      "server": "AI-SRV-05",
+      "observations": 50,
+      "mean_power_w": 471.18080000000003,
+      "max_temperature_c": 86.5,
+      "mean_load": 0.4535829868000993,
+      "review_count": 12
+    },
+    {
+      "server": "AI-SRV-06",
+      "observations": 50,
+      "mean_power_w": 495.7276,
+      "max_temperature_c": 88.01,
+      "mean_load": 0.6676000058163108,
+      "review_count": 27
+    }
+  ],
+  "tabla_redondeada": [
+    {
+      "server": "AI-SRV-01",
+      "observations": 50,
+      "mean_power_w": 363.4598,
+      "max_temperature_c": 86.5,
+      "mean_load": -0.614527,
+      "review_count": 2
+    },
+    {
+      "server": "AI-SRV-02",
+      "observations": 50,
+      "mean_power_w": 390.499,
+      "max_temperature_c": 76.47,
+      "mean_load": -0.41773,
+      "review_count": 1
+    },
+    {
+      "server": "AI-SRV-03",
+      "observations": 50,
+      "mean_power_w": 416.6088,
+      "max_temperature_c": 86.5,
+      "mean_load": -0.085884,
+      "review_count": 2
+    },
+    {
+      "server": "AI-SRV-04",
+      "observations": 50,
+      "mean_power_w": 434.8684,
+      "max_temperature_c": 80.86,
+      "mean_load": -0.003041,
+      "review_count": 5
+    },
+    {
+      "server": "AI-SRV-05",
+      "observations": 50,
+      "mean_power_w": 471.1808,
+      "max_temperature_c": 86.5,
+      "mean_load": 0.453583,
+      "review_count": 12
+    },
+    {
+      "server": "AI-SRV-06",
+      "observations": 50,
+      "mean_power_w": 495.7276,
+      "max_temperature_c": 88.01,
+      "mean_load": 0.6676,
+      "review_count": 27
+    }
+  ],
+  "AI-SRV-01": {
+    "observations": 50,
+    "mean_power_w": 363.45980000000003,
+    "max_temperature_c": 86.5,
+    "mean_load": -0.6145273545959999,
+    "review_count": 2
+  },
+  "verificacion_AI-SRV-01": {
+    "observations": {
+      "esperado": 50,
+      "obtenido": 50,
+      "ok": true
+    },
+    "mean_power_w": {
+      "esperado": 363.4598,
+      "obtenido": 363.45980000000003,
+      "ok": true
+    },
+    "max_temperature_c": {
+      "esperado": 86.5,
+      "obtenido": 86.5,
+      "ok": true
+    },
+    "mean_load": {
+      "esperado": -0.614527,
+      "obtenido": -0.6145273545959999,
+      "ok": true
+    },
+    "review_count": {
+      "esperado": 2,
+      "obtenido": 2,
+      "ok": true
+    }
+  },
+  "salidas": [
+    "output/server_analysis.parquet",
+    "t4_resumen_servidores.png"
+  ]
+}

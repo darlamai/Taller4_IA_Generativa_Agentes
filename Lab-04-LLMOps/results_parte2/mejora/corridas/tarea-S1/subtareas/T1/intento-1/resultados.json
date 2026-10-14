@@ -1,0 +1,60 @@
+{
+  "subtarea": "T1_representar_mediciones",
+  "origen_datos": "csv",
+  "repr": "ServerMeasurements(shape=(300, 3), features=('gpu_utilization', 'cpu_utilization', 'memory_gb'))",
+  "shape": [
+    300,
+    3
+  ],
+  "feature_names": [
+    "gpu_utilization",
+    "cpu_utilization",
+    "memory_gb"
+  ],
+  "dtype_values": "float64",
+  "n_filas": 300,
+  "n_columnas": 3,
+  "validaciones_valueerror": {
+    "matriz_no_bidimensional_lanza_value_error": true,
+    "numero_columnas_no_coincide_lanza_value_error": true,
+    "datos_no_numericos_lanza_value_error": true
+  },
+  "primeras_3_filas_values": [
+    [
+      59.61,
+      59.61,
+      24.87
+    ],
+    [
+      49.49,
+      52.64,
+      27.73
+    ],
+    [
+      65.62,
+      47.06,
+      26.34
+    ]
+  ],
+  "estadisticas_por_feature": {
+    "gpu_utilization": {
+      "media": 57.993133333333326,
+      "desv_est": 14.4542277731216,
+      "min": 22.31,
+      "max": 97.82
+    },
+    "cpu_utilization": {
+      "media": 50.54163333333333,
+      "desv_est": 12.719680653169622,
+      "min": 19.09,
+      "max": 93.0
+    },
+    "memory_gb": {
+      "media": 29.455333333333336,
+      "desv_est": 6.547723816677608,
+      "min": 13.59,
+      "max": 55.0
+    }
+  },
+  "archivo_parquet": "output/server_analysis.parquet"
+}

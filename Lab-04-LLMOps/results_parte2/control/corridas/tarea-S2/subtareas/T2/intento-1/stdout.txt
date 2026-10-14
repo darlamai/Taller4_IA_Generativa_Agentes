@@ -1,0 +1,10 @@
+================================================================
+T2 · Auditar datos y construir los pares — resumen
+================================================================
+CSV leído: data/model_errors.csv | intacto (SHA-256): True
+Validaciones OK: columnas exactas; store_id único y no nulo; errores numéricos, finitos y no negativos
+Emparejamiento confirmado por store_id (merge 1-a-1 + mapa clave->par)
+Tabla pareada: 16 filas x 5 columnas ['store_id', 'error_a', 'error_b', 'difference', 'favors']
+  favors -> A: 6 tiendas | B: 10 tiendas | tie: 0
+  difference: media=0.418750, min=-1.800000, max=2.100000
+Salidas: output/store_differences.csv | output/store_differences.png | resultados.json

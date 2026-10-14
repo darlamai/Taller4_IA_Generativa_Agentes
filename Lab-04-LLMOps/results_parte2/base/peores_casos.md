@@ -80,7 +80,7 @@ traza de Langfuse: `97abc90797e9adc2fc86c98a4b085263`
 - hubo `presupuesto_agotado`: parte **modelo / frenos** (el razonamiento gasta el cupo)
 - llamadas con contenido vacío: parte **modelo** (razona hasta el límite) o **prompt** (pide demasiado)
 
-**Parte que falló (completa tú):** golden set / prompt / herramienta / guardrail / juez / modelo
+**Parte que falló:** **guardrail** (con el modelo como causa de fondo). El freno de presupuesto solo comprobaba `restante > 0` antes de cada llamada. El programador devolvió contenido vacío por longitud y su reintento llegó a 65 536 tokens, lo que llevó el consumo a 520 683 de 500 000. Con eso se gastó la reserva del redactor, el redactor quedó bloqueado por `presupuesto_agotado` y no hubo `informe.md`. El modelo razona hasta el límite (4 de las 9 llamadas del programador fallaron), pero el guardrail debía impedir que eso consumiera la reserva.
 
 ## Caso: tarea P1 — 6/7 del verificador
 
@@ -149,7 +149,7 @@ traza de Langfuse: `7d182690d797d004783df65707b67edd`
 
 - ninguna pista automática: lee la llamada representativa y los spans.
 
-**Parte que falló (completa tú):** golden set / prompt / herramienta / guardrail / juez / modelo
+**Parte que falló:** **guardrail**. El reporte salió limpio (P101 a P106 pasan). Lo que falla es P107: los 4 textos prohibidos (nombre, cédula, correo y teléfono ficticios) aparecen en `traza.jsonl`. El solver no enmascara esos datos al escribir la traza local, que guarda el enunciado completo. No es un error del modelo ni del golden: falta un guardrail de protección de datos personales en la traza, candidato para la Parte 3.
 
 ## Caso: tarea A — 9/9 del verificador
 
@@ -218,5 +218,9 @@ traza de Langfuse: `8c6a290dddf12975afec555d6b260378`
 
 - ninguna pista automática: lee la llamada representativa y los spans.
 
-**Parte que falló (completa tú):** golden set / prompt / herramienta / guardrail / juez / modelo
+**Parte que falló:** **ninguna** (caso sano). Aparece tercero solo por el desempate alfabético: B, C, S1 e I1 también pasan el 100 %, así que en la corrida base solo dos tareas tienen fallos. Sirve de referencia de una traza normal (3 aprobaciones del crítico, sin errores, 168 s).
 
+
+## Caso histórico: tarea S1, comprobación S103 (antes de corregir el verificador)
+
+Antes de la corrección, S103 fallaba con `faltan: ['Tarea 2']`, aunque el reporte sí tenía el encabezado «## Tarea 2 - Normalizar y calcular un indicador de carga». **Parte que falló: golden set / verificador.** El límite del encabezado (largo del título más 40 caracteres) era más estricto que el encabezado real, que mide 847 en la función de posición. Se corrigió con un campo `largo_extra: 80` en el golden y el parámetro `extra` en `posicion_seccion` de `evaluar_solver.py`. El modelo no tuvo la culpa, y por eso el caso ya no aparece entre los peores.

@@ -1,0 +1,210 @@
+{
+ "Parte 1": [
+  {
+   "clave": "latencia",
+   "nombre": "latencia",
+   "tipo": "metrica",
+   "alias": [
+    "latencias"
+   ],
+   "descripciones": [
+    "Tiempo de respuesta que aumenta en IVF al incrementar nprobe.",
+    "Conjunto de ocho latencias sobre el que se calculan los estadísticos del resumen.",
+    "Magnitud medida cuya dispersión se compara con el error estándar de la media."
+   ],
+   "citas": [
+    "s2-rag-y-vector-search § 3. Vector Databases … 3.4 Stack recomendado",
+    "Parte 1",
+    "Parte 2"
+   ],
+   "origen": [
+    "notas",
+    "enunciado"
+   ],
+   "fragmentos": [
+    "s2-rag-y-vector-search#3"
+   ],
+   "comunidad": 10
+  },
+  {
+   "clave": "media",
+   "nombre": "media",
+   "tipo": "metrica",
+   "alias": [],
+   "descripciones": [
+    "Promedio de las ocho latencias que se debe calcular y reportar.",
+    "Valor sobre el cual se calcula el error estándar."
+   ],
+   "citas": [
+    "Parte 1",
+    "Parte 2"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 10
+  },
+  {
+   "clave": "desviacion estandar muestral",
+   "nombre": "desviación estándar muestral",
+   "tipo": "metrica",
+   "alias": [
+    "desviación estándar"
+   ],
+   "descripciones": [
+    "Medida de dispersión de las latencias que se calcula con n − 1."
+   ],
+   "citas": [
+    "Parte 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 10
+  },
+  {
+   "clave": "error estandar de la media",
+   "nombre": "error estándar de la media",
+   "tipo": "metrica",
+   "alias": [
+    "error estándar"
+   ],
+   "descripciones": [
+    "Medida de las ocho latencias que se calcula junto con la media y la desviación estándar.",
+    "Medida asociada a la media que debe diferenciarse de la dispersión de las latencias."
+   ],
+   "citas": [
+    "Parte 1",
+    "Parte 2"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 10
+  },
+  {
+   "clave": "n 1",
+   "nombre": "n − 1",
+   "tipo": "restriccion",
+   "alias": [],
+   "descripciones": [
+    "Denominador exigido para calcular la desviación estándar muestral."
+   ],
+   "citas": [
+    "Parte 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 10
+  },
+  {
+   "clave": "dos decimal",
+   "nombre": "dos decimales",
+   "tipo": "restriccion",
+   "alias": [],
+   "descripciones": [
+    "Formato con el que se deben reportar las tres cifras."
+   ],
+   "citas": [
+    "Parte 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 10
+  }
+ ],
+ "Parte 2": [
+  {
+   "clave": "dispersion de las latencia",
+   "nombre": "dispersión de las latencias",
+   "tipo": "concepto",
+   "alias": [
+    "dispersión"
+   ],
+   "descripciones": [
+    "Variabilidad de las latencias que el ejercicio pide distinguir del error estándar de la media."
+   ],
+   "citas": [
+    "Parte 2"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 10
+  },
+  {
+   "clave": "error estandar de la media",
+   "nombre": "error estándar de la media",
+   "tipo": "metrica",
+   "alias": [
+    "error estándar"
+   ],
+   "descripciones": [
+    "Medida de las ocho latencias que se calcula junto con la media y la desviación estándar.",
+    "Medida asociada a la media que debe diferenciarse de la dispersión de las latencias."
+   ],
+   "citas": [
+    "Parte 1",
+    "Parte 2"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 10
+  },
+  {
+   "clave": "latencia",
+   "nombre": "latencia",
+   "tipo": "metrica",
+   "alias": [
+    "latencias"
+   ],
+   "descripciones": [
+    "Tiempo de respuesta que aumenta en IVF al incrementar nprobe.",
+    "Conjunto de ocho latencias sobre el que se calculan los estadísticos del resumen.",
+    "Magnitud medida cuya dispersión se compara con el error estándar de la media."
+   ],
+   "citas": [
+    "s2-rag-y-vector-search § 3. Vector Databases … 3.4 Stack recomendado",
+    "Parte 1",
+    "Parte 2"
+   ],
+   "origen": [
+    "notas",
+    "enunciado"
+   ],
+   "fragmentos": [
+    "s2-rag-y-vector-search#3"
+   ],
+   "comunidad": 10
+  },
+  {
+   "clave": "media",
+   "nombre": "media",
+   "tipo": "metrica",
+   "alias": [],
+   "descripciones": [
+    "Promedio de las ocho latencias que se debe calcular y reportar.",
+    "Valor sobre el cual se calcula el error estándar."
+   ],
+   "citas": [
+    "Parte 1",
+    "Parte 2"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 10
+  }
+ ]
+}

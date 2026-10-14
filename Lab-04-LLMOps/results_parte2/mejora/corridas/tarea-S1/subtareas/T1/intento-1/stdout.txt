@@ -1,0 +1,12 @@
+======================================================================
+T1 - Representar las mediciones
+======================================================================
+Origen de datos     : csv
+repr capturado      : ServerMeasurements(shape=(300, 3), features=('gpu_utilization', 'cpu_utilization', 'memory_gb'))
+Forma de values     : (300, 3) | dtype: float64
+Nombres de features : ('gpu_utilization', 'cpu_utilization', 'memory_gb')
+Validación 1D       -> ValueError: True
+Validación columnas -> ValueError: True
+Validación numérico -> ValueError: True
+Parquet escrito     : output/server_analysis.parquet (300 filas)
+Resultados escritos : resultados.json

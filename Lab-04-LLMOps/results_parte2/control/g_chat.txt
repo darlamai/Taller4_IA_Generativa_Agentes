@@ -1,3 +1,0 @@
-curl: (56) Recv failure: Connection reset by peer
-
-chat http=000 t=0.000527s

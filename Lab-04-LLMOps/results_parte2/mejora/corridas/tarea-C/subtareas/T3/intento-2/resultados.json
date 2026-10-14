@@ -1,0 +1,959 @@
+{
+  "subtarea": "T3",
+  "titulo": "Análisis por consulta: fallos (relevante fuera del top 3) por método y términos compartidos consulta–documento relevante",
+  "config": {
+    "criterio_fallo": "el documento relevante queda fuera del top 3 del ranking del método",
+    "metodos": {
+      "tfidf": "TF-IDF (TfidfVectorizer por defecto) + similitud coseno (T1)",
+      "lsa": "LSA: TruncatedSVD(n_components=4, random_state=0) sobre la matriz TF-IDF de T1 (T2)"
+    },
+    "fuentes": {
+      "rankings_T1": "entrada/T1/resultados.json",
+      "rankings_T2": "entrada/T2/resultados.json",
+      "tfidf_y_lsa_recalculados": "misma parametrización que T1/T2; ajuste solo sobre los 10 documentos"
+    },
+    "tam_vocabulario": 105,
+    "n_documentos": 10,
+    "n_consultas": 6,
+    "varianza_explicada_lsa_4d": 0.39534217090869517
+  },
+  "resumen_fallos": {
+    "tfidf": {
+      "n_fallos": 1,
+      "consultas_fallidas": [
+        "q5"
+      ],
+      "Hit@1": 0.8333333333333334,
+      "Hit@3": 0.8333333333333334,
+      "MRR": 0.8611111111111112
+    },
+    "lsa": {
+      "n_fallos": 1,
+      "consultas_fallidas": [
+        "q5"
+      ],
+      "Hit@1": 0.6666666666666666,
+      "Hit@3": 0.8333333333333334,
+      "MRR": 0.75
+    }
+  },
+  "tabla_fallos": [
+    {
+      "consulta": "q1",
+      "texto_consulta": "¿Qué función de ranking léxica pondera la frecuencia de términos?",
+      "relevante": "d04",
+      "rank_tfidf": 1,
+      "fallo_tfidf": false,
+      "rank_lsa": 1,
+      "fallo_lsa": false,
+      "cambio_rank_lsa_menos_tfidf": 0,
+      "sim_tfidf_relevante": 0.6890762406943802,
+      "sim_lsa_relevante": 0.9542338764603777,
+      "n_terminos_compartidos": 8,
+      "terminos_compartidos": [
+        "de",
+        "frecuencia",
+        "léxica",
+        "ranking",
+        "términos",
+        "función",
+        "pondera",
+        "la"
+      ]
+    },
+    {
+      "consulta": "q2",
+      "texto_consulta": "¿Cómo se añaden fragmentos recuperados al prompt?",
+      "relevante": "d03",
+      "rank_tfidf": 1,
+      "fallo_tfidf": false,
+      "rank_lsa": 1,
+      "fallo_lsa": false,
+      "cambio_rank_lsa_menos_tfidf": 0,
+      "sim_tfidf_relevante": 0.5174387367568429,
+      "sim_lsa_relevante": 0.9753616198616087,
+      "n_terminos_compartidos": 3,
+      "terminos_compartidos": [
+        "al",
+        "fragmentos",
+        "prompt"
+      ]
+    },
+    {
+      "consulta": "q3",
+      "texto_consulta": "¿Qué técnica entrena matrices de bajo rango?",
+      "relevante": "d08",
+      "rank_tfidf": 1,
+      "fallo_tfidf": false,
+      "rank_lsa": 1,
+      "fallo_lsa": false,
+      "cambio_rank_lsa_menos_tfidf": 0,
+      "sim_tfidf_relevante": 0.5604292724229949,
+      "sim_lsa_relevante": 0.9746239272656919,
+      "n_terminos_compartidos": 5,
+      "terminos_compartidos": [
+        "bajo",
+        "entrena",
+        "matrices",
+        "rango",
+        "de"
+      ]
+    },
+    {
+      "consulta": "q4",
+      "texto_consulta": "¿Cómo se compara la orientación de dos vectores de texto?",
+      "relevante": "d05",
+      "rank_tfidf": 1,
+      "fallo_tfidf": false,
+      "rank_lsa": 3,
+      "fallo_lsa": false,
+      "cambio_rank_lsa_menos_tfidf": 2,
+      "sim_tfidf_relevante": 0.4569245353145955,
+      "sim_lsa_relevante": 0.898421713413974,
+      "n_terminos_compartidos": 4,
+      "terminos_compartidos": [
+        "compara",
+        "orientación",
+        "vectores",
+        "la"
+      ]
+    },
+    {
+      "consulta": "q5",
+      "texto_consulta": "¿Qué hace que el modelo sea más determinista al elegir la siguiente palabra?",
+      "relevante": "d09",
+      "rank_tfidf": 6,
+      "fallo_tfidf": true,
+      "rank_lsa": 6,
+      "fallo_lsa": true,
+      "cambio_rank_lsa_menos_tfidf": 0,
+      "sim_tfidf_relevante": 0.07900232923856973,
+      "sim_lsa_relevante": 0.49988551680348015,
+      "n_terminos_compartidos": 1,
+      "terminos_compartidos": [
+        "la"
+      ]
+    },
+    {
+      "consulta": "q6",
+      "texto_consulta": "¿Qué arquitectura combina autoatención con capas feed-forward?",
+      "relevante": "d02",
+      "rank_tfidf": 1,
+      "fallo_tfidf": false,
+      "rank_lsa": 1,
+      "fallo_lsa": false,
+      "cambio_rank_lsa_menos_tfidf": 0,
+      "sim_tfidf_relevante": 0.5674153888326815,
+      "sim_lsa_relevante": 0.9530957100505455,
+      "n_terminos_compartidos": 5,
+      "terminos_compartidos": [
+        "autoatención",
+        "capas",
+        "feed",
+        "forward",
+        "con"
+      ]
+    }
+  ],
+  "tabla_fallos_markdown": "| Consulta | Relevante | Rank TF-IDF | ¿Fallo TF-IDF? | Rank LSA | ¿Fallo LSA? | n términos compartidos | Términos compartidos |\n|---|---|---|---|---|---|---|---|\n| q1 | d04 | 1 | no | 1 | no | 8 | de, frecuencia, léxica, ranking, términos, función, pondera, la |\n| q2 | d03 | 1 | no | 1 | no | 3 | al, fragmentos, prompt |\n| q3 | d08 | 1 | no | 1 | no | 5 | bajo, entrena, matrices, rango, de |\n| q4 | d05 | 1 | no | 3 | no | 4 | compara, orientación, vectores, la |\n| q5 | d09 | 6 | **sí** | 6 | **sí** | 1 | la |\n| q6 | d02 | 1 | no | 1 | no | 5 | autoatención, capas, feed, forward, con |",
+  "tabla_terminos_compartidos_markdown": "| Consulta | Relevante | Término | peso consulta | peso documento | idf | df |\n|---|---|---|---|---|---|---|\n| q1 | d04 | de | 0.4162 | 0.3142 | 1.6061 | 5 |\n| q1 | d04 | frecuencia | 0.3504 | 0.2646 | 2.7047 | 1 |\n| q1 | d04 | léxica | 0.3504 | 0.2646 | 2.7047 | 1 |\n| q1 | d04 | ranking | 0.3504 | 0.2646 | 2.7047 | 1 |\n| q1 | d04 | términos | 0.3504 | 0.2646 | 2.7047 | 1 |\n| q1 | d04 | función | 0.2979 | 0.2249 | 2.2993 | 2 |\n| q1 | d04 | pondera | 0.2979 | 0.2249 | 2.2993 | 2 |\n| q1 | d04 | la | 0.1881 | 0.2841 | 1.4520 | 6 |\n| q2 | d03 | al | 0.5774 | 0.2987 | 2.7047 | 1 |\n| q2 | d03 | fragmentos | 0.5774 | 0.2987 | 2.7047 | 1 |\n| q2 | d03 | prompt | 0.5774 | 0.2987 | 2.7047 | 1 |\n| q3 | d08 | bajo | 0.4322 | 0.2979 | 2.7047 | 1 |\n| q3 | d08 | entrena | 0.4322 | 0.2979 | 2.7047 | 1 |\n| q3 | d08 | matrices | 0.4322 | 0.2979 | 2.7047 | 1 |\n| q3 | d08 | rango | 0.4322 | 0.2979 | 2.7047 | 1 |\n| q3 | d08 | de | 0.2567 | 0.1769 | 1.6061 | 5 |\n| q4 | d05 | compara | 0.4613 | 0.3012 | 2.7047 | 1 |\n| q4 | d05 | orientación | 0.4613 | 0.3012 | 2.7047 | 1 |\n| q4 | d05 | vectores | 0.4613 | 0.3012 | 2.7047 | 1 |\n| q4 | d05 | la | 0.2477 | 0.1617 | 1.4520 | 6 |\n| q5 | d09 | la | 0.2440 | 0.3238 | 1.4520 | 6 |\n| q6 | d02 | autoatención | 0.4322 | 0.3016 | 2.7047 | 1 |\n| q6 | d02 | capas | 0.4322 | 0.3016 | 2.7047 | 1 |\n| q6 | d02 | feed | 0.4322 | 0.3016 | 2.7047 | 1 |\n| q6 | d02 | forward | 0.4322 | 0.3016 | 2.7047 | 1 |\n| q6 | d02 | con | 0.2567 | 0.1791 | 1.6061 | 5 |",
+  "rankings_usados": {
+    "tfidf": {
+      "q1": [
+        "d04",
+        "d01",
+        "d06",
+        "d10",
+        "d02",
+        "d08",
+        "d09",
+        "d05",
+        "d03",
+        "d07"
+      ],
+      "q2": [
+        "d03",
+        "d01",
+        "d02",
+        "d04",
+        "d05",
+        "d06",
+        "d07",
+        "d08",
+        "d09",
+        "d10"
+      ],
+      "q3": [
+        "d08",
+        "d06",
+        "d04",
+        "d01",
+        "d10",
+        "d02",
+        "d03",
+        "d05",
+        "d07",
+        "d09"
+      ],
+      "q4": [
+        "d05",
+        "d01",
+        "d04",
+        "d10",
+        "d02",
+        "d08",
+        "d09",
+        "d03",
+        "d06",
+        "d07"
+      ],
+      "q5": [
+        "d03",
+        "d06",
+        "d04",
+        "d01",
+        "d10",
+        "d09",
+        "d08",
+        "d05",
+        "d02",
+        "d07"
+      ],
+      "q6": [
+        "d02",
+        "d06",
+        "d03",
+        "d08",
+        "d01",
+        "d04",
+        "d05",
+        "d07",
+        "d09",
+        "d10"
+      ]
+    },
+    "lsa": {
+      "q1": [
+        "d04",
+        "d01",
+        "d06",
+        "d10",
+        "d09",
+        "d05",
+        "d03",
+        "d08",
+        "d07",
+        "d02"
+      ],
+      "q2": [
+        "d03",
+        "d07",
+        "d09",
+        "d02",
+        "d04",
+        "d10",
+        "d08",
+        "d01",
+        "d05",
+        "d06"
+      ],
+      "q3": [
+        "d08",
+        "d02",
+        "d06",
+        "d10",
+        "d01",
+        "d04",
+        "d03",
+        "d05",
+        "d07",
+        "d09"
+      ],
+      "q4": [
+        "d01",
+        "d10",
+        "d05",
+        "d09",
+        "d04",
+        "d03",
+        "d08",
+        "d02",
+        "d06",
+        "d07"
+      ],
+      "q5": [
+        "d04",
+        "d01",
+        "d03",
+        "d06",
+        "d10",
+        "d09",
+        "d07",
+        "d08",
+        "d05",
+        "d02"
+      ],
+      "q6": [
+        "d02",
+        "d08",
+        "d10",
+        "d03",
+        "d06",
+        "d01",
+        "d07",
+        "d04",
+        "d09",
+        "d05"
+      ]
+    }
+  },
+  "terminos_compartidos_por_consulta": {
+    "q1": {
+      "relevante": "d04",
+      "n_terminos_compartidos": 8,
+      "terminos": [
+        {
+          "termino": "de",
+          "peso_consulta": 0.41616626604586404,
+          "peso_documento": 0.31423567671878266,
+          "producto": 0.13077428823845103,
+          "idf": 1.6061358035703155,
+          "df": 5
+        },
+        {
+          "termino": "frecuencia",
+          "peso_consulta": 0.3504139910334365,
+          "peso_documento": 0.2645879461839569,
+          "producto": 0.09271531820166046,
+          "idf": 2.7047480922384253,
+          "df": 1
+        },
+        {
+          "termino": "léxica",
+          "peso_consulta": 0.3504139910334365,
+          "peso_documento": 0.2645879461839569,
+          "producto": 0.09271531820166046,
+          "idf": 2.7047480922384253,
+          "df": 1
+        },
+        {
+          "termino": "ranking",
+          "peso_consulta": 0.3504139910334365,
+          "peso_documento": 0.2645879461839569,
+          "producto": 0.09271531820166046,
+          "idf": 2.7047480922384253,
+          "df": 1
+        },
+        {
+          "termino": "términos",
+          "peso_consulta": 0.3504139910334365,
+          "peso_documento": 0.2645879461839569,
+          "producto": 0.09271531820166046,
+          "idf": 2.7047480922384253,
+          "df": 1
+        },
+        {
+          "termino": "función",
+          "peso_consulta": 0.29788390619311367,
+          "peso_documento": 0.22492392700544242,
+          "producto": 0.06700121797267596,
+          "idf": 2.2992829841302607,
+          "df": 2
+        },
+        {
+          "termino": "pondera",
+          "peso_consulta": 0.29788390619311367,
+          "peso_documento": 0.22492392700544242,
+          "producto": 0.06700121797267596,
+          "idf": 2.2992829841302607,
+          "df": 2
+        },
+        {
+          "termino": "la",
+          "peso_consulta": 0.1881121216397302,
+          "peso_documento": 0.2840765562480844,
+          "producto": 0.053438243703935316,
+          "idf": 1.4519851237430572,
+          "df": 6
+        }
+      ],
+      "suma_producto_pesos": 0.6890762406943801,
+      "suma_peso_consulta_compartido": 2.6017021642055678,
+      "fraccion_energia_consulta_compartida": 0.8772100348880186,
+      "fraccion_energia_documento_compartida": 0.5606522212751593,
+      "tokens_compartidos_crudos": [
+        "de",
+        "frecuencia",
+        "función",
+        "la",
+        "léxica",
+        "pondera",
+        "ranking",
+        "términos"
+      ],
+      "terminos_de_la_consulta_fuera_del_vocabulario": [],
+      "terminos_de_la_consulta_en_vocabulario_pero_ausentes_en_el_relevante": [
+        "qué"
+      ],
+      "sim_coseno_tfidf": 0.6890762406943802,
+      "rank_tfidf": 1,
+      "rank_lsa": 1
+    },
+    "q2": {
+      "relevante": "d03",
+      "n_terminos_compartidos": 3,
+      "terminos": [
+        {
+          "termino": "al",
+          "peso_consulta": 0.5773502691896257,
+          "peso_documento": 0.29874339395570315,
+          "producto": 0.17247957891894763,
+          "idf": 2.7047480922384253,
+          "df": 1
+        },
+        {
+          "termino": "fragmentos",
+          "peso_consulta": 0.5773502691896257,
+          "peso_documento": 0.29874339395570315,
+          "producto": 0.17247957891894763,
+          "idf": 2.7047480922384253,
+          "df": 1
+        },
+        {
+          "termino": "prompt",
+          "peso_consulta": 0.5773502691896257,
+          "peso_documento": 0.29874339395570315,
+          "producto": 0.17247957891894763,
+          "idf": 2.7047480922384253,
+          "df": 1
+        }
+      ],
+      "suma_producto_pesos": 0.5174387367568429,
+      "suma_peso_consulta_compartido": 1.7320508075688772,
+      "fraccion_energia_consulta_compartida": 1.0,
+      "fraccion_energia_documento_compartida": 0.26774284629651746,
+      "tokens_compartidos_crudos": [
+        "al",
+        "fragmentos",
+        "prompt"
+      ],
+      "terminos_de_la_consulta_fuera_del_vocabulario": [
+        "añaden",
+        "cómo",
+        "recuperados",
+        "se"
+      ],
+      "terminos_de_la_consulta_en_vocabulario_pero_ausentes_en_el_relevante": [],
+      "sim_coseno_tfidf": 0.5174387367568429,
+      "rank_tfidf": 1,
+      "rank_lsa": 1
+    },
+    "q3": {
+      "relevante": "d08",
+      "n_terminos_compartidos": 5,
+      "terminos": [
+        {
+          "termino": "bajo",
+          "peso_consulta": 0.43223174876056586,
+          "peso_documento": 0.29788804547336384,
+          "producto": 0.128756670829819,
+          "idf": 2.7047480922384253,
+          "df": 1
+        },
+        {
+          "termino": "entrena",
+          "peso_consulta": 0.43223174876056586,
+          "peso_documento": 0.29788804547336384,
+          "producto": 0.128756670829819,
+          "idf": 2.7047480922384253,
+          "df": 1
+        },
+        {
+          "termino": "matrices",
+          "peso_consulta": 0.43223174876056586,
+          "peso_documento": 0.29788804547336384,
+          "producto": 0.128756670829819,
+          "idf": 2.7047480922384253,
+          "df": 1
+        },
+        {
+          "termino": "rango",
+          "peso_consulta": 0.43223174876056586,
+          "peso_documento": 0.29788804547336384,
+          "producto": 0.128756670829819,
+          "idf": 2.7047480922384253,
+          "df": 1
+        },
+        {
+          "termino": "de",
+          "peso_consulta": 0.2566682232316953,
+          "peso_documento": 0.17689213153095973,
+          "producto": 0.04540258910371878,
+          "idf": 1.6061358035703155,
+          "df": 5
+        }
+      ],
+      "suma_producto_pesos": 0.5604292724229948,
+      "suma_peso_consulta_compartido": 1.9855952182739587,
+      "fraccion_energia_consulta_compartida": 0.8131757153633831,
+      "fraccion_energia_documento_compartida": 0.38623997674133,
+      "tokens_compartidos_crudos": [
+        "bajo",
+        "de",
+        "entrena",
+        "matrices",
+        "rango"
+      ],
+      "terminos_de_la_consulta_fuera_del_vocabulario": [
+        "técnica"
+      ],
+      "terminos_de_la_consulta_en_vocabulario_pero_ausentes_en_el_relevante": [
+        "qué"
+      ],
+      "sim_coseno_tfidf": 0.5604292724229949,
+      "rank_tfidf": 1,
+      "rank_lsa": 1
+    },
+    "q4": {
+      "relevante": "d05",
+      "n_terminos_compartidos": 4,
+      "terminos": [
+        {
+          "termino": "compara",
+          "peso_consulta": 0.4613305217177221,
+          "peso_documento": 0.30121466100132,
+          "producto": 0.13895951670876575,
+          "idf": 2.7047480922384253,
+          "df": 1
+        },
+        {
+          "termino": "orientación",
+          "peso_consulta": 0.4613305217177221,
+          "peso_documento": 0.30121466100132,
+          "producto": 0.13895951670876575,
+          "idf": 2.7047480922384253,
+          "df": 1
+        },
+        {
+          "termino": "vectores",
+          "peso_consulta": 0.4613305217177221,
+          "peso_documento": 0.30121466100132,
+          "producto": 0.13895951670876575,
+          "idf": 2.7047480922384253,
+          "df": 1
+        },
+        {
+          "termino": "la",
+          "peso_consulta": 0.24765524618908155,
+          "peso_documento": 0.161700532512538,
+          "producto": 0.04004598518829818,
+          "idf": 1.4519851237430572,
+          "df": 6
+        }
+      ],
+      "suma_producto_pesos": 0.4569245353145954,
+      "suma_peso_consulta_compartido": 1.6316468113422478,
+      "fraccion_energia_consulta_compartida": 0.6998106717700117,
+      "fraccion_energia_documento_compartida": 0.2983378782212587,
+      "tokens_compartidos_crudos": [
+        "compara",
+        "la",
+        "orientación",
+        "vectores"
+      ],
+      "terminos_de_la_consulta_fuera_del_vocabulario": [
+        "cómo",
+        "dos",
+        "se",
+        "texto"
+      ],
+      "terminos_de_la_consulta_en_vocabulario_pero_ausentes_en_el_relevante": [
+        "de"
+      ],
+      "sim_coseno_tfidf": 0.4569245353145955,
+      "rank_tfidf": 1,
+      "rank_lsa": 3
+    },
+    "q5": {
+      "relevante": "d09",
+      "n_terminos_compartidos": 1,
+      "terminos": [
+        {
+          "termino": "la",
+          "peso_consulta": 0.24397961091537643,
+          "peso_documento": 0.32380709577396377,
+          "producto": 0.07900232923856972,
+          "idf": 1.4519851237430572,
+          "df": 6
+        }
+      ],
+      "suma_producto_pesos": 0.07900232923856972,
+      "suma_peso_consulta_compartido": 0.24397961091537643,
+      "fraccion_energia_consulta_compartida": 0.059526050542418475,
+      "fraccion_energia_documento_compartida": 0.10485103527356895,
+      "tokens_compartidos_crudos": [
+        "la"
+      ],
+      "terminos_de_la_consulta_fuera_del_vocabulario": [
+        "determinista",
+        "elegir",
+        "hace",
+        "más",
+        "palabra",
+        "sea",
+        "siguiente"
+      ],
+      "terminos_de_la_consulta_en_vocabulario_pero_ausentes_en_el_relevante": [
+        "al",
+        "el",
+        "modelo",
+        "que",
+        "qué"
+      ],
+      "sim_coseno_tfidf": 0.07900232923856973,
+      "rank_tfidf": 6,
+      "rank_lsa": 6
+    },
+    "q6": {
+      "relevante": "d02",
+      "n_terminos_compartidos": 5,
+      "terminos": [
+        {
+          "termino": "autoatención",
+          "peso_consulta": 0.43223174876056586,
+          "peso_documento": 0.30160141425178877,
+          "producto": 0.1303617067107105,
+          "idf": 2.7047480922384253,
+          "df": 1
+        },
+        {
+          "termino": "capas",
+          "peso_consulta": 0.43223174876056586,
+          "peso_documento": 0.30160141425178877,
+          "producto": 0.1303617067107105,
+          "idf": 2.7047480922384253,
+          "df": 1
+        },
+        {
+          "termino": "feed",
+          "peso_consulta": 0.43223174876056586,
+          "peso_documento": 0.30160141425178877,
+          "producto": 0.1303617067107105,
+          "idf": 2.7047480922384253,
+          "df": 1
+        },
+        {
+          "termino": "forward",
+          "peso_consulta": 0.43223174876056586,
+          "peso_documento": 0.30160141425178877,
+          "producto": 0.1303617067107105,
+          "idf": 2.7047480922384253,
+          "df": 1
+        },
+        {
+          "termino": "con",
+          "peso_consulta": 0.2566682232316953,
+          "peso_documento": 0.1790972073248953,
+          "producto": 0.045968561989839445,
+          "idf": 1.6061358035703155,
+          "df": 5
+        }
+      ],
+      "suma_producto_pesos": 0.5674153888326815,
+      "suma_peso_consulta_compartido": 1.9855952182739587,
+      "fraccion_energia_consulta_compartida": 0.8131757153633831,
+      "fraccion_energia_documento_compartida": 0.3959294619862928,
+      "tokens_compartidos_crudos": [
+        "autoatención",
+        "capas",
+        "con",
+        "feed",
+        "forward"
+      ],
+      "terminos_de_la_consulta_fuera_del_vocabulario": [
+        "arquitectura",
+        "combina"
+      ],
+      "terminos_de_la_consulta_en_vocabulario_pero_ausentes_en_el_relevante": [
+        "qué"
+      ],
+      "sim_coseno_tfidf": 0.5674153888326815,
+      "rank_tfidf": 1,
+      "rank_lsa": 1
+    }
+  },
+  "analisis_q5": {
+    "consulta": "¿Qué hace que el modelo sea más determinista al elegir la siguiente palabra?",
+    "relevante": "d09",
+    "terminos_compartidos": [
+      {
+        "termino": "la",
+        "peso_consulta": 0.24397961091537643,
+        "peso_documento": 0.32380709577396377,
+        "producto": 0.07900232923856972,
+        "idf": 1.4519851237430572,
+        "df": 6
+      }
+    ],
+    "unico_termino_compartido": "la",
+    "peso_en_consulta": 0.24397961091537643,
+    "peso_en_documento": 0.32380709577396377,
+    "idf_del_termino_compartido": 1.4519851237430572,
+    "df_del_termino_compartido": 6,
+    "fraccion_energia_consulta_compartida": 0.059526050542418475,
+    "terminos_consulta_fuera_del_vocabulario": [
+      "determinista",
+      "elegir",
+      "hace",
+      "más",
+      "palabra",
+      "sea",
+      "siguiente"
+    ],
+    "terminos_del_relevante_ausentes_en_la_consulta": [
+      {
+        "termino": "antes",
+        "peso_documento": 0.3015928366711275,
+        "idf": 2.7047480922384253,
+        "df": 1
+      },
+      {
+        "termino": "bajos",
+        "peso_documento": 0.3015928366711275,
+        "idf": 2.7047480922384253,
+        "df": 1
+      },
+      {
+        "termino": "concentran",
+        "peso_documento": 0.3015928366711275,
+        "idf": 2.7047480922384253,
+        "df": 1
+      },
+      {
+        "termino": "logits",
+        "peso_documento": 0.3015928366711275,
+        "idf": 2.7047480922384253,
+        "df": 1
+      },
+      {
+        "termino": "probabilidad",
+        "peso_documento": 0.3015928366711275,
+        "idf": 2.7047480922384253,
+        "df": 1
+      },
+      {
+        "termino": "reescala",
+        "peso_documento": 0.3015928366711275,
+        "idf": 2.7047480922384253,
+        "df": 1
+      },
+      {
+        "termino": "softmax",
+        "peso_documento": 0.3015928366711275,
+        "idf": 2.7047480922384253,
+        "df": 1
+      },
+      {
+        "termino": "temperatura",
+        "peso_documento": 0.3015928366711275,
+        "idf": 2.7047480922384253,
+        "df": 1
+      },
+      {
+        "termino": "valores",
+        "peso_documento": 0.3015928366711275,
+        "idf": 2.7047480922384253,
+        "df": 1
+      },
+      {
+        "termino": "del",
+        "peso_documento": 0.22430348576427037,
+        "idf": 2.01160091167848,
+        "df": 3
+      },
+      {
+        "termino": "los",
+        "peso_documento": 0.16190354788698189,
+        "idf": 1.4519851237430572,
+        "df": 6
+      }
+    ],
+    "ejemplos_terminos_del_relevante_ausentes": [
+      "temperatura",
+      "reescala",
+      "los",
+      "logits"
+    ],
+    "sim_coseno_tfidf": 0.07900232923856973,
+    "rank_tfidf": 6,
+    "sim_coseno_lsa": 0.49988551680348015,
+    "rank_lsa": 6,
+    "ranking_tfidf_q5": [
+      "d03",
+      "d06",
+      "d04",
+      "d01",
+      "d10",
+      "d09",
+      "d08",
+      "d05",
+      "d02",
+      "d07"
+    ],
+    "ranking_lsa_q5": [
+      "d04",
+      "d01",
+      "d03",
+      "d06",
+      "d10",
+      "d09",
+      "d07",
+      "d08",
+      "d05",
+      "d02"
+    ],
+    "documentos_que_superan_al_relevante_en_tfidf": [
+      {
+        "doc": "d03",
+        "sim_tfidf_con_q5": 0.3106758887220715,
+        "terminos_compartidos_con_q5": [
+          "al",
+          "modelo",
+          "la"
+        ]
+      },
+      {
+        "doc": "d06",
+        "sim_tfidf_con_q5": 0.20085134590621823,
+        "terminos_compartidos_con_q5": [
+          "qué",
+          "el"
+        ]
+      },
+      {
+        "doc": "d04",
+        "sim_tfidf_con_q5": 0.18955976285205217,
+        "terminos_compartidos_con_q5": [
+          "que",
+          "la"
+        ]
+      },
+      {
+        "doc": "d01",
+        "sim_tfidf_con_q5": 0.16230333908296432,
+        "terminos_compartidos_con_q5": [
+          "la",
+          "el"
+        ]
+      },
+      {
+        "doc": "d10",
+        "sim_tfidf_con_q5": 0.08491551831191196,
+        "terminos_compartidos_con_q5": [
+          "la"
+        ]
+      }
+    ],
+    "conclusion": "FALLO EN AMBOS MÉTODOS. q5 («¿Qué hace que el modelo sea más determinista al elegir la siguiente palabra?») y su relevante d09 comparten un único término del vocabulario: «la» (df=6/10, idf=1.4520), que aporta solo el 6.0% de la energía TF-IDF de la consulta; fuera de ese artículo, ningún término de d09 aparece en la consulta (p. ej. temperatura, reescala, los, logits) y los términos de contenido de la consulta (determinista, elegir, hace, más, palabra, sea, siguiente) no existen en el corpus. La similitud coseno TF-IDF es 0.0790 y d09 queda en el puesto 6 (fuera del top 3), por detrás de documentos que solo comparten palabras funcionales o «modelo/al» con q5. LSA-4D no repara el fallo (varianza explicada 39.5%): d09 sigue en el puesto 6 (sim 0.4999) porque la relación «determinista ↔ temperatura baja» no tiene soporte de co-ocurrencia en un corpus de 10 documentos."
+  },
+  "analisis_q4_lsa": {
+    "nota": "LSA no crea fallos nuevos de top 3 (el único fallo en ambos métodos es q5), pero degrada q4: el relevante d05 pasa del puesto 1 (TF-IDF) al 3 (LSA); sigue siendo acierto Hit@3 pero pierde Hit@1 (0.8333 → 0.6667). En el espacio latente d01 y d10 adelantan a d05 aunque q4 solo comparte con d05 4 términos («compara», «orientación», «vectores», «la»); la proyección 4D captura solo el 39.5% de la varianza y mezcla documentos por patrones globales de co-ocurrencia más que por los términos de contenido compartidos.",
+    "rank_tfidf": 1,
+    "rank_lsa": 3,
+    "top3_lsa_q4": [
+      {
+        "doc": "d01",
+        "sim_lsa": 0.921961809400011,
+        "sim_tfidf": 0.24754993848068024
+      },
+      {
+        "doc": "d10",
+        "sim_lsa": 0.9205569108925602,
+        "sim_tfidf": 0.19166293170642723
+      },
+      {
+        "doc": "d05",
+        "sim_lsa": 0.898421713413974,
+        "sim_tfidf": 0.4569245353145955
+      }
+    ],
+    "terminos_compartidos_q4_d05": [
+      "compara",
+      "orientación",
+      "vectores",
+      "la"
+    ]
+  },
+  "explicacion_por_consulta": {
+    "q1": "Comparte 8 término(s) con d04 («de», «frecuencia», «léxica», «ranking», «términos», «función», «pondera», «la»); cubren el 87.7% de la energía de la consulta; sim coseno TF-IDF = 0.6891; rank TF-IDF = 1 (ok), rank LSA = 1 (ok).",
+    "q2": "Comparte 3 término(s) con d03 («al», «fragmentos», «prompt»); cubren el 100.0% de la energía de la consulta; sim coseno TF-IDF = 0.5174; rank TF-IDF = 1 (ok), rank LSA = 1 (ok).",
+    "q3": "Comparte 5 término(s) con d08 («bajo», «entrena», «matrices», «rango», «de»); cubren el 81.3% de la energía de la consulta; sim coseno TF-IDF = 0.5604; rank TF-IDF = 1 (ok), rank LSA = 1 (ok).",
+    "q4": "Comparte 4 término(s) con d05 («compara», «orientación», «vectores», «la»); cubren el 70.0% de la energía de la consulta; sim coseno TF-IDF = 0.4569; rank TF-IDF = 1 (ok), rank LSA = 3 (ok).",
+    "q5": "FALLO EN AMBOS MÉTODOS. q5 («¿Qué hace que el modelo sea más determinista al elegir la siguiente palabra?») y su relevante d09 comparten un único término del vocabulario: «la» (df=6/10, idf=1.4520), que aporta solo el 6.0% de la energía TF-IDF de la consulta; fuera de ese artículo, ningún término de d09 aparece en la consulta (p. ej. temperatura, reescala, los, logits) y los términos de contenido de la consulta (determinista, elegir, hace, más, palabra, sea, siguiente) no existen en el corpus. La similitud coseno TF-IDF es 0.0790 y d09 queda en el puesto 6 (fuera del top 3), por detrás de documentos que solo comparten palabras funcionales o «modelo/al» con q5. LSA-4D no repara el fallo (varianza explicada 39.5%): d09 sigue en el puesto 6 (sim 0.4999) porque la relación «determinista ↔ temperatura baja» no tiene soporte de co-ocurrencia en un corpus de 10 documentos.",
+    "q6": "Comparte 5 término(s) con d02 («autoatención», «capas», «feed», «forward», «con»); cubren el 81.3% de la energía de la consulta; sim coseno TF-IDF = 0.5674; rank TF-IDF = 1 (ok), rank LSA = 1 (ok)."
+  },
+  "verificacion": {
+    "rankings_recalculados_coinciden_con_T1": true,
+    "rankings_recalculados_coinciden_con_T2": true,
+    "coincidencia_por_consulta": {
+      "q1": {
+        "tfidf": true,
+        "lsa": true
+      },
+      "q2": {
+        "tfidf": true,
+        "lsa": true
+      },
+      "q3": {
+        "tfidf": true,
+        "lsa": true
+      },
+      "q4": {
+        "tfidf": true,
+        "lsa": true
+      },
+      "q5": {
+        "tfidf": true,
+        "lsa": true
+      },
+      "q6": {
+        "tfidf": true,
+        "lsa": true
+      }
+    },
+    "dif_max_sim_tfidf_vs_T1": 0.0,
+    "dif_max_metricas_vs_T2": {
+      "tfidf": 0.0,
+      "lsa": 0.0
+    },
+    "dif_varianza_explicada_vs_T2": 0.0,
+    "metricas_recalculadas": {
+      "tfidf": {
+        "Hit@1": 0.8333333333333334,
+        "Hit@3": 0.8333333333333334,
+        "MRR": 0.8611111111111112
+      },
+      "lsa": {
+        "Hit@1": 0.6666666666666666,
+        "Hit@3": 0.8333333333333334,
+        "MRR": 0.75
+      }
+    },
+    "suma_producto_pesos_igual_a_coseno": {
+      "q1": 1.1102230246251565e-16,
+      "q2": 0.0,
+      "q3": 1.1102230246251565e-16,
+      "q4": 5.551115123125783e-17,
+      "q5": 1.3877787807814457e-17,
+      "q6": 0.0
+    },
+    "archivos_previos_cargados": {
+      "T1": true,
+      "T2": true
+    }
+  },
+  "figuras": [
+    "T3_fallos_y_terminos.png",
+    "T3_q5_terminos.png"
+  ]
+}

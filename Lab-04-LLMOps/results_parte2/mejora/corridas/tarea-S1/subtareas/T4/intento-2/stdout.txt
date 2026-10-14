@@ -1,0 +1,29 @@
+Fuente de datos: recomputado desde data/server_measurements.csv (load_score = zscores @ [0.50, 0.30, 0.20] (ddof=0))
+
+Tabla resumen por servidor (formato de lectura):
+   server  observations mean_power_w max_temperature_c mean_load  review_count
+AI-SRV-01            50     363.4598             86.50 -0.614527             2
+AI-SRV-02            50     390.4990             76.47 -0.417730             1
+AI-SRV-03            50     416.6088             86.50 -0.085884             2
+AI-SRV-04            50     434.8684             80.86 -0.003041             5
+AI-SRV-05            50     471.1808             86.50  0.453583            12
+AI-SRV-06            50     495.7276             88.01  0.667600            27
+
+Tabla con precisión completa:
+   server  observations  mean_power_w  max_temperature_c  mean_load  review_count
+AI-SRV-01            50      363.4598              86.50  -0.614527             2
+AI-SRV-02            50      390.4990              76.47  -0.417730             1
+AI-SRV-03            50      416.6088              86.50  -0.085884             2
+AI-SRV-04            50      434.8684              80.86  -0.003041             5
+AI-SRV-05            50      471.1808              86.50   0.453583            12
+AI-SRV-06            50      495.7276              88.01   0.667600            27
+
+Verificación AI-SRV-01 frente al enunciado:
+  observations: obtenido=50 | esperado=50 -> OK
+  mean_power_w: obtenido=363.45980000000003 | esperado=363.4598 -> OK
+  max_temperature_c: obtenido=86.5 | esperado=86.5 -> OK
+  mean_load: obtenido=-0.6145273545959999 | esperado=-0.614527 -> OK
+  review_count: obtenido=2 | esperado=2 -> OK
+
+Filas de entrada: 300 | Servidores en el resumen: 6
+Archivos escritos: output/server_analysis.parquet, resultados.json, t4_resumen_servidores.png

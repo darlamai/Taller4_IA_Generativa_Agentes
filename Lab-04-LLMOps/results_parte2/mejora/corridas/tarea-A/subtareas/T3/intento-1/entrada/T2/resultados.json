@@ -1,0 +1,48 @@
+{
+  "subtarea": "T2",
+  "tarea": "Tarea A — Generativo contra discriminativo con pocos datos",
+  "dataset": "Breast Cancer Wisconsin (Diagnostic)",
+  "division": {
+    "origen": "Parte 1 (entrada/T1): 70%/30% estratificada, random_state=42",
+    "n_train": 398,
+    "n_test": 171,
+    "coincide_con_T1": true
+  },
+  "columna_objetivo": "target",
+  "preprocesamiento": {
+    "estandarizacion": "StandardScaler ajustado únicamente con el conjunto de entrenamiento",
+    "aplicado_a": [
+      "Naive Bayes gaussiano",
+      "Regresión logística"
+    ]
+  },
+  "modelos": {
+    "naive_bayes_gaussiano": {
+      "accuracy_test": 0.9473684210526315,
+      "f1_macro_test": 0.942866688940862
+    },
+    "regresion_logistica": {
+      "accuracy_test": 0.9883040935672515,
+      "f1_macro_test": 0.9874338624338623
+    }
+  },
+  "tabla": [
+    {
+      "modelo": "Naive Bayes gaussiano",
+      "accuracy_prueba": 0.9473684210526315,
+      "f1_macro_prueba": 0.942866688940862
+    },
+    {
+      "modelo": "Regresión logística",
+      "accuracy_prueba": 0.9883040935672515,
+      "f1_macro_prueba": 0.9874338624338623
+    }
+  ],
+  "accuracy_naive_bayes_gaussiano": 0.9473684210526315,
+  "f1_macro_naive_bayes_gaussiano": 0.942866688940862,
+  "accuracy_regresion_logistica": 0.9883040935672515,
+  "f1_macro_regresion_logistica": 0.9874338624338623,
+  "archivos_generados": {
+    "tabla_png": "t2_tabla_metricas.png"
+  }
+}

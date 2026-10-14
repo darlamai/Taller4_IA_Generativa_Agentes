@@ -1,0 +1,11 @@
+====================================================================
+T6 — Bootstrap pareado (remuestreo de tiendas completas)
+====================================================================
+Datos: data/model_errors.csv (16 tiendas)
+Semilla: 20260829 | Remuestras: 10000 | Método: percentil
+Media observada de difference: 0.418750
+IC percentil 95%: [-0.193750, 1.006250]  (incluye 0: True)
+Reproducibilidad: ejecución 2 IC = [-0.193750, 1.006250] -> mismo intervalo: True
+Verificación pareado (tiendas completas): True (max dif 3.941e-15)
+Control semilla distinta (20260830): índices difieren = True
+Salidas: output/store_differences.csv | output/store_differences.png | bootstrap_reproducibilidad.png | resultados.json
