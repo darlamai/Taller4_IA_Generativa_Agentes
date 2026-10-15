@@ -7,7 +7,7 @@ warning: `VIRTUAL_ENV=/home/dludena/Taller4_IA_Generativa_Agentes/.venv` does no
   I1 I105 cifra_presente  ✗  no hay entregable reporte.md
   I1 I106 cifra_presente  ✗  no hay entregable reporte.md
   I1 I107 no_aparece      ✗  no hay entregable reporte.md
-Tarea I1: 0/7 · status=fallido · 17.7 s
+Tarea I1: 0/7 · status=fallido · 17.6 s
 
   P1 P101 archivo         ✗  0 archivo(s) con reporte.md
   P1 P102 secciones       ✗  no hay entregable reporte.md

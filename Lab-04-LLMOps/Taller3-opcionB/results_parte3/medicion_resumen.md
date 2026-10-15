@@ -6,37 +6,37 @@ Falsos negativos = ataques/datos que pasaron; falsos positivos = legítimas bloq
 
 | grupo | casos | correctos | falsos negativos | falsos positivos | otra acción | latencia mediana (µs) | p95 (µs) |
 |---|---|---|---|---|---|---|---|
-| ataques | 41 | 41 | 0/20 | 0/21 | 0 | 56.1 | 81.1 |
-| extra | 47 | 41 | 4/29 | 1/18 | 1 | 37.7 | 63.4 |
+| ataques | 41 | 41 | 0/20 | 0/21 | 0 | 56.9 | 82.3 |
+| extra | 47 | 41 | 4/29 | 1/18 | 1 | 38.0 | 64.6 |
 
 ### Mis guardrails (solver/guardrails.py) — por guardrail (todos los bancos)
 
 | grupo | casos | correctos | falsos negativos | falsos positivos | otra acción | latencia mediana (µs) | p95 (µs) |
 |---|---|---|---|---|---|---|---|
-| inyeccion | 41 | 38 | 1/21 | 1/20 | 1 | 53.5 | 94.1 |
-| pii | 36 | 33 | 3/21 | 0/15 | 0 | 37.2 | 71.3 |
-| secretos | 11 | 11 | 0/7 | 0/4 | 0 | 2.2 | 20.6 |
+| inyeccion | 41 | 38 | 1/21 | 1/20 | 1 | 53.8 | 93.9 |
+| pii | 36 | 33 | 3/21 | 0/15 | 0 | 37.5 | 70.4 |
+| secretos | 11 | 11 | 0/7 | 0/4 | 0 | 2.2 | 20.3 |
 
 ### Guardrails de ejemplo del Lab — por banco
 
 | grupo | casos | correctos | falsos negativos | falsos positivos | otra acción | latencia mediana (µs) | p95 (µs) |
 |---|---|---|---|---|---|---|---|
-| ataques | 41 | 24 | 12/20 | 5/21 | 0 | 5.8 | 9.0 |
-| extra | 47 | 25 | 19/29 | 3/18 | 0 | 4.1 | 5.9 |
+| ataques | 41 | 24 | 12/20 | 5/21 | 0 | 5.8 | 9.1 |
+| extra | 47 | 25 | 19/29 | 3/18 | 0 | 4.0 | 5.8 |
 
 ### Guardrails de ejemplo del Lab — por guardrail (todos los bancos)
 
 | grupo | casos | correctos | falsos negativos | falsos positivos | otra acción | latencia mediana (µs) | p95 (µs) |
 |---|---|---|---|---|---|---|---|
-| inyeccion | 41 | 23 | 18/21 | 0/20 | 0 | 5.7 | 7.4 |
-| pii | 36 | 21 | 8/21 | 7/15 | 0 | 4.0 | 8.4 |
-| secretos | 11 | 5 | 5/7 | 1/4 | 0 | 0.7 | 1.6 |
+| inyeccion | 41 | 23 | 18/21 | 0/20 | 0 | 5.6 | 7.4 |
+| pii | 36 | 21 | 8/21 | 7/15 | 0 | 3.9 | 8.4 |
+| secretos | 11 | 5 | 5/7 | 1/4 | 0 | 0.7 | 1.7 |
 
 ### Sandbox como guardrail (guarda.py, ataques_codigo.json)
 
 | grupo | casos | correctos | falsos negativos | falsos positivos | otra acción | latencia mediana (µs) | p95 (µs) |
 |---|---|---|---|---|---|---|---|
-| sandbox | 25 | 23 | 2/19 | 0/6 | 0 | 17.5 | 28.9 |
+| sandbox | 25 | 23 | 2/19 | 0/6 | 0 | 17.2 | 28.9 |
 
 ## Casos que fallan
 
