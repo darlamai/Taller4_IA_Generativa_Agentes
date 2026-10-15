@@ -31,7 +31,7 @@ try:
 except ImportError:  # pragma: no cover  (nombres anteriores de LangGraph)
     from langgraph.checkpoint.memory import MemorySaver as InMemorySaver
 
-from solver import formatos, graphrag, observabilidad
+from solver import formatos, graphrag, observabilidad, guardrails
 from solver.agentes import critico, ejecutor, indexador, investigador, lector, planificador, programador, redactor
 from solver.cliente_llm import ClienteLLM, PresupuestoAgotado
 from solver.config import RAIZ, Config
@@ -216,6 +216,8 @@ class Solver:
                                  "tamano_texto": len(str(doc.get("texto", "")))})
             if doc["escaneado"]:
                 t.error("PDF escaneado sin texto")
+        
+        doc = self._sanear_entrada(doc)                  # Parte 3: guardrails 1 y 2
         ruta = _guardar(self._salida(estado) / INTERNO / "enunciado_leido.json", doc)
         trabajo = [s["clave"] for s in doc["secciones"] if s["trabajo"]]
         self.traza.decision("lector", "leido", f"{len(doc['secciones'])} secciones; de trabajo: {trabajo}; "
@@ -227,6 +229,37 @@ class Solver:
             self.traza.decision("lector", "sin_secciones_de_trabajo",
                                 "no se reconoció ninguna «Parte N»: el plan cubrirá el documento entero")
         return {"documento": ruta, "restricciones": doc["restricciones"]}
+
+    def _sanear_entrada(self, doc: dict) -> dict:
+        """Parte 3, guardrails 1 y 2: el texto que extrae el lector no es confiable (un PDF puede traer
+        órdenes al modelo) y puede traer datos personales. Los spans llevan decisiones y CONTEOS, nunca el dato."""
+        if not guardrails.activos():
+            return doc
+        guardrails.reiniciar_sensibles()
+        with observabilidad.guardrail("inyeccion_en_pdf",
+                                      input={"caracteres": len(str(doc.get("texto", "")))}) as g:
+            doc, inj = guardrails.sanear_inyeccion(doc)
+            g.actualizar(output={"decision": "redactar" if inj["retiradas"] else "permitir", **inj})
+        with observabilidad.guardrail("pii_en_entrada",
+                                      input={"caracteres": len(str(doc.get("texto", "")))}) as g:
+            doc, pii = guardrails.sanear_pii(doc)
+            g.actualizar(output={"decision": "redactar" if pii["total"] else "permitir", **pii})
+        self.traza.decision("guardrail", "entrada_saneada",
+                            f"{inj['retiradas']} frase(s) retirada(s); datos personales: {pii['pii'] or 'ninguno'}")
+        return doc
+
+    def _sanear_salida(self, texto):
+        """Parte 3, guardrail de salida: el informe no sale con credenciales ni datos personales."""
+        if not guardrails.activos() or not isinstance(texto, str):
+            return texto
+        with observabilidad.guardrail("salida_pii_secretos", input={"caracteres": len(texto)}) as g:
+            limpio, inf = guardrails.sanear_salida(texto)
+            g.actualizar(output={"decision": "redactar" if inf["cambio"] else "permitir", **inf})
+        if inf["cambio"]:
+            self.traza.decision("guardrail", "salida_saneada",
+                                f"secretos={inf['secretos']}; datos personales: {inf['pii'] or 'ninguno'}")
+        return limpio
+  
     
     def _indexar(self, estado: Estado) -> dict:
         doc = _cargar(estado["documento"])
@@ -466,8 +499,10 @@ class Solver:
         aprobadas = {s["id"]: Path(s["carpeta"]) for s in plan if s.get("status") == "aprobada" and s.get("carpeta")}
         figuras = redactor.copiar_figuras(aprobadas, self._salida(estado))
         publicados = self._publicar_exigidos(estado, doc, plan, aprobadas)
+        
         texto = redactor.redactar(self.llm, doc, plan, figuras, estado.get("problemas_redaccion"),
                                   estado.get("borrador"), self._notas(estado))
+        texto = self._sanear_salida(texto)               # Parte 3: guardrail de salida
         destino = self._construir(estado, doc, plan, aprobadas, texto)
         return {"borrador": texto, "entregables": [str(destino)] + publicados,
                 "intentos_redaccion": estado.get("intentos_redaccion", 0) + 1}
@@ -720,3 +755,5 @@ class SolverSinCritico(Solver):
         cfg.usar_critico = False
         cfg.max_intentos = 1
         super().__init__(cfg)
+
+

@@ -1,0 +1,3 @@
+tarea,status,model,aprobadas,total,subtareas,intentos_codigo,tokens_entrada,tokens_salida,duracion_s,error,traza_id
+I1,fallido,,0,7,0,0,0,0,17.7,RuntimeError: Sin respuesta de 172.28.230.10:12555 ([Errno 111] Connection refused). ¿Está GlobalProtect conectada?,8ac7bcf0af8e72dad0c864f1b079722a
+P1,fallido,,0,7,0,0,0,0,0.2,RuntimeError: Sin respuesta de 172.28.230.10:12555 ([Errno 111] Connection refused). ¿Está GlobalProtect conectada?,42b8067d1c93e75dd64ee9db604529be

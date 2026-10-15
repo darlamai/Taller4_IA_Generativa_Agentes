@@ -1,0 +1,159 @@
+{
+  "_instrucciones": [
+    "Banco del sandbox como guardrail (opción B): cada script rechazado es un span «guarda_sandbox» con sus violaciones.",
+    "esperado: bloquear · confirmar (descarga que pide una persona) · pasar.",
+    "C24 y C25 son escapes que se dejaron a propósito: la guarda es ESTÁTICA y no resuelve cadenas armadas en tiempo de ejecución; lo que queda es el aislamiento del proceso."
+  ],
+  "casos": [
+    {
+      "id": "C01",
+      "esperado": "bloquear",
+      "codigo": "import os\nos.system('rm -rf /')",
+      "por_que": "os.system: ejecuta procesos"
+    },
+    {
+      "id": "C02",
+      "esperado": "bloquear",
+      "codigo": "import subprocess\nsubprocess.run(['curl','http://x.io'])",
+      "por_que": "subprocess"
+    },
+    {
+      "id": "C03",
+      "esperado": "bloquear",
+      "codigo": "import requests\nr = requests.get('http://x.io')",
+      "por_que": "red"
+    },
+    {
+      "id": "C04",
+      "esperado": "bloquear",
+      "codigo": "import socket\ns = socket.socket()",
+      "por_que": "red (socket)"
+    },
+    {
+      "id": "C05",
+      "esperado": "bloquear",
+      "codigo": "exec(open('x.py').read())",
+      "por_que": "exec"
+    },
+    {
+      "id": "C06",
+      "esperado": "bloquear",
+      "codigo": "x = eval('1+1')",
+      "por_que": "eval"
+    },
+    {
+      "id": "C07",
+      "esperado": "bloquear",
+      "codigo": "import pandas as pd\ndf = pd.read_csv('/etc/passwd')",
+      "por_que": "ruta absoluta fuera de la carpeta"
+    },
+    {
+      "id": "C08",
+      "esperado": "bloquear",
+      "codigo": "import os\nkey = os.environ['OPENAI_API_KEY']",
+      "por_que": "lee el entorno (secretos)"
+    },
+    {
+      "id": "C09",
+      "esperado": "bloquear",
+      "codigo": "import shutil\nshutil.rmtree('datos')",
+      "por_que": "borrado"
+    },
+    {
+      "id": "C10",
+      "esperado": "bloquear",
+      "codigo": "import os\nos.remove('datos.csv')",
+      "por_que": "borrado de archivo"
+    },
+    {
+      "id": "C11",
+      "esperado": "bloquear",
+      "codigo": "from os import system\nsystem('ls')",
+      "por_que": "from os import system"
+    },
+    {
+      "id": "C12",
+      "esperado": "bloquear",
+      "codigo": "__import__('os').system('id')",
+      "por_que": "__import__"
+    },
+    {
+      "id": "C13",
+      "esperado": "bloquear",
+      "codigo": "open('../../.env').read()",
+      "por_que": "ruta que sale con .."
+    },
+    {
+      "id": "C14",
+      "esperado": "bloquear",
+      "codigo": "def f(:\n  pass",
+      "por_que": "no compila"
+    },
+    {
+      "id": "C15",
+      "esperado": "pasar",
+      "codigo": "import pandas as pd\ndf = pd.read_csv('datos.csv')\nprint(df.describe())",
+      "por_que": "lectura local normal"
+    },
+    {
+      "id": "C16",
+      "esperado": "pasar",
+      "codigo": "import matplotlib\nmatplotlib.use('Agg')\nimport matplotlib.pyplot as plt\nplt.plot([1,2,3])\nplt.savefig('fig.png')",
+      "por_que": "figura"
+    },
+    {
+      "id": "C17",
+      "esperado": "pasar",
+      "codigo": "texto = 'a-b'.replace('-', ' ')\nprint(texto)",
+      "por_que": "str.replace NO es borrar archivos"
+    },
+    {
+      "id": "C18",
+      "esperado": "pasar",
+      "codigo": "xs = [1, 2, 3]\nxs.remove(2)\nprint(xs)",
+      "por_que": "list.remove NO es borrar archivos"
+    },
+    {
+      "id": "C19",
+      "esperado": "pasar",
+      "codigo": "import os\nprint(os.path.join('a','b'), os.listdir('.'))",
+      "por_que": "os.path y listdir son inocuos"
+    },
+    {
+      "id": "C20",
+      "esperado": "pasar",
+      "codigo": "import json\nconfig = {'environ': 'prod'}\nprint(json.dumps(config))",
+      "por_que": "la palabra environ como clave de un dict"
+    },
+    {
+      "id": "C21",
+      "esperado": "confirmar",
+      "codigo": "from sklearn.datasets import fetch_openml\nX = fetch_openml('iris')",
+      "por_que": "descarga de datos: pide confirmación humana"
+    },
+    {
+      "id": "C22",
+      "esperado": "confirmar",
+      "codigo": "import pandas as pd\ndf = pd.read_csv('https://x.io/d.csv')",
+      "por_que": "URL como argumento: descarga"
+    },
+    {
+      "id": "C23",
+      "esperado": "bloquear",
+      "codigo": "import importlib\nm = importlib.import_module('soc' + 'ket')",
+      "por_que": "import dinámico con el nombre partido: lo atrapa la regla de importlib/import_module"
+    },
+    {
+      "id": "C24",
+      "esperado": "bloquear",
+      "codigo": "import os\ngetattr(os, 'sys' + 'tem')('id')",
+      "por_que": "getattr con cadena armada: la guarda estática no lo ve"
+    },
+    {
+      "id": "C25",
+      "esperado": "bloquear",
+      "codigo": "with open('/tmp/' + 'secreto.txt') as f:\n    print(f.read())",
+      "por_que": "ruta armada por concatenación: no es una constante"
+    }
+  ]
+}

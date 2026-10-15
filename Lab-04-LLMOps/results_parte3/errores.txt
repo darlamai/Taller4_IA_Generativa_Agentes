@@ -1,0 +1,2 @@
+{"seq": 2, "ts": 1792043751.247, "tipo": "error", "agente": "orquestador", "subtarea": null, "error": "RuntimeError: Sin respuesta de 172.28.230.10:12555 ([Errno 111] Connection refused). ¿Está GlobalProtect conectada?"}
+{"seq": 2, "ts": 1792043760.013, "tipo": "error", "agente": "orquestador", "subtarea": null, "error": "RuntimeError: Sin respuesta de 172.28.230.10:12555 ([Errno 111] Connection refused). ¿Está GlobalProtect conectada?"}

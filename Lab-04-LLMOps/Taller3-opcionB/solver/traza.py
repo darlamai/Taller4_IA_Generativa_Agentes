@@ -24,6 +24,7 @@ import threading
 import time
 from collections import defaultdict
 from pathlib import Path
+from solver import guardrails 
 
 _PATRONES = [
     re.compile(r"sk-ant-[A-Za-z0-9_\-]{10,}"),
@@ -47,7 +48,7 @@ def enmascarar(texto: str) -> str:
             texto = patron.sub(lambda m: f"{m.group(1)}{m.group(2)}***", texto)
         else:
             texto = patron.sub("***", texto)
-    return texto
+    return guardrails.redactar_pii(texto) if guardrails.activos() else texto
 
 
 def _limpiar(valor):

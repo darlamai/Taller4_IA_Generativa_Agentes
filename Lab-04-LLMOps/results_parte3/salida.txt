@@ -1,0 +1,21 @@
+nohup: ignoring input
+warning: `VIRTUAL_ENV=/home/dludena/Taller4_IA_Generativa_Agentes/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+  I1 I101 archivo         ✗  0 archivo(s) con reporte.md
+  I1 I102 secciones       ✗  no hay entregable reporte.md
+  I1 I103 palabras_max    ✗  no hay entregable reporte.md
+  I1 I104 cifra_presente  ✗  no hay entregable reporte.md
+  I1 I105 cifra_presente  ✗  no hay entregable reporte.md
+  I1 I106 cifra_presente  ✗  no hay entregable reporte.md
+  I1 I107 no_aparece      ✗  no hay entregable reporte.md
+Tarea I1: 0/7 · status=fallido · 17.7 s
+
+  P1 P101 archivo         ✗  0 archivo(s) con reporte.md
+  P1 P102 secciones       ✗  no hay entregable reporte.md
+  P1 P103 palabras_max    ✗  no hay entregable reporte.md
+  P1 P104 cifra_presente  ✗  no hay entregable reporte.md
+  P1 P105 cifra_presente  ✗  no hay entregable reporte.md
+  P1 P106 no_aparece      ✗  no hay entregable reporte.md
+  P1 P107 no_aparece      ✗  no hay entregable reporte.md
+Tarea P1: 0/7 · status=fallido · 0.2 s
+
+Comprobaciones aprobadas: 0/14 → /home/dludena/Taller4_IA_Generativa_Agentes/Lab-04-LLMOps/results_parte3/resultados_solver.csv

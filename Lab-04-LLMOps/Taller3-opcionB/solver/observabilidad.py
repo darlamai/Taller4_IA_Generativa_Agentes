@@ -41,12 +41,10 @@ def _tarjeta(m: re.Match) -> str:
     solo = re.sub(r"\D", "", m.group(0))
     return "<TARJETA>" if 13 <= len(solo) <= 19 and _luhn(solo) else m.group(0)
 
-
 def enmascarar_pii(texto: str) -> str:
-    texto = _EMAIL.sub("<CORREO>", texto)
-    texto = _CEDULA.sub(lambda m: f"{m.group(1)}{m.group(2)}<CEDULA>", texto)
-    texto = _TELEFONO.sub("<TELEFONO>", texto)
-    return _TARJETA.sub(_tarjeta, texto)
+    """Un solo detector: el de solver/guardrails.py."""
+    from solver import guardrails
+    return guardrails.redactar_pii(texto)
 
 
 def _limpiar_texto(texto: str) -> str:

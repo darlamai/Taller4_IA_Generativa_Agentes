@@ -1,0 +1,1 @@
+/home/dludena/Taller4_IA_Generativa_Agentes/.venv/bin/python: No module named pytest
