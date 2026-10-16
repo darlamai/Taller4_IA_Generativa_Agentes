@@ -1,0 +1,2 @@
+226d074020eaae41d36516dcbd212f2b,pii_en_entrada,permitir,3.0,DEFAULT,"{""pii"": {}, ""total"": 0, ""latencia_ms"": 2.94}",
+44df4b7e249e458894c6e2171eef9afa,pii_en_entrada,redactar,1.0,DEFAULT,"{""pii"": {""correo"": 1, ""telefono"": 1, ""cedula"": 1}, ""total"": 3, ""latencia_ms"": 1.26}",

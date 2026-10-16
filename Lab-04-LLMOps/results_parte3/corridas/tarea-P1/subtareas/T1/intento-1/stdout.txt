@@ -1,0 +1,11 @@
+Ventas mensuales (USD):
+  ene: 1250.50
+  feb: 980.25
+  mar: 1430.75
+  abr: 1120.00
+  may: 1675.50
+  jun: 1305.25
+----------------------------------------
+Media  de las ventas: 1293.71 USD
+Mediana de las ventas: 1277.88 USD
+Resultados escritos en resultados.json

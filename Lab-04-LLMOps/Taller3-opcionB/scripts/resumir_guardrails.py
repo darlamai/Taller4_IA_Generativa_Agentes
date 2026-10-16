@@ -44,9 +44,10 @@ def main() -> None:
     ap.add_argument("--sesion", required=True)
     ap.add_argument("--prohibidas", nargs="*", default=[], help="literales que NO deben aparecer en ningún span")
     ap.add_argument("--salida", default=str(RAIZ / "results_parte3"))
+    ap.add_argument("--desde", default=None, help="solo observations desde esta fecha ISO (UTC), p. ej. 2026-10-16T02:00:00+00:00")
     a = ap.parse_args()
     from exportar_trazas import traer
-    obs = traer(tag=None, sesion=a.sesion, desde=None, hasta=None)
+    obs = traer(tag=None, sesion=a.sesion, desde=a.desde, hasta=None)
     salida = Path(a.salida)
     salida.mkdir(parents=True, exist_ok=True)
 

@@ -1,0 +1,212 @@
+{
+ "Parte 1": [
+  {
+   "clave": "latencia",
+   "nombre": "latencia",
+   "tipo": "metrica",
+   "alias": [
+    "latencias",
+    "ocho latencias"
+   ],
+   "descripciones": [
+    "Tiempo de respuesta que aumenta en IVF al incrementar nprobe.",
+    "Conjunto de ocho valores de latencia sobre los que se calculan las estadísticas.",
+    "Medida cuyos valores se analizan en la parte de interpretación."
+   ],
+   "citas": [
+    "s2-rag-y-vector-search § 3. Vector Databases … 3.4 Stack recomendado",
+    "Parte 1",
+    "Parte 2"
+   ],
+   "origen": [
+    "notas",
+    "enunciado"
+   ],
+   "fragmentos": [
+    "s2-rag-y-vector-search#3"
+   ],
+   "comunidad": 10
+  },
+  {
+   "clave": "media",
+   "nombre": "media",
+   "tipo": "metrica",
+   "alias": [
+    "promedio"
+   ],
+   "descripciones": [
+    "Medida que se debe calcular sobre las ocho latencias."
+   ],
+   "citas": [
+    "Parte 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 10
+  },
+  {
+   "clave": "desviacion estandar muestral",
+   "nombre": "desviación estándar muestral",
+   "tipo": "metrica",
+   "alias": [
+    "desviación estándar"
+   ],
+   "descripciones": [
+    "Medida de dispersión que se calcula con n − 1 sobre las ocho latencias."
+   ],
+   "citas": [
+    "Parte 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 10
+  },
+  {
+   "clave": "error estandar de la media",
+   "nombre": "error estándar de la media",
+   "tipo": "metrica",
+   "alias": [
+    "EEM"
+   ],
+   "descripciones": [
+    "Medida que se debe calcular sobre las ocho latencias.",
+    "Medida estadística que la tarea pide diferenciar de la dispersión de las latencias."
+   ],
+   "citas": [
+    "Parte 1",
+    "Parte 2"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 10
+  },
+  {
+   "clave": "n 1",
+   "nombre": "n − 1",
+   "tipo": "concepto",
+   "alias": [],
+   "descripciones": [
+    "Denominador indicado para el cálculo de la desviación estándar muestral."
+   ],
+   "citas": [
+    "Parte 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 10
+  },
+  {
+   "clave": "dos decimal",
+   "nombre": "dos decimales",
+   "tipo": "restriccion",
+   "alias": [],
+   "descripciones": [
+    "Formato exigido para reportar las tres cifras resultantes."
+   ],
+   "citas": [
+    "Parte 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 10
+  }
+ ],
+ "Parte 2": [
+  {
+   "clave": "dispersion",
+   "nombre": "dispersión",
+   "tipo": "concepto",
+   "alias": [
+    "dispersión de las latencias"
+   ],
+   "descripciones": [
+    "Variabilidad de las latencias que la tarea pide interpretar y distinguir del error estándar de la media."
+   ],
+   "citas": [
+    "Parte 2"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 10
+  },
+  {
+   "clave": "latencia",
+   "nombre": "latencia",
+   "tipo": "metrica",
+   "alias": [
+    "latencias",
+    "ocho latencias"
+   ],
+   "descripciones": [
+    "Tiempo de respuesta que aumenta en IVF al incrementar nprobe.",
+    "Conjunto de ocho valores de latencia sobre los que se calculan las estadísticas.",
+    "Medida cuyos valores se analizan en la parte de interpretación."
+   ],
+   "citas": [
+    "s2-rag-y-vector-search § 3. Vector Databases … 3.4 Stack recomendado",
+    "Parte 1",
+    "Parte 2"
+   ],
+   "origen": [
+    "notas",
+    "enunciado"
+   ],
+   "fragmentos": [
+    "s2-rag-y-vector-search#3"
+   ],
+   "comunidad": 10
+  },
+  {
+   "clave": "error estandar de la media",
+   "nombre": "error estándar de la media",
+   "tipo": "metrica",
+   "alias": [
+    "EEM"
+   ],
+   "descripciones": [
+    "Medida que se debe calcular sobre las ocho latencias.",
+    "Medida estadística que la tarea pide diferenciar de la dispersión de las latencias."
+   ],
+   "citas": [
+    "Parte 1",
+    "Parte 2"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 10
+  },
+  {
+   "clave": "dos frase",
+   "nombre": "dos frases",
+   "tipo": "restriccion",
+   "alias": [
+    "extensión de la explicación"
+   ],
+   "descripciones": [
+    "La explicación de la diferencia debe darse en dos frases."
+   ],
+   "citas": [
+    "Parte 2"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 10
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+id,esperado,obtenido,veredicto,violaciones,latencia_us,por_que
+C01,bloquear,bloquear,correcto,"línea 2: .system() (procesos, borrado o permisos)",16.9,os.system: ejecuta procesos
+C02,bloquear,bloquear,correcto,"línea 1: import subprocess (red, procesos o borrado)",19.7,subprocess
+C03,bloquear,bloquear,correcto,"línea 1: import requests (red, procesos o borrado) | línea 2: get('http://x.io')",20.2,red
+C04,bloquear,bloquear,correcto,"línea 1: import socket (red, procesos o borrado)",17.5,red (socket)
+C05,bloquear,bloquear,correcto,línea 1: exec(),20.8,exec
+C06,bloquear,bloquear,correcto,línea 1: eval(),13.6,eval
+C07,bloquear,bloquear,correcto,línea 2: read_csv('/etc/passwd') sale de la carpeta de trabajo,19.7,ruta absoluta fuera de la carpeta
+C08,bloquear,bloquear,correcto,línea 2: os.environ (el script no lee el entorno),17.0,lee el entorno (secretos)
+C09,bloquear,bloquear,correcto,"línea 1: import shutil (red, procesos o borrado) | línea 2: .rmtree() (procesos, borrado o permisos)",15.9,borrado
+C10,bloquear,bloquear,correcto,"línea 2: .remove() (procesos, borrado o permisos)",16.4,borrado de archivo
+C11,bloquear,bloquear,correcto,línea 1: from os import system,16.3,from os import system
+C12,bloquear,bloquear,correcto,"línea 1: .system() (procesos, borrado o permisos) | línea 1: __import__()",18.0,__import__
+C13,bloquear,bloquear,correcto,línea 1: open('../../.env') sale de la carpeta de trabajo,16.1,ruta que sale con ..
+C14,bloquear,bloquear,correcto,el código no compila: invalid syntax (línea 1),6.4,no compila
+C15,pasar,pasar,correcto,,28.7,lectura local normal
+C16,pasar,pasar,correcto,,43.3,figura
+C17,pasar,pasar,correcto,,24.3,str.replace NO es borrar archivos
+C18,pasar,pasar,correcto,,32.5,list.remove NO es borrar archivos
+C19,pasar,pasar,correcto,,31.0,os.path y listdir son inocuos
+C20,pasar,pasar,correcto,,28.0,la palabra environ como clave de un dict
+C21,confirmar,confirmar,correcto,línea 1: import fetch_openml | línea 2: fetch_openml(),16.4,descarga de datos: pide confirmación humana
+C22,confirmar,confirmar,correcto,línea 2: read_csv('https://x.io/d.csv'),19.0,URL como argumento: descarga
+C23,bloquear,bloquear,correcto,"línea 1: import importlib (red, procesos o borrado)",20.0,import dinámico con el nombre partido: lo atrapa la regla de importlib/import_module
+C24,bloquear,pasar,falso_negativo,,22.3,getattr con cadena armada: la guarda estática no lo ve
+C25,bloquear,pasar,falso_negativo,,27.5,ruta armada por concatenación: no es una constante

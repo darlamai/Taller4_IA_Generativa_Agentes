@@ -206,12 +206,12 @@ _TELEFONO = re.compile(r"(?<![\w.,/-])(?:(?:\+|00)593[\s-]?\(?0?\)?[\s-]?\d(?:[\
                        r"|09\d[\s-]?\d{3}[\s-]?\d{4}"
                        r"|\+\d{1,3}[\s-]\d{1,4}(?:[\s-]\d{2,4}){2,3})(?![\d])")
 # Cédula / RUC: solo con la palabra clave delante. «Mi cédula es 1712345678», «C.I.: 1712345678».
-_CEDULA = re.compile(r"(?i)\b(c[eé]dula(?: de (?:identidad|ciudadan[ií]a))?|c\.\s?i\.?|identificaci[oó]n|ruc|documento)"
+_CEDULA = re.compile(r"(?i)\b(c[eé]dula(?:\s+de\s+(?:identidad|ciudadan[ií]a))?|c\.\s?i\.?|identificaci[oó]n|ruc|documento)"
                      r"((?:\s+(?:es|n[°º.o]*|n[uú]mero|:|#|-))*\s*[:#-]?\s*)(?P<num>\d(?:[ .-]?\d){9}(?:[ .-]?\d{3})?)(?!\d)")
 _TARJETA = re.compile(r"(?<![\d-])(?:\d[ -]?){12,18}\d(?![\d-])")
-_NOMBRE_PROPIO = r"[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+(?:\s+(?:de |del |de la |y )?[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+){1,3}"
-_ETIQUETA_NOMBRE = re.compile(r"(?i:\b(solicitado por|solicitante|a nombre de|dirigido a|contacto|firmado por|"
-                              r"nombre completo|nombre|cliente|me llamo|mi nombre es)\b)(\*{0,2}\s*(?:es|:|-|—)?\s*\*{0,2}\s*(?:(?:Sr|Sra|Srta|Dr|Dra|Ing|Lic|Mgs|Msc|Prof)\.?\s+)?)"
+_NOMBRE_PROPIO = r"[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+(?:\s+(?:(?:de|del|de\s+la|y)\s+)?[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+){1,3}"
+_ETIQUETA_NOMBRE = re.compile(r"(?i:\b(solicitado\s+por|solicitante|a\s+nombre\s+de|dirigido\s+a|contacto|firmado\s+por|"
+                              r"nombre\s+completo|nombre|cliente|me\s+llamo|mi\s+nombre\s+es)\b)(\*{0,2}\s*(?:es|:|-|—)?\s*\*{0,2}\s*(?:(?:Sr|Sra|Srta|Dr|Dra|Ing|Lic|Mgs|Msc|Prof)\.?\s+)?)"
                               rf"({_NOMBRE_PROPIO})")
 _SENSIBLES: set[str] = set()
 

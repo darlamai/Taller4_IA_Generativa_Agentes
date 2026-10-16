@@ -1,0 +1,141 @@
+{
+ "directed": true,
+ "multigraph": false,
+ "graph": {},
+ "nodes": [
+  {
+   "titulo": "Tarea P1 — Ventas mensuales de un cliente",
+   "trabajo": false,
+   "id": "Preámbulo",
+   "capa": "enunciado"
+  },
+  {
+   "titulo": "Parte 1 — Resumen",
+   "trabajo": true,
+   "id": "Parte 1",
+   "capa": "enunciado"
+  },
+  {
+   "titulo": "Parte 2 — Lectura",
+   "trabajo": true,
+   "id": "Parte 2",
+   "capa": "enunciado"
+  },
+  {
+   "titulo": "El reporte",
+   "trabajo": false,
+   "id": "El reporte",
+   "capa": "enunciado"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "ventas mensuales",
+   "tipo": "dataset",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 1"
+   ],
+   "comunidad": null,
+   "id": "ent:venta mensual"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "mediana",
+   "tipo": "metrica",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 1"
+   ],
+   "comunidad": null,
+   "id": "ent:mediana"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "dos decimales",
+   "tipo": "restriccion",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 1"
+   ],
+   "comunidad": null,
+   "id": "ent:dos decimal"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "media",
+   "tipo": "metrica",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 1"
+   ],
+   "comunidad": null,
+   "id": "ent:media"
+  }
+ ],
+ "aristas": [
+  {
+   "tipo": "menciona",
+   "source": "Parte 1",
+   "target": "ent:venta mensual"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 1",
+   "target": "ent:media"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 1",
+   "target": "ent:mediana"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 1",
+   "target": "ent:dos decimal"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "se_calcula_de",
+   "citas": [
+    "Parte 1"
+   ],
+   "source": "ent:mediana",
+   "target": "ent:venta mensual"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "aplica_a",
+   "citas": [
+    "Parte 1"
+   ],
+   "source": "ent:dos decimal",
+   "target": "ent:media"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "aplica_a",
+   "citas": [
+    "Parte 1"
+   ],
+   "source": "ent:dos decimal",
+   "target": "ent:mediana"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "se_calcula_de",
+   "citas": [
+    "Parte 1"
+   ],
+   "source": "ent:media",
+   "target": "ent:venta mensual"
+  }
+ ]
+}

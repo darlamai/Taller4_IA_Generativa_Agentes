@@ -1,0 +1,2 @@
+/home/dludena/Taller4_IA_Generativa_Agentes/Lab-04-LLMOps/results_parte3/corridas/tarea-P1/cache_solver/enunciado_leido.json
+/home/dludena/Taller4_IA_Generativa_Agentes/Lab-04-LLMOps/results_parte3/corridas/tarea-P1/traza.jsonl

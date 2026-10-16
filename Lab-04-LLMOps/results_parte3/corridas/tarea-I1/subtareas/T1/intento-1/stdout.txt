@@ -1,0 +1,7 @@
+=== T1: Resumen estadístico de latencias (ms) ===
+Latencias: [120.0, 135.0, 128.0, 150.0, 142.0, 138.0, 160.0, 127.0]
+n = 8
+Media: 137.50 ms
+Desviación estándar muestral (n-1): 13.07 ms
+Error estándar de la media: 4.62 ms
+Resultados escritos en resultados.json

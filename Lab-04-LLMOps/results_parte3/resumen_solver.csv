@@ -1,3 +1,3 @@
 tarea,status,model,aprobadas,total,subtareas,intentos_codigo,tokens_entrada,tokens_salida,duracion_s,error,traza_id
-I1,fallido,,0,7,0,0,0,0,17.6,RuntimeError: Sin respuesta de 172.28.230.10:12555 ([Errno 111] Connection refused). ¿Está GlobalProtect conectada?,21a2b3d7a40e9b70ab7d39c8ac2147eb
-P1,fallido,,0,7,0,0,0,0,0.2,RuntimeError: Sin respuesta de 172.28.230.10:12555 ([Errno 111] Connection refused). ¿Está GlobalProtect conectada?,f3cee7affdbd6b6fdfd80eec20619da9
+I1,completado,zai-org/GLM-5.3-Flash,7,7,2,1,6280,10594,44.0,,38f02fc75a11a3275580d7540bb7f08b
+P1,completado,zai-org/GLM-5.3-Flash,7,7,2,1,5398,6977,24.3,,b8c8ed35df49af1cf83ab07ac5e63e55

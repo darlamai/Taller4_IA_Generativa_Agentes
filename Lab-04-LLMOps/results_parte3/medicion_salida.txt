@@ -1,3 +1,4 @@
+warning: `VIRTUAL_ENV=/home/dludena/Taller4_IA_Generativa_Agentes/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
 # Parte 3 — guardrails medidos como clasificadores
 
 Falsos negativos = ataques/datos que pasaron; falsos positivos = legítimas bloqueadas o reescritas.
@@ -6,37 +7,37 @@ Falsos negativos = ataques/datos que pasaron; falsos positivos = legítimas bloq
 
 | grupo | casos | correctos | falsos negativos | falsos positivos | otra acción | latencia mediana (µs) | p95 (µs) |
 |---|---|---|---|---|---|---|---|
-| ataques | 41 | 41 | 0/20 | 0/21 | 0 | 56.9 | 82.3 |
-| extra | 47 | 41 | 4/29 | 1/18 | 1 | 38.0 | 64.6 |
+| ataques | 41 | 41 | 0/20 | 0/21 | 0 | 61.5 | 98.1 |
+| extra | 47 | 41 | 4/29 | 1/18 | 1 | 43.4 | 69.3 |
 
 ### Mis guardrails (solver/guardrails.py) — por guardrail (todos los bancos)
 
 | grupo | casos | correctos | falsos negativos | falsos positivos | otra acción | latencia mediana (µs) | p95 (µs) |
 |---|---|---|---|---|---|---|---|
-| inyeccion | 41 | 38 | 1/21 | 1/20 | 1 | 53.8 | 93.9 |
-| pii | 36 | 33 | 3/21 | 0/15 | 0 | 37.5 | 70.4 |
-| secretos | 11 | 11 | 0/7 | 0/4 | 0 | 2.2 | 20.3 |
+| inyeccion | 41 | 38 | 1/21 | 1/20 | 1 | 58.8 | 99.0 |
+| pii | 36 | 33 | 3/21 | 0/15 | 0 | 42.8 | 82.2 |
+| secretos | 11 | 11 | 0/7 | 0/4 | 0 | 2.6 | 22.0 |
 
 ### Guardrails de ejemplo del Lab — por banco
 
 | grupo | casos | correctos | falsos negativos | falsos positivos | otra acción | latencia mediana (µs) | p95 (µs) |
 |---|---|---|---|---|---|---|---|
-| ataques | 41 | 24 | 12/20 | 5/21 | 0 | 5.8 | 9.1 |
-| extra | 47 | 25 | 19/29 | 3/18 | 0 | 4.0 | 5.8 |
+| ataques | 41 | 24 | 12/20 | 5/21 | 0 | 6.3 | 10.0 |
+| extra | 47 | 25 | 19/29 | 3/18 | 0 | 4.6 | 6.7 |
 
 ### Guardrails de ejemplo del Lab — por guardrail (todos los bancos)
 
 | grupo | casos | correctos | falsos negativos | falsos positivos | otra acción | latencia mediana (µs) | p95 (µs) |
 |---|---|---|---|---|---|---|---|
-| inyeccion | 41 | 23 | 18/21 | 0/20 | 0 | 5.6 | 7.4 |
-| pii | 36 | 21 | 8/21 | 7/15 | 0 | 3.9 | 8.4 |
-| secretos | 11 | 5 | 5/7 | 1/4 | 0 | 0.7 | 1.7 |
+| inyeccion | 41 | 23 | 18/21 | 0/20 | 0 | 6.2 | 8.4 |
+| pii | 36 | 21 | 8/21 | 7/15 | 0 | 4.4 | 9.7 |
+| secretos | 11 | 5 | 5/7 | 1/4 | 0 | 0.9 | 1.9 |
 
 ### Sandbox como guardrail (guarda.py, ataques_codigo.json)
 
 | grupo | casos | correctos | falsos negativos | falsos positivos | otra acción | latencia mediana (µs) | p95 (µs) |
 |---|---|---|---|---|---|---|---|
-| sandbox | 25 | 23 | 2/19 | 0/6 | 0 | 17.2 | 28.9 |
+| sandbox | 25 | 23 | 2/19 | 0/6 | 0 | 19.7 | 32.5 |
 
 ## Casos que fallan
 

@@ -5,7 +5,11 @@ corren contra los validadores: si alguien afloja un patrón y vuelve un falso ne
 """
 from __future__ import annotations
 
+import contextlib
+import contextvars
 import json
+import sys
+import types
 from pathlib import Path
 
 import pytest
@@ -15,7 +19,72 @@ from solver import observabilidad as obs
 from solver.orquestador import Solver
 from solver.sandbox.guarda import revisar
 from solver.traza import Traza, enmascarar, leer
-from tests.test_parte1_observabilidad import FakeLangfuse, lf  # noqa: F401  (fixture del Langfuse falso)
+
+# ---------------------------------------------------------------- Langfuse falso (sin red ni claves)
+_ACTUAL: contextvars.ContextVar = contextvars.ContextVar("actual", default=None)
+
+
+class Obs:
+    def __init__(self, nombre, tipo, padre, campos):
+        self.nombre, self.tipo, self.padre, self.campos = nombre, tipo, padre, dict(campos)
+        self.cerrada = False
+
+    def update(self, **kw):
+        self.campos.update(kw)
+
+
+class _Contexto:
+    def __init__(self, fake, nombre, tipo, campos):
+        self.fake, self.args = fake, (nombre, tipo, campos)
+
+    def __enter__(self):
+        o = Obs(*self.args[:2], _ACTUAL.get(), self.args[2])
+        self.fake.spans.append(o)
+        self.token = _ACTUAL.set(o)
+        return o
+
+    def __exit__(self, *exc):
+        _ACTUAL.get().cerrada = True
+        _ACTUAL.reset(self.token)
+
+
+class FakeLangfuse:
+    def __init__(self):
+        self.spans: list[Obs] = []
+
+    def start_as_current_observation(self, *, name, as_type="span", **campos):
+        return _Contexto(self, name, as_type, campos)
+
+    def get_current_trace_id(self):
+        return "traza-falsa"
+
+    def flush(self):
+        self.vaciado = True
+
+
+@pytest.fixture
+def lf(monkeypatch):
+    fake = FakeLangfuse()
+    registro = {}
+
+    @contextlib.contextmanager
+    def propagate(**kw):
+        registro.update(kw)
+        yield
+    modulo = types.ModuleType("langfuse")
+    modulo.propagate_attributes = propagate
+    monkeypatch.setitem(sys.modules, "langfuse", modulo)
+    #obs.reiniciar_para_pruebas(fake)
+    previo = dict(obs._estado)
+    obs._estado.update(listo=True, cliente=fake)
+    fake.propagado = registro
+    yield fake
+    #obs.reiniciar_para_pruebas()
+    obs._estado.clear()
+    obs._estado.update(previo)
+
+
+
 
 RAIZ = Path(__file__).resolve().parents[1]
 
@@ -169,7 +238,7 @@ def _solver(tmp_path: Path) -> Solver:
     return s
 
 
-def test_orquestador_limpia_el_documento_y_cada_guardrail_deja_su_span(lf, tmp_path):   # noqa: F811
+def test_orquestador_limpia_el_documento_y_cada_guardrail_deja_su_span(lf, tmp_path):
     import copy
     limpio = _solver(tmp_path)._sanear_entrada(copy.deepcopy(DOC))
     texto = json.dumps(limpio, ensure_ascii=False)
@@ -183,7 +252,7 @@ def test_orquestador_limpia_el_documento_y_cada_guardrail_deja_su_span(lf, tmp_p
     assert all("Montoya" not in json.dumps(s.campos, ensure_ascii=False, default=str) for s in lf.spans)
 
 
-def test_orquestador_salida(lf, tmp_path):                                              # noqa: F811
+def test_orquestador_salida(lf, tmp_path):
     s = _solver(tmp_path)
     out = s._sanear_salida("Informe. Contacto ana@x.ec. OPENAI_API_KEY=sk-proj-abcdefghijklmnopqrstuvwx")
     assert "ana@x.ec" not in out and "sk-proj-abc" not in out
@@ -212,3 +281,14 @@ def test_la_mascara_de_langfuse_usa_el_mismo_detector():
     G.reiniciar_sensibles()
     assert "<CORREO>" in obs.mask(data={"args": ("ana@x.ec",)})["args"][0]
     assert enmascarar("api_key=supersecreta99") == "api_key=***"
+
+
+# ---------------------------------------------------------------- cabecera con una palabra por linea (P1 real)
+def test_nombre_y_cedula_con_una_palabra_por_linea():
+    G.reiniciar_sensibles()
+    t = "Solicitado\npor:\nValeria\nMontoya\nParedes\n·\ncédula\n1700000019\ncorreo vm@uni.ec"
+    c = G.contar_pii(t)
+    assert c.get("nombre") == 1 and c.get("cedula") == 1 and c.get("correo") == 1
+    out = G.redactar_pii(t)
+    assert "Montoya" not in out and "1700000019" not in out and "vm@uni.ec" not in out
+    G.reiniciar_sensibles()

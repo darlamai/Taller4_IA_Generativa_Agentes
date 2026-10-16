@@ -1,0 +1,50 @@
+{
+  "subtarea": "T1_media_y_mediana_ventas",
+  "ventas_mensuales_usd": [
+    1250.5,
+    980.25,
+    1430.75,
+    1120.0,
+    1675.5,
+    1305.25
+  ],
+  "meses": [
+    "ene",
+    "feb",
+    "mar",
+    "abr",
+    "may",
+    "jun"
+  ],
+  "n_observaciones": 6,
+  "media_ventas_usd": 1293.71,
+  "mediana_ventas_usd": 1277.88,
+  "media_ventas_usd_sin_redondear": 1293.7083333333333,
+  "mediana_ventas_usd_sin_redondear": 1277.875,
+  "tabla_ventas": [
+    {
+      "mes": "ene",
+      "ventas_usd": 1250.5
+    },
+    {
+      "mes": "feb",
+      "ventas_usd": 980.25
+    },
+    {
+      "mes": "mar",
+      "ventas_usd": 1430.75
+    },
+    {
+      "mes": "abr",
+      "ventas_usd": 1120.0
+    },
+    {
+      "mes": "may",
+      "ventas_usd": 1675.5
+    },
+    {
+      "mes": "jun",
+      "ventas_usd": 1305.25
+    }
+  ]
+}

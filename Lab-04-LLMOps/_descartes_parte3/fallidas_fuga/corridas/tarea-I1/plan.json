@@ -1,0 +1,30 @@
+{
+ "subtareas": [
+  {
+   "id": "T1",
+   "tipo": "calculo",
+   "secciones": [
+    "Parte 1"
+   ],
+   "depende_de": [],
+   "objetivo": "Cargar las ocho latencias (120, 135, 128, 150, 142, 138, 160, 127 ms) y calcular la media, la desviación estándar muestral (con n−1) y el error estándar de la media (s/√n), reportando las tres cifras con dos decimales.",
+   "criterio": "Existen tres valores numéricos producidos por código: media, desviación estándar muestral y error estándar de la media, todos con dos decimales, calculados sobre los 8 datos.",
+   "status": "pendiente",
+   "intentos": 0
+  },
+  {
+   "id": "T2",
+   "tipo": "conceptual",
+   "secciones": [
+    "Parte 2"
+   ],
+   "depende_de": [
+    "T1"
+   ],
+   "objetivo": "Redactar una explicación en dos frases de la diferencia entre la dispersión de las latencias (desviación estándar de las observaciones individuales) y el error estándar de la media (precisión de la estimación de la media), usando las cifras obtenidas en T1.",
+   "criterio": "Texto de exactamente dos frases que contrasta dispersión individual vs. variabilidad de la media, menciona o es coherente con los valores numéricos de T1 (incluida la relación SEM = s/√n).",
+   "status": "pendiente",
+   "intentos": 0
+  }
+ ]
+}

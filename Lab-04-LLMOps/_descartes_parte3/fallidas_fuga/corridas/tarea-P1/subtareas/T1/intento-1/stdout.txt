@@ -1,0 +1,6 @@
+Subtarea T1 completada.
+Datos (USD): [1250.5, 980.25, 1430.75, 1120.0, 1675.5, 1305.25]
+n observaciones: 6
+Media   : 1293.71 USD (sin redondear: 1293.7083333333333)
+Mediana : 1277.88 USD (sin redondear: 1277.875)
+Archivos escritos: resultados.json, reporte.md

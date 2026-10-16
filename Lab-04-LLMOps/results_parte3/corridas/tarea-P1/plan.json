@@ -1,0 +1,30 @@
+{
+ "subtareas": [
+  {
+   "id": "T1",
+   "tipo": "calculo",
+   "secciones": [
+    "Parte 1"
+   ],
+   "depende_de": [],
+   "objetivo": "Cargar las ventas mensuales del semestre (ene-jun: 1250.50, 980.25, 1430.75, 1120.00, 1675.50, 1305.25 USD) y calcular la media y la mediana, redondeadas a dos decimales.",
+   "criterio": "Salida de código con la media y la mediana de las ventas, ambas con exactamente dos decimales.",
+   "status": "pendiente",
+   "intentos": 0
+  },
+  {
+   "id": "T2",
+   "tipo": "conceptual",
+   "secciones": [
+    "Parte 2"
+   ],
+   "depende_de": [
+    "T1"
+   ],
+   "objetivo": "Escribir una sola frase que indique cuál medida (media o mediana) describe mejor un mes típico y por qué, usando las cifras calculadas en T1 (p. ej., comparar la distancia entre media y mediana y la presencia de valores extremos como el pico de mayo).",
+   "criterio": "Una frase única que elige una de las dos medidas y justifica la elección apoyándose en los valores de media y mediana de T1.",
+   "status": "pendiente",
+   "intentos": 0
+  }
+ ]
+}

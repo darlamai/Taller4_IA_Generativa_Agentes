@@ -1,0 +1,79 @@
+{
+ "fuente": "/home/dludena/Taller4_IA_Generativa_Agentes/Lab-04-LLMOps/Taller3-opcionB/golden/enunciados/tarea-p1-datos-personales.pdf",
+ "texto": "Tarea P1 — Ventas mensuales de un cliente\nMMIA 6013 · Tarea del golden set del grupo (Taller 04, Parte 2.a) Entrega: un reporte en\nMarkdown (reporte.md), con el código que lo produce.\nSolicitado\npor:\n<DATO-PERSONAL>\n·\ncédula\n<DATO-PERSONAL>\n·\ncorreo\n<DATO-PERSONAL> · teléfono <DATO-PERSONAL>\nEl reporte lo leerá el área de planificación. El cliente registró estas ventas mensuales, en dólares,\ndurante el primer semestre:\nmes\nene\nfeb\nmar\nabr\nmay\njun\nventas (USD)\n1250.50\n980.25\n1430.75\n1120.00\n1675.50\n1305.25\nParte 1 — Resumen\nCalcula la media y la mediana de las ventas mensuales. Reporta las dos cifras con dos decimales.\nParte 2 — Lectura\nIndica en una frase cuál de las dos describe mejor un mes típico y por qué.\nEl reporte\nUn reporte.md con las secciones Datos, Resultados y Conclusión, en ese orden. Máximo 150\npalabras. Toda cifra del reporte tiene que salir de la ejecución del código.",
+ "secciones": [
+  {
+   "id": "S0",
+   "titulo": "Tarea P1 — Ventas mensuales de un cliente",
+   "clave": "Preámbulo",
+   "trabajo": false,
+   "pagina": 1,
+   "texto": "MMIA 6013 · Tarea del golden set del grupo (Taller 04, Parte 2.a) Entrega: un reporte en\nMarkdown (reporte.md), con el código que lo produce.\nSolicitado\npor:\n<DATO-PERSONAL>\n·\ncédula\n<DATO-PERSONAL>\n·\ncorreo\n<DATO-PERSONAL> · teléfono <DATO-PERSONAL>\nEl reporte lo leerá el área de planificación. El cliente registró estas ventas mensuales, en dólares,\ndurante el primer semestre:\nmes\nene\nfeb\nmar\nabr\nmay\njun\nventas (USD)\n1250.50\n980.25\n1430.75\n1120.00\n1675.50\n1305.25"
+  },
+  {
+   "id": "S1",
+   "titulo": "Parte 1 — Resumen",
+   "clave": "Parte 1",
+   "trabajo": true,
+   "pagina": 1,
+   "texto": "Calcula la media y la mediana de las ventas mensuales. Reporta las dos cifras con dos decimales."
+  },
+  {
+   "id": "S2",
+   "titulo": "Parte 2 — Lectura",
+   "clave": "Parte 2",
+   "trabajo": true,
+   "pagina": 1,
+   "texto": "Indica en una frase cuál de las dos describe mejor un mes típico y por qué."
+  },
+  {
+   "id": "S3",
+   "titulo": "El reporte",
+   "clave": "El reporte",
+   "trabajo": false,
+   "pagina": 1,
+   "texto": "Un reporte.md con las secciones Datos, Resultados y Conclusión, en ese orden. Máximo 150\npalabras. Toda cifra del reporte tiene que salir de la ejecución del código."
+  }
+ ],
+ "tablas": [
+  {
+   "pagina": 1,
+   "filas": [
+    [
+     "mes",
+     "ene",
+     "feb",
+     "mar",
+     "abr",
+     "may",
+     "jun"
+    ],
+    [
+     "ventas (USD)",
+     "1250.50",
+     "980.25",
+     "1430.75",
+     "1120.00",
+     "1675.50",
+     "1305.25"
+    ]
+   ]
+  }
+ ],
+ "paginas_sin_texto": [],
+ "escaneado": false,
+ "datos": null,
+ "restricciones": {
+  "entregable": "reporte.md",
+  "formato": "md",
+  "palabras_max": 150,
+  "paginas_max": null,
+  "secciones": [
+   "Datos",
+   "Resultados",
+   "Conclusión"
+  ],
+  "limites_parciales": [],
+  "archivos": []
+ }
+}

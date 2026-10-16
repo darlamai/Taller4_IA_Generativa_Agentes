@@ -1,0 +1,69 @@
+{
+ "Parte 1": [
+  {
+   "clave": "venta mensual",
+   "nombre": "ventas mensuales",
+   "tipo": "dataset",
+   "alias": [],
+   "descripciones": [
+    "Datos de ventas por mes sobre los que se deben calcular estadísticas."
+   ],
+   "citas": [
+    "Parte 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "media",
+   "nombre": "media",
+   "tipo": "metrica",
+   "alias": [],
+   "descripciones": [
+    "Medida que se debe calcular para las ventas mensuales."
+   ],
+   "citas": [
+    "Parte 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "mediana",
+   "nombre": "mediana",
+   "tipo": "metrica",
+   "alias": [],
+   "descripciones": [
+    "Medida que se debe calcular para las ventas mensuales."
+   ],
+   "citas": [
+    "Parte 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "dos decimal",
+   "nombre": "dos decimales",
+   "tipo": "restriccion",
+   "alias": [],
+   "descripciones": [
+    "Formato exigido para reportar las dos cifras calculadas."
+   ],
+   "citas": [
+    "Parte 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  }
+ ],
+ "Parte 2": []
+}

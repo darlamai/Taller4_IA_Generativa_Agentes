@@ -1,0 +1,31 @@
+16:SESION_POR_DEFECTO = "grupo-07-base"
+17:ETIQUETA = "taller-04"
+18:VERSION_PROMPTS_POR_DEFECTO = "v1"
+19:_MAX_TEXTO = 4_000
+22:_EMAIL = re.compile(r"[\w.+-]+@[\w-]+\.[\w.-]+")
+23:_TELEFONO = re.compile(r"(?<![\w.])(?:(?:\+|00)593[\s-]?\(?0?\)?[\s-]?\d(?:[\s-]?\d){7,8}"
+25:_CEDULA = re.compile(r"(?i)\b(c[eé]dula|c\.?i\.?|identificaci[oó]n|ruc)\b(\s*(?:n[°ºo.]*\s*)?[:#]?\s*)\d{10}(?:\d{3})?(?!\d)")
+26:_TARJETA = re.compile(r"(?<![\d-])(?:\d[ -]?){12,18}\d(?![\d-])")
+29:def _luhn(digitos: str) -> bool:
+40:def _tarjeta(m: re.Match) -> str:
+44:def enmascarar_pii(texto: str) -> str:
+50:def _limpiar_texto(texto: str) -> str:
+55:def mask(*, data: Any, **_: Any) -> Any:
+67:_estado: dict[str, Any] = {"listo": False, "cliente": None}
+70:def _aviso(texto: str) -> None:
+74:def cliente():
+100:def activo() -> bool:
+104:def vaciar() -> None:
+114:def version_prompts() -> str:
+118:def sesion() -> str:
+123:def _recortar(valor: Any, limite: int = _MAX_TEXTO) -> Any:
+133:class Manejador:
+156:def _span(nombre: str, tipo: str, **campos: Any) -> Iterator[Manejador]:
+186:def corrida(pregunta: str, *, variante: str = "completo", metadata: dict | None = None) -> Iterator[Manejador]:
+204:def agente(nombre: str, **campos: Any):
+208:def herramienta(nombre: str, **campos: Any):
+212:def guardrail(nombre: str, **campos: Any):
+216:def generacion(nombre: str, *, modelo: str, **campos: Any):
+220:def usar_uso(h: Manejador, uso: dict | None, **extra: Any) -> None:
+228:def con_contexto(fn: Callable) -> Callable:
+237:def traza_id_actual() -> str | None:
