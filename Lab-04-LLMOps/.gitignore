@@ -1,7 +1,7 @@
 # Salida de cada corrida.
 resultados*.csv
 guardrails*.csv
-spans*.jsonl
+#spans*.jsonl
 reports/traces.jsonl
 reports/answers.json
 reports/evaluation_report.json

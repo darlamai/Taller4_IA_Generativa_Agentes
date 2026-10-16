@@ -1,0 +1,495 @@
+{"traza": "e90311a64d01ccea68f5378cc429532d", "span": "guardrail", "nombre": "validar_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "e90311a64d01ccea68f5378cc429532d", "span": "corrida", "nombre": "corrida", "duracion_ms": 19397.0, "error": null, "prompt_version": "v1"}
+{"traza": "e90311a64d01ccea68f5378cc429532d", "span": "agent", "nombre": "lector", "duracion_ms": 27.0, "error": null}
+{"traza": "e90311a64d01ccea68f5378cc429532d", "span": "herramienta", "nombre": "leer_pdf", "duracion_ms": 26.0, "error": null}
+{"traza": "e90311a64d01ccea68f5378cc429532d", "span": "agent", "nombre": "indexador", "duracion_ms": 2670.0, "error": null}
+{"traza": "e90311a64d01ccea68f5378cc429532d", "span": "llm", "nombre": "indexador", "duracion_ms": 2176.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 350, "tokens_salida": 842, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "e90311a64d01ccea68f5378cc429532d", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "e90311a64d01ccea68f5378cc429532d", "span": "llm", "nombre": "indexador", "duracion_ms": 748.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 344, "tokens_salida": 185, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "e90311a64d01ccea68f5378cc429532d", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "e90311a64d01ccea68f5378cc429532d", "span": "agent", "nombre": "planificador", "duracion_ms": 1568.0, "error": null}
+{"traza": "e90311a64d01ccea68f5378cc429532d", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "e90311a64d01ccea68f5378cc429532d", "span": "llm", "nombre": "planificador", "duracion_ms": 1563.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 710, "tokens_salida": 550, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "e90311a64d01ccea68f5378cc429532d", "span": "agent", "nombre": "investigador", "duracion_ms": 157.0, "error": null}
+{"traza": "e90311a64d01ccea68f5378cc429532d", "span": "agent", "nombre": "programador", "duracion_ms": 6749.0, "error": null}
+{"traza": "e90311a64d01ccea68f5378cc429532d", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "e90311a64d01ccea68f5378cc429532d", "span": "llm", "nombre": "programador", "duracion_ms": 6746.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1385, "tokens_salida": 2610, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "e90311a64d01ccea68f5378cc429532d", "span": "agent", "nombre": "ejecutor", "duracion_ms": 34.0, "error": null}
+{"traza": "e90311a64d01ccea68f5378cc429532d", "span": "guardrail", "nombre": "freno_repeticion", "duracion_ms": 1.0, "error": null}
+{"traza": "e90311a64d01ccea68f5378cc429532d", "span": "guardrail", "nombre": "guarda_sandbox", "duracion_ms": 1.0, "error": null}
+{"traza": "e90311a64d01ccea68f5378cc429532d", "span": "herramienta", "nombre": "sandbox_python", "duracion_ms": 29.0, "error": null}
+{"traza": "e90311a64d01ccea68f5378cc429532d", "span": "agent", "nombre": "critico", "duracion_ms": 1182.0, "error": null}
+{"traza": "e90311a64d01ccea68f5378cc429532d", "span": "llm", "nombre": "critico", "duracion_ms": 1177.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1526, "tokens_salida": 459, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "e90311a64d01ccea68f5378cc429532d", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "e90311a64d01ccea68f5378cc429532d", "span": "agent", "nombre": "redactor", "duracion_ms": 6985.0, "error": null}
+{"traza": "e90311a64d01ccea68f5378cc429532d", "span": "llm", "nombre": "redactor", "duracion_ms": 6982.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 896, "tokens_salida": 1965, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "e90311a64d01ccea68f5378cc429532d", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "e90311a64d01ccea68f5378cc429532d", "span": "agent", "nombre": "redactor", "duracion_ms": 2.0, "error": null}
+{"traza": "29fe39b413dd05b32baed2a91b8f765a", "span": "corrida", "nombre": "corrida", "duracion_ms": 38685.0, "error": null, "prompt_version": "v1"}
+{"traza": "29fe39b413dd05b32baed2a91b8f765a", "span": "guardrail", "nombre": "validar_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "29fe39b413dd05b32baed2a91b8f765a", "span": "agent", "nombre": "lector", "duracion_ms": 33.0, "error": null}
+{"traza": "29fe39b413dd05b32baed2a91b8f765a", "span": "herramienta", "nombre": "leer_pdf", "duracion_ms": 30.0, "error": null}
+{"traza": "29fe39b413dd05b32baed2a91b8f765a", "span": "agent", "nombre": "indexador", "duracion_ms": 5920.0, "error": null}
+{"traza": "29fe39b413dd05b32baed2a91b8f765a", "span": "llm", "nombre": "indexador", "duracion_ms": 4951.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 442, "tokens_salida": 1688, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "29fe39b413dd05b32baed2a91b8f765a", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "29fe39b413dd05b32baed2a91b8f765a", "span": "llm", "nombre": "indexador", "duracion_ms": 5179.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 352, "tokens_salida": 1549, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "29fe39b413dd05b32baed2a91b8f765a", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "29fe39b413dd05b32baed2a91b8f765a", "span": "agent", "nombre": "planificador", "duracion_ms": 2859.0, "error": null}
+{"traza": "29fe39b413dd05b32baed2a91b8f765a", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "29fe39b413dd05b32baed2a91b8f765a", "span": "llm", "nombre": "planificador", "duracion_ms": 2854.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 753, "tokens_salida": 1122, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "29fe39b413dd05b32baed2a91b8f765a", "span": "agent", "nombre": "investigador", "duracion_ms": 182.0, "error": null}
+{"traza": "29fe39b413dd05b32baed2a91b8f765a", "span": "agent", "nombre": "programador", "duracion_ms": 7195.0, "error": null}
+{"traza": "29fe39b413dd05b32baed2a91b8f765a", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "29fe39b413dd05b32baed2a91b8f765a", "span": "llm", "nombre": "programador", "duracion_ms": 7192.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 2422, "tokens_salida": 2905, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "29fe39b413dd05b32baed2a91b8f765a", "span": "guardrail", "nombre": "freno_repeticion", "duracion_ms": 1.0, "error": null}
+{"traza": "29fe39b413dd05b32baed2a91b8f765a", "span": "agent", "nombre": "ejecutor", "duracion_ms": 619.0, "error": null}
+{"traza": "29fe39b413dd05b32baed2a91b8f765a", "span": "guardrail", "nombre": "guarda_sandbox", "duracion_ms": 2.0, "error": null}
+{"traza": "29fe39b413dd05b32baed2a91b8f765a", "span": "herramienta", "nombre": "sandbox_python", "duracion_ms": 614.0, "error": null}
+{"traza": "29fe39b413dd05b32baed2a91b8f765a", "span": "agent", "nombre": "critico", "duracion_ms": 3169.0, "error": null}
+{"traza": "29fe39b413dd05b32baed2a91b8f765a", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "29fe39b413dd05b32baed2a91b8f765a", "span": "llm", "nombre": "critico", "duracion_ms": 3163.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1965, "tokens_salida": 1180, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "29fe39b413dd05b32baed2a91b8f765a", "span": "agent", "nombre": "redactor", "duracion_ms": 18680.0, "error": null}
+{"traza": "29fe39b413dd05b32baed2a91b8f765a", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "29fe39b413dd05b32baed2a91b8f765a", "span": "llm", "nombre": "redactor", "duracion_ms": 18676.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1038, "tokens_salida": 7681, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "29fe39b413dd05b32baed2a91b8f765a", "span": "agent", "nombre": "redactor", "duracion_ms": 3.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "corrida", "nombre": "corrida", "duracion_ms": 1135843.0, "error": null, "prompt_version": "v1"}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "validar_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "agent", "nombre": "lector", "duracion_ms": 209.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "herramienta", "nombre": "leer_pdf", "duracion_ms": 208.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "agent", "nombre": "indexador", "duracion_ms": 86077.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "llm", "nombre": "indexador", "duracion_ms": 34623.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 399, "tokens_salida": 3577, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "llm", "nombre": "indexador", "duracion_ms": 35014.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 487, "tokens_salida": 3535, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "llm", "nombre": "indexador", "duracion_ms": 22341.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 400, "tokens_salida": 2057, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "llm", "nombre": "indexador", "duracion_ms": 31976.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 444, "tokens_salida": 3667, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "llm", "nombre": "indexador", "duracion_ms": 35239.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 473, "tokens_salida": 3864, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "llm", "nombre": "indexador", "duracion_ms": 43028.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 434, "tokens_salida": 4108, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "llm", "nombre": "indexador", "duracion_ms": 80939.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 500, "tokens_salida": 15403, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "llm", "nombre": "indexador", "duracion_ms": 34241.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 406, "tokens_salida": 3124, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "llm", "nombre": "indexador", "duracion_ms": 23368.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 429, "tokens_salida": 2498, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "llm", "nombre": "indexador", "duracion_ms": 23541.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 478, "tokens_salida": 3636, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "llm", "nombre": "indexador", "duracion_ms": 16236.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 396, "tokens_salida": 2391, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "agent", "nombre": "planificador", "duracion_ms": 41961.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "llm", "nombre": "planificador", "duracion_ms": 41955.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 3056, "tokens_salida": 15099, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "agent", "nombre": "planificador", "duracion_ms": 6849.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "llm", "nombre": "planificador", "duracion_ms": 6840.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 5371, "tokens_salida": 3047, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "agent", "nombre": "investigador", "duracion_ms": 280.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "agent", "nombre": "programador", "duracion_ms": 40842.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "llm", "nombre": "programador", "duracion_ms": 40839.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1901, "tokens_salida": 14766, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "agent", "nombre": "ejecutor", "duracion_ms": 895.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "freno_repeticion", "duracion_ms": 0.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "guarda_sandbox", "duracion_ms": 5.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "herramienta", "nombre": "sandbox_python", "duracion_ms": 885.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "agent", "nombre": "critico", "duracion_ms": 4924.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "llm", "nombre": "critico", "duracion_ms": 4911.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 7481, "tokens_salida": 1615, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "agent", "nombre": "investigador", "duracion_ms": 151.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "agent", "nombre": "programador", "duracion_ms": 122250.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "llm", "nombre": "programador", "duracion_ms": 122247.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 2982, "tokens_salida": 14862, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "agent", "nombre": "ejecutor", "duracion_ms": 828.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "freno_repeticion", "duracion_ms": 1.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "guarda_sandbox", "duracion_ms": 4.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "herramienta", "nombre": "sandbox_python", "duracion_ms": 819.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "agent", "nombre": "critico", "duracion_ms": 4731.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "llm", "nombre": "critico", "duracion_ms": 4721.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 6864, "tokens_salida": 1537, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "agent", "nombre": "investigador", "duracion_ms": 180.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "agent", "nombre": "programador", "duracion_ms": 85958.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "llm", "nombre": "programador", "duracion_ms": 85954.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 3236, "tokens_salida": 23217, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "agent", "nombre": "ejecutor", "duracion_ms": 1387.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "freno_repeticion", "duracion_ms": 1.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "guarda_sandbox", "duracion_ms": 5.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "herramienta", "nombre": "sandbox_python", "duracion_ms": 1377.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "agent", "nombre": "critico", "duracion_ms": 4685.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "llm", "nombre": "critico", "duracion_ms": 4673.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 7942, "tokens_salida": 1936, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "agent", "nombre": "investigador", "duracion_ms": 160.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "agent", "nombre": "programador", "duracion_ms": 274856.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "llm", "nombre": "programador", "duracion_ms": 122099.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 3150, "tokens_salida": 32768, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "llm", "nombre": "programador", "duracion_ms": 152749.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 3150, "tokens_salida": 64090, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "agent", "nombre": "ejecutor", "duracion_ms": 1509.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "freno_repeticion", "duracion_ms": 0.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "guarda_sandbox", "duracion_ms": 4.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "herramienta", "nombre": "sandbox_python", "duracion_ms": 1501.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "agent", "nombre": "critico", "duracion_ms": 117199.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "llm", "nombre": "critico", "duracion_ms": 65559.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 7259, "tokens_salida": 32768, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "llm", "nombre": "critico", "duracion_ms": 51627.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 7259, "tokens_salida": 25743, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "agent", "nombre": "investigador", "duracion_ms": 2043.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "agent", "nombre": "programador", "duracion_ms": 46453.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "llm", "nombre": "programador", "duracion_ms": 46449.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 3244, "tokens_salida": 16321, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "agent", "nombre": "ejecutor", "duracion_ms": 958.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "freno_repeticion", "duracion_ms": 0.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "guarda_sandbox", "duracion_ms": 4.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "herramienta", "nombre": "sandbox_python", "duracion_ms": 948.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "agent", "nombre": "critico", "duracion_ms": 3171.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "llm", "nombre": "critico", "duracion_ms": 3159.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 7995, "tokens_salida": 1010, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "agent", "nombre": "investigador", "duracion_ms": 186.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "agent", "nombre": "programador", "duracion_ms": 209501.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "llm", "nombre": "programador", "duracion_ms": 91184.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 8924, "tokens_salida": 32768, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "llm", "nombre": "programador", "duracion_ms": 118309.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 8924, "tokens_salida": 42581, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "agent", "nombre": "ejecutor", "duracion_ms": 1348.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "freno_repeticion", "duracion_ms": 1.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "guarda_sandbox", "duracion_ms": 7.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "herramienta", "nombre": "sandbox_python", "duracion_ms": 1336.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "agent", "nombre": "critico", "duracion_ms": 13.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "agent", "nombre": "redactor", "duracion_ms": 76163.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "llm", "nombre": "redactor", "duracion_ms": 76157.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 10486, "tokens_salida": 27296, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "b6ed29ae2524499fdb7c5d3fe6f3807f", "span": "agent", "nombre": "redactor", "duracion_ms": 11.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "corrida", "nombre": "corrida", "duracion_ms": 1028785.0, "error": null, "prompt_version": "v1"}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "guardrail", "nombre": "validar_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "herramienta", "nombre": "leer_pdf", "duracion_ms": 107.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "agent", "nombre": "lector", "duracion_ms": 109.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "agent", "nombre": "indexador", "duracion_ms": 31751.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "llm", "nombre": "indexador", "duracion_ms": 19086.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 480, "tokens_salida": 2981, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "llm", "nombre": "indexador", "duracion_ms": 24874.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 536, "tokens_salida": 3989, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "llm", "nombre": "indexador", "duracion_ms": 27656.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 425, "tokens_salida": 4361, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "llm", "nombre": "indexador", "duracion_ms": 11722.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 445, "tokens_salida": 1872, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "llm", "nombre": "indexador", "duracion_ms": 11645.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 434, "tokens_salida": 1785, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "agent", "nombre": "planificador", "duracion_ms": 14917.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "llm", "nombre": "planificador", "duracion_ms": 14911.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1898, "tokens_salida": 2619, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "agent", "nombre": "investigador", "duracion_ms": 323.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "agent", "nombre": "programador", "duracion_ms": 12337.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "llm", "nombre": "programador", "duracion_ms": 12333.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 2335, "tokens_salida": 4571, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "agent", "nombre": "ejecutor", "duracion_ms": 306.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "guardrail", "nombre": "freno_repeticion", "duracion_ms": 1.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "guardrail", "nombre": "guarda_sandbox", "duracion_ms": 2.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "herramienta", "nombre": "sandbox_python", "duracion_ms": 300.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "agent", "nombre": "critico", "duracion_ms": 2614.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "llm", "nombre": "critico", "duracion_ms": 2605.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 3798, "tokens_salida": 876, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "agent", "nombre": "investigador", "duracion_ms": 240.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "agent", "nombre": "programador", "duracion_ms": 44926.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "llm", "nombre": "programador", "duracion_ms": 44922.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 2340, "tokens_salida": 16531, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "agent", "nombre": "ejecutor", "duracion_ms": 969.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "guardrail", "nombre": "freno_repeticion", "duracion_ms": 0.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "guardrail", "nombre": "guarda_sandbox", "duracion_ms": 4.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "herramienta", "nombre": "sandbox_python", "duracion_ms": 960.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "agent", "nombre": "critico", "duracion_ms": 24406.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "llm", "nombre": "critico", "duracion_ms": 24393.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 6922, "tokens_salida": 2482, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "agent", "nombre": "investigador", "duracion_ms": 217.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "agent", "nombre": "programador", "duracion_ms": 31030.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "llm", "nombre": "programador", "duracion_ms": 31027.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 4208, "tokens_salida": 10501, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "agent", "nombre": "ejecutor", "duracion_ms": 321.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "guardrail", "nombre": "freno_repeticion", "duracion_ms": 0.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "guardrail", "nombre": "guarda_sandbox", "duracion_ms": 3.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "herramienta", "nombre": "sandbox_python", "duracion_ms": 314.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "agent", "nombre": "critico", "duracion_ms": 48019.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "llm", "nombre": "critico", "duracion_ms": 48011.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 4706, "tokens_salida": 15778, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "agent", "nombre": "investigador", "duracion_ms": 177.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "agent", "nombre": "programador", "duracion_ms": 88425.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "llm", "nombre": "programador", "duracion_ms": 88421.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 2930, "tokens_salida": 24139, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "guardrail", "nombre": "freno_repeticion", "duracion_ms": 1.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "agent", "nombre": "ejecutor", "duracion_ms": 805.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "guardrail", "nombre": "guarda_sandbox", "duracion_ms": 6.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "herramienta", "nombre": "sandbox_python", "duracion_ms": 796.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "agent", "nombre": "critico", "duracion_ms": 10207.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "llm", "nombre": "critico", "duracion_ms": 10195.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 6788, "tokens_salida": 3394, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "agent", "nombre": "investigador", "duracion_ms": 173.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "agent", "nombre": "programador", "duracion_ms": 590564.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "llm", "nombre": "programador", "duracion_ms": 185831.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 2439, "tokens_salida": 32768, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "llm", "nombre": "programador", "duracion_ms": 404726.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 2439, "tokens_salida": 63894, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "agent", "nombre": "ejecutor", "duracion_ms": 341.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "guardrail", "nombre": "freno_repeticion", "duracion_ms": 1.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "guardrail", "nombre": "guarda_sandbox", "duracion_ms": 7.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "herramienta", "nombre": "sandbox_python", "duracion_ms": 328.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "agent", "nombre": "critico", "duracion_ms": 75847.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "llm", "nombre": "critico", "duracion_ms": 75822.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 8143, "tokens_salida": 2916, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "agent", "nombre": "redactor", "duracion_ms": 47145.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "llm", "nombre": "redactor", "duracion_ms": 47138.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 9195, "tokens_salida": 7655, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "agent", "nombre": "redactor", "duracion_ms": 46.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "agent", "nombre": "redactor", "duracion_ms": 2475.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "llm", "nombre": "redactor", "duracion_ms": 2468.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 10555, "tokens_salida": 1366, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "502c2a573d9e01e44b905e37db4cbd28", "span": "agent", "nombre": "redactor", "duracion_ms": 37.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "corrida", "nombre": "corrida", "duracion_ms": 563839.0, "error": null, "prompt_version": "v1"}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "guardrail", "nombre": "validar_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "agent", "nombre": "lector", "duracion_ms": 171.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "herramienta", "nombre": "leer_pdf", "duracion_ms": 169.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "agent", "nombre": "indexador", "duracion_ms": 17683.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "llm", "nombre": "indexador", "duracion_ms": 12368.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 391, "tokens_salida": 3194, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "llm", "nombre": "indexador", "duracion_ms": 14351.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 395, "tokens_salida": 3894, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "llm", "nombre": "indexador", "duracion_ms": 11796.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 364, "tokens_salida": 2992, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "llm", "nombre": "indexador", "duracion_ms": 7232.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 370, "tokens_salida": 1593, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "agent", "nombre": "planificador", "duracion_ms": 9226.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "llm", "nombre": "planificador", "duracion_ms": 9220.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1313, "tokens_salida": 2931, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "agent", "nombre": "investigador", "duracion_ms": 232.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "agent", "nombre": "programador", "duracion_ms": 32962.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "llm", "nombre": "programador", "duracion_ms": 32958.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 3033, "tokens_salida": 7350, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "agent", "nombre": "ejecutor", "duracion_ms": 1594.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "guardrail", "nombre": "freno_repeticion", "duracion_ms": 0.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "guardrail", "nombre": "guarda_sandbox", "duracion_ms": 3.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "herramienta", "nombre": "sandbox_python", "duracion_ms": 1587.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "agent", "nombre": "critico", "duracion_ms": 28069.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "llm", "nombre": "critico", "duracion_ms": 28058.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 5417, "tokens_salida": 1234, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "agent", "nombre": "investigador", "duracion_ms": 198.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "agent", "nombre": "programador", "duracion_ms": 61442.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "llm", "nombre": "programador", "duracion_ms": 61437.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 5313, "tokens_salida": 20513, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "agent", "nombre": "ejecutor", "duracion_ms": 1593.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "guardrail", "nombre": "freno_repeticion", "duracion_ms": 1.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "guardrail", "nombre": "guarda_sandbox", "duracion_ms": 4.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "herramienta", "nombre": "sandbox_python", "duracion_ms": 1584.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "agent", "nombre": "critico", "duracion_ms": 48349.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "llm", "nombre": "critico", "duracion_ms": 48337.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 6743, "tokens_salida": 2001, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "agent", "nombre": "investigador", "duracion_ms": 161.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "agent", "nombre": "programador", "duracion_ms": 323068.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "llm", "nombre": "programador", "duracion_ms": 96833.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 5869, "tokens_salida": 32768, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 2.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "llm", "nombre": "programador", "duracion_ms": 226225.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 5869, "tokens_salida": 58134, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "agent", "nombre": "ejecutor", "duracion_ms": 1636.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "guardrail", "nombre": "freno_repeticion", "duracion_ms": 0.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "guardrail", "nombre": "guarda_sandbox", "duracion_ms": 8.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "herramienta", "nombre": "sandbox_python", "duracion_ms": 1624.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "agent", "nombre": "critico", "duracion_ms": 5028.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "llm", "nombre": "critico", "duracion_ms": 5008.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 10612, "tokens_salida": 1556, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "agent", "nombre": "redactor", "duracion_ms": 32374.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "llm", "nombre": "redactor", "duracion_ms": 32323.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 9331, "tokens_salida": 7059, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "ebf14c089dc824d0df2e0a4e87cd18f5", "span": "agent", "nombre": "redactor", "duracion_ms": 8.0, "error": null}
+{"traza": "81b004ac12ce37d6e60a0061f4d990f5", "span": "corrida", "nombre": "corrida", "duracion_ms": 4.0, "error": "ConnectionResetError: [Errno 104] Connection reset by peer", "prompt_version": "v1"}
+{"traza": "81b004ac12ce37d6e60a0061f4d990f5", "span": "guardrail", "nombre": "validar_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "be8a6cb9d9103bb895ea59b5e6a8efd6", "span": "corrida", "nombre": "corrida", "duracion_ms": 4.0, "error": "ConnectionResetError: [Errno 104] Connection reset by peer", "prompt_version": "v1"}
+{"traza": "be8a6cb9d9103bb895ea59b5e6a8efd6", "span": "guardrail", "nombre": "validar_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "82ccb2a6d188f393406d6e71fcf7e896", "span": "corrida", "nombre": "corrida", "duracion_ms": 4.0, "error": "ConnectionResetError: [Errno 104] Connection reset by peer", "prompt_version": "v1"}
+{"traza": "82ccb2a6d188f393406d6e71fcf7e896", "span": "guardrail", "nombre": "validar_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "c7aa1421f1884aaa9c8512d9c4968a94", "span": "corrida", "nombre": "corrida", "duracion_ms": 4.0, "error": "ConnectionResetError: [Errno 104] Connection reset by peer", "prompt_version": "v1"}
+{"traza": "c7aa1421f1884aaa9c8512d9c4968a94", "span": "guardrail", "nombre": "validar_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "guardrail", "nombre": "validar_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "corrida", "nombre": "corrida", "duracion_ms": 1206759.0, "error": "error en redactar: ConnectionResetError: [Errno 104] Connection reset by peer", "prompt_version": "v1"}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "agent", "nombre": "lector", "duracion_ms": 92.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "herramienta", "nombre": "leer_pdf", "duracion_ms": 91.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "agent", "nombre": "indexador", "duracion_ms": 41012.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "llm", "nombre": "indexador", "duracion_ms": 39858.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 391, "tokens_salida": 4202, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "llm", "nombre": "indexador", "duracion_ms": 33798.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 395, "tokens_salida": 2525, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "llm", "nombre": "indexador", "duracion_ms": 35833.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 364, "tokens_salida": 3096, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "llm", "nombre": "indexador", "duracion_ms": 29139.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 370, "tokens_salida": 1499, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "agent", "nombre": "planificador", "duracion_ms": 39821.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "llm", "nombre": "planificador", "duracion_ms": 39815.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1313, "tokens_salida": 3293, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "agent", "nombre": "investigador", "duracion_ms": 180.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "agent", "nombre": "programador", "duracion_ms": 23352.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "llm", "nombre": "programador", "duracion_ms": 23347.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 3037, "tokens_salida": 6939, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "agent", "nombre": "ejecutor", "duracion_ms": 1537.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "guardrail", "nombre": "freno_repeticion", "duracion_ms": 1.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "guardrail", "nombre": "guarda_sandbox", "duracion_ms": 6.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "herramienta", "nombre": "sandbox_python", "duracion_ms": 1527.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "agent", "nombre": "critico", "duracion_ms": 3832.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "llm", "nombre": "critico", "duracion_ms": 3824.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 5487, "tokens_salida": 1110, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "agent", "nombre": "investigador", "duracion_ms": 253.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "agent", "nombre": "programador", "duracion_ms": 76693.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "llm", "nombre": "programador", "duracion_ms": 76689.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 5332, "tokens_salida": 22525, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "agent", "nombre": "ejecutor", "duracion_ms": 1590.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "guardrail", "nombre": "freno_repeticion", "duracion_ms": 0.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "guardrail", "nombre": "guarda_sandbox", "duracion_ms": 4.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "herramienta", "nombre": "sandbox_python", "duracion_ms": 1581.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "agent", "nombre": "critico", "duracion_ms": 36617.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "llm", "nombre": "critico", "duracion_ms": 36604.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 7199, "tokens_salida": 1410, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "agent", "nombre": "investigador", "duracion_ms": 170.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "agent", "nombre": "programador", "duracion_ms": 398120.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "llm", "nombre": "programador", "duracion_ms": 118140.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 6047, "tokens_salida": 32768, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "llm", "nombre": "programador", "duracion_ms": 279972.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 6047, "tokens_salida": 65536, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "agent", "nombre": "ejecutor", "duracion_ms": 1.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "agent", "nombre": "critico", "duracion_ms": 1.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "agent", "nombre": "programador", "duracion_ms": 386852.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "llm", "nombre": "programador", "duracion_ms": 125064.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 6047, "tokens_salida": 32768, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "llm", "nombre": "programador", "duracion_ms": 261779.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 6047, "tokens_salida": 65536, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "agent", "nombre": "ejecutor", "duracion_ms": 1.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "agent", "nombre": "critico", "duracion_ms": 2.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "agent", "nombre": "programador", "duracion_ms": 196579.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "llm", "nombre": "programador", "duracion_ms": 138883.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 6047, "tokens_salida": 32768, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "llm", "nombre": "programador", "duracion_ms": 57682.0, "error": "RemoteDisconnected: Remote end closed connection without response", "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": null, "tokens_salida": 0, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "llm", "nombre": "programador", "duracion_ms": 4.0, "error": "ConnectionResetError: [Errno 104] Connection reset by peer", "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": null, "tokens_salida": 0, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "agent", "nombre": "ejecutor", "duracion_ms": 1.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "agent", "nombre": "critico", "duracion_ms": 2.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "agent", "nombre": "redactor", "duracion_ms": 9.0, "error": "ConnectionResetError: [Errno 104] Connection reset by peer"}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "llm", "nombre": "redactor", "duracion_ms": 3.0, "error": "ConnectionResetError: [Errno 104] Connection reset by peer", "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": null, "tokens_salida": 0, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "7b514fd5fd0d3d9afd2cc70fb62108ec", "span": "llm", "nombre": "redactor", "duracion_ms": 3.0, "error": "ConnectionResetError: [Errno 104] Connection reset by peer", "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": null, "tokens_salida": 0, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "guardrail", "nombre": "validar_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "corrida", "nombre": "corrida", "duracion_ms": 173251.0, "error": null, "prompt_version": "v1"}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "herramienta", "nombre": "leer_pdf", "duracion_ms": 44.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "agent", "nombre": "lector", "duracion_ms": 45.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "agent", "nombre": "indexador", "duracion_ms": 17674.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "llm", "nombre": "indexador", "duracion_ms": 16353.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 414, "tokens_salida": 2280, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "llm", "nombre": "indexador", "duracion_ms": 16505.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 402, "tokens_salida": 2265, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "llm", "nombre": "indexador", "duracion_ms": 15488.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 417, "tokens_salida": 2132, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "llm", "nombre": "indexador", "duracion_ms": 14949.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 380, "tokens_salida": 1871, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "agent", "nombre": "planificador", "duracion_ms": 7727.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "llm", "nombre": "planificador", "duracion_ms": 7723.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1010, "tokens_salida": 1842, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "agent", "nombre": "investigador", "duracion_ms": 253.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "agent", "nombre": "programador", "duracion_ms": 11514.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "llm", "nombre": "programador", "duracion_ms": 11511.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 2315, "tokens_salida": 3409, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "agent", "nombre": "ejecutor", "duracion_ms": 766.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "guardrail", "nombre": "freno_repeticion", "duracion_ms": 0.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "guardrail", "nombre": "guarda_sandbox", "duracion_ms": 3.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "herramienta", "nombre": "sandbox_python", "duracion_ms": 761.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "agent", "nombre": "critico", "duracion_ms": 4535.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "llm", "nombre": "critico", "duracion_ms": 4527.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 3449, "tokens_salida": 1318, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "agent", "nombre": "investigador", "duracion_ms": 173.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "agent", "nombre": "programador", "duracion_ms": 29112.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "llm", "nombre": "programador", "duracion_ms": 29108.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 3571, "tokens_salida": 8883, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "agent", "nombre": "ejecutor", "duracion_ms": 566.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "guardrail", "nombre": "guarda_sandbox", "duracion_ms": 3.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "guardrail", "nombre": "freno_repeticion", "duracion_ms": 0.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "herramienta", "nombre": "sandbox_python", "duracion_ms": 560.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "agent", "nombre": "critico", "duracion_ms": 13508.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "llm", "nombre": "critico", "duracion_ms": 13500.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 4793, "tokens_salida": 1239, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "agent", "nombre": "investigador", "duracion_ms": 165.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "agent", "nombre": "programador", "duracion_ms": 30951.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "llm", "nombre": "programador", "duracion_ms": 30943.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 4150, "tokens_salida": 8347, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "agent", "nombre": "ejecutor", "duracion_ms": 615.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "guardrail", "nombre": "freno_repeticion", "duracion_ms": 1.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "guardrail", "nombre": "guarda_sandbox", "duracion_ms": 3.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "herramienta", "nombre": "sandbox_python", "duracion_ms": 607.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "agent", "nombre": "critico", "duracion_ms": 14672.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "llm", "nombre": "critico", "duracion_ms": 14663.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 4011, "tokens_salida": 4226, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "agent", "nombre": "redactor", "duracion_ms": 40927.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "llm", "nombre": "redactor", "duracion_ms": 38793.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 4090, "tokens_salida": 11475, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "bdd3a9ed6adb62499c29a9e15cd3c9f7", "span": "agent", "nombre": "redactor", "duracion_ms": 6.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "corrida", "nombre": "corrida", "duracion_ms": 247239.0, "error": null, "prompt_version": "v1"}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "guardrail", "nombre": "validar_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "herramienta", "nombre": "leer_pdf", "duracion_ms": 100.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "agent", "nombre": "lector", "duracion_ms": 101.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "agent", "nombre": "indexador", "duracion_ms": 34553.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "llm", "nombre": "indexador", "duracion_ms": 30064.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 450, "tokens_salida": 2819, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "llm", "nombre": "indexador", "duracion_ms": 25269.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 391, "tokens_salida": 1837, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "llm", "nombre": "indexador", "duracion_ms": 31142.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 429, "tokens_salida": 3102, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "llm", "nombre": "indexador", "duracion_ms": 26163.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 385, "tokens_salida": 1846, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "agent", "nombre": "planificador", "duracion_ms": 4543.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "llm", "nombre": "planificador", "duracion_ms": 4536.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1054, "tokens_salida": 1063, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "agent", "nombre": "investigador", "duracion_ms": 219.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "agent", "nombre": "programador", "duracion_ms": 78218.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "llm", "nombre": "programador", "duracion_ms": 78214.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 1541, "tokens_salida": 6415, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "agent", "nombre": "ejecutor", "duracion_ms": 1396.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "guardrail", "nombre": "freno_repeticion", "duracion_ms": 0.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "guardrail", "nombre": "guarda_sandbox", "duracion_ms": 2.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "herramienta", "nombre": "sandbox_python", "duracion_ms": 1390.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "agent", "nombre": "critico", "duracion_ms": 1574.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "llm", "nombre": "critico", "duracion_ms": 1566.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 3347, "tokens_salida": 368, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "agent", "nombre": "investigador", "duracion_ms": 158.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "agent", "nombre": "programador", "duracion_ms": 44364.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "llm", "nombre": "programador", "duracion_ms": 44360.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 3131, "tokens_salida": 7655, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "agent", "nombre": "ejecutor", "duracion_ms": 1451.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "guardrail", "nombre": "freno_repeticion", "duracion_ms": 1.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "guardrail", "nombre": "guarda_sandbox", "duracion_ms": 3.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "herramienta", "nombre": "sandbox_python", "duracion_ms": 1443.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "agent", "nombre": "critico", "duracion_ms": 10778.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "llm", "nombre": "critico", "duracion_ms": 10767.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 4473, "tokens_salida": 2030, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "agent", "nombre": "investigador", "duracion_ms": 181.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "agent", "nombre": "programador", "duracion_ms": 50927.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "llm", "nombre": "programador", "duracion_ms": 50923.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 4202, "tokens_salida": 14307, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 0.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "agent", "nombre": "ejecutor", "duracion_ms": 1545.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "guardrail", "nombre": "freno_repeticion", "duracion_ms": 0.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "guardrail", "nombre": "guarda_sandbox", "duracion_ms": 3.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "herramienta", "nombre": "sandbox_python", "duracion_ms": 1538.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "agent", "nombre": "critico", "duracion_ms": 5550.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "llm", "nombre": "critico", "duracion_ms": 5540.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 5398, "tokens_salida": 1546, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "agent", "nombre": "redactor", "duracion_ms": 11621.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "guardrail", "nombre": "presupuesto_tokens", "duracion_ms": 1.0, "error": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "llm", "nombre": "redactor", "duracion_ms": 11616.0, "error": null, "modelo": "zai-org/GLM-5.3-Flash", "tokens_entrada": 4563, "tokens_salida": 3390, "tokens_razonamiento": 0, "prompt": "", "prompt_version_ligada": null}
+{"traza": "0bb83eda83d42899034b4ae0190eec39", "span": "agent", "nombre": "redactor", "duracion_ms": 19.0, "error": null}
+{"traza": "d1600afb41fd5f2c3541f9a2b512a048", "span": "corrida", "nombre": "corrida", "duracion_ms": 4.0, "error": "ConnectionResetError: [Errno 104] Connection reset by peer", "prompt_version": "v1"}
+{"traza": "d1600afb41fd5f2c3541f9a2b512a048", "span": "guardrail", "nombre": "validar_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "dc674ab253eca542431f080277adc050", "span": "corrida", "nombre": "corrida", "duracion_ms": 4.0, "error": "ConnectionResetError: [Errno 104] Connection reset by peer", "prompt_version": "v1"}
+{"traza": "dc674ab253eca542431f080277adc050", "span": "guardrail", "nombre": "validar_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "37fcf2992c39b309a33dc640ca5f82fe", "span": "corrida", "nombre": "corrida", "duracion_ms": 5.0, "error": "ConnectionResetError: [Errno 104] Connection reset by peer", "prompt_version": "v1"}
+{"traza": "37fcf2992c39b309a33dc640ca5f82fe", "span": "guardrail", "nombre": "validar_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "7548139bae6d15d575fd96b11b9cde26", "span": "corrida", "nombre": "corrida", "duracion_ms": 5.0, "error": "ConnectionResetError: [Errno 104] Connection reset by peer", "prompt_version": "v1"}
+{"traza": "7548139bae6d15d575fd96b11b9cde26", "span": "guardrail", "nombre": "validar_entrada", "duracion_ms": 1.0, "error": null}
+{"traza": "c59a4979d0c5f41d0330f29b63a40028", "span": "corrida", "nombre": "corrida", "duracion_ms": 4.0, "error": "ConnectionResetError: [Errno 104] Connection reset by peer", "prompt_version": "v1"}
+{"traza": "c59a4979d0c5f41d0330f29b63a40028", "span": "guardrail", "nombre": "validar_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "6f392bb248011f2c35d9b52d737f9e57", "span": "corrida", "nombre": "corrida", "duracion_ms": 4.0, "error": "ConnectionResetError: [Errno 104] Connection reset by peer", "prompt_version": "v1"}
+{"traza": "6f392bb248011f2c35d9b52d737f9e57", "span": "guardrail", "nombre": "validar_entrada", "duracion_ms": 0.0, "error": null}
+{"traza": "e5d62d0a751dc247a2ab1245490fa17a", "span": "corrida", "nombre": "corrida", "duracion_ms": 5.0, "error": "ConnectionResetError: [Errno 104] Connection reset by peer", "prompt_version": "v1"}
+{"traza": "e5d62d0a751dc247a2ab1245490fa17a", "span": "guardrail", "nombre": "validar_entrada", "duracion_ms": 0.0, "error": null}
