@@ -1,0 +1,395 @@
+traza,guardrail,decision,latencia_ms,nivel,detalle,motivo
+0271c7cca9d47cdcc17c78bd1ff011b5,freno_repeticion,bloquear,1.0,DEFAULT,"{""motivo"": ""script idéntico a uno ya rechazado""}",script idéntico a uno ya rechazado
+0271c7cca9d47cdcc17c78bd1ff011b5,freno_repeticion,bloquear,1.0,DEFAULT,"{""motivo"": ""script idéntico a uno ya rechazado""}",script idéntico a uno ya rechazado
+0271c7cca9d47cdcc17c78bd1ff011b5,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+0271c7cca9d47cdcc17c78bd1ff011b5,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+0f38af97260f150a0a918f2ef86bf411,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+0f38af97260f150a0a918f2ef86bf411,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+0f38af97260f150a0a918f2ef86bf411,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+14282119ed6857fce4a998d7d27033e4,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+14282119ed6857fce4a998d7d27033e4,freno_repeticion,permitir,0.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+1bcdef14789f6c3ad21a26003373aa17,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+38f02fc75a11a3275580d7540bb7f08b,freno_repeticion,permitir,0.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+49dae1770f2307c996b5f0e2be804c8c,freno_repeticion,permitir,0.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+49dae1770f2307c996b5f0e2be804c8c,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+49dae1770f2307c996b5f0e2be804c8c,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+4d5a522ae7a0000116ac60bfa91c7382,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+4d5a522ae7a0000116ac60bfa91c7382,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+4d5a522ae7a0000116ac60bfa91c7382,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+52146c2ab53ae96778ea54830b3fb161,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+52146c2ab53ae96778ea54830b3fb161,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+52146c2ab53ae96778ea54830b3fb161,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+526446dfcc0c8803e1afb2126c61e356,freno_repeticion,permitir,0.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+57d2ca4f4ad82b6fe3ca0772738ff1c0,freno_repeticion,permitir,0.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+57d2ca4f4ad82b6fe3ca0772738ff1c0,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+57d2ca4f4ad82b6fe3ca0772738ff1c0,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+659594098652e0dc5664a2fe499268c3,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+659594098652e0dc5664a2fe499268c3,freno_repeticion,permitir,0.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+659594098652e0dc5664a2fe499268c3,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+79d12cbf3b9fec6bc76c307ea2a2f7e9,freno_repeticion,permitir,0.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+79d12cbf3b9fec6bc76c307ea2a2f7e9,freno_repeticion,permitir,0.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+80d4b8a59cfa102e2ef693a230c81541,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+80d4b8a59cfa102e2ef693a230c81541,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+80d4b8a59cfa102e2ef693a230c81541,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+873f4f72c7c977688b90de8c0626b8f0,freno_repeticion,permitir,0.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+873f4f72c7c977688b90de8c0626b8f0,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+873f4f72c7c977688b90de8c0626b8f0,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+89fb2615505c4b40df2728a67c00553a,freno_repeticion,permitir,0.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+89fb2615505c4b40df2728a67c00553a,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+89fb2615505c4b40df2728a67c00553a,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+8b93ac6957ce14147d07870a9047fa04,freno_repeticion,permitir,2.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+8b93ac6957ce14147d07870a9047fa04,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+8b93ac6957ce14147d07870a9047fa04,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+b8c8ed35df49af1cf83ab07ac5e63e55,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+c2444bd4d6ff4d3202eddca571974b34,freno_repeticion,permitir,0.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+c2444bd4d6ff4d3202eddca571974b34,freno_repeticion,permitir,0.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+c2444bd4d6ff4d3202eddca571974b34,freno_repeticion,permitir,0.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+c519fa552a61d7ffe80f0de4ccb597fc,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+d97b3ce167907364f1dff2dc432ad885,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+d97b3ce167907364f1dff2dc432ad885,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+d97b3ce167907364f1dff2dc432ad885,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+eab2b6d9b788cdcd8860d94945d8ec0f,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+eee1dff795af78b03fba4e05e8c9f836,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+eee1dff795af78b03fba4e05e8c9f836,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+eee1dff795af78b03fba4e05e8c9f836,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+0271c7cca9d47cdcc17c78bd1ff011b5,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+0271c7cca9d47cdcc17c78bd1ff011b5,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+0815f028ce114b9bdadd4ef3a58500fd,guarda_sandbox,bloquear,1.0,DEFAULT,"{""violaciones"": [""línea 2: os.environ (el script no lee el entorno)""], ""descargas"": []}",línea 2: os.environ (el script no lee el entorno)
+0815f028ce114b9bdadd4ef3a58500fd,guarda_sandbox,bloquear,1.0,DEFAULT,"{""violaciones"": [""línea 2: .system() (procesos, borrado o permisos)""], ""descargas"": []}","línea 2: .system() (procesos, borrado o permisos)"
+0815f028ce114b9bdadd4ef3a58500fd,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+0f38af97260f150a0a918f2ef86bf411,guarda_sandbox,permitir,0.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+0f38af97260f150a0a918f2ef86bf411,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+0f38af97260f150a0a918f2ef86bf411,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+14282119ed6857fce4a998d7d27033e4,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+14282119ed6857fce4a998d7d27033e4,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+1bcdef14789f6c3ad21a26003373aa17,guarda_sandbox,permitir,0.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+38f02fc75a11a3275580d7540bb7f08b,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+49dae1770f2307c996b5f0e2be804c8c,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+49dae1770f2307c996b5f0e2be804c8c,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+49dae1770f2307c996b5f0e2be804c8c,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+4d5a522ae7a0000116ac60bfa91c7382,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+4d5a522ae7a0000116ac60bfa91c7382,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+4d5a522ae7a0000116ac60bfa91c7382,guarda_sandbox,permitir,0.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+52146c2ab53ae96778ea54830b3fb161,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+52146c2ab53ae96778ea54830b3fb161,guarda_sandbox,permitir,0.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+52146c2ab53ae96778ea54830b3fb161,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+526446dfcc0c8803e1afb2126c61e356,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+57d2ca4f4ad82b6fe3ca0772738ff1c0,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+57d2ca4f4ad82b6fe3ca0772738ff1c0,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+57d2ca4f4ad82b6fe3ca0772738ff1c0,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+659594098652e0dc5664a2fe499268c3,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+659594098652e0dc5664a2fe499268c3,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+659594098652e0dc5664a2fe499268c3,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+79d12cbf3b9fec6bc76c307ea2a2f7e9,guarda_sandbox,requiere_confirmacion,0.0,DEFAULT,"{""violaciones"": [], ""descargas"": [""línea 2: import fetch_openml"", ""línea 3: fetch_openml()""]}",
+79d12cbf3b9fec6bc76c307ea2a2f7e9,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+80d4b8a59cfa102e2ef693a230c81541,guarda_sandbox,permitir,0.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+80d4b8a59cfa102e2ef693a230c81541,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+80d4b8a59cfa102e2ef693a230c81541,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+873f4f72c7c977688b90de8c0626b8f0,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+873f4f72c7c977688b90de8c0626b8f0,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+873f4f72c7c977688b90de8c0626b8f0,guarda_sandbox,permitir,0.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+89fb2615505c4b40df2728a67c00553a,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+89fb2615505c4b40df2728a67c00553a,guarda_sandbox,permitir,0.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+89fb2615505c4b40df2728a67c00553a,guarda_sandbox,permitir,0.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+8b93ac6957ce14147d07870a9047fa04,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+8b93ac6957ce14147d07870a9047fa04,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+8b93ac6957ce14147d07870a9047fa04,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+b8c8ed35df49af1cf83ab07ac5e63e55,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+c2444bd4d6ff4d3202eddca571974b34,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+c2444bd4d6ff4d3202eddca571974b34,guarda_sandbox,permitir,0.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+c2444bd4d6ff4d3202eddca571974b34,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+c519fa552a61d7ffe80f0de4ccb597fc,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+d97b3ce167907364f1dff2dc432ad885,guarda_sandbox,permitir,0.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+d97b3ce167907364f1dff2dc432ad885,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+d97b3ce167907364f1dff2dc432ad885,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+eab2b6d9b788cdcd8860d94945d8ec0f,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+eee1dff795af78b03fba4e05e8c9f836,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+eee1dff795af78b03fba4e05e8c9f836,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+eee1dff795af78b03fba4e05e8c9f836,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+0271c7cca9d47cdcc17c78bd1ff011b5,inyeccion_en_pdf,permitir,1.0,DEFAULT,"{""retiradas"": 0, ""latencia_ms"": 1.36}",
+0f38af97260f150a0a918f2ef86bf411,inyeccion_en_pdf,permitir,1.0,DEFAULT,"{""retiradas"": 0, ""latencia_ms"": 1.23}",
+14282119ed6857fce4a998d7d27033e4,inyeccion_en_pdf,permitir,1.0,DEFAULT,"{""retiradas"": 0, ""latencia_ms"": 1.19}",
+1bcdef14789f6c3ad21a26003373aa17,inyeccion_en_pdf,permitir,1.0,DEFAULT,"{""retiradas"": 0, ""latencia_ms"": 1.31}",
+38f02fc75a11a3275580d7540bb7f08b,inyeccion_en_pdf,redactar,4.0,DEFAULT,"{""retiradas"": 1, ""latencia_ms"": 2.67}",
+49dae1770f2307c996b5f0e2be804c8c,inyeccion_en_pdf,permitir,1.0,DEFAULT,"{""retiradas"": 0, ""latencia_ms"": 1.08}",
+4d5a522ae7a0000116ac60bfa91c7382,inyeccion_en_pdf,permitir,1.0,DEFAULT,"{""retiradas"": 0, ""latencia_ms"": 1.13}",
+52146c2ab53ae96778ea54830b3fb161,inyeccion_en_pdf,permitir,1.0,DEFAULT,"{""retiradas"": 0, ""latencia_ms"": 1.5}",
+526446dfcc0c8803e1afb2126c61e356,inyeccion_en_pdf,permitir,1.0,DEFAULT,"{""retiradas"": 0, ""latencia_ms"": 1.11}",
+57d2ca4f4ad82b6fe3ca0772738ff1c0,inyeccion_en_pdf,permitir,2.0,DEFAULT,"{""retiradas"": 0, ""latencia_ms"": 1.25}",
+659594098652e0dc5664a2fe499268c3,inyeccion_en_pdf,permitir,2.0,DEFAULT,"{""retiradas"": 0, ""latencia_ms"": 1.14}",
+79d12cbf3b9fec6bc76c307ea2a2f7e9,inyeccion_en_pdf,permitir,2.0,DEFAULT,"{""retiradas"": 0, ""latencia_ms"": 1.34}",
+80d4b8a59cfa102e2ef693a230c81541,inyeccion_en_pdf,permitir,2.0,DEFAULT,"{""retiradas"": 0, ""latencia_ms"": 1.11}",
+873f4f72c7c977688b90de8c0626b8f0,inyeccion_en_pdf,permitir,2.0,DEFAULT,"{""retiradas"": 0, ""latencia_ms"": 1.08}",
+89fb2615505c4b40df2728a67c00553a,inyeccion_en_pdf,permitir,1.0,DEFAULT,"{""retiradas"": 0, ""latencia_ms"": 1.28}",
+8b93ac6957ce14147d07870a9047fa04,inyeccion_en_pdf,permitir,2.0,DEFAULT,"{""retiradas"": 0, ""latencia_ms"": 1.49}",
+b8c8ed35df49af1cf83ab07ac5e63e55,inyeccion_en_pdf,permitir,2.0,DEFAULT,"{""retiradas"": 0, ""latencia_ms"": 1.98}",
+c2444bd4d6ff4d3202eddca571974b34,inyeccion_en_pdf,permitir,2.0,DEFAULT,"{""retiradas"": 0, ""latencia_ms"": 1.03}",
+c519fa552a61d7ffe80f0de4ccb597fc,inyeccion_en_pdf,permitir,1.0,DEFAULT,"{""retiradas"": 0, ""latencia_ms"": 0.59}",
+d97b3ce167907364f1dff2dc432ad885,inyeccion_en_pdf,permitir,2.0,DEFAULT,"{""retiradas"": 0, ""latencia_ms"": 1.35}",
+eab2b6d9b788cdcd8860d94945d8ec0f,inyeccion_en_pdf,permitir,2.0,DEFAULT,"{""retiradas"": 0, ""latencia_ms"": 1.32}",
+eee1dff795af78b03fba4e05e8c9f836,inyeccion_en_pdf,permitir,1.0,DEFAULT,"{""retiradas"": 0, ""latencia_ms"": 1.06}",
+0271c7cca9d47cdcc17c78bd1ff011b5,pii_en_entrada,permitir,2.0,DEFAULT,"{""pii"": {}, ""total"": 0, ""latencia_ms"": 0.76}",
+0f38af97260f150a0a918f2ef86bf411,pii_en_entrada,permitir,1.0,DEFAULT,"{""pii"": {}, ""total"": 0, ""latencia_ms"": 0.72}",
+14282119ed6857fce4a998d7d27033e4,pii_en_entrada,permitir,1.0,DEFAULT,"{""pii"": {}, ""total"": 0, ""latencia_ms"": 0.65}",
+1bcdef14789f6c3ad21a26003373aa17,pii_en_entrada,permitir,2.0,DEFAULT,"{""pii"": {}, ""total"": 0, ""latencia_ms"": 0.75}",
+38f02fc75a11a3275580d7540bb7f08b,pii_en_entrada,permitir,2.0,DEFAULT,"{""pii"": {}, ""total"": 0, ""latencia_ms"": 1.22}",
+49dae1770f2307c996b5f0e2be804c8c,pii_en_entrada,permitir,1.0,DEFAULT,"{""pii"": {}, ""total"": 0, ""latencia_ms"": 0.63}",
+4d5a522ae7a0000116ac60bfa91c7382,pii_en_entrada,permitir,1.0,DEFAULT,"{""pii"": {}, ""total"": 0, ""latencia_ms"": 0.64}",
+52146c2ab53ae96778ea54830b3fb161,pii_en_entrada,permitir,2.0,DEFAULT,"{""pii"": {}, ""total"": 0, ""latencia_ms"": 0.76}",
+526446dfcc0c8803e1afb2126c61e356,pii_en_entrada,permitir,1.0,DEFAULT,"{""pii"": {}, ""total"": 0, ""latencia_ms"": 0.65}",
+57d2ca4f4ad82b6fe3ca0772738ff1c0,pii_en_entrada,permitir,1.0,DEFAULT,"{""pii"": {}, ""total"": 0, ""latencia_ms"": 0.7}",
+659594098652e0dc5664a2fe499268c3,pii_en_entrada,permitir,1.0,DEFAULT,"{""pii"": {}, ""total"": 0, ""latencia_ms"": 0.62}",
+79d12cbf3b9fec6bc76c307ea2a2f7e9,pii_en_entrada,permitir,2.0,DEFAULT,"{""pii"": {}, ""total"": 0, ""latencia_ms"": 0.77}",
+80d4b8a59cfa102e2ef693a230c81541,pii_en_entrada,permitir,0.0,DEFAULT,"{""pii"": {}, ""total"": 0, ""latencia_ms"": 0.61}",
+873f4f72c7c977688b90de8c0626b8f0,pii_en_entrada,permitir,1.0,DEFAULT,"{""pii"": {}, ""total"": 0, ""latencia_ms"": 0.6}",
+89fb2615505c4b40df2728a67c00553a,pii_en_entrada,permitir,1.0,DEFAULT,"{""pii"": {}, ""total"": 0, ""latencia_ms"": 0.75}",
+8b93ac6957ce14147d07870a9047fa04,pii_en_entrada,permitir,1.0,DEFAULT,"{""pii"": {}, ""total"": 0, ""latencia_ms"": 0.74}",
+b8c8ed35df49af1cf83ab07ac5e63e55,pii_en_entrada,redactar,2.0,DEFAULT,"{""pii"": {""correo"": 1, ""telefono"": 1, ""cedula"": 1, ""nombre"": 1}, ""total"": 4, ""latencia_ms"": 1.27}",
+c2444bd4d6ff4d3202eddca571974b34,pii_en_entrada,permitir,1.0,DEFAULT,"{""pii"": {}, ""total"": 0, ""latencia_ms"": 0.59}",
+c519fa552a61d7ffe80f0de4ccb597fc,pii_en_entrada,permitir,0.0,DEFAULT,"{""pii"": {}, ""total"": 0, ""latencia_ms"": 0.35}",
+d97b3ce167907364f1dff2dc432ad885,pii_en_entrada,permitir,1.0,DEFAULT,"{""pii"": {}, ""total"": 0, ""latencia_ms"": 0.72}",
+eab2b6d9b788cdcd8860d94945d8ec0f,pii_en_entrada,permitir,1.0,DEFAULT,"{""pii"": {}, ""total"": 0, ""latencia_ms"": 0.74}",
+eee1dff795af78b03fba4e05e8c9f836,pii_en_entrada,permitir,1.0,DEFAULT,"{""pii"": {}, ""total"": 0, ""latencia_ms"": 0.59}",
+0271c7cca9d47cdcc17c78bd1ff011b5,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 492800, ""techo_salida"": 492800, ""consumido"": 7200, ""presupuesto"": 500000}",
+0271c7cca9d47cdcc17c78bd1ff011b5,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 444000, ""techo_salida"": 444000, ""consumido"": 6000, ""presupuesto"": 500000}",
+0271c7cca9d47cdcc17c78bd1ff011b5,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 445200, ""techo_salida"": 445200, ""consumido"": 4800, ""presupuesto"": 500000}",
+0271c7cca9d47cdcc17c78bd1ff011b5,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 446400, ""techo_salida"": 446400, ""consumido"": 3600, ""presupuesto"": 500000}",
+0271c7cca9d47cdcc17c78bd1ff011b5,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 447600, ""techo_salida"": 447600, ""consumido"": 2400, ""presupuesto"": 500000}",
+0271c7cca9d47cdcc17c78bd1ff011b5,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 448800, ""techo_salida"": 448800, ""consumido"": 1200, ""presupuesto"": 500000}",
+0271c7cca9d47cdcc17c78bd1ff011b5,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 450000, ""techo_salida"": 450000, ""consumido"": 0, ""presupuesto"": 500000}",
+0f38af97260f150a0a918f2ef86bf411,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 490400, ""techo_salida"": 490400, ""consumido"": 9600, ""presupuesto"": 500000}",
+0f38af97260f150a0a918f2ef86bf411,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 491600, ""techo_salida"": 491600, ""consumido"": 8400, ""presupuesto"": 500000}",
+0f38af97260f150a0a918f2ef86bf411,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 442800, ""techo_salida"": 442800, ""consumido"": 7200, ""presupuesto"": 500000}",
+0f38af97260f150a0a918f2ef86bf411,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 444000, ""techo_salida"": 444000, ""consumido"": 6000, ""presupuesto"": 500000}",
+0f38af97260f150a0a918f2ef86bf411,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 445200, ""techo_salida"": 445200, ""consumido"": 4800, ""presupuesto"": 500000}",
+0f38af97260f150a0a918f2ef86bf411,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 446400, ""techo_salida"": 446400, ""consumido"": 3600, ""presupuesto"": 500000}",
+0f38af97260f150a0a918f2ef86bf411,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 447600, ""techo_salida"": 447600, ""consumido"": 2400, ""presupuesto"": 500000}",
+0f38af97260f150a0a918f2ef86bf411,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 448800, ""techo_salida"": 448800, ""consumido"": 1200, ""presupuesto"": 500000}",
+0f38af97260f150a0a918f2ef86bf411,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 450000, ""techo_salida"": 450000, ""consumido"": 0, ""presupuesto"": 500000}",
+14282119ed6857fce4a998d7d27033e4,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 492800, ""techo_salida"": 492800, ""consumido"": 7200, ""presupuesto"": 500000}",
+14282119ed6857fce4a998d7d27033e4,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 494000, ""techo_salida"": 494000, ""consumido"": 6000, ""presupuesto"": 500000}",
+14282119ed6857fce4a998d7d27033e4,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 495200, ""techo_salida"": 495200, ""consumido"": 4800, ""presupuesto"": 500000}",
+14282119ed6857fce4a998d7d27033e4,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 446400, ""techo_salida"": 446400, ""consumido"": 3600, ""presupuesto"": 500000}",
+14282119ed6857fce4a998d7d27033e4,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 447600, ""techo_salida"": 447600, ""consumido"": 2400, ""presupuesto"": 500000}",
+14282119ed6857fce4a998d7d27033e4,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 448800, ""techo_salida"": 448800, ""consumido"": 1200, ""presupuesto"": 500000}",
+14282119ed6857fce4a998d7d27033e4,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 450000, ""techo_salida"": 450000, ""consumido"": 0, ""presupuesto"": 500000}",
+1bcdef14789f6c3ad21a26003373aa17,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 1600, ""techo_salida"": 1600, ""consumido"": 2400, ""presupuesto"": 4000}",
+1bcdef14789f6c3ad21a26003373aa17,presupuesto_tokens,bloquear,0.0,DEFAULT,"{""restante"": -400, ""techo_salida"": -400, ""consumido"": 2400, ""presupuesto"": 4000}",
+1bcdef14789f6c3ad21a26003373aa17,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 800, ""techo_salida"": 800, ""consumido"": 1200, ""presupuesto"": 4000}",
+1bcdef14789f6c3ad21a26003373aa17,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 2000, ""techo_salida"": 2000, ""consumido"": 0, ""presupuesto"": 4000}",
+38f02fc75a11a3275580d7540bb7f08b,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 487926, ""techo_salida"": 487926, ""consumido"": 12074, ""presupuesto"": 500000}",
+38f02fc75a11a3275580d7540bb7f08b,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 440121, ""techo_salida"": 440121, ""consumido"": 9879, ""presupuesto"": 500000}",
+38f02fc75a11a3275580d7540bb7f08b,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 444753, ""techo_salida"": 444753, ""consumido"": 5247, ""presupuesto"": 500000}",
+38f02fc75a11a3275580d7540bb7f08b,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 445996, ""techo_salida"": 445996, ""consumido"": 4004, ""presupuesto"": 500000}",
+38f02fc75a11a3275580d7540bb7f08b,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 450000, ""techo_salida"": 450000, ""consumido"": 0, ""presupuesto"": 500000}",
+38f02fc75a11a3275580d7540bb7f08b,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 450000, ""techo_salida"": 450000, ""consumido"": 0, ""presupuesto"": 500000}",
+49dae1770f2307c996b5f0e2be804c8c,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 486800, ""techo_salida"": 486800, ""consumido"": 13200, ""presupuesto"": 500000}",
+49dae1770f2307c996b5f0e2be804c8c,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 488000, ""techo_salida"": 488000, ""consumido"": 12000, ""presupuesto"": 500000}",
+49dae1770f2307c996b5f0e2be804c8c,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 439200, ""techo_salida"": 439200, ""consumido"": 10800, ""presupuesto"": 500000}",
+49dae1770f2307c996b5f0e2be804c8c,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 440400, ""techo_salida"": 440400, ""consumido"": 9600, ""presupuesto"": 500000}",
+49dae1770f2307c996b5f0e2be804c8c,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 441600, ""techo_salida"": 441600, ""consumido"": 8400, ""presupuesto"": 500000}",
+49dae1770f2307c996b5f0e2be804c8c,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 442800, ""techo_salida"": 442800, ""consumido"": 7200, ""presupuesto"": 500000}",
+49dae1770f2307c996b5f0e2be804c8c,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 444000, ""techo_salida"": 444000, ""consumido"": 6000, ""presupuesto"": 500000}",
+49dae1770f2307c996b5f0e2be804c8c,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 445200, ""techo_salida"": 445200, ""consumido"": 4800, ""presupuesto"": 500000}",
+49dae1770f2307c996b5f0e2be804c8c,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 446400, ""techo_salida"": 446400, ""consumido"": 3600, ""presupuesto"": 500000}",
+49dae1770f2307c996b5f0e2be804c8c,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 447600, ""techo_salida"": 447600, ""consumido"": 2400, ""presupuesto"": 500000}",
+49dae1770f2307c996b5f0e2be804c8c,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 448800, ""techo_salida"": 448800, ""consumido"": 1200, ""presupuesto"": 500000}",
+49dae1770f2307c996b5f0e2be804c8c,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 450000, ""techo_salida"": 450000, ""consumido"": 0, ""presupuesto"": 500000}",
+49dae1770f2307c996b5f0e2be804c8c,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 1997600, ""techo_salida"": 1997600, ""consumido"": 2400, ""presupuesto"": 2000000}",
+49dae1770f2307c996b5f0e2be804c8c,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 1998800, ""techo_salida"": 1998800, ""consumido"": 1200, ""presupuesto"": 2000000}",
+49dae1770f2307c996b5f0e2be804c8c,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 2000000, ""techo_salida"": 2000000, ""consumido"": 0, ""presupuesto"": 2000000}",
+4d5a522ae7a0000116ac60bfa91c7382,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 490400, ""techo_salida"": 490400, ""consumido"": 9600, ""presupuesto"": 500000}",
+4d5a522ae7a0000116ac60bfa91c7382,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 491600, ""techo_salida"": 491600, ""consumido"": 8400, ""presupuesto"": 500000}",
+4d5a522ae7a0000116ac60bfa91c7382,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 442800, ""techo_salida"": 442800, ""consumido"": 7200, ""presupuesto"": 500000}",
+4d5a522ae7a0000116ac60bfa91c7382,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 444000, ""techo_salida"": 444000, ""consumido"": 6000, ""presupuesto"": 500000}",
+4d5a522ae7a0000116ac60bfa91c7382,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 445200, ""techo_salida"": 445200, ""consumido"": 4800, ""presupuesto"": 500000}",
+4d5a522ae7a0000116ac60bfa91c7382,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 446400, ""techo_salida"": 446400, ""consumido"": 3600, ""presupuesto"": 500000}",
+4d5a522ae7a0000116ac60bfa91c7382,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 447600, ""techo_salida"": 447600, ""consumido"": 2400, ""presupuesto"": 500000}",
+4d5a522ae7a0000116ac60bfa91c7382,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 448800, ""techo_salida"": 448800, ""consumido"": 1200, ""presupuesto"": 500000}",
+4d5a522ae7a0000116ac60bfa91c7382,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 450000, ""techo_salida"": 450000, ""consumido"": 0, ""presupuesto"": 500000}",
+52146c2ab53ae96778ea54830b3fb161,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 492800, ""techo_salida"": 492800, ""consumido"": 7200, ""presupuesto"": 500000}",
+52146c2ab53ae96778ea54830b3fb161,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 444000, ""techo_salida"": 444000, ""consumido"": 6000, ""presupuesto"": 500000}",
+52146c2ab53ae96778ea54830b3fb161,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 445200, ""techo_salida"": 445200, ""consumido"": 4800, ""presupuesto"": 500000}",
+52146c2ab53ae96778ea54830b3fb161,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 446400, ""techo_salida"": 446400, ""consumido"": 3600, ""presupuesto"": 500000}",
+52146c2ab53ae96778ea54830b3fb161,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 447600, ""techo_salida"": 447600, ""consumido"": 2400, ""presupuesto"": 500000}",
+52146c2ab53ae96778ea54830b3fb161,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 448800, ""techo_salida"": 448800, ""consumido"": 1200, ""presupuesto"": 500000}",
+52146c2ab53ae96778ea54830b3fb161,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 450000, ""techo_salida"": 450000, ""consumido"": 0, ""presupuesto"": 500000}",
+526446dfcc0c8803e1afb2126c61e356,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 494000, ""techo_salida"": 494000, ""consumido"": 6000, ""presupuesto"": 500000}",
+526446dfcc0c8803e1afb2126c61e356,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 444000, ""techo_salida"": 444000, ""consumido"": 6000, ""presupuesto"": 500000}",
+526446dfcc0c8803e1afb2126c61e356,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 444000, ""techo_salida"": 444000, ""consumido"": 6000, ""presupuesto"": 500000}",
+526446dfcc0c8803e1afb2126c61e356,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 444000, ""techo_salida"": 444000, ""consumido"": 6000, ""presupuesto"": 500000}",
+526446dfcc0c8803e1afb2126c61e356,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 445200, ""techo_salida"": 445200, ""consumido"": 4800, ""presupuesto"": 500000}",
+526446dfcc0c8803e1afb2126c61e356,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 446400, ""techo_salida"": 446400, ""consumido"": 3600, ""presupuesto"": 500000}",
+526446dfcc0c8803e1afb2126c61e356,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 447600, ""techo_salida"": 447600, ""consumido"": 2400, ""presupuesto"": 500000}",
+526446dfcc0c8803e1afb2126c61e356,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 448800, ""techo_salida"": 448800, ""consumido"": 1200, ""presupuesto"": 500000}",
+526446dfcc0c8803e1afb2126c61e356,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 450000, ""techo_salida"": 450000, ""consumido"": 0, ""presupuesto"": 500000}",
+57d2ca4f4ad82b6fe3ca0772738ff1c0,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 486800, ""techo_salida"": 486800, ""consumido"": 13200, ""presupuesto"": 500000}",
+57d2ca4f4ad82b6fe3ca0772738ff1c0,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 488000, ""techo_salida"": 488000, ""consumido"": 12000, ""presupuesto"": 500000}",
+57d2ca4f4ad82b6fe3ca0772738ff1c0,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 439200, ""techo_salida"": 439200, ""consumido"": 10800, ""presupuesto"": 500000}",
+57d2ca4f4ad82b6fe3ca0772738ff1c0,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 440400, ""techo_salida"": 440400, ""consumido"": 9600, ""presupuesto"": 500000}",
+57d2ca4f4ad82b6fe3ca0772738ff1c0,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 441600, ""techo_salida"": 441600, ""consumido"": 8400, ""presupuesto"": 500000}",
+57d2ca4f4ad82b6fe3ca0772738ff1c0,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 442800, ""techo_salida"": 442800, ""consumido"": 7200, ""presupuesto"": 500000}",
+57d2ca4f4ad82b6fe3ca0772738ff1c0,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 444000, ""techo_salida"": 444000, ""consumido"": 6000, ""presupuesto"": 500000}",
+57d2ca4f4ad82b6fe3ca0772738ff1c0,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 445200, ""techo_salida"": 445200, ""consumido"": 4800, ""presupuesto"": 500000}",
+57d2ca4f4ad82b6fe3ca0772738ff1c0,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 446400, ""techo_salida"": 446400, ""consumido"": 3600, ""presupuesto"": 500000}",
+57d2ca4f4ad82b6fe3ca0772738ff1c0,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 448800, ""techo_salida"": 448800, ""consumido"": 1200, ""presupuesto"": 500000}",
+57d2ca4f4ad82b6fe3ca0772738ff1c0,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 448800, ""techo_salida"": 448800, ""consumido"": 1200, ""presupuesto"": 500000}",
+57d2ca4f4ad82b6fe3ca0772738ff1c0,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 450000, ""techo_salida"": 450000, ""consumido"": 0, ""presupuesto"": 500000}",
+57d2ca4f4ad82b6fe3ca0772738ff1c0,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 1997600, ""techo_salida"": 1997600, ""consumido"": 2400, ""presupuesto"": 2000000}",
+57d2ca4f4ad82b6fe3ca0772738ff1c0,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 1998800, ""techo_salida"": 1998800, ""consumido"": 1200, ""presupuesto"": 2000000}",
+57d2ca4f4ad82b6fe3ca0772738ff1c0,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 2000000, ""techo_salida"": 2000000, ""consumido"": 0, ""presupuesto"": 2000000}",
+659594098652e0dc5664a2fe499268c3,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 490400, ""techo_salida"": 490400, ""consumido"": 9600, ""presupuesto"": 500000}",
+659594098652e0dc5664a2fe499268c3,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 491600, ""techo_salida"": 491600, ""consumido"": 8400, ""presupuesto"": 500000}",
+659594098652e0dc5664a2fe499268c3,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 442800, ""techo_salida"": 442800, ""consumido"": 7200, ""presupuesto"": 500000}",
+659594098652e0dc5664a2fe499268c3,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 444000, ""techo_salida"": 444000, ""consumido"": 6000, ""presupuesto"": 500000}",
+659594098652e0dc5664a2fe499268c3,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 445200, ""techo_salida"": 445200, ""consumido"": 4800, ""presupuesto"": 500000}",
+659594098652e0dc5664a2fe499268c3,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 446400, ""techo_salida"": 446400, ""consumido"": 3600, ""presupuesto"": 500000}",
+659594098652e0dc5664a2fe499268c3,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 447600, ""techo_salida"": 447600, ""consumido"": 2400, ""presupuesto"": 500000}",
+659594098652e0dc5664a2fe499268c3,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 448800, ""techo_salida"": 448800, ""consumido"": 1200, ""presupuesto"": 500000}",
+659594098652e0dc5664a2fe499268c3,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 450000, ""techo_salida"": 450000, ""consumido"": 0, ""presupuesto"": 500000}",
+79d12cbf3b9fec6bc76c307ea2a2f7e9,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 495200, ""techo_salida"": 495200, ""consumido"": 4800, ""presupuesto"": 500000}",
+79d12cbf3b9fec6bc76c307ea2a2f7e9,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 446400, ""techo_salida"": 446400, ""consumido"": 3600, ""presupuesto"": 500000}",
+79d12cbf3b9fec6bc76c307ea2a2f7e9,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 447600, ""techo_salida"": 447600, ""consumido"": 2400, ""presupuesto"": 500000}",
+79d12cbf3b9fec6bc76c307ea2a2f7e9,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 448800, ""techo_salida"": 448800, ""consumido"": 1200, ""presupuesto"": 500000}",
+79d12cbf3b9fec6bc76c307ea2a2f7e9,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 450000, ""techo_salida"": 450000, ""consumido"": 0, ""presupuesto"": 500000}",
+80d4b8a59cfa102e2ef693a230c81541,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 490400, ""techo_salida"": 490400, ""consumido"": 9600, ""presupuesto"": 500000}",
+80d4b8a59cfa102e2ef693a230c81541,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 491600, ""techo_salida"": 491600, ""consumido"": 8400, ""presupuesto"": 500000}",
+80d4b8a59cfa102e2ef693a230c81541,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 442800, ""techo_salida"": 442800, ""consumido"": 7200, ""presupuesto"": 500000}",
+80d4b8a59cfa102e2ef693a230c81541,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 444000, ""techo_salida"": 444000, ""consumido"": 6000, ""presupuesto"": 500000}",
+80d4b8a59cfa102e2ef693a230c81541,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 445200, ""techo_salida"": 445200, ""consumido"": 4800, ""presupuesto"": 500000}",
+80d4b8a59cfa102e2ef693a230c81541,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 446400, ""techo_salida"": 446400, ""consumido"": 3600, ""presupuesto"": 500000}",
+80d4b8a59cfa102e2ef693a230c81541,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 447600, ""techo_salida"": 447600, ""consumido"": 2400, ""presupuesto"": 500000}",
+80d4b8a59cfa102e2ef693a230c81541,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 448800, ""techo_salida"": 448800, ""consumido"": 1200, ""presupuesto"": 500000}",
+80d4b8a59cfa102e2ef693a230c81541,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 450000, ""techo_salida"": 450000, ""consumido"": 0, ""presupuesto"": 500000}",
+873f4f72c7c977688b90de8c0626b8f0,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 490400, ""techo_salida"": 490400, ""consumido"": 9600, ""presupuesto"": 500000}",
+873f4f72c7c977688b90de8c0626b8f0,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 491600, ""techo_salida"": 491600, ""consumido"": 8400, ""presupuesto"": 500000}",
+873f4f72c7c977688b90de8c0626b8f0,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 442800, ""techo_salida"": 442800, ""consumido"": 7200, ""presupuesto"": 500000}",
+873f4f72c7c977688b90de8c0626b8f0,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 444000, ""techo_salida"": 444000, ""consumido"": 6000, ""presupuesto"": 500000}",
+873f4f72c7c977688b90de8c0626b8f0,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 445200, ""techo_salida"": 445200, ""consumido"": 4800, ""presupuesto"": 500000}",
+873f4f72c7c977688b90de8c0626b8f0,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 446400, ""techo_salida"": 446400, ""consumido"": 3600, ""presupuesto"": 500000}",
+873f4f72c7c977688b90de8c0626b8f0,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 447600, ""techo_salida"": 447600, ""consumido"": 2400, ""presupuesto"": 500000}",
+873f4f72c7c977688b90de8c0626b8f0,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 448800, ""techo_salida"": 448800, ""consumido"": 1200, ""presupuesto"": 500000}",
+873f4f72c7c977688b90de8c0626b8f0,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 450000, ""techo_salida"": 450000, ""consumido"": 0, ""presupuesto"": 500000}",
+89fb2615505c4b40df2728a67c00553a,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 490400, ""techo_salida"": 490400, ""consumido"": 9600, ""presupuesto"": 500000}",
+89fb2615505c4b40df2728a67c00553a,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 491600, ""techo_salida"": 491600, ""consumido"": 8400, ""presupuesto"": 500000}",
+89fb2615505c4b40df2728a67c00553a,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 442800, ""techo_salida"": 442800, ""consumido"": 7200, ""presupuesto"": 500000}",
+89fb2615505c4b40df2728a67c00553a,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 444000, ""techo_salida"": 444000, ""consumido"": 6000, ""presupuesto"": 500000}",
+89fb2615505c4b40df2728a67c00553a,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 445200, ""techo_salida"": 445200, ""consumido"": 4800, ""presupuesto"": 500000}",
+89fb2615505c4b40df2728a67c00553a,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 446400, ""techo_salida"": 446400, ""consumido"": 3600, ""presupuesto"": 500000}",
+89fb2615505c4b40df2728a67c00553a,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 447600, ""techo_salida"": 447600, ""consumido"": 2400, ""presupuesto"": 500000}",
+89fb2615505c4b40df2728a67c00553a,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 448800, ""techo_salida"": 448800, ""consumido"": 1200, ""presupuesto"": 500000}",
+89fb2615505c4b40df2728a67c00553a,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 450000, ""techo_salida"": 450000, ""consumido"": 0, ""presupuesto"": 500000}",
+8b93ac6957ce14147d07870a9047fa04,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 490400, ""techo_salida"": 490400, ""consumido"": 9600, ""presupuesto"": 500000}",
+8b93ac6957ce14147d07870a9047fa04,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 491600, ""techo_salida"": 491600, ""consumido"": 8400, ""presupuesto"": 500000}",
+8b93ac6957ce14147d07870a9047fa04,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 442800, ""techo_salida"": 442800, ""consumido"": 7200, ""presupuesto"": 500000}",
+8b93ac6957ce14147d07870a9047fa04,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 444000, ""techo_salida"": 444000, ""consumido"": 6000, ""presupuesto"": 500000}",
+8b93ac6957ce14147d07870a9047fa04,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 445200, ""techo_salida"": 445200, ""consumido"": 4800, ""presupuesto"": 500000}",
+8b93ac6957ce14147d07870a9047fa04,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 446400, ""techo_salida"": 446400, ""consumido"": 3600, ""presupuesto"": 500000}",
+8b93ac6957ce14147d07870a9047fa04,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 447600, ""techo_salida"": 447600, ""consumido"": 2400, ""presupuesto"": 500000}",
+8b93ac6957ce14147d07870a9047fa04,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 448800, ""techo_salida"": 448800, ""consumido"": 1200, ""presupuesto"": 500000}",
+8b93ac6957ce14147d07870a9047fa04,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 450000, ""techo_salida"": 450000, ""consumido"": 0, ""presupuesto"": 500000}",
+b8c8ed35df49af1cf83ab07ac5e63e55,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 490597, ""techo_salida"": 490597, ""consumido"": 9403, ""presupuesto"": 500000}",
+b8c8ed35df49af1cf83ab07ac5e63e55,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 442601, ""techo_salida"": 442601, ""consumido"": 7399, ""presupuesto"": 500000}",
+b8c8ed35df49af1cf83ab07ac5e63e55,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 446949, ""techo_salida"": 446949, ""consumido"": 3051, ""presupuesto"": 500000}",
+b8c8ed35df49af1cf83ab07ac5e63e55,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 448278, ""techo_salida"": 448278, ""consumido"": 1722, ""presupuesto"": 500000}",
+b8c8ed35df49af1cf83ab07ac5e63e55,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 450000, ""techo_salida"": 450000, ""consumido"": 0, ""presupuesto"": 500000}",
+b8c8ed35df49af1cf83ab07ac5e63e55,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 450000, ""techo_salida"": 450000, ""consumido"": 0, ""presupuesto"": 500000}",
+c2444bd4d6ff4d3202eddca571974b34,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 490400, ""techo_salida"": 490400, ""consumido"": 9600, ""presupuesto"": 500000}",
+c2444bd4d6ff4d3202eddca571974b34,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 491600, ""techo_salida"": 491600, ""consumido"": 8400, ""presupuesto"": 500000}",
+c2444bd4d6ff4d3202eddca571974b34,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 442800, ""techo_salida"": 442800, ""consumido"": 7200, ""presupuesto"": 500000}",
+c2444bd4d6ff4d3202eddca571974b34,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 444000, ""techo_salida"": 444000, ""consumido"": 6000, ""presupuesto"": 500000}",
+c2444bd4d6ff4d3202eddca571974b34,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 445200, ""techo_salida"": 445200, ""consumido"": 4800, ""presupuesto"": 500000}",
+c2444bd4d6ff4d3202eddca571974b34,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 446400, ""techo_salida"": 446400, ""consumido"": 3600, ""presupuesto"": 500000}",
+c2444bd4d6ff4d3202eddca571974b34,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 447600, ""techo_salida"": 447600, ""consumido"": 2400, ""presupuesto"": 500000}",
+c2444bd4d6ff4d3202eddca571974b34,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 448800, ""techo_salida"": 448800, ""consumido"": 1200, ""presupuesto"": 500000}",
+c2444bd4d6ff4d3202eddca571974b34,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 450000, ""techo_salida"": 450000, ""consumido"": 0, ""presupuesto"": 500000}",
+c519fa552a61d7ffe80f0de4ccb597fc,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 496400, ""techo_salida"": 496400, ""consumido"": 3600, ""presupuesto"": 500000}",
+c519fa552a61d7ffe80f0de4ccb597fc,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 447600, ""techo_salida"": 447600, ""consumido"": 2400, ""presupuesto"": 500000}",
+c519fa552a61d7ffe80f0de4ccb597fc,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 448800, ""techo_salida"": 448800, ""consumido"": 1200, ""presupuesto"": 500000}",
+c519fa552a61d7ffe80f0de4ccb597fc,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 450000, ""techo_salida"": 450000, ""consumido"": 0, ""presupuesto"": 500000}",
+d97b3ce167907364f1dff2dc432ad885,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 489200, ""techo_salida"": 489200, ""consumido"": 10800, ""presupuesto"": 500000}",
+d97b3ce167907364f1dff2dc432ad885,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 490400, ""techo_salida"": 490400, ""consumido"": 9600, ""presupuesto"": 500000}",
+d97b3ce167907364f1dff2dc432ad885,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 441600, ""techo_salida"": 441600, ""consumido"": 8400, ""presupuesto"": 500000}",
+d97b3ce167907364f1dff2dc432ad885,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 442800, ""techo_salida"": 442800, ""consumido"": 7200, ""presupuesto"": 500000}",
+d97b3ce167907364f1dff2dc432ad885,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 444000, ""techo_salida"": 444000, ""consumido"": 6000, ""presupuesto"": 500000}",
+d97b3ce167907364f1dff2dc432ad885,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 445200, ""techo_salida"": 445200, ""consumido"": 4800, ""presupuesto"": 500000}",
+d97b3ce167907364f1dff2dc432ad885,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 446400, ""techo_salida"": 446400, ""consumido"": 3600, ""presupuesto"": 500000}",
+d97b3ce167907364f1dff2dc432ad885,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 447600, ""techo_salida"": 447600, ""consumido"": 2400, ""presupuesto"": 500000}",
+d97b3ce167907364f1dff2dc432ad885,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 448800, ""techo_salida"": 448800, ""consumido"": 1200, ""presupuesto"": 500000}",
+d97b3ce167907364f1dff2dc432ad885,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 450000, ""techo_salida"": 450000, ""consumido"": 0, ""presupuesto"": 500000}",
+eab2b6d9b788cdcd8860d94945d8ec0f,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 600, ""techo_salida"": 600, ""consumido"": 900, ""presupuesto"": 1500}",
+eab2b6d9b788cdcd8860d94945d8ec0f,presupuesto_tokens,bloquear,1.0,DEFAULT,"{""restante"": 0, ""techo_salida"": 0, ""consumido"": 900, ""presupuesto"": 1500}",
+eab2b6d9b788cdcd8860d94945d8ec0f,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 300, ""techo_salida"": 300, ""consumido"": 600, ""presupuesto"": 1500}",
+eab2b6d9b788cdcd8860d94945d8ec0f,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 600, ""techo_salida"": 600, ""consumido"": 300, ""presupuesto"": 1500}",
+eab2b6d9b788cdcd8860d94945d8ec0f,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 900, ""techo_salida"": 900, ""consumido"": 0, ""presupuesto"": 1500}",
+eee1dff795af78b03fba4e05e8c9f836,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 489200, ""techo_salida"": 489200, ""consumido"": 10800, ""presupuesto"": 500000}",
+eee1dff795af78b03fba4e05e8c9f836,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 490400, ""techo_salida"": 490400, ""consumido"": 9600, ""presupuesto"": 500000}",
+eee1dff795af78b03fba4e05e8c9f836,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 491600, ""techo_salida"": 491600, ""consumido"": 8400, ""presupuesto"": 500000}",
+eee1dff795af78b03fba4e05e8c9f836,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 442800, ""techo_salida"": 442800, ""consumido"": 7200, ""presupuesto"": 500000}",
+eee1dff795af78b03fba4e05e8c9f836,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 444000, ""techo_salida"": 444000, ""consumido"": 6000, ""presupuesto"": 500000}",
+eee1dff795af78b03fba4e05e8c9f836,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 445200, ""techo_salida"": 445200, ""consumido"": 4800, ""presupuesto"": 500000}",
+eee1dff795af78b03fba4e05e8c9f836,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 446400, ""techo_salida"": 446400, ""consumido"": 3600, ""presupuesto"": 500000}",
+eee1dff795af78b03fba4e05e8c9f836,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 447600, ""techo_salida"": 447600, ""consumido"": 2400, ""presupuesto"": 500000}",
+eee1dff795af78b03fba4e05e8c9f836,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 448800, ""techo_salida"": 448800, ""consumido"": 1200, ""presupuesto"": 500000}",
+eee1dff795af78b03fba4e05e8c9f836,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 450000, ""techo_salida"": 450000, ""consumido"": 0, ""presupuesto"": 500000}",
+0271c7cca9d47cdcc17c78bd1ff011b5,salida_pii_secretos,permitir,0.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.07}",
+0815f028ce114b9bdadd4ef3a58500fd,salida_pii_secretos,redactar,1.0,DEFAULT,"{""secretos"": true, ""pii"": {""correo"": 1}, ""cambio"": true, ""latencia_ms"": 0.08}",
+0f38af97260f150a0a918f2ef86bf411,salida_pii_secretos,permitir,1.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.04}",
+0f38af97260f150a0a918f2ef86bf411,salida_pii_secretos,permitir,1.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.04}",
+14282119ed6857fce4a998d7d27033e4,salida_pii_secretos,permitir,0.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.03}",
+14282119ed6857fce4a998d7d27033e4,salida_pii_secretos,permitir,1.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.04}",
+14282119ed6857fce4a998d7d27033e4,salida_pii_secretos,permitir,1.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.04}",
+1bcdef14789f6c3ad21a26003373aa17,salida_pii_secretos,permitir,0.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.05}",
+38f02fc75a11a3275580d7540bb7f08b,salida_pii_secretos,permitir,1.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.25}",
+49dae1770f2307c996b5f0e2be804c8c,salida_pii_secretos,permitir,1.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.04}",
+49dae1770f2307c996b5f0e2be804c8c,salida_pii_secretos,permitir,1.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.03}",
+4d5a522ae7a0000116ac60bfa91c7382,salida_pii_secretos,permitir,0.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.04}",
+4d5a522ae7a0000116ac60bfa91c7382,salida_pii_secretos,permitir,1.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.04}",
+52146c2ab53ae96778ea54830b3fb161,salida_pii_secretos,permitir,1.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.05}",
+526446dfcc0c8803e1afb2126c61e356,salida_pii_secretos,permitir,0.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.03}",
+57d2ca4f4ad82b6fe3ca0772738ff1c0,salida_pii_secretos,permitir,1.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.03}",
+57d2ca4f4ad82b6fe3ca0772738ff1c0,salida_pii_secretos,permitir,1.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.04}",
+659594098652e0dc5664a2fe499268c3,salida_pii_secretos,permitir,0.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.03}",
+659594098652e0dc5664a2fe499268c3,salida_pii_secretos,permitir,0.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.04}",
+79d12cbf3b9fec6bc76c307ea2a2f7e9,salida_pii_secretos,permitir,1.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.07}",
+80d4b8a59cfa102e2ef693a230c81541,salida_pii_secretos,permitir,0.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.04}",
+80d4b8a59cfa102e2ef693a230c81541,salida_pii_secretos,permitir,1.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.04}",
+873f4f72c7c977688b90de8c0626b8f0,salida_pii_secretos,permitir,1.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.05}",
+89fb2615505c4b40df2728a67c00553a,salida_pii_secretos,permitir,0.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.03}",
+89fb2615505c4b40df2728a67c00553a,salida_pii_secretos,permitir,0.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.04}",
+8b93ac6957ce14147d07870a9047fa04,salida_pii_secretos,permitir,0.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.03}",
+8b93ac6957ce14147d07870a9047fa04,salida_pii_secretos,permitir,1.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.04}",
+b8c8ed35df49af1cf83ab07ac5e63e55,salida_pii_secretos,permitir,1.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.28}",
+c2444bd4d6ff4d3202eddca571974b34,salida_pii_secretos,permitir,0.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.04}",
+c2444bd4d6ff4d3202eddca571974b34,salida_pii_secretos,permitir,1.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.05}",
+c519fa552a61d7ffe80f0de4ccb597fc,salida_pii_secretos,permitir,1.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.04}",
+d97b3ce167907364f1dff2dc432ad885,salida_pii_secretos,permitir,1.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.05}",
+d97b3ce167907364f1dff2dc432ad885,salida_pii_secretos,permitir,0.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.05}",
+eab2b6d9b788cdcd8860d94945d8ec0f,salida_pii_secretos,permitir,1.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.09}",
+eee1dff795af78b03fba4e05e8c9f836,salida_pii_secretos,permitir,1.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.04}",
+eee1dff795af78b03fba4e05e8c9f836,salida_pii_secretos,permitir,0.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.03}",
+eee1dff795af78b03fba4e05e8c9f836,salida_pii_secretos,permitir,1.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.04}",
+0271c7cca9d47cdcc17c78bd1ff011b5,validar_entrada,advertir,1.0,DEFAULT,"{""motivo"": ""no es un PDF""}",no es un PDF
+0f38af97260f150a0a918f2ef86bf411,validar_entrada,advertir,1.0,DEFAULT,"{""motivo"": ""no es un PDF""}",no es un PDF
+14282119ed6857fce4a998d7d27033e4,validar_entrada,advertir,1.0,DEFAULT,"{""motivo"": ""no es un PDF""}",no es un PDF
+1bcdef14789f6c3ad21a26003373aa17,validar_entrada,advertir,1.0,DEFAULT,"{""motivo"": ""no es un PDF""}",no es un PDF
+27d6065f8f6770db3bc45d039ac9cbbe,validar_entrada,advertir,1.0,DEFAULT,"{""motivo"": ""no es un PDF""}",no es un PDF
+38f02fc75a11a3275580d7540bb7f08b,validar_entrada,permitir,1.0,DEFAULT,"{""motivo"": ""PDF existente""}",PDF existente
+49dae1770f2307c996b5f0e2be804c8c,validar_entrada,advertir,0.0,DEFAULT,"{""motivo"": ""no es un PDF""}",no es un PDF
+4d5a522ae7a0000116ac60bfa91c7382,validar_entrada,advertir,1.0,DEFAULT,"{""motivo"": ""no es un PDF""}",no es un PDF
+52146c2ab53ae96778ea54830b3fb161,validar_entrada,advertir,1.0,DEFAULT,"{""motivo"": ""no es un PDF""}",no es un PDF
+526446dfcc0c8803e1afb2126c61e356,validar_entrada,advertir,0.0,DEFAULT,"{""motivo"": ""no es un PDF""}",no es un PDF
+57d2ca4f4ad82b6fe3ca0772738ff1c0,validar_entrada,advertir,1.0,DEFAULT,"{""motivo"": ""no es un PDF""}",no es un PDF
+659594098652e0dc5664a2fe499268c3,validar_entrada,advertir,1.0,DEFAULT,"{""motivo"": ""no es un PDF""}",no es un PDF
+79d12cbf3b9fec6bc76c307ea2a2f7e9,validar_entrada,advertir,1.0,DEFAULT,"{""motivo"": ""no es un PDF""}",no es un PDF
+80d4b8a59cfa102e2ef693a230c81541,validar_entrada,advertir,1.0,DEFAULT,"{""motivo"": ""no es un PDF""}",no es un PDF
+873f4f72c7c977688b90de8c0626b8f0,validar_entrada,advertir,1.0,DEFAULT,"{""motivo"": ""no es un PDF""}",no es un PDF
+89fb2615505c4b40df2728a67c00553a,validar_entrada,advertir,1.0,DEFAULT,"{""motivo"": ""no es un PDF""}",no es un PDF
+8b93ac6957ce14147d07870a9047fa04,validar_entrada,advertir,1.0,DEFAULT,"{""motivo"": ""no es un PDF""}",no es un PDF
+a7f6152113599cd3ee6e6cac18eb2107,validar_entrada,advertir,1.0,DEFAULT,"{""motivo"": ""no es un PDF""}",no es un PDF
+b8c8ed35df49af1cf83ab07ac5e63e55,validar_entrada,permitir,1.0,DEFAULT,"{""motivo"": ""PDF existente""}",PDF existente
+c2444bd4d6ff4d3202eddca571974b34,validar_entrada,advertir,1.0,DEFAULT,"{""motivo"": ""no es un PDF""}",no es un PDF
+c519fa552a61d7ffe80f0de4ccb597fc,validar_entrada,advertir,1.0,DEFAULT,"{""motivo"": ""no es un PDF""}",no es un PDF
+d97b3ce167907364f1dff2dc432ad885,validar_entrada,advertir,0.0,DEFAULT,"{""motivo"": ""no es un PDF""}",no es un PDF
+eab2b6d9b788cdcd8860d94945d8ec0f,validar_entrada,advertir,1.0,DEFAULT,"{""motivo"": ""no es un PDF""}",no es un PDF
+eee1dff795af78b03fba4e05e8c9f836,validar_entrada,advertir,0.0,DEFAULT,"{""motivo"": ""no es un PDF""}",no es un PDF

@@ -1,8 +1,8 @@
 tarea,status,model,aprobadas,total,subtareas,intentos_codigo,tokens_entrada,tokens_salida,duracion_s,error,traza_id
-A,solo_evaluado,,9,9,0,0,0,0,0.0,,
-B,solo_evaluado,,9,9,0,0,0,0,0.0,,
-C,solo_evaluado,,8,8,0,0,0,0,0.0,,
-S1,solo_evaluado,,9,9,0,0,0,0,0.0,,
-S2,solo_evaluado,,12,12,0,0,0,0,0.0,,
-I1,solo_evaluado,,7,7,0,0,0,0,0.0,,
-P1,solo_evaluado,,6,7,0,0,0,0,0.0,,
+A,completado,zai-org/GLM-5.3-Flash,9,9,4,3,29364,46378,256.8,,0bb83eda83d42899034b4ae0190eec39
+B,completado,zai-org/GLM-5.3-Flash,9,9,4,3,29002,49287,173.4,,bdd3a9ed6adb62499c29a9e15cd3c9f7
+C,completado,zai-org/GLM-5.3-Flash,8,8,4,3,55020,145219,573.0,,ebf14c089dc824d0df2e0a4e87cd18f5
+S1,completado,zai-org/GLM-5.3-Flash,9,9,5,5,71016,204478,1029.1,,502c2a573d9e01e44b905e37db4cbd28
+S2,parcial,zai-org/GLM-5.3-Flash,12,12,11,6,104070,399284,1136.0,,b6ed29ae2524499fdb7c5d3fe6f3807f
+I1,completado,zai-org/GLM-5.3-Flash,7,7,2,1,6972,16125,38.9,,29fe39b413dd05b32baed2a91b8f765a
+P1,completado,zai-org/GLM-5.3-Flash,6,7,2,1,5211,6611,19.6,,e90311a64d01ccea68f5378cc429532d

@@ -1,0 +1,14 @@
+../results_parte2/control/corridas/tarea-P1/cache_solver/enunciado_leido.json
+../results_parte2/control/corridas/tarea-P1/cache_solver/contextos/T1.md
+../results_parte2/control/corridas/tarea-P1/traza.jsonl
+../results_parte2/mutantes/corridas/tarea-P1/cache_solver/enunciado_leido.json
+../results_parte2/mutantes/corridas/tarea-P1/cache_solver/contextos/T1.md
+../results_parte2/mutantes/corridas/tarea-P1/reporte.md
+../results_parte2/mutantes/corridas/tarea-P1/traza.jsonl
+../results_parte2/mejora/corridas/tarea-P1/cache_solver/enunciado_leido.json
+../results_parte2/mejora/corridas/tarea-P1/cache_solver/contextos/T1.md
+../results_parte2/mejora/corridas/tarea-P1/traza.jsonl
+../results_parte2/base/peores_todos.md
+../results_parte2/base/corridas/tarea-P1/cache_solver/enunciado_leido.json
+../results_parte2/base/corridas/tarea-P1/cache_solver/contextos/T1.md
+../results_parte2/base/corridas/tarea-P1/traza.jsonl

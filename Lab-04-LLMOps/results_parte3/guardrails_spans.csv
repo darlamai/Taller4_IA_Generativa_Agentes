@@ -1,0 +1,29 @@
+traza,guardrail,decision,latencia_ms,nivel,detalle,motivo
+38f02fc75a11a3275580d7540bb7f08b,freno_repeticion,permitir,0.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+b8c8ed35df49af1cf83ab07ac5e63e55,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+0815f028ce114b9bdadd4ef3a58500fd,guarda_sandbox,bloquear,1.0,DEFAULT,"{""violaciones"": [""línea 2: os.environ (el script no lee el entorno)""], ""descargas"": []}",línea 2: os.environ (el script no lee el entorno)
+0815f028ce114b9bdadd4ef3a58500fd,guarda_sandbox,bloquear,1.0,DEFAULT,"{""violaciones"": [""línea 2: .system() (procesos, borrado o permisos)""], ""descargas"": []}","línea 2: .system() (procesos, borrado o permisos)"
+0815f028ce114b9bdadd4ef3a58500fd,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+38f02fc75a11a3275580d7540bb7f08b,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+b8c8ed35df49af1cf83ab07ac5e63e55,guarda_sandbox,permitir,1.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+38f02fc75a11a3275580d7540bb7f08b,inyeccion_en_pdf,redactar,4.0,DEFAULT,"{""retiradas"": 1, ""latencia_ms"": 2.67}",
+b8c8ed35df49af1cf83ab07ac5e63e55,inyeccion_en_pdf,permitir,2.0,DEFAULT,"{""retiradas"": 0, ""latencia_ms"": 1.98}",
+38f02fc75a11a3275580d7540bb7f08b,pii_en_entrada,permitir,2.0,DEFAULT,"{""pii"": {}, ""total"": 0, ""latencia_ms"": 1.22}",
+b8c8ed35df49af1cf83ab07ac5e63e55,pii_en_entrada,redactar,2.0,DEFAULT,"{""pii"": {""correo"": 1, ""telefono"": 1, ""cedula"": 1, ""nombre"": 1}, ""total"": 4, ""latencia_ms"": 1.27}",
+38f02fc75a11a3275580d7540bb7f08b,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 487926, ""techo_salida"": 487926, ""consumido"": 12074, ""presupuesto"": 500000}",
+38f02fc75a11a3275580d7540bb7f08b,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 440121, ""techo_salida"": 440121, ""consumido"": 9879, ""presupuesto"": 500000}",
+38f02fc75a11a3275580d7540bb7f08b,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 444753, ""techo_salida"": 444753, ""consumido"": 5247, ""presupuesto"": 500000}",
+38f02fc75a11a3275580d7540bb7f08b,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 445996, ""techo_salida"": 445996, ""consumido"": 4004, ""presupuesto"": 500000}",
+38f02fc75a11a3275580d7540bb7f08b,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 450000, ""techo_salida"": 450000, ""consumido"": 0, ""presupuesto"": 500000}",
+38f02fc75a11a3275580d7540bb7f08b,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 450000, ""techo_salida"": 450000, ""consumido"": 0, ""presupuesto"": 500000}",
+b8c8ed35df49af1cf83ab07ac5e63e55,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 490597, ""techo_salida"": 490597, ""consumido"": 9403, ""presupuesto"": 500000}",
+b8c8ed35df49af1cf83ab07ac5e63e55,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 442601, ""techo_salida"": 442601, ""consumido"": 7399, ""presupuesto"": 500000}",
+b8c8ed35df49af1cf83ab07ac5e63e55,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 446949, ""techo_salida"": 446949, ""consumido"": 3051, ""presupuesto"": 500000}",
+b8c8ed35df49af1cf83ab07ac5e63e55,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 448278, ""techo_salida"": 448278, ""consumido"": 1722, ""presupuesto"": 500000}",
+b8c8ed35df49af1cf83ab07ac5e63e55,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 450000, ""techo_salida"": 450000, ""consumido"": 0, ""presupuesto"": 500000}",
+b8c8ed35df49af1cf83ab07ac5e63e55,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 450000, ""techo_salida"": 450000, ""consumido"": 0, ""presupuesto"": 500000}",
+0815f028ce114b9bdadd4ef3a58500fd,salida_pii_secretos,redactar,1.0,DEFAULT,"{""secretos"": true, ""pii"": {""correo"": 1}, ""cambio"": true, ""latencia_ms"": 0.08}",
+38f02fc75a11a3275580d7540bb7f08b,salida_pii_secretos,permitir,1.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.25}",
+b8c8ed35df49af1cf83ab07ac5e63e55,salida_pii_secretos,permitir,1.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.28}",
+38f02fc75a11a3275580d7540bb7f08b,validar_entrada,permitir,1.0,DEFAULT,"{""motivo"": ""PDF existente""}",PDF existente
+b8c8ed35df49af1cf83ab07ac5e63e55,validar_entrada,permitir,1.0,DEFAULT,"{""motivo"": ""PDF existente""}",PDF existente

@@ -1,0 +1,29 @@
+traza,guardrail,decision,latencia_ms,nivel,detalle,motivo
+226d074020eaae41d36516dcbd212f2b,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+44df4b7e249e458894c6e2171eef9afa,freno_repeticion,permitir,1.0,DEFAULT,"{""motivo"": ""script nuevo""}",script nuevo
+226d074020eaae41d36516dcbd212f2b,guarda_sandbox,permitir,4.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+44df4b7e249e458894c6e2171eef9afa,guarda_sandbox,permitir,2.0,DEFAULT,"{""violaciones"": [], ""descargas"": []}",
+226d074020eaae41d36516dcbd212f2b,inyeccion_en_pdf,redactar,6.0,DEFAULT,"{""retiradas"": 1, ""latencia_ms"": 4.28}",
+44df4b7e249e458894c6e2171eef9afa,inyeccion_en_pdf,permitir,2.0,DEFAULT,"{""retiradas"": 0, ""latencia_ms"": 2.26}",
+226d074020eaae41d36516dcbd212f2b,pii_en_entrada,permitir,3.0,DEFAULT,"{""pii"": {}, ""total"": 0, ""latencia_ms"": 2.94}",
+44df4b7e249e458894c6e2171eef9afa,pii_en_entrada,redactar,1.0,DEFAULT,"{""pii"": {""correo"": 1, ""telefono"": 1, ""cedula"": 1}, ""total"": 3, ""latencia_ms"": 1.26}",
+226d074020eaae41d36516dcbd212f2b,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 488692, ""techo_salida"": 488692, ""consumido"": 11308, ""presupuesto"": 500000}",
+226d074020eaae41d36516dcbd212f2b,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 440934, ""techo_salida"": 440934, ""consumido"": 9066, ""presupuesto"": 500000}",
+226d074020eaae41d36516dcbd212f2b,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 445695, ""techo_salida"": 445695, ""consumido"": 4305, ""presupuesto"": 500000}",
+226d074020eaae41d36516dcbd212f2b,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 446976, ""techo_salida"": 446976, ""consumido"": 3024, ""presupuesto"": 500000}",
+226d074020eaae41d36516dcbd212f2b,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 450000, ""techo_salida"": 450000, ""consumido"": 0, ""presupuesto"": 500000}",
+226d074020eaae41d36516dcbd212f2b,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 450000, ""techo_salida"": 450000, ""consumido"": 0, ""presupuesto"": 500000}",
+44df4b7e249e458894c6e2171eef9afa,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 487221, ""techo_salida"": 487221, ""consumido"": 12779, ""presupuesto"": 500000}",
+44df4b7e249e458894c6e2171eef9afa,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 441930, ""techo_salida"": 441930, ""consumido"": 8070, ""presupuesto"": 500000}",
+44df4b7e249e458894c6e2171eef9afa,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 447108, ""techo_salida"": 447108, ""consumido"": 2892, ""presupuesto"": 500000}",
+44df4b7e249e458894c6e2171eef9afa,presupuesto_tokens,permitir,1.0,DEFAULT,"{""restante"": 448508, ""techo_salida"": 448508, ""consumido"": 1492, ""presupuesto"": 500000}",
+44df4b7e249e458894c6e2171eef9afa,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 450000, ""techo_salida"": 450000, ""consumido"": 0, ""presupuesto"": 500000}",
+44df4b7e249e458894c6e2171eef9afa,presupuesto_tokens,permitir,0.0,DEFAULT,"{""restante"": 450000, ""techo_salida"": 450000, ""consumido"": 0, ""presupuesto"": 500000}",
+226d074020eaae41d36516dcbd212f2b,salida_pii_secretos,permitir,0.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.23}",
+44df4b7e249e458894c6e2171eef9afa,salida_pii_secretos,permitir,1.0,DEFAULT,"{""secretos"": false, ""pii"": {}, ""cambio"": false, ""latencia_ms"": 0.41}",
+21a2b3d7a40e9b70ab7d39c8ac2147eb,validar_entrada,permitir,1.0,DEFAULT,"{""motivo"": ""PDF existente""}",PDF existente
+226d074020eaae41d36516dcbd212f2b,validar_entrada,permitir,2.0,DEFAULT,"{""motivo"": ""PDF existente""}",PDF existente
+42b8067d1c93e75dd64ee9db604529be,validar_entrada,permitir,1.0,DEFAULT,"{""motivo"": ""PDF existente""}",PDF existente
+44df4b7e249e458894c6e2171eef9afa,validar_entrada,permitir,0.0,DEFAULT,"{""motivo"": ""PDF existente""}",PDF existente
+8ac7bcf0af8e72dad0c864f1b079722a,validar_entrada,permitir,1.0,DEFAULT,"{""motivo"": ""PDF existente""}",PDF existente
+f3cee7affdbd6b6fdfd80eec20619da9,validar_entrada,permitir,0.0,DEFAULT,"{""motivo"": ""PDF existente""}",PDF existente

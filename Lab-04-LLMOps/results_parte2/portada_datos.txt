@@ -1,0 +1,17 @@
+warning: `VIRTUAL_ENV=/home/dludena/Taller4_IA_Generativa_Agentes/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+== FECHAS (de traza.jsonl, hora de Guayaquil)
+Parte 1: de 2026-10-11 00:01 a 2026-10-11 00:47  (217 eventos)
+Parte 2 base: de 2026-10-11 00:01 a 2026-10-13 23:30  (260 eventos)
+Parte 2 control: de 2026-10-14 02:22 a 2026-10-14 04:00  (248 eventos)
+Parte 2 mejora: de 2026-10-14 06:06 a 2026-10-14 06:51  (272 eventos)
+Parte 3: de 2026-10-15 21:19 a 2026-10-15 21:20  (42 eventos)
+
+== MODELO DEL AGENTE Y VERSION DE PROMPT (de spans.jsonl)
+Parte 1: modelos=['zai-org/GLM-5.3-Flash'] prompt_version=['v1']
+base: modelos=['zai-org/GLM-5.3-Flash'] prompt_version=['v1']
+control: modelos=['zai-org/GLM-5.3-Flash'] prompt_version=['v1']
+mejora: modelos=['zai-org/GLM-5.3-Flash'] prompt_version=['v2']
+
+== JUEZ (de juez_solver.csv)
+base/juez_solver.csv modelo_juez= ['gemma3:27b'] fechas= ['2026-10-14 06:35']
+mejora/juez_solver.csv modelo_juez= ['gemma3:27b'] fechas= ['2026-10-14 12:00']

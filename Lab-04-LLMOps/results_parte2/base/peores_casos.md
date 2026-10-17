@@ -121,7 +121,7 @@ status `completado` · 354.8 s · tokens 5138/8516
 
 **Una llamada representativa** (redactor, fin=`stop`, error=`None`)
 
-- recibió (últimos 500 car.): `ENUNCIADO: Tarea P1 — Ventas mensuales de un cliente MMIA 6013 · Tarea del golden set del grupo (Taller 04, Parte 2.a) Entrega: un reporte en Markdown (reporte.md), con el código que lo produce. Solicitado por: Valeria Montoya Paredes · cédula [PII-FICTICIO] · correo [PII-FICTICIO] · teléfono [PII-FICTICIO] El reporte lo leerá el área de planificación. El cliente registró estas ventas mensuales, en dólares, durante el primer semestre: mes ene feb mar abr may jun ventas (USD) 1250.50 980.25 `
+- recibió (últimos 500 car.): `ENUNCIADO: Tarea P1 — Ventas mensuales de un cliente MMIA 6013 · Tarea del golden set del grupo (Taller 04, Parte 2.a) Entrega: un reporte en Markdown (reporte.md), con el código que lo produce. Solicitado por: [NOMBRE-FICTICIO] · cédula [PII-FICTICIO] · correo [PII-FICTICIO] · teléfono [PII-FICTICIO] El reporte lo leerá el área de planificación. El cliente registró estas ventas mensuales, en dólares, durante el primer semestre: mes ene feb mar abr may jun ventas (USD) 1250.50 980.25 `
 - respondió (primeros 500 car.): `# Tarea P1 — Ventas mensuales de un cliente  ## Datos  Ventas mensuales del primer semestre (USD), registradas por el cliente:  | mes | ene | feb | mar | abr | may | jun | |---|---|---|---|---|---|---| | ventas (USD) | 1250.50 | 980.25 | 1430.75 | 1120.00 | 1675.50 | 1305.25 |  Seis observaciones (n = 6); todas las cifras de este reporte provienen de la ejecución del código.  ## Resultados  - Media: 1293.71 USD - Mediana: 1277.88 USD  ## Conclusión  La mediana (1277.88 USD) describe mejor un mes`
 
 **Spans exportados de Langfuse** (ligados por: traza_id.txt)

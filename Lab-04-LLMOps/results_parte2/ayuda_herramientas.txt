@@ -1,0 +1,27 @@
+warning: `VIRTUAL_ENV=/home/dludena/Taller4_IA_Generativa_Agentes/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+usage: herramientas_2b.py [-h]
+                          {parche,resumen,plantilla,juez,peores,comparar} ...
+
+Partes 2.b y 2.c (opción B): el juez del solver, sus calibraciones y la comparación antes/después.
+
+Un solo archivo con subcomandos. Desde la RAÍZ del repo (Taller3-opcionB):
+
+    uv run python scripts/herramientas_2b.py parche                 # una vez: evaluar_solver guarda el traza_id
+    uv run python scripts/herramientas_2b.py resumen  --resultados R.csv --resumenes a.csv b.csv --salida S.csv
+    uv run python scripts/herramientas_2b.py plantilla --corridas C --salida etiquetas_plantilla.csv
+    uv run python scripts/herramientas_2b.py juez     --corridas C --resultados R.csv --salida DIR [--etiquetas E.csv]
+    uv run python scripts/herramientas_2b.py peores   --base DIR --salida peores_casos.md
+    uv run python scripts/herramientas_2b.py comparar --base R1.csv --mejora R2.csv [--control R3.csv] ...
+
+`juez` es el `juez_solver.py` que pide el enunciado para la opción B: lee el entregable de cada
+tarea, juzga con temperature=0 las comprobaciones que se pueden decidir leyéndolo (las que tienen
+campo `juez` y las de tipo `juez`, con su `criterio`) SIN ver lo que dijo el verificador, y escribe
+`juez_solver.csv` (+ `juez_solver.md` con las dos calibraciones y `traza_juez.jsonl`).
+Reutiliza el cliente de Ollama de scripts/juez.py (mismo gemma3 de la H200, mismo prompt), pero llama a
+/api/chat con num_ctx=16384: con los 4096 por omisión de Ollama el notebook de B se recortaba.
+
+positional arguments:
+  {parche,resumen,plantilla,juez,peores,comparar}
+
+options:
+  -h, --help            show this help message and exit
